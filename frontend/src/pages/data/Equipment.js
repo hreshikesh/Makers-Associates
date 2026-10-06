@@ -1,0 +1,38 @@
+export const FLEET = [
+  {
+    id: "excavator",
+    name: "Hydraulic Excavators",
+    category: "Earthmoving",
+    specs: "22 - 30 Tons • 1.2m³ Bucket Capacity",
+    use: "Deep foundation excavation, trenching, and massive site leveling.",
+    image: "https://res.cloudinary.com/yavvnb6s/image/upload/v1790589770/617169c7-b897-4e10-80fb-c1dc16897ab4.png",
+    telemetry: "SYS.OP. NORMAL | HYD: 4200 PSI",
+  },
+  {
+    id: "crane",
+    name: "Tower Cranes",
+    category: "Heavy Lifting",
+    specs: "Upto 60m Reach • 8-Ton Max Lift",
+    use: "High-rise structural steel, concrete bucket lifting, and material staging.",
+    image: "https://res.cloudinary.com/yavvnb6s/image/upload/v1790589861/03ac6bed-9bfc-4d28-88ff-52fa965ac24b.png",
+    telemetry: "WIND: 12 KM/H | LOAD: STABLE",
+  },
+  {
+    id: "mixer",
+    name: "Transit Mixers",
+    category: "Concrete Logistics",
+    specs: "7 - 9 Cu.M Drum Capacity",
+    use: "Transporting ready-mix concrete securely from batching plants to site.",
+    image: "https://res.cloudinary.com/yavvnb6s/image/upload/v1790589903/23c47dd5-0169-4247-a04b-f84af1747faf.png",
+    telemetry: "RPM: 14 | MIX: OPTIMAL",
+  },
+  {
+    id: "pump",
+    name: "Boom Pumps",
+    category: "Concrete Placement",
+    specs: "36m - 42m Vertical Reach",
+    use: "High-pressure continuous concrete pouring for deep rafts and high slabs.",
+    image: "https://res.cloudinary.com/yavvnb6s/image/upload/v1790589968/edc47f23-4f7f-4b3a-a8b6-df8f650a90d0.png",
+    telemetry: "FLOW: 120m³/h | PRES: HIGH",
+  },
+];

@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Add MaterialSpecRow model + material_specs field to CustomQuote",
+    "status": "completed"
+  },
+  {
+    "content": "Seed 23 default material rows for new quotes and populate existing ones",
+    "status": "completed"
+  },
+  {
+    "content": "Add Material Specification section to PDF (after spec sheets, before Payment Schedule)",
+    "status": "completed"
+  },
+  {
+    "content": "Build Admin UI editable table (add/remove/edit rows)",
+    "status": "completed"
+  },
+  {
+    "content": "Verify PDF + save round-trip",
+    "status": "completed"
+  }
+]

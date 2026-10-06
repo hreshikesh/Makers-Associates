@@ -1,0 +1,43 @@
+{
+  "summary": "Completed comprehensive testing of admin login fix (DB-backed auth with bcrypt). All 8 requirements verified: new credentials work, case-insensitive email, wrong password handling, old credentials rejected, DB seeding with bcrypt hash, browser login/logout flows, session persistence, and no regressions in admin endpoints.",
+  "backend_issues": {
+    "critical_bugs": [],
+    "flaky_endpoints": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "passed_tests": [
+    "POST /api/admin/login with new credentials (dkmanjeshbelli@gmail.com / 9980577310@aB) returns 200 with token + email + role='admin' + httpOnly Set-Cookie",
+    "POST /api/admin/login with UPPERCASE email (DKMANJESHBELLI@GMAIL.COM) succeeds (case-insensitive normalization)",
+    "POST /api/admin/login with wrong password returns 401 'Invalid credentials' (not 500 or crash)",
+    "POST /api/admin/login with old credentials (admin@constructons.in / admin123) fails with 401",
+    "Database verification: admin_users collection exists with bcrypt-hashed password ($2b$12$...), email stored as lowercase",
+    "Browser flow: login with new credentials succeeds, redirects to /admin dashboard, shows 'Welcome back!' toast",
+    "Browser flow: wrong password shows 'Invalid credentials' error toast, stays on login page",
+    "Session persistence: refresh after login keeps user logged in (cookie working)",
+    "Logout button clears cookie and redirects to /admin/login",
+    "After logout, cannot access /admin (properly redirects to login)",
+    "Regression: all admin endpoints work with new auth (GET /api/packages, /api/leads, /api/quiz-submissions, /api/site-settings)",
+    "Regression: /api/admin/me works with cookie-based session"
+  ],
+  "test_report_links": [
+    "/app/backend/admin_login_test.py",
+    ".screenshots/admin_login_wrong_password.png",
+    ".screenshots/admin_dashboard_after_login.png"
+  ],
+  "action_item_for_main_agent": "",
+  "updated_files": [
+    "/app/backend/admin_login_test.py",
+    "/app/memory/test_credentials.md"
+  ],
+  "success_percentage": {
+    "backend": "100% (8/8 tests passed)",
+    "frontend": "100% (3/3 browser tests passed)",
+    "overall": "100% (11/11 tests passed)"
+  },
+  "should_call_test_agent_after_fix": false,
+  "should_main_agent_test_itself": false
+}

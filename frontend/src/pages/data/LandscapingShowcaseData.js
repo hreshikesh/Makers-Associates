@@ -1,0 +1,122 @@
+export const LANDSCAPING_SHOWCASE = [
+  {
+    id: "ls-01",
+    title: "Villa Backyard Retreat",
+    location: "Bengaluru, KA",
+    style: "Tropical",
+    space: "Villa Garden",
+    year: "2024",
+    coverage: "3,200 sq.ft.",
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80",
+    description: "A lush tropical sanctuary with layered planting, natural stone pathways, and a hidden meditation nook.",
+    plants: ["Areca Palm", "Bird of Paradise", "Bougainvillea", "Frangipani"]
+  },
+  {
+    id: "ls-02",
+    title: "Rooftop Green Oasis",
+    location: "Mumbai, MH",
+    style: "Modern Minimalist",
+    space: "Terrace",
+    year: "2024",
+    coverage: "1,800 sq.ft.",
+    image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=1200&q=80",
+    description: "Urban rooftop transformed into a modern green retreat with modular planters and evening lounge zones.",
+    plants: ["Bamboo Palm", "Snake Plant", "Rubber Plant"]
+  },
+  {
+    id: "ls-03",
+    title: "Zen Water Garden",
+    location: "Chennai, TN",
+    style: "Zen / Japanese",
+    space: "Villa Garden",
+    year: "2023",
+    coverage: "1,200 sq.ft.",
+    image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&q=80",
+    description: "A serene Japanese-inspired garden with koi pond, bamboo grove, and hand-placed river stones.",
+    plants: ["Japanese Maple", "Bamboo", "Moss", "Water Lily"]
+  },
+  {
+    id: "ls-04",
+    title: "Vertical Living Wall",
+    location: "Hyderabad, TS",
+    style: "Modern Minimalist",
+    space: "Commercial",
+    year: "2024",
+    coverage: "600 sq.ft.",
+    image: "https://images.unsplash.com/photo-1519455953755-af066f52f1a6?w=1200&q=80",
+    description: "A striking 40-foot vertical garden wall featuring 200+ plants with automated drip irrigation.",
+    plants: ["Pothos", "Philodendron", "Ferns", "Spider Plant"]
+  },
+  {
+    id: "ls-05",
+    title: "Balcony Herb Garden",
+    location: "Pune, MH",
+    style: "Indian Traditional",
+    space: "Balcony",
+    year: "2024",
+    coverage: "180 sq.ft.",
+    image: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=1200&q=80",
+    description: "A compact urban balcony filled with edible herbs, seasonal flowers, and a small vertical garden.",
+    plants: ["Tulsi", "Curry Leaves", "Mint", "Marigold"]
+  },
+  {
+    id: "ls-06",
+    title: "Poolside Tropical Paradise",
+    location: "Goa, GA",
+    style: "Tropical",
+    space: "Villa Garden",
+    year: "2023",
+    coverage: "2,800 sq.ft.",
+    image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80",
+    description: "Poolside landscape with mature palm trees, tropical undergrowth, and warm ambient lighting.",
+    plants: ["Coconut Palm", "Traveler's Palm", "Hibiscus", "Cordyline"]
+  },
+  {
+    id: "ls-07",
+    title: "Cascading Water Feature",
+    location: "Bengaluru, KA",
+    style: "Modern Minimalist",
+    space: "Villa Garden",
+    year: "2024",
+    coverage: "900 sq.ft.",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
+    description: "A contemporary three-tier stone water feature surrounded by manicured landscaping.",
+    plants: ["Ornamental Grass", "Lavender", "Rosemary"]
+  },
+  {
+    id: "ls-08",
+    title: "English Cottage Garden",
+    location: "Ooty, TN",
+    style: "English Cottage",
+    space: "Villa Garden",
+    year: "2023",
+    coverage: "2,400 sq.ft.",
+    image: "https://images.unsplash.com/photo-1466692476655-9d8b7bc27ba1?w=1200&q=80",
+    description: "A romantic English-style garden with roses, lavender borders, and stone pathways winding through blooms.",
+    plants: ["Roses", "Lavender", "Foxglove", "Hydrangea"]
+  },
+  {
+    id: "ls-09",
+    title: "Corporate Green Courtyard",
+    location: "Gurugram, HR",
+    style: "Modern Minimalist",
+    space: "Commercial",
+    year: "2024",
+    coverage: "4,500 sq.ft.",
+    image: "https://images.unsplash.com/photo-1600577916048-804c9191e36c?w=1200&q=80",
+    description: "A calming central courtyard for a tech campus with native trees and employee wellness zones.",
+    plants: ["Neem", "Peepal", "Champa", "Money Plant"]
+  },
+  {
+    id: "ls-10",
+    title: "Farmhouse Kitchen Garden",
+    location: "Coimbatore, TN",
+    style: "Indian Traditional",
+    space: "Farmhouse",
+    year: "2024",
+    coverage: "5,000 sq.ft.",
+    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80",
+    description: "A traditional Indian farmhouse garden with vegetables, fruit trees, and a central courtyard tulsi mandap.",
+    plants: ["Tulsi", "Mango", "Guava", "Curry Leaves", "Banana"]
+  }
+];

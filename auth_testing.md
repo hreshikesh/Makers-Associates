@@ -1,0 +1,1 @@
+See Emergent Auth testing playbook above. Use this when running the testing agent for the customer portal.
