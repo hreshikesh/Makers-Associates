@@ -45,10 +45,10 @@ export default function AdminDashboard() {
     <div className="font-['Poppins']">
       <div className="flex items-baseline justify-between">
         <div>
-          <div className="text-xs font-semibold text-[#FF6600] uppercase tracking-wider">Overview</div>
-          <h1 className="mt-1 text-2xl md:text-3xl font-bold text-[#000F1B]">Dashboard</h1>
+          <div className="text-xs font-semibold text-[#B89416] uppercase tracking-wider">Overview</div>
+          <h1 className="mt-1 text-2xl md:text-3xl font-bold text-[#252A2A]">Dashboard</h1>
         </div>
-        <Link to="/" className="text-sm text-[#111111]/60 hover:text-[#FF6600] transition">
+        <Link to="/" className="text-sm text-[#252A2A]/60 hover:text-[#B89416] transition">
           View public site →
         </Link>
       </div>
@@ -67,33 +67,33 @@ export default function AdminDashboard() {
             key={s.label}
             className="rounded-2xl bg-white border border-black/5 shadow-sm p-4 hover:shadow-md transition group"
           >
-            <s.icon className="w-5 h-5 text-[#FF6600]" />
-            <div className="mt-2 text-2xl font-bold text-[#000F1B]">{s.value ?? "0"}</div>
-            <div className="text-xs text-[#111111]/60">{s.label}</div>
+            <s.icon className="w-5 h-5 text-[#B89416]" />
+            <div className="mt-2 text-2xl font-bold text-[#252A2A]">{s.value ?? "0"}</div>
+            <div className="text-xs text-[#252A2A]/60">{s.label}</div>
           </Link>
         ))}
       </div>
 
       <div className="mt-8 rounded-2xl bg-white border border-black/5 shadow-sm">
         <div className="p-4 flex items-center justify-between border-b border-black/5">
-          <div className="font-semibold text-[#000F1B]">Recent leads</div>
-          <Link to="/admin/leads" className="text-sm text-[#FF6600] font-semibold inline-flex items-center gap-1 hover:underline">
+          <div className="font-semibold text-[#252A2A]">Recent leads</div>
+          <Link to="/admin/leads" className="text-sm text-[#B89416] font-semibold inline-flex items-center gap-1 hover:underline">
             All leads <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
         <div className="divide-y divide-black/5">
-          {leads.length === 0 && <div className="p-6 text-sm text-[#111111]/50 italic">No leads recorded yet.</div>}
+          {leads.length === 0 && <div className="p-6 text-sm text-[#252A2A]/50 italic">No leads recorded yet.</div>}
           {leads.map((l) => (
             <div key={l.id || l.created_at} className="p-4 flex items-center justify-between text-sm">
               <div>
-                <div className="font-semibold text-[#000F1B]">
-                  {l.name} <span className="text-[#111111]/50 font-normal">· {l.phone}</span>
+                <div className="font-semibold text-[#252A2A]">
+                  {l.name} <span className="text-[#252A2A]/50 font-normal">· {l.phone}</span>
                 </div>
-                <div className="text-xs text-[#111111]/60 mt-0.5">
+                <div className="text-xs text-[#252A2A]/60 mt-0.5">
                   {l.message || l.interested_home || l.interested_package || "General enquiry"}
                 </div>
               </div>
-              <div className="text-xs text-[#111111]/40">
+              <div className="text-xs text-[#252A2A]/40">
                 {l.created_at ? new Date(l.created_at).toLocaleString() : ""}
               </div>
             </div>

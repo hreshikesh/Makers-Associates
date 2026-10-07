@@ -27,7 +27,7 @@ export default function AdminSiteSettings() {
       });
   }, []);
 
-  if (!s) return <div className="p-12 flex justify-center"><Loader2 className="w-6 h-6 animate-spin text-[#FF6600]" /></div>;
+  if (!s) return <div className="p-12 flex justify-center"><Loader2 className="w-6 h-6 animate-spin text-[#B89416]" /></div>;
 
   const save = async () => {
     setSaving(true);
@@ -46,9 +46,9 @@ export default function AdminSiteSettings() {
 
   return (
     <div className="max-w-4xl font-['Poppins'] pb-12">
-      <div className="text-xs font-semibold text-[#FF6600] uppercase tracking-wider">CMS Management</div>
-      <h1 className="mt-1 text-2xl font-bold text-[#000F1B]">Site Settings</h1>
-      <p className="text-sm text-[#111111]/60 mt-1 mb-6">Manage your public website contact details and branding.</p>
+      <div className="text-xs font-semibold text-[#B89416] uppercase tracking-wider">CMS Management</div>
+      <h1 className="mt-1 text-2xl font-bold text-[#252A2A]">Site Settings</h1>
+      <p className="text-sm text-[#252A2A]/60 mt-1 mb-6">Manage your public website contact details and branding.</p>
 
       <div className="bg-white rounded-2xl border border-black/5 p-6 shadow-sm">
         <div className="grid md:grid-cols-2 gap-4">
@@ -64,7 +64,7 @@ export default function AdminSiteSettings() {
       </div>
 
       <div className="bg-white rounded-2xl border border-black/5 shadow-sm p-6 mt-6">
-        <div className="font-bold text-[#000F1B] mb-4">Social Links</div>
+        <div className="font-bold text-[#252A2A] mb-4">Social Links</div>
         <div className="grid md:grid-cols-2 gap-4">
           {["facebook","instagram","twitter","linkedin","youtube"].map((k) => (
             <Field key={k} label={k[0].toUpperCase()+k.slice(1)} value={s.social_links?.[k] || ""} onChange={(v) => updateSocial(k, v)} />
@@ -73,7 +73,7 @@ export default function AdminSiteSettings() {
       </div>
       
       <div className="mt-6 flex justify-end">
-        <button onClick={save} disabled={saving} className="bg-[#000F1B] hover:bg-[#FF6600] text-white px-6 py-3 rounded-xl text-sm font-bold transition flex items-center gap-2 disabled:opacity-50">
+        <button onClick={save} disabled={saving} className="bg-[#252A2A] hover:bg-[#B89416] text-white px-6 py-3 rounded-xl text-sm font-bold transition flex items-center gap-2 disabled:opacity-50">
           {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />} 
           {saving ? "Saving…" : "Save Changes"}
         </button>
@@ -85,11 +85,11 @@ export default function AdminSiteSettings() {
 function Field({ label, value, onChange, className = "" }) {
   return (
     <label className={`block ${className}`}>
-      <div className="text-[10px] font-bold uppercase tracking-wider text-[#000F1B] mb-1.5">{label}</div>
+      <div className="text-[10px] font-bold uppercase tracking-wider text-[#252A2A] mb-1.5">{label}</div>
       <input 
         value={value || ""} 
         onChange={(e) => onChange(e.target.value)} 
-        className="w-full rounded-xl border border-black/10 bg-[#F9FAFB] px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#FF6600] focus:bg-white text-sm transition" 
+        className="w-full rounded-xl border border-black/10 bg-[#F9FAFB] px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#B89416] focus:bg-white text-sm transition" 
       />
     </label>
   );

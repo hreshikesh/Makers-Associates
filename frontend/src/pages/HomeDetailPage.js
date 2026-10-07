@@ -67,19 +67,19 @@ export default function HomeDetailPage() {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://constructons.com"
+              "item": "https://[Your Brand]s.com"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Collection",
-              "item": "https://constructons.com/#home-collection"
+              "item": "https://[Your Brand]s.com/#home-collection"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": home.name,
-              "item": `https://constructons.com/homes/${home.slug}`
+              "item": `https://[Your Brand]s.com/homes/${home.slug}`
             }
           ]
         }
@@ -91,8 +91,8 @@ export default function HomeDetailPage() {
     return (
       <div className="min-h-screen bg-white grid place-items-center font-['Poppins',sans-serif]">
         <div className="flex flex-col items-center gap-3">
-          <div className="w-10 h-10 rounded-full border-2 border-[#FF6600] border-t-transparent animate-spin" />
-          <div className="text-xs uppercase tracking-widest text-[#000F1B]/50">
+          <div className="w-10 h-10 rounded-full border-2 border-[#B89416] border-t-transparent animate-spin" />
+          <div className="text-xs uppercase tracking-widest text-[#252A2A]/50">
             Loading home
           </div>
         </div>
@@ -106,18 +106,18 @@ export default function HomeDetailPage() {
         <Header />
         <div className="min-h-[70vh] grid place-items-center text-center px-6 pt-24">
           <div>
-            <div className="w-16 h-16 mx-auto rounded-2xl bg-[#FF6600]/10 grid place-items-center">
-              <HomeIcon className="w-7 h-7 text-[#FF6600]" />
+            <div className="w-16 h-16 mx-auto rounded-2xl bg-[#B89416]/10 grid place-items-center">
+              <HomeIcon className="w-7 h-7 text-[#B89416]" />
             </div>
-            <div className="mt-4 text-2xl font-bold text-[#000F1B]">
+            <div className="mt-4 text-2xl font-bold text-[#252A2A]">
               Home not found
             </div>
-            <p className="mt-1 text-sm text-[#000F1B]/50">
+            <p className="mt-1 text-sm text-[#252A2A]/50">
               The design you're looking for doesn't exist or was moved.
             </p>
             <Link
               to="/#home-collection"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#FF6600] hover:bg-[#E04F00] text-white text-sm font-semibold px-6 py-3 transition"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#B89416] hover:bg-[#8F7210] text-white text-sm font-semibold px-6 py-3 transition"
             >
               Browse Home Collection <ArrowRight className="w-4 h-4" />
             </Link>
@@ -138,7 +138,7 @@ export default function HomeDetailPage() {
     setSelected((s) => (s - 1 + gallery.length) % gallery.length);
 
   return (
-    <div className="bg-[#F7F7F7] font-['Poppins',sans-serif] selection:bg-[#FF6600] selection:text-white min-h-screen">
+    <div className="bg-[#F7F7F7] font-['Poppins',sans-serif] selection:bg-[#B89416] selection:text-white min-h-screen">
       <SEO
         title={`${home.name} - Custom House Design Blueprint`}
         description={`Explore the ${home.name} floorplan layout. ${home.bedrooms} BHK style specification, with ${home.area_sqft} details and architectural features.`}
@@ -155,21 +155,21 @@ export default function HomeDetailPage() {
           <div className="flex items-center justify-between mb-6">
             <Link
               to="/#home-collection"
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#000F1B]/55 hover:text-[#FF6600] transition group"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#252A2A]/55 hover:text-[#B89416] transition group"
             >
-              <span className="w-8 h-8 rounded-full bg-white border border-black/5 grid place-items-center group-hover:border-[#FF6600]/30 transition">
+              <span className="w-8 h-8 rounded-full bg-white border border-black/5 grid place-items-center group-hover:border-[#B89416]/30 transition">
                 <ArrowLeft className="w-3.5 h-3.5" />
               </span>
               Back to Home Collection
             </Link>
 
-            <div className="hidden sm:flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#000F1B]/40">
-              <span className="text-[#000F1B]">CONSTRUCTONS</span>
+            <div className="hidden sm:flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#252A2A]/40">
+              <span className="text-[#252A2A]">[Your Brand]s</span>
             
-              <span className="text-[#000F1B]/20">/</span>
-              <span className="text-[#000F1B]">HOMES</span>
-              <span className="text-[#000F1B]/20">/</span>
-              <span className="text-[#FF6600]">{home.name}</span>
+              <span className="text-[#252A2A]/20">/</span>
+              <span className="text-[#252A2A]">HOMES</span>
+              <span className="text-[#252A2A]/20">/</span>
+              <span className="text-[#B89416]">{home.name}</span>
             </div>
           </div>
 
@@ -191,13 +191,13 @@ export default function HomeDetailPage() {
                         data-testid={`gallery-thumb-${i}`}
                         className={`relative shrink-0 w-20 h-20 lg:w-full lg:h-24 rounded-xl overflow-hidden border-2 transition-all ${
                           selected === i
-                            ? "border-[#FF6600] scale-[1.02] shadow-md"
+                            ? "border-[#B89416] scale-[1.02] shadow-md"
                             : "border-transparent opacity-55 hover:opacity-100"
                         }`}
                       >
                         <img src={g} alt="" className="w-full h-full object-cover" />
                         {selected === i && (
-                          <span className="absolute inset-x-1 bottom-1 h-0.5 rounded-full bg-[#FF6600]" />
+                          <span className="absolute inset-x-1 bottom-1 h-0.5 rounded-full bg-[#B89416]" />
                         )}
                       </button>
                     ))}
@@ -223,11 +223,11 @@ export default function HomeDetailPage() {
                       <BrandLockup tone="light" size="xs" />
                     </div>
 
-                    <div className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full bg-[#FF6600] text-white text-[10px] font-bold uppercase tracking-widest shadow-md">
+                    <div className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full bg-[#B89416] text-white text-[10px] font-bold uppercase tracking-widest shadow-md">
                       {home.style}
                     </div>
 
-                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#000F1B]/70 to-transparent pointer-events-none" />
+                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#252A2A]/70 to-transparent pointer-events-none" />
 
                     <div className="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6 md:p-8">
                       <h1 className="text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight drop-shadow">
@@ -245,7 +245,7 @@ export default function HomeDetailPage() {
                         <button
                           type="button"
                           onClick={prevImg}
-                          className="absolute top-1/2 left-3 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/15 grid place-items-center text-white hover:bg-[#FF6600] transition opacity-0 group-hover:opacity-100"
+                          className="absolute top-1/2 left-3 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/15 grid place-items-center text-white hover:bg-[#B89416] transition opacity-0 group-hover:opacity-100"
                           aria-label="Previous image"
                         >
                           <ChevronLeft className="w-4 h-4" />
@@ -253,7 +253,7 @@ export default function HomeDetailPage() {
                         <button
                           type="button"
                           onClick={nextImg}
-                          className="absolute top-1/2 right-3 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/15 grid place-items-center text-white hover:bg-[#FF6600] transition opacity-0 group-hover:opacity-100"
+                          className="absolute top-1/2 right-3 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/15 grid place-items-center text-white hover:bg-[#B89416] transition opacity-0 group-hover:opacity-100"
                           aria-label="Next image"
                         >
                           <ChevronRight className="w-4 h-4" />
@@ -264,7 +264,7 @@ export default function HomeDetailPage() {
                     <button
                       type="button"
                       onClick={() => setLightbox(true)}
-                      className="absolute bottom-4 right-4 z-20 w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 grid place-items-center text-white hover:bg-[#FF6600] transition"
+                      className="absolute bottom-4 right-4 z-20 w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/15 grid place-items-center text-white hover:bg-[#B89416] transition"
                       aria-label="View fullscreen"
                     >
                       <Maximize2 className="w-3.5 h-3.5" />
@@ -289,7 +289,7 @@ export default function HomeDetailPage() {
             >
               <GlassCard>
                 <div className="flex items-center justify-between gap-2">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#FF6600]">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#B89416]">
                     {home.style} Home
                   </div>
                   {home.vastu_compliant && (
@@ -299,12 +299,12 @@ export default function HomeDetailPage() {
                   )}
                 </div>
 
-                <h2 className="mt-2 text-xl sm:text-2xl font-bold text-[#000F1B]">
+                <h2 className="mt-2 text-xl sm:text-2xl font-bold text-[#252A2A]">
                   {home.name}
                 </h2>
                 {home.dimensions && (
-                  <div className="mt-1 inline-flex items-center gap-1.5 text-xs text-[#000F1B]/60">
-                    <MapPin className="w-3.5 h-3.5 text-[#FF6600]" />
+                  <div className="mt-1 inline-flex items-center gap-1.5 text-xs text-[#252A2A]/60">
+                    <MapPin className="w-3.5 h-3.5 text-[#B89416]" />
                     Plot {home.dimensions}
                   </div>
                 )}
@@ -319,8 +319,8 @@ export default function HomeDetailPage() {
                 </div>
 
                 {/* Price band */}
-                <div className="mt-5 rounded-2xl bg-gradient-to-br from-[#000F1B] to-[#0B1E30] text-white p-4 relative overflow-hidden border border-white/10">
-                  <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-[#FF6600]/20 blur-3xl" />
+                <div className="mt-5 rounded-2xl bg-gradient-to-br from-[#252A2A] to-[#0B1E30] text-white p-4 relative overflow-hidden border border-white/10">
+                  <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-[#B89416]/20 blur-3xl" />
                   <div className="relative z-10">
                     <div className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#FF8A4C]">
                       Estimated Cost
@@ -340,23 +340,23 @@ export default function HomeDetailPage() {
                     type="button"
                     onClick={() => open({ home: home.name, source: "home_detail" })}
                     data-testid="home-detail-cta"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#FF6600] hover:bg-[#E04F00] text-white text-sm font-semibold px-6 py-3.5 shadow-[0_12px_28px_rgba(255,90,0,0.32)] transition"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#B89416] hover:bg-[#8F7210] text-white text-sm font-semibold px-6 py-3.5 shadow-[0_12px_28px_rgba(255,90,0,0.32)] transition"
                   >
                     Get Custom Quote <ArrowRight className="w-4 h-4" />
                   </button>
                   {settings?.phone && (
                     <a
                       href={`tel:${settings.phone}`}
-                      className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white/70 backdrop-blur text-[#000F1B] hover:border-[#000F1B] text-sm font-semibold px-6 py-3 transition"
+                      className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white/70 backdrop-blur text-[#252A2A] hover:border-[#252A2A] text-sm font-semibold px-6 py-3 transition"
                     >
-                      <Phone className="w-4 h-4 text-[#FF6600]" /> Call {settings.phone}
+                      <Phone className="w-4 h-4 text-[#B89416]" /> Call {settings.phone}
                     </a>
                   )}
                 </div>
 
                 {home.package_compatibility?.length > 0 && (
                   <div className="mt-5 pt-5 border-t border-black/5">
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-[#000F1B]/45 mb-2">
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-[#252A2A]/45 mb-2">
                       Available Packages
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -364,7 +364,7 @@ export default function HomeDetailPage() {
                         <Link
                           key={p}
                           to="/#packages"
-                          className="text-xs px-3 py-1.5 rounded-full bg-[#FF6600]/10 text-[#FF6600] font-semibold hover:bg-[#FF6600] hover:text-white transition"
+                          className="text-xs px-3 py-1.5 rounded-full bg-[#B89416]/10 text-[#B89416] font-semibold hover:bg-[#B89416] hover:text-white transition"
                         >
                           {p}
                         </Link>
@@ -387,24 +387,24 @@ export default function HomeDetailPage() {
               <GlassCard padded>
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#FF6600]">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#B89416]">
                       Overview
                     </div>
-                    <h3 className="mt-2 text-2xl sm:text-3xl font-bold text-[#000F1B] tracking-tight">
+                    <h3 className="mt-2 text-2xl sm:text-3xl font-bold text-[#252A2A] tracking-tight">
                       About this home
                     </h3>
                   </div>
                   <button
                     type="button"
                     onClick={() => setAboutOpen(true)}
-                    className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-[#000F1B] hover:bg-[#0B1E30] text-white text-xs font-semibold px-4 py-2.5 transition"
+                    className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-[#252A2A] hover:bg-[#0B1E30] text-white text-xs font-semibold px-4 py-2.5 transition"
                   >
                     <BookOpen className="w-3.5 h-3.5" />
                     Read Full Story
                   </button>
                 </div>
 
-                <p className="mt-4 text-[#000F1B]/70 text-sm sm:text-[15px] leading-relaxed line-clamp-4">
+                <p className="mt-4 text-[#252A2A]/70 text-sm sm:text-[15px] leading-relaxed line-clamp-4">
                   {home.description}
                 </p>
 
@@ -413,9 +413,9 @@ export default function HomeDetailPage() {
                     {home.features.slice(0, 4).map((f, i) => (
                       <span
                         key={`chip-${i}`}
-                        className="inline-flex items-center gap-1.5 text-xs font-medium text-[#000F1B]/80 bg-white/70 backdrop-blur border border-black/5 rounded-full px-3 py-1.5"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-[#252A2A]/80 bg-white/70 backdrop-blur border border-black/5 rounded-full px-3 py-1.5"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#B89416]" />
                         {f}
                       </span>
                     ))}
@@ -423,7 +423,7 @@ export default function HomeDetailPage() {
                       <button
                         type="button"
                         onClick={() => setAboutOpen(true)}
-                        className="inline-flex items-center gap-1 text-xs font-bold text-[#FF6600] bg-[#FF6600]/10 hover:bg-[#FF6600] hover:text-white rounded-full px-3 py-1.5 transition"
+                        className="inline-flex items-center gap-1 text-xs font-bold text-[#B89416] bg-[#B89416]/10 hover:bg-[#B89416] hover:text-white rounded-full px-3 py-1.5 transition"
                       >
                         +{home.features.length - 4} more
                       </button>
@@ -434,7 +434,7 @@ export default function HomeDetailPage() {
                 <button
                   type="button"
                   onClick={() => setAboutOpen(true)}
-                  className="mt-5 sm:hidden w-full inline-flex items-center justify-center gap-1.5 rounded-full bg-[#000F1B] hover:bg-[#0B1E30] text-white text-xs font-semibold px-4 py-3 transition"
+                  className="mt-5 sm:hidden w-full inline-flex items-center justify-center gap-1.5 rounded-full bg-[#252A2A] hover:bg-[#0B1E30] text-white text-xs font-semibold px-4 py-3 transition"
                 >
                   <BookOpen className="w-3.5 h-3.5" />
                   Read Full Story
@@ -443,7 +443,7 @@ export default function HomeDetailPage() {
                 <button
                   type="button"
                   onClick={() => setAboutOpen(true)}
-                  className="hidden sm:inline-flex mt-4 items-center gap-1 text-sm font-bold text-[#FF6600] hover:gap-2 transition-all"
+                  className="hidden sm:inline-flex mt-4 items-center gap-1 text-sm font-bold text-[#B89416] hover:gap-2 transition-all"
                 >
                   Learn more <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -466,19 +466,19 @@ export default function HomeDetailPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-6 relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#000F1B] via-[#0B1E30] to-[#000F1B] text-white p-6 sm:p-8 md:p-10 border border-white/10"
+            className="mt-6 relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#252A2A] via-[#0B1E30] to-[#252A2A] text-white p-6 sm:p-8 md:p-10 border border-white/10"
           >
-            <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#FF6600]/15 blur-3xl" />
-            <div className="absolute -bottom-16 -left-16 w-56 h-56 rounded-full bg-[#FF6600]/10 blur-3xl" />
+            <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#B89416]/15 blur-3xl" />
+            <div className="absolute -bottom-16 -left-16 w-56 h-56 rounded-full bg-[#B89416]/10 blur-3xl" />
 
             <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
               <div className="max-w-xl">
                 <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#FF8A4C]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600] animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#B89416] animate-pulse" />
                   Ready to build {home.name}?
                 </div>
                 <h4 className="mt-2 text-2xl sm:text-3xl font-bold leading-tight">
-                  Get a personalized quote in <span className="text-[#FF6600]">24 hours.</span>
+                  Get a personalized quote in <span className="text-[#B89416]">24 hours.</span>
                 </h4>
                 <p className="mt-2 text-white/55 text-sm leading-relaxed">
                   Talk to our expert. Free consultation. No obligation.
@@ -497,7 +497,7 @@ export default function HomeDetailPage() {
                 <button
                   type="button"
                   onClick={() => open({ home: home.name, source: "home_detail_bottom" })}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FF6600] hover:bg-[#E04F00] text-white text-sm font-semibold px-6 py-3 shadow-[0_10px_28px_rgba(255,90,0,0.35)] transition"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B89416] hover:bg-[#8F7210] text-white text-sm font-semibold px-6 py-3 shadow-[0_10px_28px_rgba(255,90,0,0.35)] transition"
                 >
                   Get Free Consultation <ArrowRight className="w-4 h-4" />
                 </button>
@@ -517,13 +517,13 @@ export default function HomeDetailPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] bg-[#000F1B]/95 backdrop-blur-md flex items-center justify-center p-4"
+            className="fixed inset-0 z-[200] bg-[#252A2A]/95 backdrop-blur-md flex items-center justify-center p-4"
             onClick={() => setLightbox(false)}
           >
             <button
               type="button"
               onClick={() => setLightbox(false)}
-              className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white grid place-items-center hover:bg-[#FF6600] transition"
+              className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white grid place-items-center hover:bg-[#B89416] transition"
               aria-label="Close"
             >
               <X className="w-4 h-4" />
@@ -537,7 +537,7 @@ export default function HomeDetailPage() {
                     e.stopPropagation();
                     prevImg();
                   }}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 border border-white/20 text-white grid place-items-center hover:bg-[#FF6600] transition"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 border border-white/20 text-white grid place-items-center hover:bg-[#B89416] transition"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
@@ -547,7 +547,7 @@ export default function HomeDetailPage() {
                     e.stopPropagation();
                     nextImg();
                   }}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 border border-white/20 text-white grid place-items-center hover:bg-[#FF6600] transition"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 border border-white/20 text-white grid place-items-center hover:bg-[#B89416] transition"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
@@ -592,14 +592,14 @@ function GlassCard({ children, padded = true, className = "" }) {
 
 function StatCell({ icon: Icon, label, value }) {
   return (
-    <div className="rounded-xl border border-white/70 bg-white/50 backdrop-blur p-3 hover:border-[#FF6600]/30 hover:bg-white transition-all">
+    <div className="rounded-xl border border-white/70 bg-white/50 backdrop-blur p-3 hover:border-[#B89416]/30 hover:bg-white transition-all">
       <div className="flex items-center gap-1.5">
-        <Icon className="w-3.5 h-3.5 text-[#FF6600]" />
-        <div className="text-[9px] uppercase tracking-widest text-[#000F1B]/50 font-bold">
+        <Icon className="w-3.5 h-3.5 text-[#B89416]" />
+        <div className="text-[9px] uppercase tracking-widest text-[#252A2A]/50 font-bold">
           {label}
         </div>
       </div>
-      <div className="mt-1 font-bold text-sm text-[#000F1B]">{value}</div>
+      <div className="mt-1 font-bold text-sm text-[#252A2A]">{value}</div>
     </div>
   );
 }
@@ -614,7 +614,7 @@ function AboutModal({ open, onClose, home }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[150] bg-[#000F1B]/70 backdrop-blur-md flex items-end sm:items-center justify-center p-0 sm:p-6"
+          className="fixed inset-0 z-[150] bg-[#252A2A]/70 backdrop-blur-md flex items-end sm:items-center justify-center p-0 sm:p-6"
           onClick={onClose}
         >
           <motion.div
@@ -627,12 +627,12 @@ function AboutModal({ open, onClose, home }) {
           >
             <div className="relative h-48 sm:h-56 shrink-0 overflow-hidden">
               <img src={home.cover_image} alt={home.name} className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#000F1B]/85 via-[#000F1B]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#252A2A]/85 via-[#252A2A]/30 to-transparent" />
 
               <button
                 type="button"
                 onClick={onClose}
-                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 border border-white/25 backdrop-blur text-white grid place-items-center hover:bg-[#FF6600] transition"
+                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/15 border border-white/25 backdrop-blur text-white grid place-items-center hover:bg-[#B89416] transition"
                 aria-label="Close"
               >
                 <X className="w-4 h-4" />
@@ -655,28 +655,28 @@ function AboutModal({ open, onClose, home }) {
 
             <div className="flex-1 overflow-y-auto p-5 sm:p-7">
               {home.tagline && (
-                <div className="text-sm sm:text-base font-semibold text-[#FF6600] italic mb-4">
+                <div className="text-sm sm:text-base font-semibold text-[#B89416] italic mb-4">
                   {home.tagline}
                 </div>
               )}
 
-              <p className="text-[#000F1B]/75 text-sm sm:text-[15px] leading-relaxed whitespace-pre-line">
+              <p className="text-[#252A2A]/75 text-sm sm:text-[15px] leading-relaxed whitespace-pre-line">
                 {home.description}
               </p>
 
               {home.features?.length > 0 && (
                 <div className="mt-8">
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="w-6 h-[2px] bg-[#FF6600]" />
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-[#000F1B]/50">
+                    <span className="w-6 h-[2px] bg-[#B89416]" />
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-[#252A2A]/50">
                       All Highlights
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
                     {home.features.map((f, i) => (
-                      <div key={`modal-feat-${i}`} className="flex items-start gap-2.5 text-sm text-[#000F1B]/85">
-                        <span className="w-5 h-5 rounded-full bg-[#FF6600]/10 grid place-items-center shrink-0 mt-0.5">
-                          <Check className="w-3.5 h-3.5 text-[#FF6600]" />
+                      <div key={`modal-feat-${i}`} className="flex items-start gap-2.5 text-sm text-[#252A2A]/85">
+                        <span className="w-5 h-5 rounded-full bg-[#B89416]/10 grid place-items-center shrink-0 mt-0.5">
+                          <Check className="w-3.5 h-3.5 text-[#B89416]" />
                         </span>
                         <span>{f}</span>
                       </div>
@@ -696,14 +696,14 @@ function AboutModal({ open, onClose, home }) {
               <button
                 type="button"
                 onClick={onClose}
-                className="flex-1 rounded-full border border-black/10 bg-white text-[#000F1B] text-sm font-semibold py-2.5 hover:border-[#000F1B] transition"
+                className="flex-1 rounded-full border border-black/10 bg-white text-[#252A2A] text-sm font-semibold py-2.5 hover:border-[#252A2A] transition"
               >
                 Close
               </button>
               <Link
                 to="/#home-collection"
                 onClick={onClose}
-                className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#FF6600] hover:bg-[#E04F00] text-white text-sm font-semibold py-2.5 transition"
+                className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#B89416] hover:bg-[#8F7210] text-white text-sm font-semibold py-2.5 transition"
               >
                 Browse More <ArrowRight className="w-4 h-4" />
               </Link>
@@ -718,8 +718,8 @@ function AboutModal({ open, onClose, home }) {
 function ModalFact({ label, value }) {
   return (
     <div className="text-center">
-      <div className="text-lg sm:text-xl font-bold text-[#000F1B]">{value}</div>
-      <div className="text-[10px] uppercase tracking-widest text-[#000F1B]/45 mt-0.5">
+      <div className="text-lg sm:text-xl font-bold text-[#252A2A]">{value}</div>
+      <div className="text-[10px] uppercase tracking-widest text-[#252A2A]/45 mt-0.5">
         {label}
       </div>
     </div>
@@ -744,13 +744,13 @@ function FloorPlanCard({ home }) {
     <GlassCard padded>
       <div className="flex items-start justify-between gap-3">
         <div>
-          <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#FF6600]">
+          <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#B89416]">
             Floor Plan
           </div>
-          <h3 className="mt-2 text-xl sm:text-2xl font-bold text-[#000F1B] tracking-tight">
+          <h3 className="mt-2 text-xl sm:text-2xl font-bold text-[#252A2A] tracking-tight">
             Space breakdown
           </h3>
-          <p className="mt-1 text-xs text-[#000F1B]/50">
+          <p className="mt-1 text-xs text-[#252A2A]/50">
             Visual layout of every space
           </p>
         </div>
@@ -774,12 +774,12 @@ function FloorPlanCard({ home }) {
               let rowSpan = share > 0.25 ? 2 : 1;
 
               const hues = [
-                "bg-[#FF6600]/90 text-white border-[#FF6600]",
-                "bg-[#000F1B] text-white border-[#000F1B]",
-                "bg-white text-[#000F1B] border-black/10",
-                "bg-[#FFF1E8] text-[#000F1B] border-[#FF6600]/20",
+                "bg-[#B89416]/90 text-white border-[#B89416]",
+                "bg-[#252A2A] text-white border-[#252A2A]",
+                "bg-white text-[#252A2A] border-black/10",
+                "bg-[#FFF1E8] text-[#252A2A] border-[#B89416]/20",
                 "bg-[#0B1E30] text-white border-[#0B1E30]",
-                "bg-[#F7F7F7] text-[#000F1B] border-black/5",
+                "bg-[#F7F7F7] text-[#252A2A] border-black/5",
               ];
               const cls = hues[i % hues.length];
 
@@ -814,7 +814,7 @@ function FloorPlanCard({ home }) {
           </div>
 
           {total > 0 && (
-            <div className="mt-4 flex items-center justify-between rounded-xl bg-[#000F1B] text-white p-3 border border-white/10">
+            <div className="mt-4 flex items-center justify-between rounded-xl bg-[#252A2A] text-white p-3 border border-white/10">
               <div className="text-[10px] uppercase tracking-widest text-[#FF8A4C] font-bold">
                 Total Covered
               </div>
@@ -834,10 +834,10 @@ function FloorPlanCard({ home }) {
               <li key={`li-fp-${i}`} className="py-3 border-b border-black/5 last:border-0">
                 <div className="flex items-center justify-between text-sm">
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FF6600]" />
-                    <span className="text-[#000F1B]/80 font-medium">{a.label}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#B89416]" />
+                    <span className="text-[#252A2A]/80 font-medium">{a.label}</span>
                   </div>
-                  <span className="font-bold text-[#000F1B] text-sm">
+                  <span className="font-bold text-[#252A2A] text-sm">
                     {a.area}
                   </span>
                 </div>
@@ -848,7 +848,7 @@ function FloorPlanCard({ home }) {
                       whileInView={{ width: `${share}%` }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: i * 0.05 }}
-                      className="h-full rounded-full bg-[#FF6600]"
+                      className="h-full rounded-full bg-[#B89416]"
                     />
                   </div>
                 )}
@@ -876,7 +876,7 @@ function TabBtn({ active, children, onClick }) {
       type="button"
       onClick={onClick}
       className={`px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition ${
-        active ? "bg-[#000F1B] text-white" : "text-[#000F1B]/50 hover:text-[#000F1B]"
+        active ? "bg-[#252A2A] text-white" : "text-[#252A2A]/50 hover:text-[#252A2A]"
       }`}
     >
       {children}

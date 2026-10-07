@@ -1,6 +1,6 @@
 /**
  * PortalHome — Customer's project status dashboard.
- * ConstructONS™ — India's First Integrated Construction Ecosystem.
+ * [Your Brand]s™ — India's First Integrated Construction Ecosystem.
  */
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
@@ -92,8 +92,8 @@ export default function PortalHome() {
         aria-live="polite"
       >
         <div className="flex flex-col items-center gap-3">
-          <Loader2 className="w-8 h-8 animate-spin text-[#FF6600]" />
-          <span className="text-sm font-medium text-[#111111]/70">
+          <Loader2 className="w-8 h-8 animate-spin text-[#B89416]" />
+          <span className="text-sm font-medium text-[#252A2A]/70">
             Loading your project details...
           </span>
         </div>
@@ -117,7 +117,7 @@ export default function PortalHome() {
 
   return (
     <div
-      className="min-h-screen bg-[#F2F2F2] text-[#111111] font-['Poppins'] flex flex-col selection:bg-[#FF6600]/20 selection:text-[#000F1B]"
+      className="min-h-screen bg-[#F2F2F2] text-[#252A2A] font-['Poppins'] flex flex-col selection:bg-[#B89416]/20 selection:text-[#252A2A]"
       data-testid="portal-home"
     >
       <Toaster richColors position="top-right" />
@@ -129,10 +129,10 @@ export default function PortalHome() {
           <div className="flex items-center gap-3 sm:gap-6">
             <Link
               to="/"
-              aria-label="Back to ConstructONS Website"
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#111111]/80 hover:text-[#FF6600] transition-colors py-2 px-2.5 -ml-2 rounded-lg hover:bg-[#F2F2F2] min-h-[44px]"
+              aria-label="Back to [Your Brand]s Website"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#252A2A]/80 hover:text-[#B89416] transition-colors py-2 px-2.5 -ml-2 rounded-lg hover:bg-[#F2F2F2] min-h-[44px]"
             >
-              <ArrowLeft className="w-4 h-4 text-[#FF6600]" aria-hidden="true" />
+              <ArrowLeft className="w-4 h-4 text-[#B89416]" aria-hidden="true" />
               <span className="hidden xs:inline">Back to</span> Home
             </Link>
 
@@ -140,7 +140,7 @@ export default function PortalHome() {
 
             <div className="flex items-center gap-2">
               <BrandLockup tone="light" size="sm" />
-              <span className="hidden md:inline-block px-2 py-0.5 rounded-full bg-[#FF6600]/10 text-[10px] font-semibold text-[#FF6600] uppercase tracking-wider">
+              <span className="hidden md:inline-block px-2 py-0.5 rounded-full bg-[#B89416]/10 text-[10px] font-semibold text-[#B89416] uppercase tracking-wider">
                 Live Tracker
               </span>
             </div>
@@ -155,16 +155,16 @@ export default function PortalHome() {
                 className="w-8 h-8 rounded-full border border-black/10 object-cover"
               />
             ) : (
-              <div className="w-8 h-8 rounded-full bg-[#000F1B] text-white text-xs font-bold grid place-items-center">
+              <div className="w-8 h-8 rounded-full bg-[#252A2A] text-white text-xs font-bold grid place-items-center">
                 {user.name ? user.name.charAt(0).toUpperCase() : "U"}
               </div>
             )}
 
             <div className="hidden sm:block text-left leading-tight">
-              <div className="text-xs font-semibold text-[#000F1B] max-w-[140px] truncate">
+              <div className="text-xs font-semibold text-[#252A2A] max-w-[140px] truncate">
                 {user.name}
               </div>
-              <div className="text-[11px] text-[#111111]/50 max-w-[140px] truncate">
+              <div className="text-[11px] text-[#252A2A]/50 max-w-[140px] truncate">
                 {user.email}
               </div>
             </div>
@@ -174,9 +174,9 @@ export default function PortalHome() {
               onClick={logout}
               data-testid="portal-logout"
               aria-label="Sign out of portal"
-              className="inline-flex items-center gap-1.5 rounded-xl border border-black/10 bg-white px-3 py-2 text-xs font-semibold text-[#111111] hover:bg-[#F2F2F2] hover:text-[#FF0000] transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#FF6600]"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-black/10 bg-white px-3 py-2 text-xs font-semibold text-[#252A2A] hover:bg-[#F2F2F2] hover:text-[#B89416] transition-colors min-h-[44px] focus:outline-none focus:ring-2 focus:ring-[#B89416]"
             >
-              <LogOut className="w-3.5 h-3.5 text-[#111111]/70" aria-hidden="true" />
+              <LogOut className="w-3.5 h-3.5 text-[#252A2A]/70" aria-hidden="true" />
               <span className="hidden sm:inline">Sign out</span>
             </button>
           </div>
@@ -191,28 +191,28 @@ export default function PortalHome() {
             className="rounded-2xl bg-white border border-black/5 shadow-sm p-8 sm:p-12 text-center"
             data-testid="portal-no-project"
           >
-            <div className="w-16 h-16 mx-auto rounded-2xl bg-[#FF6600]/10 grid place-items-center mb-5">
-              <Building2 className="w-8 h-8 text-[#FF6600]" aria-hidden="true" />
+            <div className="w-16 h-16 mx-auto rounded-2xl bg-[#B89416]/10 grid place-items-center mb-5">
+              <Building2 className="w-8 h-8 text-[#B89416]" aria-hidden="true" />
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#000F1B] tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#252A2A] tracking-tight">
               Welcome, {user.name?.split(" ")[0]}
             </h1>
-            <p className="mt-3 text-sm text-[#111111]/70 max-w-lg mx-auto leading-relaxed">
+            <p className="mt-3 text-sm text-[#252A2A]/70 max-w-lg mx-auto leading-relaxed">
               Your live project tracker has not been activated yet. Once your site consultation, planning, and agreement stages are confirmed, your live milestone tracker will appear here with daily progress photos, verified quality checks, and digital documents.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
                 to="/"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#FF6600] text-white px-6 py-3 text-sm font-semibold hover:bg-[#FF0000] transition min-h-[44px] shadow-sm"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#B89416] text-white px-6 py-3 text-sm font-semibold hover:bg-[#B89416] transition min-h-[44px] shadow-sm"
               >
                 <ArrowLeft className="w-4 h-4" aria-hidden="true" />
                 <span>Return to Home</span>
               </Link>
               <Link
                 to="/#services"
-                className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-6 py-3 text-sm font-semibold text-[#000F1B] hover:bg-[#F2F2F2] transition min-h-[44px]"
+                className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-6 py-3 text-sm font-semibold text-[#252A2A] hover:bg-[#F2F2F2] transition min-h-[44px]"
               >
                 <span>Explore Ecosystem Services</span>
               </Link>
@@ -223,14 +223,14 @@ export default function PortalHome() {
           <div className="space-y-6">
             {/* Project Master Card */}
             <section
-              className="rounded-2xl bg-[#000F1B] text-white p-6 sm:p-8 lg:p-10 shadow-sm relative overflow-hidden"
+              className="rounded-2xl bg-[#252A2A] text-white p-6 sm:p-8 lg:p-10 shadow-sm relative overflow-hidden"
               data-testid="portal-project-header"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-[#FF6600]" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-[#B89416]" />
 
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                 <div>
-                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#FF6600]/20 border border-[#FF6600]/30 text-[10px] font-semibold text-[#FF6600] tracking-wider uppercase">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#B89416]/20 border border-[#B89416]/30 text-[10px] font-semibold text-[#B89416] tracking-wider uppercase">
                     Active Home Construction
                   </span>
                   <h1 className="mt-2 text-2xl sm:text-3xl font-bold text-white tracking-tight">
@@ -244,7 +244,7 @@ export default function PortalHome() {
                 </div>
 
                 <div className="text-left sm:text-right shrink-0">
-                  <div className="text-2xl sm:text-3xl font-bold text-[#FF6600]">
+                  <div className="text-2xl sm:text-3xl font-bold text-[#B89416]">
                     {overallProgress}%
                   </div>
                   <div className="text-xs text-white/60">Overall Completion</div>
@@ -261,7 +261,7 @@ export default function PortalHome() {
                   aria-valuemax={100}
                 >
                   <div
-                    className="h-full bg-[#FF6600] rounded-full transition-all duration-500 ease-out"
+                    className="h-full bg-[#B89416] rounded-full transition-all duration-500 ease-out"
                     style={{ width: `${overallProgress}%` }}
                   />
                 </div>
@@ -269,14 +269,14 @@ export default function PortalHome() {
                   <span>
                     {completedStagesCount} of {project.stages?.length || 0} stages completed
                   </span>
-                  <span>ConstructONS™ Verified</span>
+                  <span>[Your Brand]s™ Verified</span>
                 </div>
               </div>
             </section>
 
             {/* Stages Milestone List */}
             <section aria-label="Construction Milestones" className="space-y-3">
-              <h2 className="text-base font-bold text-[#000F1B] px-1">
+              <h2 className="text-base font-bold text-[#252A2A] px-1">
                 Construction Stages & Milestones
               </h2>
 
@@ -310,14 +310,14 @@ function StageCard({ stage, displayIndex }) {
     in_progress: {
       Icon: PlayCircle,
       label: "In Progress",
-      iconColor: "text-[#FF6600]",
-      chipClass: "bg-[#FF6600]/10 text-[#FF6600] border-[#FF6600]/20",
+      iconColor: "text-[#B89416]",
+      chipClass: "bg-[#B89416]/10 text-[#B89416] border-[#B89416]/20",
     },
     pending: {
       Icon: Circle,
       label: "Pending",
       iconColor: "text-[#A6A6A6]",
-      chipClass: "bg-black/5 text-[#111111]/60 border-black/5",
+      chipClass: "bg-black/5 text-[#252A2A]/60 border-black/5",
     },
   };
 
@@ -333,7 +333,7 @@ function StageCard({ stage, displayIndex }) {
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
-        className="w-full flex items-center gap-3 sm:gap-4 p-4 sm:p-5 text-left hover:bg-[#F2F2F2]/50 transition min-h-[56px] focus:outline-none focus:ring-2 focus:ring-[#FF6600] focus:ring-inset"
+        className="w-full flex items-center gap-3 sm:gap-4 p-4 sm:p-5 text-left hover:bg-[#F2F2F2]/50 transition min-h-[56px] focus:outline-none focus:ring-2 focus:ring-[#B89416] focus:ring-inset"
       >
         <StatusIcon
           className={`w-6 h-6 sm:w-7 sm:h-7 shrink-0 ${currentStatus.iconColor}`}
@@ -342,7 +342,7 @@ function StageCard({ stage, displayIndex }) {
 
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-[11px] uppercase tracking-wider text-[#111111]/50 font-semibold">
+            <span className="text-[11px] uppercase tracking-wider text-[#252A2A]/50 font-semibold">
               Stage {displayIndex}
             </span>
             <span
@@ -352,19 +352,19 @@ function StageCard({ stage, displayIndex }) {
             </span>
           </div>
 
-          <h3 className="font-bold text-[#000F1B] text-sm sm:text-base mt-0.5 truncate">
+          <h3 className="font-bold text-[#252A2A] text-sm sm:text-base mt-0.5 truncate">
             {stage.name}
           </h3>
 
           {stage.description && (
-            <p className="text-xs sm:text-sm text-[#111111]/60 mt-0.5 line-clamp-1">
+            <p className="text-xs sm:text-sm text-[#252A2A]/60 mt-0.5 line-clamp-1">
               {stage.description}
             </p>
           )}
         </div>
 
         <div className="text-right shrink-0 flex items-center gap-3">
-          <div className="hidden xs:block text-xs text-[#111111]/50">
+          <div className="hidden xs:block text-xs text-[#252A2A]/50">
             {stage.expected_date && (
               <div className="inline-flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5" aria-hidden="true" />
@@ -372,13 +372,13 @@ function StageCard({ stage, displayIndex }) {
               </div>
             )}
             {stage.status === "in_progress" && (
-              <div className="font-bold text-[#FF6600] text-sm mt-0.5">
+              <div className="font-bold text-[#B89416] text-sm mt-0.5">
                 {stage.progress_pct || 0}%
               </div>
             )}
           </div>
 
-          <div className="w-8 h-8 rounded-full bg-[#F2F2F2] grid place-items-center text-[#111111]/60">
+          <div className="w-8 h-8 rounded-full bg-[#F2F2F2] grid place-items-center text-[#252A2A]/60">
             {isOpen ? (
               <ChevronUp className="w-4 h-4" />
             ) : (
@@ -392,8 +392,8 @@ function StageCard({ stage, displayIndex }) {
       {isOpen && (
         <div className="px-4 sm:px-5 pb-5 pt-3 border-t border-black/5 bg-[#F2F2F2]/20 space-y-4 text-xs sm:text-sm">
           {stage.notes && (
-            <div className="bg-white p-3.5 rounded-xl border border-black/5 text-[#111111]/80 leading-relaxed whitespace-pre-wrap">
-              <span className="font-semibold block text-[#000F1B] mb-1">
+            <div className="bg-white p-3.5 rounded-xl border border-black/5 text-[#252A2A]/80 leading-relaxed whitespace-pre-wrap">
+              <span className="font-semibold block text-[#252A2A] mb-1">
                 Engineer Site Notes:
               </span>
               {stage.notes}
@@ -403,8 +403,8 @@ function StageCard({ stage, displayIndex }) {
           {/* Photos from Site */}
           {(stage.photos || []).length > 0 && (
             <div>
-              <div className="text-xs font-semibold text-[#000F1B] uppercase tracking-wider mb-2.5 inline-flex items-center gap-1.5">
-                <Camera className="w-4 h-4 text-[#FF6600]" aria-hidden="true" />
+              <div className="text-xs font-semibold text-[#252A2A] uppercase tracking-wider mb-2.5 inline-flex items-center gap-1.5">
+                <Camera className="w-4 h-4 text-[#B89416]" aria-hidden="true" />
                 <span>Site Progress Photos</span>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
@@ -431,8 +431,8 @@ function StageCard({ stage, displayIndex }) {
           {/* Documents & Checklists */}
           {(stage.documents || []).length > 0 && (
             <div>
-              <div className="text-xs font-semibold text-[#000F1B] uppercase tracking-wider mb-2 inline-flex items-center gap-1.5">
-                <FileText className="w-4 h-4 text-[#FF6600]" aria-hidden="true" />
+              <div className="text-xs font-semibold text-[#252A2A] uppercase tracking-wider mb-2 inline-flex items-center gap-1.5">
+                <FileText className="w-4 h-4 text-[#B89416]" aria-hidden="true" />
                 <span>Verified Inspection Documents</span>
               </div>
               <div className="grid sm:grid-cols-2 gap-2">
@@ -442,9 +442,9 @@ function StageCard({ stage, displayIndex }) {
                     href={doc.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-black/5 text-[#000F1B] hover:text-[#FF6600] hover:border-[#FF6600]/40 transition min-h-[44px]"
+                    className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-black/5 text-[#252A2A] hover:text-[#B89416] hover:border-[#B89416]/40 transition min-h-[44px]"
                   >
-                    <FileText className="w-4 h-4 shrink-0 text-[#FF6600]" />
+                    <FileText className="w-4 h-4 shrink-0 text-[#B89416]" />
                     <span className="truncate font-medium">{doc.name || "Inspection Document"}</span>
                   </a>
                 ))}
@@ -453,7 +453,7 @@ function StageCard({ stage, displayIndex }) {
           )}
 
           {/* Timeline Milestones Stamp */}
-          <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-black/5 text-[11px] text-[#111111]/50">
+          <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-black/5 text-[11px] text-[#252A2A]/50">
             {stage.started_at && (
               <span className="inline-flex items-center gap-1">
                 <Calendar className="w-3.5 h-3.5" />

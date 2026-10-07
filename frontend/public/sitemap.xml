@@ -3,83 +3,83 @@
 
   <!-- Homepage (Highest Priority) -->
   <url>
-    <loc>https://constructons.com/</loc>
+    <loc>https://[Your Brand]s.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Packages -->
   <url>
-    <loc>https://constructons.com/packages</loc>
+    <loc>https://[Your Brand]s.com/packages</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://constructons.com/packages/compare</loc>
+    <loc>https://[Your Brand]s.com/packages/compare</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://constructons.com/find-my-package</loc>
+    <loc>https://[Your Brand]s.com/find-my-package</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Marketplace -->
   <url>
-    <loc>https://constructons.com/marketplace/architects</loc>
+    <loc>https://[Your Brand]s.com/marketplace/architects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://constructons.com/marketplace/contractors</loc>
+    <loc>https://[Your Brand]s.com/marketplace/contractors</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://constructons.com/marketplace/engineers</loc>
+    <loc>https://[Your Brand]s.com/marketplace/engineers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://constructons.com/marketplace/interior</loc>
+    <loc>https://[Your Brand]s.com/marketplace/interior</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://constructons.com/marketplace/materials</loc>
+    <loc>https://[Your Brand]s.com/marketplace/materials</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://constructons.com/marketplace/equipment</loc>
+    <loc>https://[Your Brand]s.com/marketplace/equipment</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://constructons.com/marketplace/smart-home</loc>
+    <loc>https://[Your Brand]s.com/marketplace/smart-home</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://constructons.com/marketplace/landscaping</loc>
+    <loc>https://[Your Brand]s.com/marketplace/landscaping</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- Content Pages -->
   <url>
-    <loc>https://constructons.com/about</loc>
+    <loc>https://[Your Brand]s.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://constructons.com/blog</loc>
+    <loc>https://[Your Brand]s.com/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://constructons.com/contact</loc>
+    <loc>https://[Your Brand]s.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

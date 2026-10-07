@@ -64,8 +64,8 @@ export default function ApprovalsPage() {
         category: "Material",
         details: `${m.quantity} ${m.unit} • ${m.brand || "Standard"}`,
         icon: Package,
-        color: "text-[#FF6600]",
-        bg: "bg-[#FF6600]/10",
+        color: "text-[#B89416]",
+        bg: "bg-[#B89416]/10",
         timestamp: m.created_at,
         isMaterial: true,
         rawData: m,
@@ -150,18 +150,18 @@ export default function ApprovalsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-xl bg-[#000F1B] grid place-items-center shrink-0 relative">
+          <div className="w-12 h-12 rounded-xl bg-[#252A2A] grid place-items-center shrink-0 relative">
             <CheckSquare className="w-6 h-6 text-white" />
             {pendingApprovals.length > 0 && (
-              <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-[#FF0000] border-2 border-[#F5F6F8] animate-pulse" />
+              <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-[#B89416] border-2 border-[#F5F6F8] animate-pulse" />
             )}
           </div>
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#000F1B] tracking-tight">Action Center</h1>
-            <p className="text-sm text-[#111111]/60 mt-0.5">Pending decisions requiring your review and approval.</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#252A2A] tracking-tight">Action Center</h1>
+            <p className="text-sm text-[#252A2A]/60 mt-0.5">Pending decisions requiring your review and approval.</p>
           </div>
         </div>
-        <div className="text-right text-xs font-bold text-[#FF6600] bg-white border border-[#FF6600]/20 px-4 py-2.5 rounded-xl shadow-sm">
+        <div className="text-right text-xs font-bold text-[#B89416] bg-white border border-[#B89416]/20 px-4 py-2.5 rounded-xl shadow-sm">
           {pendingApprovals.length} Pending Actions
         </div>
       </div>
@@ -169,15 +169,15 @@ export default function ApprovalsPage() {
       {/* Main List */}
       <div className="bg-white rounded-2xl shadow-sm border border-black/5 overflow-hidden">
         <div className="p-4 sm:p-5 border-b border-black/5 bg-[#F9FAFB]">
-          <h2 className="text-sm font-bold text-[#000F1B] uppercase tracking-wider">Requires Your Attention</h2>
+          <h2 className="text-sm font-bold text-[#252A2A] uppercase tracking-wider">Requires Your Attention</h2>
         </div>
         
         <div className="p-2 sm:p-4">
           {pendingApprovals.length === 0 ? (
             <div className="text-center py-20 flex flex-col items-center">
-              <CheckSquare className="w-12 h-12 text-[#111111]/20 mb-4" />
-              <h3 className="text-base font-bold text-[#000F1B]">You're all caught up!</h3>
-              <p className="text-sm text-[#111111]/50 mt-1 max-w-sm">There are no pending approvals or decisions required from your side at this moment.</p>
+              <CheckSquare className="w-12 h-12 text-[#252A2A]/20 mb-4" />
+              <h3 className="text-base font-bold text-[#252A2A]">You're all caught up!</h3>
+              <p className="text-sm text-[#252A2A]/50 mt-1 max-w-sm">There are no pending approvals or decisions required from your side at this moment.</p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -191,9 +191,9 @@ export default function ApprovalsPage() {
                       <div className={`text-[10px] font-bold uppercase tracking-widest mb-1 ${item.color}`}>
                         {item.category}
                       </div>
-                      <h3 className="text-base font-bold text-[#000F1B] truncate">{item.title}</h3>
-                      <div className="flex items-center gap-2 text-xs text-[#111111]/60 mt-1 font-medium">
-                        <span className="font-semibold text-[#000F1B]">{item.details}</span>
+                      <h3 className="text-base font-bold text-[#252A2A] truncate">{item.title}</h3>
+                      <div className="flex items-center gap-2 text-xs text-[#252A2A]/60 mt-1 font-medium">
+                        <span className="font-semibold text-[#252A2A]">{item.details}</span>
                         <span>•</span>
                         <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {item.timestamp ? new Date(item.timestamp).toLocaleDateString() : 'Just now'}</span>
                       </div>
@@ -203,14 +203,14 @@ export default function ApprovalsPage() {
                   {item.isMaterial ? (
                     <button 
                       onClick={() => setSelectedMaterial(item.rawData)}
-                      className="shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#000F1B] text-white rounded-xl text-xs font-bold hover:bg-[#FF6600] transition shadow-sm"
+                      className="shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#252A2A] text-white rounded-xl text-xs font-bold hover:bg-[#B89416] transition shadow-sm"
                     >
                       {item.actionText} <ArrowRight className="w-4 h-4" />
                     </button>
                   ) : (
                     <Link 
                       to={item.link} 
-                      className="shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#000F1B] text-white rounded-xl text-xs font-bold hover:bg-[#FF6600] transition shadow-sm"
+                      className="shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#252A2A] text-white rounded-xl text-xs font-bold hover:bg-[#B89416] transition shadow-sm"
                     >
                       {item.actionText} <ArrowRight className="w-4 h-4" />
                     </Link>
@@ -224,7 +224,7 @@ export default function ApprovalsPage() {
 
       {/* Locked Future Modules */}
       <div className="pt-8 border-t border-black/5">
-        <h2 className="text-xs font-bold text-[#000F1B] uppercase tracking-wider mb-4 px-1">Upcoming Approval Modules</h2>
+        <h2 className="text-xs font-bold text-[#252A2A] uppercase tracking-wider mb-4 px-1">Upcoming Approval Modules</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <LockedModule title="Milestone Payments" icon={IndianRupee} />
           <LockedModule title="Design Changes" icon={PencilRuler} />
@@ -235,14 +235,14 @@ export default function ApprovalsPage() {
 
       {/* Material Decision Modal */}
       {selectedMaterial && (
-        <div className="fixed inset-0 bg-[#000F1B]/80 backdrop-blur-sm z-[60] flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-[#252A2A]/80 backdrop-blur-sm z-[60] flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden flex flex-col">
             <div className="p-5 border-b border-black/5 flex items-center justify-between bg-[#F9FAFB]">
               <div>
-                <div className="text-[10px] font-bold text-[#FF6600] uppercase tracking-wider">Material Procurement Review</div>
-                <h2 className="text-lg font-bold text-[#000F1B] mt-0.5">{selectedMaterial.item_name}</h2>
+                <div className="text-[10px] font-bold text-[#B89416] uppercase tracking-wider">Material Procurement Review</div>
+                <h2 className="text-lg font-bold text-[#252A2A] mt-0.5">{selectedMaterial.item_name}</h2>
               </div>
-              <button onClick={() => { setSelectedMaterial(null); setComment(""); }} className="w-8 h-8 rounded-full grid place-items-center hover:bg-black/5 text-[#000F1B] transition">
+              <button onClick={() => { setSelectedMaterial(null); setComment(""); }} className="w-8 h-8 rounded-full grid place-items-center hover:bg-black/5 text-[#252A2A] transition">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -258,27 +258,27 @@ export default function ApprovalsPage() {
                 </div>
                 <div className="grid grid-cols-2 gap-4 flex-1">
                   <div>
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-[#111111]/40 block mb-0.5">Brand / Grade</span>
-                    <span className="text-sm font-bold text-[#000F1B]">{selectedMaterial.brand || "Standard"} {selectedMaterial.grade_spec && `· ${selectedMaterial.grade_spec}`}</span>
+                    <span className="text-[10px] uppercase tracking-widest font-bold text-[#252A2A]/40 block mb-0.5">Brand / Grade</span>
+                    <span className="text-sm font-bold text-[#252A2A]">{selectedMaterial.brand || "Standard"} {selectedMaterial.grade_spec && `· ${selectedMaterial.grade_spec}`}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-[#111111]/40 block mb-0.5">Category</span>
-                    <span className="text-sm font-bold text-[#000F1B]">{selectedMaterial.category}</span>
+                    <span className="text-[10px] uppercase tracking-widest font-bold text-[#252A2A]/40 block mb-0.5">Category</span>
+                    <span className="text-sm font-bold text-[#252A2A]">{selectedMaterial.category}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-[#111111]/40 block mb-0.5">Quantity</span>
-                    <span className="text-sm font-bold text-[#000F1B]">{selectedMaterial.quantity} {selectedMaterial.unit}</span>
+                    <span className="text-[10px] uppercase tracking-widest font-bold text-[#252A2A]/40 block mb-0.5">Quantity</span>
+                    <span className="text-sm font-bold text-[#252A2A]">{selectedMaterial.quantity} {selectedMaterial.unit}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-[#111111]/40 block mb-0.5">Total Cost</span>
+                    <span className="text-[10px] uppercase tracking-widest font-bold text-[#252A2A]/40 block mb-0.5">Total Cost</span>
                     <span className="text-sm font-black text-[#10B981]">₹ {Number(selectedMaterial.total_cost || 0).toLocaleString('en-IN')}</span>
                   </div>
                 </div>
               </div>
 
               {selectedMaterial.notes && (
-                <div className="p-3 bg-[#F5F6F8] rounded-xl border border-black/5 text-xs text-[#000F1B] leading-relaxed">
-                  <strong className="block text-[10px] uppercase tracking-wider text-[#111111]/50 mb-1">Admin Notes</strong>
+                <div className="p-3 bg-[#F5F6F8] rounded-xl border border-black/5 text-xs text-[#252A2A] leading-relaxed">
+                  <strong className="block text-[10px] uppercase tracking-wider text-[#252A2A]/50 mb-1">Admin Notes</strong>
                   {selectedMaterial.notes}
                 </div>
               )}
@@ -288,7 +288,7 @@ export default function ApprovalsPage() {
                   value={comment}
                   onChange={e => setComment(e.target.value)}
                   placeholder="Add a comment or concern (required if rejecting)..."
-                  className="w-full h-20 px-3 py-2 text-xs rounded-xl border border-black/10 focus:outline-none focus:ring-2 focus:ring-[#FF6600] resize-none"
+                  className="w-full h-20 px-3 py-2 text-xs rounded-xl border border-black/10 focus:outline-none focus:ring-2 focus:ring-[#B89416] resize-none"
                 />
               </div>
             </div>
@@ -322,8 +322,8 @@ export default function ApprovalsPage() {
 function LockedModule({ title, icon: Icon }) {
   return (
     <div className="rounded-xl border border-dashed border-black/15 bg-white/50 p-4 flex flex-col items-center justify-center text-center opacity-60">
-      <Icon className="w-6 h-6 text-[#111111]/30 mb-2" />
-      <span className="text-[10px] font-bold text-[#000F1B] uppercase tracking-wider leading-snug">{title}</span>
+      <Icon className="w-6 h-6 text-[#252A2A]/30 mb-2" />
+      <span className="text-[10px] font-bold text-[#252A2A] uppercase tracking-wider leading-snug">{title}</span>
     </div>
   );
 }

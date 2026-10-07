@@ -123,7 +123,7 @@ export default function CustomerJourney({ steps = [] }) {
                 <div className="relative flex h-32 w-32 items-center justify-center rounded-full border border-gray-100 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
                   <img
                     src="/icon.svg"
-                    alt="ConstructONS"
+                    alt="[Your Brand]s"
                     className="h-16 w-auto object-contain"
                     onError={(e) => {
                       e.currentTarget.src = "/logo.png";
@@ -253,7 +253,7 @@ export default function CustomerJourney({ steps = [] }) {
             <div className="relative flex h-24 w-24 items-center justify-center rounded-full border border-gray-100 bg-white shadow-lg">
               <img
                 src="/icon.svg"
-                alt="ConstructONS"
+                alt="[Your Brand]s"
                 className="h-14 w-auto object-contain"
                 onError={(e) => {
                   e.currentTarget.src = "/logo.png";

@@ -142,7 +142,7 @@ export default function LeadModal({ isOpen, onClose, context = {} }) {
                 <X className="w-4 h-4" />
               </button>
               <div className="section-eyebrow text-brand-orangeLight">Get Free Consultation</div>
-              <h3 className="mt-2 text-2xl font-bold">Build your dream home with ConstructONS</h3>
+              <h3 className="mt-2 text-2xl font-bold">Build your dream home with [Your Brand]s</h3>
               <p className="text-white/70 text-sm mt-1">
                 Talk to our AI-powered consultants. It’s free & no obligation.
               </p>
@@ -206,14 +206,14 @@ export default function LeadModal({ isOpen, onClose, context = {} }) {
                 type="submit"
                 disabled={submitting}
                 data-testid="lead-submit"
-                className="btn-primary w-full mt-2 disabled:opacity-70 flex items-center justify-center gap-2 py-3 bg-[#FF6600] hover:bg-[#E04F00] text-white font-semibold rounded-xl transition shadow-md"
+                className="btn-primary w-full mt-2 disabled:opacity-70 flex items-center justify-center gap-2 py-3 bg-[#B89416] hover:bg-[#8F7210] text-white font-semibold rounded-xl transition shadow-md"
               >
                 {submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <ShieldCheck className="w-4 h-4" />}
                 {submitting ? "Submitting..." : "Request Free Consultation"}
               </button>
 
               <p className="text-[11px] text-brand-navy/50 text-center pt-1">
-                By submitting, you agree to be contacted by ConstructONS. No spam, ever.
+                By submitting, you agree to be contacted by [Your Brand]s. No spam, ever.
               </p>
             </form>
           </motion.div>
@@ -230,7 +230,7 @@ function Field({ icon: Icon, placeholder, value, onChange, type = "text", isText
         className={`flex items-start gap-2 rounded-xl border bg-white px-3 py-2.5 transition ${
           error
             ? "border-red-500 focus-within:border-red-500 ring-1 ring-red-500/20"
-            : "border-black/10 focus-within:border-[#FF6600]"
+            : "border-black/10 focus-within:border-[#B89416]"
         }`}
       >
         <Icon className={`w-4 h-4 mt-1 shrink-0 ${error ? "text-red-500" : "text-brand-navy/50"}`} />

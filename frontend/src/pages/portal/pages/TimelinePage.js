@@ -34,10 +34,10 @@ const statusMeta = (status) => {
     return {
       label: "In Progress",
       Icon: PlayCircle,
-      node: "text-[#FF6600] bg-white border-[#FF6600]/30",
-      badge: "bg-[#FF6600]/10 text-[#FF6600] border-[#FF6600]/20",
-      card: "bg-[#FF6600]/5 border-[#FF6600]/25 shadow-sm",
-      line: "bg-[#FF6600]/30",
+      node: "text-[#B89416] bg-white border-[#B89416]/30",
+      badge: "bg-[#B89416]/10 text-[#B89416] border-[#B89416]/20",
+      card: "bg-[#B89416]/5 border-[#B89416]/25 shadow-sm",
+      line: "bg-[#B89416]/30",
     };
   }
   return {
@@ -75,11 +75,11 @@ function StageCard({ stage, index, meta }) {
               {meta.label}
             </span>
           </div>
-          <h3 className="text-base sm:text-lg font-bold text-[#000F1B] leading-snug">
+          <h3 className="text-base sm:text-lg font-bold text-[#252A2A] leading-snug">
             {stage.name}
           </h3>
           {stage.description && (
-            <p className="text-xs text-[#111111]/60 mt-1 leading-relaxed">
+            <p className="text-xs text-[#252A2A]/60 mt-1 leading-relaxed">
               {stage.description}
             </p>
           )}
@@ -95,7 +95,7 @@ function StageCard({ stage, index, meta }) {
               <div className="text-[9px] font-bold uppercase text-gray-400 tracking-wider">
                 Expected
               </div>
-              <div className="text-[11px] font-bold text-[#000F1B] truncate">
+              <div className="text-[11px] font-bold text-[#252A2A] truncate">
                 {expected}
               </div>
             </div>
@@ -108,7 +108,7 @@ function StageCard({ stage, index, meta }) {
               <div className="text-[9px] font-bold uppercase text-gray-400 tracking-wider">
                 Started
               </div>
-              <div className="text-[11px] font-bold text-[#000F1B] truncate">
+              <div className="text-[11px] font-bold text-[#252A2A] truncate">
                 {started}
               </div>
             </div>
@@ -140,7 +140,7 @@ function StageCard({ stage, index, meta }) {
           <div className="text-[9px] font-bold uppercase tracking-wider text-gray-400 mb-1">
             Site Notes
           </div>
-          <p className="text-xs text-[#000F1B] leading-relaxed whitespace-pre-wrap">
+          <p className="text-xs text-[#252A2A] leading-relaxed whitespace-pre-wrap">
             {stage.notes}
           </p>
         </div>
@@ -151,8 +151,8 @@ function StageCard({ stage, index, meta }) {
         <div className="mt-3 pt-3 border-t border-black/5 space-y-3">
           {hasPhotos && (
             <div>
-              <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider font-bold text-[#000F1B] mb-2">
-                <Camera className="w-3.5 h-3.5 text-[#FF6600]" />
+              <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider font-bold text-[#252A2A] mb-2">
+                <Camera className="w-3.5 h-3.5 text-[#B89416]" />
                 Progress Photos
               </div>
               <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
@@ -162,7 +162,7 @@ function StageCard({ stage, index, meta }) {
                     href={url}
                     target="_blank"
                     rel="noreferrer"
-                    className="shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden border border-black/10 hover:border-[#FF6600] transition"
+                    className="shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden border border-black/10 hover:border-[#B89416] transition"
                   >
                     <img
                       src={url}
@@ -178,8 +178,8 @@ function StageCard({ stage, index, meta }) {
 
           {hasDocs && (
             <div>
-              <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider font-bold text-[#000F1B] mb-2">
-                <FileText className="w-3.5 h-3.5 text-[#FF6600]" />
+              <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider font-bold text-[#252A2A] mb-2">
+                <FileText className="w-3.5 h-3.5 text-[#B89416]" />
                 Stage Documents
               </div>
               <div className="flex flex-col gap-1.5">
@@ -189,7 +189,7 @@ function StageCard({ stage, index, meta }) {
                     href={doc.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#111111]/70 hover:text-[#FF6600] transition"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#252A2A]/70 hover:text-[#B89416] transition"
                   >
                     <FileText className="w-3.5 h-3.5" />
                     {doc.name || `Document ${did + 1}`}
@@ -227,14 +227,14 @@ export default function TimelinePage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-xl bg-[#000F1B] grid place-items-center shrink-0">
+          <div className="w-12 h-12 rounded-xl bg-[#252A2A] grid place-items-center shrink-0">
             <GitBranch className="w-5 h-5 text-white" />
           </div>
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#000F1B] tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#252A2A] tracking-tight">
               Project Timeline
             </h1>
-            <p className="text-sm text-[#111111]/60 mt-0.5">
+            <p className="text-sm text-[#252A2A]/60 mt-0.5">
               Stage-by-stage construction journey with key dates.
             </p>
           </div>
@@ -246,7 +246,7 @@ export default function TimelinePage() {
             <span className="text-[10px] font-bold uppercase px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
               {summary.completed} Done
             </span>
-            <span className="text-[10px] font-bold uppercase px-2.5 py-1 rounded-full bg-[#FF6600]/10 text-[#FF6600] border border-[#FF6600]/20">
+            <span className="text-[10px] font-bold uppercase px-2.5 py-1 rounded-full bg-[#B89416]/10 text-[#B89416] border border-[#B89416]/20">
               {summary.inProgress} Active
             </span>
             <span className="text-[10px] font-bold uppercase px-2.5 py-1 rounded-full bg-gray-50 text-gray-500 border border-gray-200">
@@ -259,7 +259,7 @@ export default function TimelinePage() {
       {/* Timeline body */}
       <div className="bg-white rounded-2xl shadow-sm border border-black/5 p-4 sm:p-8 overflow-hidden">
         {stages.length === 0 ? (
-          <div className="text-sm text-[#111111]/50 text-center py-16">
+          <div className="text-sm text-[#252A2A]/50 text-center py-16">
             No timeline stages recorded yet.
           </div>
         ) : (

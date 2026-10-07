@@ -17,4 +17,4 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-Sitemap: https://constructons.com/sitemap.xml
+Sitemap: https://[Your Brand]s.com/sitemap.xml

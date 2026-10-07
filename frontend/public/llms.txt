@@ -1,6 +1,6 @@
-# ConstructONS — AI-Powered Home Construction Platform
+# [Your Brand]s — AI-Powered Home Construction Platform
 
-> ConstructONS is India's leading turnkey home construction platform, leveraging AI design tools, transparent pricing, and real-time live site tracking.
+> [Your Brand]s is India's leading turnkey home construction platform, leveraging AI design tools, transparent pricing, and real-time live site tracking.
 
 ## Core Products & Services
 - **Turnkey Home Construction**: Complete end-to-end design, civil construction, and interior design across India.
@@ -9,12 +9,12 @@
 - **Live Site Tracking**: 24/7 camera access and milestone-based progress tracking for homeowners.
 
 ## Key Pages
-- [Homepage](https://constructons.com/)
-- [Construction Packages & Pricing](https://constructons.com/packages)
-- [Contact & Support](https://constructons.com/contact)
+- [Homepage](https://[Your Brand]s.com/)
+- [Construction Packages & Pricing](https://[Your Brand]s.com/packages)
+- [Contact & Support](https://[Your Brand]s.com/contact)
 
 ## Business Facts
-- **Company Name**: ConstructONS
+- **Company Name**: [Your Brand]s
 - **Industry**: Construction Tech / PropTech
 - **Target Market**: India (Pan-India residential construction)
-- **Website**: https://constructons.com
+- **Website**: https://[Your Brand]s.com

@@ -561,7 +561,7 @@ export default function AdminPackages() {
       payment_schedule: [],
       package_faqs: [],
       is_most_popular: false,
-      accent_color: "#FF6600",
+      accent_color: "#B89416",
       cta_label: "View Details",
       sort_order: (packages?.length || 0) + 1,
       is_published: true,
@@ -1042,7 +1042,7 @@ function BasicsTab({ editing, setField }) {
       </div>
       <div>
         <Label>Accent color (hex)</Label>
-        <TextInput value={editing.accent_color} onChange={(v) => setField({ accent_color: v })} placeholder="#FF6600" />
+        <TextInput value={editing.accent_color} onChange={(v) => setField({ accent_color: v })} placeholder="#B89416" />
       </div>
       <div>
         <Label>Sort order</Label>

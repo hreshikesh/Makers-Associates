@@ -53,24 +53,24 @@ export default function VideoShowcase() {
 
                 {/* Header */}
                 <div className="text-center mb-6 md:mb-10">
-                    <div className="text-[9px] font-bold tracking-[0.2em] text-[#FF6600] uppercase mb-1">
+                    <div className="text-[9px] font-bold tracking-[0.2em] text-[#B89416] uppercase mb-1">
                         Step Inside
                     </div>
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#111111] tracking-tight inline-flex flex-wrap items-center justify-center gap-x-1.5">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#252A2A] tracking-tight inline-flex flex-wrap items-center justify-center gap-x-1.5">
                         <span>Experience the</span>
 
                         {/* Brand Logo Group */}
                         <span className="inline-flex items-center align-middle">
                             <span className="font-extrabold tracking-[0.14em] text-black">
-                                 CONSTRUCT
+                                 [Your
                             </span>
 
-                            <span className="font-extrabold tracking-[0.14em] bg-gradient-to-r from-[#FF6600] to-[#FF0000] bg-clip-text text-transparent">
-                                ONS
+                            <span className="font-extrabold tracking-[0.14em] bg-gradient-to-r from-[#B89416] to-[#B89416] bg-clip-text text-transparent">
+                               Brand]
                             </span>
-                            <sup className="text-[9px] md:text-[11px] text-[#FF6600] font-bold ml-0.5 -top-1">
+                            {/* <sup className="text-[9px] md:text-[11px] text-[#B89416] font-bold ml-0.5 -top-1">
                                 ™
-                            </sup>
+                            </sup> */}
                         </span>
 
                         <span>difference.</span>
@@ -82,7 +82,7 @@ export default function VideoShowcase() {
 
                     {/* Wall Backlight Glow (Syncs with play state) */}
                     <div
-                        className={`absolute top-10 w-4/5 h-56 rounded-full transition-opacity duration-1000 blur-[60px] pointer-events-none -z-10 ${isPlaying ? "bg-[#FF6600]/20 scale-105" : "bg-black/5 scale-95"
+                        className={`absolute top-10 w-4/5 h-56 rounded-full transition-opacity duration-1000 blur-[60px] pointer-events-none -z-10 ${isPlaying ? "bg-[#B89416]/20 scale-105" : "bg-black/5 scale-95"
                             }`}
                     />
 
@@ -104,12 +104,12 @@ export default function VideoShowcase() {
 
                             {/* Screen Area */}
                             <div
-                                className="relative aspect-video bg-[#111111] rounded md:rounded-xl overflow-hidden cursor-pointer group"
+                                className="relative aspect-video bg-[#252A2A] rounded md:rounded-xl overflow-hidden cursor-pointer group"
                                 onClick={togglePlay}
                             >
                                 <video
                                     ref={videoRef}
-                                    src="/videos/tv.mp4"
+                                    src=""
                                     poster="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                                     className="w-full h-full object-cover"
                                     loop
@@ -129,19 +129,17 @@ export default function VideoShowcase() {
                                     {/* CONSTRUCT ⏻ NS Branding */}
                                     <div className="flex items-center gap-0.5 text-white mb-4 select-none">
                                         <span className="font-extrabold text-sm sm:text-lg md:text-2xl tracking-[0.14em] leading-none">
-                                            CONSTRUCT
+                                           Your
                                         </span>
-                                        <Power className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#FF6600] stroke-[3] mx-0.5" />
-                                        <span className="font-extrabold text-sm sm:text-lg md:text-2xl tracking-[0.14em] bg-gradient-to-r from-[#FF6600] to-[#FF0000] bg-clip-text text-transparent leading-none">
-                                            NS
+                                        
+                                        <span className="font-extrabold text-sm sm:text-lg md:text-2xl tracking-[0.14em] bg-gradient-to-r from-[#B89416] to-[#B89416] bg-clip-text text-transparent leading-none">
+                                            Brand
                                         </span>
-                                        <span className="text-[8px] md:text-[10px] text-[#FF6600] font-bold self-start mt-0.5 ml-0.5">
-                                            ™
-                                        </span>
+                                        
                                     </div>
 
                                     {/* Play Button */}
-                                    <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-r from-[#FF6600] to-[#FF0000] flex items-center justify-center text-white shadow-[0_0_30px_rgba(255,102,0,0.6)] group-hover:scale-110 transition-transform duration-300">
+                                    <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-r from-[#B89416] to-[#B89416] flex items-center justify-center text-white shadow-[0_0_30px_rgba(255,102,0,0.6)] group-hover:scale-110 transition-transform duration-300">
                                         <Play className="w-6 h-6 md:w-8 md:h-8 ml-1 fill-current" />
                                     </div>
                                     <p className="mt-3 text-[9px] md:text-xs font-semibold tracking-widest uppercase text-white/80">
@@ -154,7 +152,7 @@ export default function VideoShowcase() {
                                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-3">
                                         <div className="flex items-center justify-between">
                                             {/* Play/Pause icon indicator */}
-                                            <button onClick={(e) => { e.stopPropagation(); togglePlay(); }} className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#FF6600] backdrop-blur text-white flex items-center justify-center transition">
+                                            <button onClick={(e) => { e.stopPropagation(); togglePlay(); }} className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#B89416] backdrop-blur text-white flex items-center justify-center transition">
                                                 <Pause className="w-4 h-4 fill-current" />
                                             </button>
 
@@ -174,7 +172,7 @@ export default function VideoShowcase() {
                                 {isPlaying && (
                                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/40">
                                         <div
-                                            className="h-full bg-gradient-to-r from-[#FF6600] to-[#FF0000] transition-all duration-75"
+                                            className="h-full bg-gradient-to-r from-[#B89416] to-[#B89416] transition-all duration-75"
                                             style={{ width: `${progress}%` }}
                                         />
                                     </div>

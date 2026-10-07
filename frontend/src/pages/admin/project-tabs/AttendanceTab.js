@@ -74,10 +74,10 @@ export default function AttendanceTab({ project, onSaved }) {
     <div className="bg-white rounded-xl border border-black/5 shadow-sm p-5 max-w-4xl mx-auto font-['Poppins']">
       <div className="flex items-center justify-between mb-4 border-b border-black/5 pb-4">
         <div>
-          <h3 className="text-sm font-bold text-[#000F1B]">
+          <h3 className="text-sm font-bold text-[#252A2A]">
             Daily Site Attendance
           </h3>
-          <p className="text-[10px] text-[#111111]/50 mt-1">
+          <p className="text-[10px] text-[#252A2A]/50 mt-1">
             Mark who is present on site today ({new Date().toLocaleDateString("en-IN")})
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function AttendanceTab({ project, onSaved }) {
             <Loader2 className="w-6 h-6 animate-spin text-emerald-600" />
           </div>
         ) : members.length === 0 ? (
-          <div className="col-span-full py-8 text-center text-xs italic text-[#111111]/40 border border-dashed border-black/10 rounded-xl">
+          <div className="col-span-full py-8 text-center text-xs italic text-[#252A2A]/40 border border-dashed border-black/10 rounded-xl">
             No team members assigned to this project yet. Assign team members in the "Team" tab first.
           </div>
         ) : (
@@ -125,15 +125,15 @@ export default function AttendanceTab({ project, onSaved }) {
                       className="w-10 h-10 rounded-full object-cover border border-black/10 shrink-0"
                     />
                   ) : (
-                    <div className="w-10 h-10 rounded-full bg-[#000F1B] text-white grid place-items-center text-xs font-bold shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#252A2A] text-white grid place-items-center text-xs font-bold shrink-0">
                       {m.name?.[0]}
                     </div>
                   )}
                   <div className="min-w-0">
-                    <div className="text-xs font-bold text-[#000F1B] truncate">
+                    <div className="text-xs font-bold text-[#252A2A] truncate">
                       {m.name}
                     </div>
-                    <div className="text-[9px] text-[#111111]/50 truncate font-semibold mt-0.5">
+                    <div className="text-[9px] text-[#252A2A]/50 truncate font-semibold mt-0.5">
                       {m.role}
                     </div>
                   </div>

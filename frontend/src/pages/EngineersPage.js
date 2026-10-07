@@ -58,7 +58,7 @@ export default function EngineersPage() {
   const clear = () => { setSpec(""); setCert(""); setPtype(""); setQuery(""); };
 
   const handleWhatsApp = (pro) => {
-    const text = encodeURIComponent(`Hi ${pro.name.split(" ")[1]}, I found your profile on ConstructONS™. I need engineering consultation for my ${pro.specialization.toLowerCase()} requirements. Can we discuss?`);
+    const text = encodeURIComponent(`Hi ${pro.name.split(" ")[1]}, I found your profile on [Your Brand]s™. I need engineering consultation for my ${pro.specialization.toLowerCase()} requirements. Can we discuss?`);
     window.open(`https://wa.me/${pro.phone}?text=${text}`, "_blank", "noopener");
   };
 
@@ -70,8 +70,8 @@ export default function EngineersPage() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": "https://constructons.com/marketplace/engineers#webpage",
-        "url": "https://constructons.com/marketplace/engineers",
+        "@id": "https://[Your Brand]s.com/marketplace/engineers#webpage",
+        "url": "https://[Your Brand]s.com/marketplace/engineers",
         "name": "Structural, Geotechnical & MEP Civil Engineers",
         "description": "Discover chartered structural engineers, soil test specialists, and MEP advisors for stable residential construction."
       },
@@ -82,19 +82,19 @@ export default function EngineersPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://constructons.com"
+            "item": "https://[Your Brand]s.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Marketplace",
-            "item": "https://constructons.com/marketplace/engineers"
+            "item": "https://[Your Brand]s.com/marketplace/engineers"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Engineers",
-            "item": "https://constructons.com/marketplace/engineers"
+            "item": "https://[Your Brand]s.com/marketplace/engineers"
           }
         ]
       }
@@ -102,7 +102,7 @@ export default function EngineersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F6F8] font-['Poppins',sans-serif] text-[#000F1B] selection:bg-[#FF6600] selection:text-white flex flex-col">
+    <div className="min-h-screen bg-[#F5F6F8] font-['Poppins',sans-serif] text-[#252A2A] selection:bg-[#B89416] selection:text-white flex flex-col">
       <style>{`.no-scrollbar::-webkit-scrollbar{display:none} .no-scrollbar{scrollbar-width:none}`}</style>
       
       <SEO
@@ -117,10 +117,10 @@ export default function EngineersPage() {
 
       <main className="flex-1">
         {/* ===================== HERO ===================== */}
-        <section className="relative bg-[#000F1B] text-white pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <section className="relative bg-[#252A2A] text-white pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
           <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px)", backgroundSize: "40px 40px" }} />
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#FF6600]/15 blur-[120px] rounded-full pointer-events-none"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#B89416]/15 blur-[120px] rounded-full pointer-events-none"
             animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.8, 0.5] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -131,18 +131,18 @@ export default function EngineersPage() {
                 <div className="inline-flex items-center justify-center lg:justify-start gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm mx-auto lg:mx-0">
                   <BrandLockup tone="dark" size="sm" />
                   <span className="w-px h-3 bg-white/20 mx-1" />
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#FF6600] uppercase">Engineering Bureau</span>
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#B89416] uppercase">Engineering Bureau</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
-                  The minds who make sure your home <br className="hidden lg:block" /> <em className="text-[#FF6600] not-italic">stands strong</em> for the next 100 years.
+                  The minds who make sure your home <br className="hidden lg:block" /> <em className="text-[#B89416] not-italic">stands strong</em> for the next 100 years.
                 </h1>
                 <p className="mt-6 text-base md:text-lg text-white/60 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                   Vetted structural, MEP, geotechnical & site engineers — the people behind every column, beam, and load calculation of a well-built home.
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-8">
-                  <button onClick={() => document.getElementById("directory")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center gap-2 bg-[#FF6600] hover:bg-[#E04F00] transition px-8 py-4 rounded-full text-sm font-bold shadow-[0_0_20px_rgba(255,90,0,0.3)] hover:-translate-y-0.5 cursor-pointer">
+                  <button onClick={() => document.getElementById("directory")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center gap-2 bg-[#B89416] hover:bg-[#8F7210] transition px-8 py-4 rounded-full text-sm font-bold shadow-[0_0_20px_rgba(255,90,0,0.3)] hover:-translate-y-0.5 cursor-pointer">
                     Browse Engineers <ArrowRight className="w-4 h-4" />
                   </button>
                   <div className="flex gap-8 text-left">
@@ -170,11 +170,11 @@ export default function EngineersPage() {
                   <motion.div key={i}
                     initial={reduce ? false : { opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.15 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                    className={`rounded-2xl bg-white/5 border border-white/10 p-6 flex flex-col justify-between backdrop-blur-sm relative overflow-hidden hover:border-[#FF6600]/40 transition ${i % 2 ? "mt-12" : ""} aspect-square`}>
-                    <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: "linear-gradient(to right,#FF6600 1px,transparent 1px),linear-gradient(to bottom,#FF6600 1px,transparent 1px)", backgroundSize: "20px 20px" }} />
+                    className={`rounded-2xl bg-white/5 border border-white/10 p-6 flex flex-col justify-between backdrop-blur-sm relative overflow-hidden hover:border-[#B89416]/40 transition ${i % 2 ? "mt-12" : ""} aspect-square`}>
+                    <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: "linear-gradient(to right,#B89416 1px,transparent 1px),linear-gradient(to bottom,#B89416 1px,transparent 1px)", backgroundSize: "20px 20px" }} />
                     <div className="relative">
-                      <div className="w-12 h-12 rounded-xl bg-[#FF6600]/15 grid place-items-center border border-[#FF6600]/20">
-                        <Icon className="w-6 h-6 text-[#FF6600]" />
+                      <div className="w-12 h-12 rounded-xl bg-[#B89416]/15 grid place-items-center border border-[#B89416]/20">
+                        <Icon className="w-6 h-6 text-[#B89416]" />
                       </div>
                     </div>
                     <div className="relative">
@@ -192,13 +192,13 @@ export default function EngineersPage() {
         <section className="py-16 md:py-28 bg-white border-b border-black/5 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="max-w-3xl mb-10 md:mb-12 text-center md:text-left mx-auto md:mx-0">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FF6600]/10 text-[#FF6600] text-[10px] font-bold uppercase tracking-widest mb-4">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#B89416]/10 text-[#B89416] text-[10px] font-bold uppercase tracking-widest mb-4">
                 <ShieldCheck className="w-3.5 h-3.5" /> Live Compliance Tool
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[#000F1B] mb-4">
-                Before you build,<br /> know what your land <span className="text-[#FF6600]">demands.</span>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[#252A2A] mb-4">
+                Before you build,<br /> know what your land <span className="text-[#B89416]">demands.</span>
               </h2>
-              <p className="text-sm md:text-base text-[#111111]/60 leading-relaxed">
+              <p className="text-sm md:text-base text-[#252A2A]/60 leading-relaxed">
                 India is divided into four seismic zones under IS 1893:2016. Enter your PIN code to instantly see your zone, risk level, and the specific structural precautions your engineer is required to design for.
               </p>
             </div>
@@ -212,15 +212,15 @@ export default function EngineersPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#000F1B] tracking-tight">Find your engineer</h2>
-                <p className="text-sm text-[#111111]/60 mt-2">Filter by specialization, credentials, or project type. Results re-rank by how closely they fit.</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#252A2A] tracking-tight">Find your engineer</h2>
+                <p className="text-sm text-[#252A2A]/60 mt-2">Filter by specialization, credentials, or project type. Results re-rank by how closely they fit.</p>
               </div>
               <div className="relative w-full md:w-80">
-                <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-[#111111]/40" />
+                <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-[#252A2A]/40" />
                 <input
                   value={query} onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search name, firm, or city..."
-                  className="w-full bg-white border border-black/10 rounded-full pl-11 pr-4 py-3 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#FF6600] shadow-sm"
+                  className="w-full bg-white border border-black/10 rounded-full pl-11 pr-4 py-3 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#B89416] shadow-sm"
                 />
               </div>
             </div>
@@ -231,9 +231,9 @@ export default function EngineersPage() {
               <FilterRow label="Project Type" options={PROJECT_TYPES} value={ptype} onChange={setPtype} />
 
               {(filtering || query) && (
-                <div className="flex items-center justify-between pt-4 border-t border-black/5 text-xs font-bold text-[#111111]/50 uppercase tracking-wider">
+                <div className="flex items-center justify-between pt-4 border-t border-black/5 text-xs font-bold text-[#252A2A]/50 uppercase tracking-wider">
                   <span>Showing {results.length} of {ENGINEERS.length} engineers</span>
-                  <button onClick={clear} className="text-[#FF6600] hover:text-[#FF0000] flex items-center gap-1 cursor-pointer"><X className="w-3.5 h-3.5" /> Clear all</button>
+                  <button onClick={clear} className="text-[#B89416] hover:text-[#B89416] flex items-center gap-1 cursor-pointer"><X className="w-3.5 h-3.5" /> Clear all</button>
                 </div>
               )}
             </div>
@@ -250,12 +250,12 @@ export default function EngineersPage() {
             {results.length === 0 && (
               <div className="text-center py-20 bg-white rounded-3xl border border-black/5 shadow-sm">
                 <div className="w-16 h-16 rounded-full bg-black/5 grid place-items-center mx-auto mb-4">
-                  <Search className="w-8 h-8 text-[#111111]/30" />
+                  <Search className="w-8 h-8 text-[#252A2A]/30" />
                 </div>
-                <h3 className="text-xl font-bold text-[#000F1B] mb-2">No engineer fits all of that</h3>
-                <p className="text-sm text-[#111111]/60 mb-6">Loosen one filter, or let us recommend someone for you.</p>
+                <h3 className="text-xl font-bold text-[#252A2A] mb-2">No engineer fits all of that</h3>
+                <p className="text-sm text-[#252A2A]/60 mb-6">Loosen one filter, or let us recommend someone for you.</p>
                 <div className="flex justify-center gap-3">
-                  <button onClick={clear} className="px-6 py-3 rounded-full bg-[#000F1B] text-white text-sm font-bold transition hover:bg-[#FF6600] cursor-pointer">Clear filters</button>
+                  <button onClick={clear} className="px-6 py-3 rounded-full bg-[#252A2A] text-white text-sm font-bold transition hover:bg-[#B89416] cursor-pointer">Clear filters</button>
                 </div>
               </div>
             )}
@@ -263,15 +263,15 @@ export default function EngineersPage() {
         </section>
 
         {/* ===================== CTA ===================== */}
-        <section className="bg-[#000F1B] text-white py-20 md:py-28 px-6 relative overflow-hidden">
+        <section className="bg-[#252A2A] text-white py-20 md:py-28 px-6 relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px)", backgroundSize: "40px 40px" }} />
           <div className="max-w-4xl mx-auto text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Design is only half the story. <br /><span className="text-[#FF6600]">Great engineering makes it last generations.</span></h2>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Design is only half the story. <br /><span className="text-[#B89416]">Great engineering makes it last generations.</span></h2>
             <p className="text-white/60 text-sm md:text-base max-w-2xl mx-auto mt-6 mb-10 leading-relaxed">
-              Once your structural drawings are approved, the ConstructONS™ execution team ensures every column, beam, and connection is built exactly to code — with third-party quality audits at every stage.
+              Once your structural drawings are approved, the [Your Brand]s™ execution team ensures every column, beam, and connection is built exactly to code — with third-party quality audits at every stage.
             </p>
             <button onClick={() => navigate("/contact")}
-              className="inline-flex items-center justify-center gap-2 bg-[#FF6600] hover:bg-[#E04F00] shadow-[0_0_20px_rgba(255,90,0,0.3)] text-white px-8 py-4 rounded-full font-bold text-sm transition hover:-translate-y-0.5 cursor-pointer">
+              className="inline-flex items-center justify-center gap-2 bg-[#B89416] hover:bg-[#8F7210] shadow-[0_0_20px_rgba(255,90,0,0.3)] text-white px-8 py-4 rounded-full font-bold text-sm transition hover:-translate-y-0.5 cursor-pointer">
               Get an Engineer Recommendation <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -290,14 +290,14 @@ export default function EngineersPage() {
 function FilterRow({ label, options, value, onChange }) {
   return (
     <div className="flex flex-col md:flex-row md:items-center gap-3">
-      <div className="md:w-32 text-xs font-bold uppercase tracking-wider text-[#111111]/50 shrink-0">{label}</div>
+      <div className="md:w-32 text-xs font-bold uppercase tracking-wider text-[#252A2A]/50 shrink-0">{label}</div>
       <div className="flex flex-wrap gap-2" role="group" aria-label={label}>
         {options.map((o) => {
           const on = value === o;
           return (
             <button key={o} onClick={() => onChange(on ? "" : o)} aria-pressed={on}
               className={`px-4 py-2 rounded-full text-xs font-bold transition border cursor-pointer ${
-                on ? "bg-[#000F1B] text-white border-[#000F1B]" : "bg-white text-[#111111]/70 border-black/10 hover:border-[#FF6600] hover:text-[#FF6600]"}`}>
+                on ? "bg-[#252A2A] text-white border-[#252A2A]" : "bg-white text-[#252A2A]/70 border-black/10 hover:border-[#B89416] hover:text-[#B89416]"}`}>
               {o}
             </button>
           );
@@ -318,11 +318,11 @@ function EngineerCard({ pro, index, reduce, onOpen, onChat }) {
       className="bg-white rounded-3xl overflow-hidden border border-black/5 flex flex-col group shadow-sm hover:shadow-xl hover:border-black/15 transition-all duration-300">
 
       {/* Technical Stat Band */}
-      <div className="relative bg-[#000F1B] p-5 md:p-6 text-white overflow-hidden">
+      <div className="relative bg-[#252A2A] p-5 md:p-6 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px)", backgroundSize: "25px 25px" }} />
         
         {pro.score !== null && (
-          <span className="absolute top-4 right-4 bg-[#FF6600] text-white px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-md flex items-center gap-1.5 z-10">
+          <span className="absolute top-4 right-4 bg-[#B89416] text-white px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-md flex items-center gap-1.5 z-10">
             <Zap className="w-3.5 h-3.5 fill-current" /> {pro.score}% Match
           </span>
         )}
@@ -335,7 +335,7 @@ function EngineerCard({ pro, index, reduce, onOpen, onChat }) {
           </div>
           <div className="border-l border-white/10 pl-4">
             <div className="text-[9px] font-bold uppercase tracking-widest text-white/40 mb-1">Zone</div>
-            <div className="text-lg font-black text-[#FF6600]">{pro.zoneCoverage.split(" ")[1] || "All"}</div>
+            <div className="text-lg font-black text-[#B89416]">{pro.zoneCoverage.split(" ")[1] || "All"}</div>
             <div className="text-[9px] text-white/60 font-semibold">Coverage</div>
           </div>
           <div className="border-l border-white/10 pl-4">
@@ -348,12 +348,12 @@ function EngineerCard({ pro, index, reduce, onOpen, onChat }) {
 
       <div className="p-6 md:p-7 flex-1 flex flex-col">
         <div className="flex items-start gap-4 mb-5">
-          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#FF6600]/20 shadow-md shrink-0">
+          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#B89416]/20 shadow-md shrink-0">
             <img src={pro.avatar} alt="" className="w-full h-full object-cover" />
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className="text-xl font-bold text-[#000F1B] leading-tight mb-0.5">{pro.name}</h3>
-            <div className="text-sm font-semibold text-[#FF6600] truncate">{pro.firm}</div>
+            <h3 className="text-xl font-bold text-[#252A2A] leading-tight mb-0.5">{pro.name}</h3>
+            <div className="text-sm font-semibold text-[#B89416] truncate">{pro.firm}</div>
             <span className="inline-flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full shrink-0 mt-1.5">
               <ShieldCheck className="w-3 h-3" /> {pro.badge}
             </span>
@@ -363,43 +363,43 @@ function EngineerCard({ pro, index, reduce, onOpen, onChat }) {
         {/* Credentials */}
         <div className="flex flex-wrap gap-1.5 mb-4">
           {pro.credentials.map((c) => (
-            <span key={c} className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-[#F5F6F8] border border-black/5 text-[#000F1B] uppercase tracking-wider inline-flex items-center gap-1">
-              <Award className="w-2.5 h-2.5 text-[#FF6600]" /> {c}
+            <span key={c} className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-[#F5F6F8] border border-black/5 text-[#252A2A] uppercase tracking-wider inline-flex items-center gap-1">
+              <Award className="w-2.5 h-2.5 text-[#B89416]" /> {c}
             </span>
           ))}
         </div>
 
         {/* Specialization chip */}
         <div className="flex flex-wrap gap-2 mb-5">
-          <span className="px-3 py-1 rounded-md text-xs font-bold bg-[#000F1B] text-white inline-flex items-center gap-1.5">
-            <HardHat className="w-3.5 h-3.5 text-[#FF6600]" /> {pro.specialization}
+          <span className="px-3 py-1 rounded-md text-xs font-bold bg-[#252A2A] text-white inline-flex items-center gap-1.5">
+            <HardHat className="w-3.5 h-3.5 text-[#B89416]" /> {pro.specialization}
           </span>
-          {pro.projectTypes.map((s) => <span key={s} className="px-3 py-1 rounded-md text-xs font-semibold border border-black/10 text-[#111111]/70">{s}</span>)}
+          {pro.projectTypes.map((s) => <span key={s} className="px-3 py-1 rounded-md text-xs font-semibold border border-black/10 text-[#252A2A]/70">{s}</span>)}
         </div>
 
-        <p className="text-sm text-[#111111]/70 leading-relaxed line-clamp-2 mb-5 flex-1 italic border-l-2 border-[#FF6600]/40 pl-3">"{pro.philosophy}"</p>
+        <p className="text-sm text-[#252A2A]/70 leading-relaxed line-clamp-2 mb-5 flex-1 italic border-l-2 border-[#B89416]/40 pl-3">"{pro.philosophy}"</p>
 
         <div className="flex items-center justify-between mb-5 bg-[#F9FAFB] border border-black/5 p-3 rounded-xl">
           <div className="flex flex-col">
-            <span className="text-[9px] uppercase text-[#111111]/40 font-bold mb-0.5">Rating</span>
-            <div className="flex items-center gap-1 text-sm font-bold text-[#000F1B]">
+            <span className="text-[9px] uppercase text-[#252A2A]/40 font-bold mb-0.5">Rating</span>
+            <div className="flex items-center gap-1 text-sm font-bold text-[#252A2A]">
               <Star className="w-3.5 h-3.5 text-[#F59E0B] fill-current" /> {pro.rating}
             </div>
           </div>
           <div className="w-px h-6 bg-black/10" />
           <div className="flex flex-col">
-            <span className="text-[9px] uppercase text-[#111111]/40 font-bold mb-0.5">Codes</span>
-            <div className="text-sm font-bold text-[#000F1B]">{pro.isCodes.length} IS</div>
+            <span className="text-[9px] uppercase text-[#252A2A]/40 font-bold mb-0.5">Codes</span>
+            <div className="text-sm font-bold text-[#252A2A]">{pro.isCodes.length} IS</div>
           </div>
           <div className="w-px h-6 bg-black/10" />
           <div className="flex flex-col">
-            <span className="text-[9px] uppercase text-[#111111]/40 font-bold mb-0.5">Location</span>
-            <div className="text-sm font-bold text-[#000F1B] flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-[#FF6600]" /> {pro.location.split(",")[0]}</div>
+            <span className="text-[9px] uppercase text-[#252A2A]/40 font-bold mb-0.5">Location</span>
+            <div className="text-sm font-bold text-[#252A2A] flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-[#B89416]" /> {pro.location.split(",")[0]}</div>
           </div>
         </div>
 
         <div className="grid grid-cols-2 gap-3 mt-auto">
-          <button onClick={() => onOpen(0)} className="py-3.5 rounded-xl bg-[#F5F6F8] border border-black/5 hover:bg-[#000F1B] hover:text-white text-[#000F1B] text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer">
+          <button onClick={() => onOpen(0)} className="py-3.5 rounded-xl bg-[#F5F6F8] border border-black/5 hover:bg-[#252A2A] hover:text-white text-[#252A2A] text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer">
             <FileText className="w-4 h-4" /> View Credentials
           </button>
           <button onClick={onChat} className="py-3.5 rounded-xl bg-[#10B981] hover:bg-emerald-600 text-white text-xs font-bold transition inline-flex items-center justify-center gap-2 cursor-pointer shadow-sm">
@@ -438,7 +438,7 @@ function CredentialsModal({ view, setView, onChat }) {
     <AnimatePresence>
       {pro && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true" aria-label={`${pro.name} credentials`}>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setView(null)} className="absolute inset-0 bg-[#000F1B]/90 backdrop-blur-md" />
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setView(null)} className="absolute inset-0 bg-[#252A2A]/90 backdrop-blur-md" />
           <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="relative z-10 w-full max-w-6xl h-[90vh] lg:h-[700px] bg-white rounded-3xl overflow-hidden flex flex-col lg:flex-row shadow-2xl border border-black/10">
 
@@ -453,18 +453,18 @@ function CredentialsModal({ view, setView, onChat }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                 
                 {/* Tech Label */}
-                <div className="absolute top-4 left-4 bg-[#FF6600] text-white px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5">
+                <div className="absolute top-4 left-4 bg-[#B89416] text-white px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5">
                   <Ruler className="w-3.5 h-3.5" /> Technical Documentation
                 </div>
 
-                <button onClick={() => step(-1)} aria-label="Previous" className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur hover:bg-white/90 grid place-items-center text-white hover:text-[#000F1B] transition cursor-pointer"><ArrowLeft className="w-5 h-5" /></button>
-                <button onClick={() => step(1)} aria-label="Next" className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur hover:bg-white/90 grid place-items-center text-white hover:text-[#000F1B] transition cursor-pointer"><ArrowRight className="w-5 h-5" /></button>
+                <button onClick={() => step(-1)} aria-label="Previous" className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur hover:bg-white/90 grid place-items-center text-white hover:text-[#252A2A] transition cursor-pointer"><ArrowLeft className="w-5 h-5" /></button>
+                <button onClick={() => step(1)} aria-label="Next" className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur hover:bg-white/90 grid place-items-center text-white hover:text-[#252A2A] transition cursor-pointer"><ArrowRight className="w-5 h-5" /></button>
                 <span className="absolute bottom-4 left-4 text-[10px] font-bold uppercase tracking-widest bg-black/60 backdrop-blur text-white px-4 py-2 rounded-lg">{i + 1} / {pro.techImages.length}</span>
               </div>
-              <div className="flex gap-2 p-3 bg-[#000F1B]">
+              <div className="flex gap-2 p-3 bg-[#252A2A]">
                 {pro.techImages.map((img, n) => (
                   <button key={n} onClick={() => setI(n)} aria-label={`View doc ${n + 1}`}
-                    className={`h-16 flex-1 rounded-xl overflow-hidden border-2 transition cursor-pointer ${n === i ? "border-[#FF6600]" : "border-transparent opacity-50 hover:opacity-100"}`}>
+                    className={`h-16 flex-1 rounded-xl overflow-hidden border-2 transition cursor-pointer ${n === i ? "border-[#B89416]" : "border-transparent opacity-50 hover:opacity-100"}`}>
                     <img src={img} alt="" className="w-full h-full object-cover" />
                   </button>
                 ))}
@@ -473,39 +473,39 @@ function CredentialsModal({ view, setView, onChat }) {
 
             {/* Right: Credentials Panel */}
             <div className="relative lg:w-[45%] flex-1 overflow-y-auto no-scrollbar p-6 md:p-8 flex flex-col bg-white">
-              <button onClick={() => setView(null)} aria-label="Close" className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/5 hover:bg-black/10 grid place-items-center cursor-pointer transition z-10"><X className="w-4 h-4 text-[#000F1B]" /></button>
+              <button onClick={() => setView(null)} aria-label="Close" className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/5 hover:bg-black/10 grid place-items-center cursor-pointer transition z-10"><X className="w-4 h-4 text-[#252A2A]" /></button>
 
               <div className="flex items-center gap-4 mb-6 pt-4">
-                <img src={pro.avatar} alt="" className="w-16 h-16 rounded-full object-cover border-2 border-[#FF6600]/20 shadow-sm" />
+                <img src={pro.avatar} alt="" className="w-16 h-16 rounded-full object-cover border-2 border-[#B89416]/20 shadow-sm" />
                 <div>
-                  <h3 className="text-2xl font-bold text-[#000F1B] leading-tight mb-1">{pro.name}</h3>
-                  <div className="text-sm font-semibold text-[#FF6600]">{pro.firm}</div>
+                  <h3 className="text-2xl font-bold text-[#252A2A] leading-tight mb-1">{pro.name}</h3>
+                  <div className="text-sm font-semibold text-[#B89416]">{pro.firm}</div>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-2 mb-6">
-                <span className="bg-[#000F1B] text-white px-3 py-1.5 rounded-md text-xs font-bold inline-flex items-center gap-1.5">
-                  <HardHat className="w-3.5 h-3.5 text-[#FF6600]" /> {pro.specialization}
+                <span className="bg-[#252A2A] text-white px-3 py-1.5 rounded-md text-xs font-bold inline-flex items-center gap-1.5">
+                  <HardHat className="w-3.5 h-3.5 text-[#B89416]" /> {pro.specialization}
                 </span>
                 <span className="bg-emerald-50 border border-emerald-100 text-emerald-700 px-3 py-1.5 rounded-md text-xs font-bold inline-flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5" />{pro.badge}</span>
               </div>
 
-              <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#111111]/40 mb-2">Engineering Philosophy</h4>
-              <p className="text-sm leading-relaxed text-[#000F1B]/80 mb-6 italic border-l-2 border-[#FF6600] pl-4 bg-[#F9FAFB] py-3 rounded-r-xl">"{pro.philosophy}"</p>
+              <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#252A2A]/40 mb-2">Engineering Philosophy</h4>
+              <p className="text-sm leading-relaxed text-[#252A2A]/80 mb-6 italic border-l-2 border-[#B89416] pl-4 bg-[#F9FAFB] py-3 rounded-r-xl">"{pro.philosophy}"</p>
 
-              <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#111111]/40 mb-3">Credentials</h4>
+              <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#252A2A]/40 mb-3">Credentials</h4>
               <div className="flex flex-wrap gap-2 mb-6">
                 {pro.credentials.map((c) => (
-                  <span key={c} className="px-3 py-1.5 rounded-md text-xs font-bold bg-[#F5F6F8] border border-black/10 text-[#000F1B] inline-flex items-center gap-1.5">
-                    <Award className="w-3.5 h-3.5 text-[#FF6600]" /> {c}
+                  <span key={c} className="px-3 py-1.5 rounded-md text-xs font-bold bg-[#F5F6F8] border border-black/10 text-[#252A2A] inline-flex items-center gap-1.5">
+                    <Award className="w-3.5 h-3.5 text-[#B89416]" /> {c}
                   </span>
                 ))}
               </div>
 
-              <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#111111]/40 mb-3">Compliance Standards</h4>
+              <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#252A2A]/40 mb-3">Compliance Standards</h4>
               <div className="flex flex-wrap gap-2 mb-6">
                 {pro.isCodes.map((code) => (
-                  <span key={code} className="px-3 py-1.5 rounded-md text-xs font-bold bg-[#FF6600]/10 border border-[#FF6600]/20 text-[#FF6600] inline-flex items-center gap-1.5 font-mono">
+                  <span key={code} className="px-3 py-1.5 rounded-md text-xs font-bold bg-[#B89416]/10 border border-[#B89416]/20 text-[#B89416] inline-flex items-center gap-1.5 font-mono">
                     <FileText className="w-3.5 h-3.5" /> {code}
                   </span>
                 ))}
@@ -513,22 +513,22 @@ function CredentialsModal({ view, setView, onChat }) {
 
               <div className="grid grid-cols-3 gap-2 mb-6">
                 <div className="bg-[#F9FAFB] rounded-xl p-3 border border-black/5 text-center">
-                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#111111]/40 mb-1">Rating</div>
-                  <div className="text-base font-bold text-[#000F1B] flex items-center justify-center gap-1"><Star className="w-3.5 h-3.5 text-[#F59E0B] fill-current" />{pro.rating}</div>
+                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#252A2A]/40 mb-1">Rating</div>
+                  <div className="text-base font-bold text-[#252A2A] flex items-center justify-center gap-1"><Star className="w-3.5 h-3.5 text-[#F59E0B] fill-current" />{pro.rating}</div>
                 </div>
                 <div className="bg-[#F9FAFB] rounded-xl p-3 border border-black/5 text-center">
-                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#111111]/40 mb-1">Projects</div>
-                  <div className="text-base font-bold text-[#000F1B]">{pro.projects}</div>
+                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#252A2A]/40 mb-1">Projects</div>
+                  <div className="text-base font-bold text-[#252A2A]">{pro.projects}</div>
                 </div>
                 <div className="bg-[#F9FAFB] rounded-xl p-3 border border-black/5 text-center">
-                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#111111]/40 mb-1">Zones</div>
-                  <div className="text-base font-bold text-[#000F1B]">{pro.zoneCoverage.split(" ")[1] || "All"}</div>
+                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#252A2A]/40 mb-1">Zones</div>
+                  <div className="text-base font-bold text-[#252A2A]">{pro.zoneCoverage.split(" ")[1] || "All"}</div>
                 </div>
               </div>
 
-              <div className="text-sm font-semibold text-[#000F1B]/60 mb-6 space-y-2">
-                <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#FF6600]" /> Based in {pro.location}</div>
-                <div className="flex items-center gap-2"><HardHat className="w-4 h-4 text-[#FF6600]" /> Handles: {pro.projectTypes.join(", ")}</div>
+              <div className="text-sm font-semibold text-[#252A2A]/60 mb-6 space-y-2">
+                <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#B89416]" /> Based in {pro.location}</div>
+                <div className="flex items-center gap-2"><HardHat className="w-4 h-4 text-[#B89416]" /> Handles: {pro.projectTypes.join(", ")}</div>
               </div>
 
               <div className="mt-auto">

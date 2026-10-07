@@ -54,7 +54,7 @@ export default function PortalLogin() {
       );
       navigate("/portal", { replace: true });
     } catch (err) {
-      console.error("[ConstructONS Auth] Google login error:", err);
+      console.error("[[Your Brand]s Auth] Google login error:", err);
       setError(
         err?.response?.data?.detail || "Authentication failed. Access restricted."
       );
@@ -123,8 +123,8 @@ export default function PortalLogin() {
         aria-live="polite"
       >
         <div className="flex flex-col items-center gap-3">
-          <Loader2 className="w-8 h-8 animate-spin text-[#FF6600]" />
-          <span className="text-sm font-medium text-[#111111]/70 font-['Poppins']">
+          <Loader2 className="w-8 h-8 animate-spin text-[#B89416]" />
+          <span className="text-sm font-medium text-[#252A2A]/70 font-['Poppins']">
             Checking session...
           </span>
         </div>
@@ -134,50 +134,50 @@ export default function PortalLogin() {
 
   return (
     <div 
-      className="min-h-screen bg-[#F2F2F2] flex flex-col md:grid md:grid-cols-2 font-['Poppins'] relative selection:bg-[#FF6600]/20 selection:text-[#000F1B]"
+      className="min-h-screen bg-[#F2F2F2] flex flex-col md:grid md:grid-cols-2 font-['Poppins'] relative selection:bg-[#B89416]/20 selection:text-[#252A2A]"
       data-testid="portal-login"
     >
       <SEO
         title="Client Portal Login"
-        description="Sign in to your ConstructONS Client Portal to access live site updates, drawings, and quality milestones."
+        description="Sign in to your [Your Brand]s Client Portal to access live site updates, drawings, and quality milestones."
         canonical="/portal/login"
         noindex={true}
       />
 
       {/* 📱 Mobile Top Header */}
-      <header className="md:hidden bg-[#000F1B] border-b border-white/10 px-4 py-3 flex items-center justify-between z-10">
+      <header className="md:hidden bg-[#252A2A] border-b border-white/10 px-4 py-3 flex items-center justify-between z-10">
         <Link
           to="/"
-          aria-label="Back to ConstructONS Home"
+          aria-label="Back to [Your Brand]s Home"
           className="inline-flex items-center gap-2 text-white/90 hover:text-white text-sm font-medium transition-colors py-2 px-3 -ml-2 rounded-lg active:bg-white/10 min-h-[44px]"
         >
-          <ArrowLeft className="w-4 h-4 text-[#FF6600]" aria-hidden="true" />
+          <ArrowLeft className="w-4 h-4 text-[#B89416]" aria-hidden="true" />
           <span>Home</span>
         </Link>
         <BrandLockup tone="dark" size="sm" />
       </header>
 
       {/* 💻 Left Hero Column: Brand Ecosystem Showcase */}
-      <div className="hidden md:flex bg-[#000F1B] text-white flex-col justify-between p-10 lg:p-14 xl:p-16 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1.5 bg-[#FF6600]" />
+      <div className="hidden md:flex bg-[#252A2A] text-white flex-col justify-between p-10 lg:p-14 xl:p-16 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1.5 bg-[#B89416]" />
 
         <div>
           <Link
             to="/"
-            aria-label="Back to ConstructONS Home"
+            aria-label="Back to [Your Brand]s Home"
             className="inline-flex items-center gap-2.5 text-white/80 hover:text-white text-sm font-medium transition-all py-2 px-3.5 -ml-3 rounded-xl hover:bg-white/10 min-h-[44px] group"
           >
-            <ArrowLeft className="w-4 h-4 text-[#FF6600] transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true" />
+            <ArrowLeft className="w-4 h-4 text-[#B89416] transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true" />
             <span>Back to Home</span>
           </Link>
 
           <div className="mt-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FF6600]/10 border border-[#FF6600]/20 rounded-full text-xs font-semibold text-[#FF6600] tracking-wider uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#B89416]/10 border border-[#B89416]/20 rounded-full text-xs font-semibold text-[#B89416] tracking-wider uppercase">
               Customer Portal
             </div>
             <h1 className="mt-4 text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white">
               Everything Construction. <br />
-              <span className="text-[#FF6600]">Always On.</span>
+              <span className="text-[#B89416]">Always On.</span>
             </h1>
             <p className="mt-3.5 text-white/70 text-sm lg:text-base leading-relaxed max-w-md">
               Your trusted partner for every stage of home construction. Access live updates, documents, and quality milestones in real time.
@@ -211,7 +211,7 @@ export default function PortalLogin() {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3.5">
               <div className="w-9 h-9 rounded-xl bg-[#white]/5 border border-white/10 grid place-items-center shrink-0 mt-0.5">
-                <item.Icon className="w-4 h-4 text-[#FF6600]" strokeWidth={2} aria-hidden="true" />
+                <item.Icon className="w-4 h-4 text-[#B89416]" strokeWidth={2} aria-hidden="true" />
               </div>
               <div>
                 <div className="text-sm font-semibold text-white">{item.title}</div>
@@ -230,10 +230,10 @@ export default function PortalLogin() {
       <div className="flex-1 grid place-items-center p-6 sm:p-10 lg:p-12">
         <main className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-black/5 p-8 sm:p-10">
           <BrandLockup tone="light" size="xs" />
-          <h2 className="mt-2 text-2xl font-bold text-[#000F1B] tracking-tight">
+          <h2 className="mt-2 text-2xl font-bold text-[#252A2A] tracking-tight">
             Sign in to your portal
           </h2>
-          <p className="mt-2 text-sm text-[#111111]/70 leading-relaxed">
+          <p className="mt-2 text-sm text-[#252A2A]/70 leading-relaxed">
             Verify identity with your Google account to access your live home construction project.
           </p>
 
@@ -248,9 +248,9 @@ export default function PortalLogin() {
           {/* Google Sign-In Container */}
           <div className="mt-8 flex justify-center">
             {signingIn ? (
-              <div className="w-full py-3.5 px-4 rounded-xl border border-black/10 bg-[#F2F2F2] flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold text-[#000F1B]">
-                <Loader2 className="w-4 h-4 animate-spin text-[#FF6600]" />
-                <span>Creating ConstructONS session...</span>
+              <div className="w-full py-3.5 px-4 rounded-xl border border-black/10 bg-[#F2F2F2] flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold text-[#252A2A]">
+                <Loader2 className="w-4 h-4 animate-spin text-[#B89416]" />
+                <span>Creating [Your Brand]s session...</span>
               </div>
             ) : (
               <div className="w-full flex justify-center">
@@ -262,16 +262,16 @@ export default function PortalLogin() {
             )}
           </div>
 
-          <div className="mt-6 text-[12px] text-[#111111]/60 leading-relaxed bg-[#F2F2F2] p-3.5 rounded-xl border border-black/5">
-            By signing in, you access ConstructONS™ secure project management. Direct Google authentication is used securely to identify your verified profile.
+          <div className="mt-6 text-[12px] text-[#252A2A]/60 leading-relaxed bg-[#F2F2F2] p-3.5 rounded-xl border border-black/5">
+            By signing in, you access [Your Brand]s™ secure project management. Direct Google authentication is used securely to identify your verified profile.
           </div>
 
           {/* Switch to Staff Login */}
-          <div className="mt-8 pt-6 border-t border-black/5 flex items-center justify-between text-xs text-[#111111]/70">
+          <div className="mt-8 pt-6 border-t border-black/5 flex items-center justify-between text-xs text-[#252A2A]/70">
             <span>Admin or Site Engineer?</span>
             <Link
               to="/admin/login"
-              className="text-[#FF6600] font-semibold hover:underline focus:outline-none focus:ring-1 focus:ring-[#FF6600] rounded px-1 py-0.5"
+              className="text-[#B89416] font-semibold hover:underline focus:outline-none focus:ring-1 focus:ring-[#B89416] rounded px-1 py-0.5"
             >
               Staff Login &rarr;
             </Link>

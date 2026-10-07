@@ -1,7 +1,7 @@
 import React from "react";
 
 /**
- * ConstructONS logo mark — stylized "C" inside an orange circle.
+ * [Your Brand]s logo mark — stylized "C" inside an orange circle.
  * Matches brand reference: solid orange disc + white C with subtle inner shadow.
  */
 export default function LogoMark({ className = "w-8 h-8" }) {
@@ -15,9 +15,9 @@ export default function LogoMark({ className = "w-8 h-8" }) {
       <defs>
         {/* Orange disc gradient — subtle premium sheen */}
         <linearGradient id="cons-disc" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#FF7A2E" />
-          <stop offset="55%" stopColor="#FF6600" />
-          <stop offset="100%" stopColor="#E64F00" />
+          <stop offset="0%" stopColor="#F2D66D" />
+          <stop offset="55%" stopColor="#B89416" />
+          <stop offset="100%" stopColor="#8F7210" />
         </linearGradient>
         {/* Inner shadow so the C looks embossed */}
         <filter id="cons-inner" x="-20%" y="-20%" width="140%" height="140%">

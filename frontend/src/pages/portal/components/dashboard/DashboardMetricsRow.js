@@ -53,7 +53,7 @@ export default function DashboardMetricsRow({ project }) {
         <div className="flex items-center justify-between mb-2 shrink-0">
           <div className="flex items-center gap-1.5">
             <FileText className="w-4 h-4 text-blue-500" />
-            <h2 className="text-sm font-bold text-[#000F1B]">Recent Updates</h2>
+            <h2 className="text-sm font-bold text-[#252A2A]">Recent Updates</h2>
           </div>
           <Link to="/portal/site-reports" className="text-[10px] font-bold text-blue-600 hover:underline">
             View All
@@ -62,7 +62,7 @@ export default function DashboardMetricsRow({ project }) {
         
         <div className="flex-1 overflow-y-auto custom-scrollbar space-y-1.5 pr-1">
           {recentUpdates.length === 0 ? (
-            <div className="text-[10px] text-[#111111]/40 italic text-center py-10">
+            <div className="text-[10px] text-[#252A2A]/40 italic text-center py-10">
               No recent updates in the last 7 days.
             </div>
           ) : (
@@ -82,9 +82,9 @@ export default function DashboardMetricsRow({ project }) {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1 mb-0.5">
                     <CheckCircle2 className="w-2.5 h-2.5 text-emerald-500" />
-                    <span className="text-[8px] text-[#111111]/50 font-semibold">{formatDate(act.timestamp)}</span>
+                    <span className="text-[8px] text-[#252A2A]/50 font-semibold">{formatDate(act.timestamp)}</span>
                   </div>
-                  <div className="text-[11px] font-bold text-[#000F1B] truncate">{act.action}</div>
+                  <div className="text-[11px] font-bold text-[#252A2A] truncate">{act.action}</div>
                 </div>
               </div>
             ))
@@ -96,34 +96,34 @@ export default function DashboardMetricsRow({ project }) {
       <div className="bg-white rounded-2xl border border-black/5 p-4 shadow-sm flex flex-col h-[200px]">
         <div className="flex items-center gap-1.5 mb-2 shrink-0">
           <Activity className="w-4 h-4 text-blue-500" />
-          <h2 className="text-sm font-bold text-[#000F1B]">Project at a Glance</h2>
+          <h2 className="text-sm font-bold text-[#252A2A]">Project at a Glance</h2>
         </div>
         
         <div className="grid grid-cols-2 gap-2 flex-1">
           {/* Days Remaining */}
           <div className="border border-black/5 rounded-lg p-2.5 bg-[#F9FAFB] flex flex-col justify-center">
             <div className="flex items-center gap-1.5 mb-0.5">
-              <Hourglass className="w-3.5 h-3.5 text-[#111111]/40" />
-              <span className="text-base font-black text-[#000F1B] leading-none">
+              <Hourglass className="w-3.5 h-3.5 text-[#252A2A]/40" />
+              <span className="text-base font-black text-[#252A2A] leading-none">
                 {daysRemaining !== null ? daysRemaining : "TBD"}
               </span>
             </div>
-            <div className="text-[8px] font-bold text-[#111111]/50 uppercase tracking-wider">Days Remaining</div>
+            <div className="text-[8px] font-bold text-[#252A2A]/50 uppercase tracking-wider">Days Remaining</div>
           </div>
 
           {/* Budget / Spent */}
           <div className="border border-black/5 rounded-lg p-2.5 bg-[#F9FAFB] flex flex-col justify-center">
             <div className="flex items-center gap-1 mb-0.5">
-              <IndianRupee className="w-3.5 h-3.5 text-[#111111]/40" />
-              <span className="text-base font-black text-[#000F1B] leading-none truncate">
+              <IndianRupee className="w-3.5 h-3.5 text-[#252A2A]/40" />
+              <span className="text-base font-black text-[#252A2A] leading-none truncate">
                 {formatMoney(sp)}
               </span>
             </div>
-            <div className="text-[8px] font-semibold text-[#111111]/60 truncate mb-1">
+            <div className="text-[8px] font-semibold text-[#252A2A]/60 truncate mb-1">
               of {formatMoney(cv)} Spent ({pctSpent}%)
             </div>
             <div className="w-full h-1.5 bg-black/10 rounded-full overflow-hidden">
-              <div className="h-full bg-[#000F1B] rounded-full transition-all" style={{ width: `${Math.min(pctSpent, 100)}%` }} />
+              <div className="h-full bg-[#252A2A] rounded-full transition-all" style={{ width: `${Math.min(pctSpent, 100)}%` }} />
             </div>
           </div>
 
@@ -131,22 +131,22 @@ export default function DashboardMetricsRow({ project }) {
           <div className="border border-black/5 rounded-lg p-2.5 bg-[#F9FAFB] flex flex-col justify-center">
             <div className="flex items-center gap-1.5 mb-0.5">
               <Calendar className="w-3.5 h-3.5 text-red-500" />
-              <span className="text-base font-black text-[#000F1B] leading-none">
+              <span className="text-base font-black text-[#252A2A] leading-none">
                 {clientActionsPending}
               </span>
             </div>
-            <div className="text-[8px] font-bold text-[#111111]/50 uppercase tracking-wider">Actions Pending</div>
+            <div className="text-[8px] font-bold text-[#252A2A]/50 uppercase tracking-wider">Actions Pending</div>
           </div>
 
           {/* Stages Completed */}
           <div className="border border-black/5 rounded-lg p-2.5 bg-[#F9FAFB] flex flex-col justify-center">
             <div className="flex items-center gap-1.5 mb-0.5">
-              <Layers className="w-3.5 h-3.5 text-[#000F1B]" />
-              <span className="text-base font-black text-[#000F1B] leading-none">
+              <Layers className="w-3.5 h-3.5 text-[#252A2A]" />
+              <span className="text-base font-black text-[#252A2A] leading-none">
                 {completedStages}/{stages.length}
               </span>
             </div>
-            <div className="text-[8px] font-bold text-[#111111]/50 uppercase tracking-wider">Stages Completed</div>
+            <div className="text-[8px] font-bold text-[#252A2A]/50 uppercase tracking-wider">Stages Completed</div>
           </div>
         </div>
       </div>

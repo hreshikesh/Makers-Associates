@@ -6,7 +6,7 @@ const API_BASE = (process.env.REACT_APP_BACKEND_URL || "http://localhost:8000") 
 
 export default function PortalProjectAdvisorModal({ project, onClose }) {
   const [messages, setMessages] = useState([
-    { role: "assistant", content: `Hello! I'm your **ConstructONS Project Advisor** for **${project.title}**. I have live access to your construction progress, pending approvals, quality checks, and forecast completion. What can I help you with today?` }
+    { role: "assistant", content: `Hello! I'm your **[Your Brand]s Project Advisor** for **${project.title}**. I have live access to your construction progress, pending approvals, quality checks, and forecast completion. What can I help you with today?` }
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -41,18 +41,18 @@ export default function PortalProjectAdvisorModal({ project, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-[#000F1B]/80 backdrop-blur-sm z-[70] grid place-items-center p-4 font-['Poppins']">
+    <div className="fixed inset-0 bg-[#252A2A]/80 backdrop-blur-sm z-[70] grid place-items-center p-4 font-['Poppins']">
       <div className="bg-white rounded-3xl w-full max-w-xl h-[600px] shadow-2xl flex flex-col overflow-hidden">
         
         {/* Header */}
-        <div className="bg-[#000F1B] p-4 text-white flex items-center justify-between shrink-0">
+        <div className="bg-[#252A2A] p-4 text-white flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#FF6600] grid place-items-center">
+            <div className="w-10 h-10 rounded-xl bg-[#B89416] grid place-items-center">
               <Bot className="w-6 h-6 text-white" />
             </div>
             <div>
               <div className="text-sm font-bold flex items-center gap-1.5">
-                ConstructONS Project Advisor 
+                [Your Brand]s Project Advisor 
               </div>
               <div className="text-xs text-white/60">Linked to Project: {project.project_code || project.title}</div>
             </div>
@@ -68,8 +68,8 @@ export default function PortalProjectAdvisorModal({ project, onClose }) {
             <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
               <div className={`max-w-[85%] p-3.5 rounded-2xl ${
                 m.role === "user"
-                  ? "bg-[#FF6600] text-white font-medium rounded-br-none"
-                  : "bg-white text-[#000F1B] border border-black/10 shadow-sm rounded-bl-none"
+                  ? "bg-[#B89416] text-white font-medium rounded-br-none"
+                  : "bg-white text-[#252A2A] border border-black/10 shadow-sm rounded-bl-none"
               }`}>
                 {m.content}
               </div>
@@ -78,7 +78,7 @@ export default function PortalProjectAdvisorModal({ project, onClose }) {
           {loading && (
             <div className="flex justify-start">
               <div className="bg-white p-3 rounded-2xl border border-black/10 shadow-sm flex items-center gap-2 text-gray-500">
-                <Loader2 className="w-4 h-4 animate-spin text-[#FF6600]" /> Analyzing live project data...
+                <Loader2 className="w-4 h-4 animate-spin text-[#B89416]" /> Analyzing live project data...
               </div>
             </div>
           )}
@@ -92,12 +92,12 @@ export default function PortalProjectAdvisorModal({ project, onClose }) {
             value={input}
             onChange={e => setInput(e.target.value)}
             placeholder="Ask about your project stage, approvals, timeline..."
-            className="flex-1 px-4 py-3 bg-[#F5F6F8] rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-[#FF6600]"
+            className="flex-1 px-4 py-3 bg-[#F5F6F8] rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-[#B89416]"
           />
           <button
             type="submit"
             disabled={loading || !input.trim()}
-            className="w-11 h-11 rounded-xl bg-[#000F1B] hover:bg-[#FF6600] text-white grid place-items-center transition disabled:opacity-50"
+            className="w-11 h-11 rounded-xl bg-[#252A2A] hover:bg-[#B89416] text-white grid place-items-center transition disabled:opacity-50"
           >
             <Send className="w-4 h-4" />
           </button>

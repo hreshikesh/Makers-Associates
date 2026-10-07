@@ -67,7 +67,7 @@ export default function ContactPage() {
   // Formatted WhatsApp URL
   const waNumber = String(whatsapp).replace(/\D/g, "");
   const waLink = waNumber 
-    ? `https://wa.me/${waNumber}?text=${encodeURIComponent("Hi ConstructONS, I'd like a consultation for my construction project.")}`
+    ? `https://wa.me/${waNumber}?text=${encodeURIComponent("Hi [Your Brand]s, I'd like a consultation for my construction project.")}`
     : "#";
   const waQr = waNumber
     ? `https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=12&data=${encodeURIComponent(waLink)}`
@@ -99,7 +99,7 @@ export default function ContactPage() {
     {
       name: "Reddit",
       icon: RedditIcon,
-      url: "https://www.reddit.com/r/ConstructONS/",
+      url: "https://www.reddit.com/r/[Your Brand]s/",
       brandBg: "bg-[#FF4500]",
       textColor: "text-[#FF4500]",
     },
@@ -107,8 +107,8 @@ export default function ContactPage() {
       name: "YouTube",
       icon: Youtube,
       url: settings?.social_youtube || settings?.social_links?.youtube || "",
-      brandBg: "bg-[#FF0000]",
-      textColor: "text-[#FF0000]",
+      brandBg: "bg-[#B89416]",
+      textColor: "text-[#B89416]",
     },
   ];
 
@@ -117,17 +117,17 @@ export default function ContactPage() {
     "@graph": [
       {
         "@type": "ContactPage",
-        "@id": "https://constructons.com/contact#webpage",
-        "url": "https://constructons.com/contact",
-        "name": "Contact ConstructONS",
+        "@id": "https://[Your Brand]s.com/contact#webpage",
+        "url": "https://[Your Brand]s.com/contact",
+        "name": "Contact [Your Brand]s",
         "description": "Contact India's premium residential builders for standard and luxury pricing estimators."
       },
       {
         "@type": "LocalBusiness",
-        "name": "ConstructONS",
-        "image": "https://constructons.com/icon.svg",
+        "name": "[Your Brand]s",
+        "image": "https://[Your Brand]s.com/icon.svg",
         "telephone": phone || "+91-XXXXXXXXXX",
-        "email": email || "support@constructons.com",
+        "email": email || "support@[Your Brand]s.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Bengaluru Head Office",
@@ -136,18 +136,18 @@ export default function ContactPage() {
           "postalCode": "560001",
           "addressCountry": "IN"
         },
-        "url": "https://constructons.com"
+        "url": "https://[Your Brand]s.com"
       }
     ]
   };
 
   return (
-    <div className="bg-white font-['Poppins',sans-serif] selection:bg-[#FF6600] selection:text-white min-h-screen">
+    <div className="bg-white font-['Poppins',sans-serif] selection:bg-[#B89416] selection:text-white min-h-screen">
       <SEO
         title="Contact Us - Free Construction Consultation"
-        description="Have questions about house construction packages? Get in touch with ConstructONS headquarters in Bengaluru. Call directly, WhatsApp, email, or visit our design studio."
+        description="Have questions about house construction packages? Get in touch with [Your Brand]s headquarters in Bengaluru. Call directly, WhatsApp, email, or visit our design studio."
         canonical="/contact"
-        keywords="contact constructons, home builder phone number, modular house consult, modular construction studio Bangalore, cost estimation quote"
+        keywords="contact [Your Brand]s, home builder phone number, modular house consult, modular construction studio Bangalore, cost estimation quote"
         structuredData={structuredData}
       />
 
@@ -159,7 +159,7 @@ export default function ContactPage() {
           className="relative pt-28 md:pt-36 pb-16 md:pb-24 bg-cover bg-center bg-no-repeat overflow-hidden border-b border-black/10"
           style={{ backgroundImage: "url('/images/contact/contacthero.webp')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-[#000F1B]/90 via-[#000F1B]/80 to-[#000F1B]/95 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#252A2A]/90 via-[#252A2A]/80 to-[#252A2A]/95 backdrop-blur-[2px]" />
 
           <div className="container-wide relative z-10">
             <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
@@ -179,7 +179,7 @@ export default function ContactPage() {
                 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.1] tracking-tight"
               >
                 Let&rsquo;s Connect &amp; Build <br className="hidden sm:inline" />
-                <span className="text-[#FF6600]">Your Dream Space</span>
+                <span className="text-[#B89416]">Your Dream Space</span>
               </motion.h1>
 
               <motion.p
@@ -202,7 +202,7 @@ export default function ContactPage() {
                   <span>Free Consultation</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/15 shadow-sm">
-                  <Building2 className="w-3.5 h-3.5 text-[#FF6600]" />
+                  <Building2 className="w-3.5 h-3.5 text-[#B89416]" />
                   <span>Bengaluru HQ</span>
                 </div>
               </motion.div>
@@ -218,16 +218,16 @@ export default function ContactPage() {
               {/* Card 1: Call Directly */}
               <a
                 href={phone ? `tel:${phone.replace(/\s+/g, "")}` : "#"}
-                className="relative rounded-lg -skew-x-6 -translate-y-2 hover:-translate-y-1 hover:-translate-x-0 hover:skew-x-0 duration-500 w-72 h-44 p-2 bg-neutral-900 transition-all [box-shadow:12px_12px_0px_#000F1B] hover:[box-shadow:4px_4px_0px_#000F1B] block group border border-white/10"
+                className="relative rounded-lg -skew-x-6 -translate-y-2 hover:-translate-y-1 hover:-translate-x-0 hover:skew-x-0 duration-500 w-72 h-44 p-2 bg-neutral-900 transition-all [box-shadow:12px_12px_0px_#252A2A] hover:[box-shadow:4px_4px_0px_#252A2A] block group border border-white/10"
               >
                 <figure className="w-full h-full relative overflow-hidden rounded-lg">
                   <img
                     src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=600&q=80"
-                    alt="Call ConstructONS"
+                    alt="Call [Your Brand]s"
                     className="w-full h-full object-cover rounded-lg brightness-50 group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#FF6600] text-white grid place-items-center shadow-md">
+                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#B89416] text-white grid place-items-center shadow-md">
                     <Phone className="w-4 h-4" />
                   </div>
                 </figure>
@@ -272,16 +272,16 @@ export default function ContactPage() {
               {/* Card 3: Email Proposals */}
               <a
                 href={email ? `mailto:${email}` : "#"}
-                className="relative rounded-lg -skew-x-6 -translate-y-2 hover:-translate-y-1 hover:-translate-x-0 hover:skew-x-0 duration-500 w-72 h-44 p-2 bg-neutral-900 transition-all [box-shadow:12px_12px_0px_#FF6600] hover:[box-shadow:4px_4px_0px_#FF6600] block group border border-white/10"
+                className="relative rounded-lg -skew-x-6 -translate-y-2 hover:-translate-y-1 hover:-translate-x-0 hover:skew-x-0 duration-500 w-72 h-44 p-2 bg-neutral-900 transition-all [box-shadow:12px_12px_0px_#B89416] hover:[box-shadow:4px_4px_0px_#B89416] block group border border-white/10"
               >
                 <figure className="w-full h-full relative overflow-hidden rounded-lg">
                   <img
                     src="https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&w=600&q=80"
-                    alt="Email ConstructONS"
+                    alt="Email [Your Brand]s"
                     className="w-full h-full object-cover rounded-lg brightness-50 group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#FF6600] text-white grid place-items-center shadow-md">
+                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#B89416] text-white grid place-items-center shadow-md">
                     <Mail className="w-4 h-4" />
                   </div>
                 </figure>
@@ -314,10 +314,10 @@ export default function ContactPage() {
                   <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-500/10 px-3 py-1 rounded-full inline-block mb-2">
                     Quick Connect
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-[#000F1B]">
+                  <h3 className="text-base sm:text-lg font-bold text-[#252A2A]">
                     Scan QR code to start a WhatsApp chat
                   </h3>
-                  <p className="text-xs text-[#000F1B]/60 max-w-md mt-1 leading-relaxed">
+                  <p className="text-xs text-[#252A2A]/60 max-w-md mt-1 leading-relaxed">
                     Point your camera at the screen to start chatting instantly without saving contact details.
                   </p>
                 </div>
@@ -340,13 +340,13 @@ export default function ContactPage() {
         <section className="py-14 bg-slate-50 border-t border-black/5">
           <div className="container-wide">
             <div className="text-center max-w-xl mx-auto mb-10">
-              <div className="text-[10px] font-bold uppercase tracking-widest text-[#FF6600] mb-1">
+              <div className="text-[10px] font-bold uppercase tracking-widest text-[#B89416] mb-1">
                 Social Channels
               </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#000F1B] tracking-tight">
-                Follow ConstructONS Online
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#252A2A] tracking-tight">
+                Follow [Your Brand]s Online
               </h2>
-              <p className="text-xs text-[#000F1B]/60 mt-1">
+              <p className="text-xs text-[#252A2A]/60 mt-1">
                 Stay updated with our ongoing site construction photos, design trends, and architectural updates.
               </p>
             </div>
@@ -384,7 +384,7 @@ export default function ContactPage() {
                       {social.name}
                     </span>
 
-                    <span className="text-[10px] font-semibold text-[#000F1B]/50 mt-1 flex items-center gap-1">
+                    <span className="text-[10px] font-semibold text-[#252A2A]/50 mt-1 flex items-center gap-1">
                       <span>{hasValidUrl ? "Follow" : "Coming Soon"}</span>
                       {hasValidUrl && <ExternalLink className="w-2.5 h-2.5" />}
                     </span>
@@ -400,10 +400,10 @@ export default function ContactPage() {
           <div className="container-wide relative z-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
               <div>
-                <div className="text-[11px] font-bold uppercase tracking-widest text-[#FF6600] mb-2">
+                <div className="text-[11px] font-bold uppercase tracking-widest text-[#B89416] mb-2">
                   Head Office &amp; Studio
                 </div>
-                <h2 className="text-2xl sm:text-4xl font-extrabold text-[#000F1B] tracking-tight">
+                <h2 className="text-2xl sm:text-4xl font-extrabold text-[#252A2A] tracking-tight">
                   Visit Us in Person
                 </h2>
               </div>
@@ -412,7 +412,7 @@ export default function ContactPage() {
                 href={directMapUrl || "#"}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#FF6600] hover:underline"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#B89416] hover:underline"
               >
                 <Navigation className="w-4 h-4" />
                 <span>Get Directions</span>
@@ -425,7 +425,7 @@ export default function ContactPage() {
               {/* Google Maps iFrame */}
               {mapEmbed ? (
                 <iframe
-                  title="ConstructONS Office Location Map"
+                  title="[Your Brand]s Office Location Map"
                   src={mapEmbed}
                   className="absolute inset-0 w-full h-full border-0 transition-all duration-500"
                   loading="lazy"
@@ -444,20 +444,20 @@ export default function ContactPage() {
                 className="absolute top-4 left-4 z-20 bg-white px-3.5 py-2.5 rounded-2xl shadow-[0_4px_16px_rgba(0,0,0,0.12)] border border-slate-100 flex items-center gap-3 hover:shadow-xl transition-all duration-200 group"
               >
                 {/* Orange Map Pin Circle */}
-                <div className="w-7 h-7 rounded-full border-2 border-[#FF6600] grid place-items-center shrink-0">
-                  <div className="w-2.5 h-2.5 bg-[#FF6600] rounded-full" />
+                <div className="w-7 h-7 rounded-full border-2 border-[#B89416] grid place-items-center shrink-0">
+                  <div className="w-2.5 h-2.5 bg-[#B89416] rounded-full" />
                 </div>
 
                 {/* View Location Title + Brand Logo (with Power Button 'O') */}
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wide text-[#FF6600] leading-none mb-1">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wide text-[#B89416] leading-none mb-1">
                     VIEW LOCATION
                   </span>
                   <BrandLockup tone="light" size="sm" />
                 </div>
 
                 {/* External Link Arrow Icon on the right */}
-                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#FF6600] transition-colors ml-1" />
+                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#B89416] transition-colors ml-1" />
               </a>
             </div>
           </div>

@@ -37,7 +37,7 @@ def _get_branded_html_template(
                     <tr>
                         <td style="background-color: #000F1B; padding: 30px 40px; text-align: left; border-bottom: 4px solid #FF5A00;">
                             <h1 style="color: #FFFFFF; font-size: 24px; font-weight: 700; margin: 0;">
-                                Construct<span style="color: #FF5A00;">ONS</span><span style="font-size: 14px; vertical-align: super; color: #FF5A00;">™</span>
+                                YOUR<span style="color: #FF5A00;">BRAND</span><span style="font-size: 14px; vertical-align: super; color: #FF5A00;">™</span>
                             </h1>
                             <p style="color: #A6A6A6; font-size: 12px; margin: 4px 0 0 0; text-transform: uppercase; letter-spacing: 1px;">
                                 Everything Construction. Always On.
@@ -81,10 +81,10 @@ def _get_branded_html_template(
                     <tr>
                         <td style="background-color: #F9F9F9; padding: 24px 40px; text-align: center; border-top: 1px solid #EEEEEE; font-size: 12px; color: #777777;">
                             <p style="margin: 0 0 6px 0; font-weight: 600; color: #000F1B;">
-                                ConstructONS™ — India's First Integrated Construction Ecosystem
+                                Your Brand — India's First Integrated Construction Ecosystem
                             </p>
                             <p style="margin: 0; color: #999; font-size: 11px;">
-                                Automated notification from your ConstructONS Customer Portal.
+                                Automated notification from your Your Brand Customer Portal.
                             </p>
                         </td>
                     </tr>
@@ -147,7 +147,7 @@ async def send_project_notification_email(
     notification_title: str, notification_message: str, portal_link: str
 ):
     """Standard notification email (no attachment)."""
-    subject = f"[{project_title}] {notification_title} — ConstructONS"
+    subject = f"[{project_title}] {notification_title} — Your Brand"
     html = _get_branded_html_template(
         customer_name, project_title,
         notification_title, notification_message, portal_link
@@ -168,7 +168,7 @@ async def send_receipt_email(
     pdf_bytes: bytes = None,
 ):
     """Send payment receipt email with PDF attachment to client."""
-    subject = f"Payment Receipt {receipt_number} — {project_title} — ConstructONS"
+    subject = f"Payment Receipt {receipt_number} — {project_title} — Your Brand"
 
     invoice_line = (
         f"Linked to Proforma Invoice <strong>{linked_invoice_number}</strong>."

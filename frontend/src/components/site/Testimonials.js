@@ -27,7 +27,7 @@ const DEFAULT_TESTIMONIALS = [
     location: "Mumbai • Luxury Duplex",
     rating: 5,
     review:
-      "ConstructONS delivered on time and within budget. The whole family loves it.",
+      "[Your Brand]s delivered on time and within budget. The whole family loves it.",
   },
   {
     name: "Arjun Mehta",
@@ -65,7 +65,7 @@ export default function TestimonialsSection({
       name: t?.customer_name || t?.name || "Happy Customer",
       location: locationParts.length
         ? locationParts.join(" • ")
-        : t?.city || "ConstructONS Home",
+        : t?.city || "[Your Brand]s Home",
       rating: Number(t?.rating) || 5,
       review: t?.quote || t?.review || t?.content || t?.message || "",
       avatar: t?.avatar || null,
@@ -82,38 +82,38 @@ export default function TestimonialsSection({
           {/* LEFT CONTENT COLUMN */}
           <div className="lg:col-span-4 z-10 bg-[#F8F9FA]">
             <div className="flex items-center gap-2 mb-3">
-              <span className="h-[2px] w-6 bg-[#FF6600]" />
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#FF6600]">
+              <span className="h-[2px] w-6 bg-[#B89416]" />
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#B89416]">
                 TESTIMONIALS
               </span>
             </div>
 
-            <h2 className="text-3xl font-extrabold tracking-tight text-[#111111] sm:text-4xl lg:text-5xl leading-[1.15]">
+            <h2 className="text-3xl font-extrabold tracking-tight text-[#252A2A] sm:text-4xl lg:text-5xl leading-[1.15]">
               Happy Families. <br />
-              <span className="bg-gradient-to-r from-[#FF6600] to-[#FF0000] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#B89416] to-[#B89416] bg-clip-text text-transparent">
                 Happy Homes.
               </span>
             </h2>
 
             <p className="mt-4 text-sm text-slate-600 sm:text-base max-w-md">
               Real families. Real homes. Real stories of transparent
-              construction with ConstructONS.
+              construction with [Your Brand]s.
             </p>
 
-            <div className="mt-8 inline-flex items-center gap-4 rounded-2xl bg-[#111111] px-5 py-3.5 text-white shadow-xl w-fit">
+            <div className="mt-8 inline-flex items-center gap-4 rounded-2xl bg-[#252A2A] px-5 py-3.5 text-white shadow-xl w-fit">
               <div className="flex items-baseline gap-1">
                 <span className="text-2xl font-black text-white">4.5</span>
-                <span className="text-xs font-bold text-[#FF6600]">/5</span>
+                <span className="text-xs font-bold text-[#B89416]">/5</span>
               </div>
 
               <div className="h-7 w-[1px] bg-white/20" />
 
               <div>
-                <div className="flex text-[#FF6600] gap-0.5">
+                <div className="flex text-[#B89416] gap-0.5">
                   {[...Array(4)].map((_, i) => (
                     <Star
                       key={i}
-                      className="h-4 w-4 fill-[#FF6600] text-[#FF6600]"
+                      className="h-4 w-4 fill-[#B89416] text-[#B89416]"
                     />
                   ))}
                 </div>
@@ -179,7 +179,7 @@ export default function TestimonialsSection({
                         </div>
 
                         <div>
-                          <h3 className="text-base font-extrabold text-[#111111] leading-snug">
+                          <h3 className="text-base font-extrabold text-[#252A2A] leading-snug">
                             {item.name}
                           </h3>
                           <p className="text-xs font-medium text-slate-400">
@@ -188,14 +188,14 @@ export default function TestimonialsSection({
                         </div>
                       </div>
 
-                      <Quote className="h-6 w-6 text-[#FF6600]/30 shrink-0" />
+                      <Quote className="h-6 w-6 text-[#B89416]/30 shrink-0" />
                     </div>
 
-                    <div className="flex text-[#FF6600] gap-0.5 mb-3">
+                    <div className="flex text-[#B89416] gap-0.5 mb-3">
                       {[...Array(item.rating || 5)].map((_, i) => (
                         <Star
                           key={i}
-                          className="h-4 w-4 fill-[#FF6600] text-[#FF6600]"
+                          className="h-4 w-4 fill-[#B89416] text-[#B89416]"
                         />
                       ))}
                     </div>

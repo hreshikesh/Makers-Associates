@@ -133,10 +133,10 @@ export default function DocumentsTab({ project, onSaved }) {
       {!showForm && (
         <div className="flex items-center justify-between bg-white p-3.5 rounded-xl border border-gray-200 shadow-sm">
           <div>
-            <h3 className="text-xs font-bold text-[#000F1B]">Document Vault</h3>
+            <h3 className="text-xs font-bold text-[#252A2A]">Document Vault</h3>
             <p className="text-[10px] text-gray-500">{documents.length} files stored</p>
           </div>
-          <button onClick={openNew} className="inline-flex items-center gap-1.5 bg-[#000F1B] hover:bg-[#FF6600] text-white px-4 py-2 rounded-lg text-[10px] font-bold transition shadow-sm">
+          <button onClick={openNew} className="inline-flex items-center gap-1.5 bg-[#252A2A] hover:bg-[#B89416] text-white px-4 py-2 rounded-lg text-[10px] font-bold transition shadow-sm">
             <Plus className="w-3.5 h-3.5" /> Upload Document
           </button>
         </div>
@@ -145,24 +145,24 @@ export default function DocumentsTab({ project, onSaved }) {
       {showForm && (
         <div className="bg-gray-50 border border-gray-200 p-4 rounded-xl shadow-sm animate-in fade-in">
           <div className="flex justify-between items-center mb-3">
-            <h3 className="text-xs font-bold text-[#000F1B]">{editingId ? "Edit Document Metadata" : "Upload New Document"}</h3>
+            <h3 className="text-xs font-bold text-[#252A2A]">{editingId ? "Edit Document Metadata" : "Upload New Document"}</h3>
             <button onClick={() => setShowForm(false)} className="p-1 hover:bg-gray-200 rounded text-gray-500"><X className="w-4 h-4"/></button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            <div className="sm:col-span-2"><label className="block text-[9px] font-bold text-gray-500 uppercase mb-1">Title *</label><input value={form.name} onChange={e=>setForm({...form, name: e.target.value})} className="w-full px-2.5 py-1.5 text-xs border rounded-lg outline-none focus:border-[#FF6600]" placeholder="e.g. Approved Floor Plan" /></div>
-            <div><label className="block text-[9px] font-bold text-gray-500 uppercase mb-1">Category</label><select value={form.category} onChange={e=>setForm({...form, category: e.target.value})} className="w-full px-2.5 py-1.5 text-xs border rounded-lg outline-none focus:border-[#FF6600] bg-white"><option value="">Select...</option>{CATEGORIES.map(c=><option key={c}>{c}</option>)}</select></div>
+            <div className="sm:col-span-2"><label className="block text-[9px] font-bold text-gray-500 uppercase mb-1">Title *</label><input value={form.name} onChange={e=>setForm({...form, name: e.target.value})} className="w-full px-2.5 py-1.5 text-xs border rounded-lg outline-none focus:border-[#B89416]" placeholder="e.g. Approved Floor Plan" /></div>
+            <div><label className="block text-[9px] font-bold text-gray-500 uppercase mb-1">Category</label><select value={form.category} onChange={e=>setForm({...form, category: e.target.value})} className="w-full px-2.5 py-1.5 text-xs border rounded-lg outline-none focus:border-[#B89416] bg-white"><option value="">Select...</option>{CATEGORIES.map(c=><option key={c}>{c}</option>)}</select></div>
             
             {/* Dynamic Stage Dropdown */}
             <div>
               <label className="block text-[9px] font-bold text-gray-500 uppercase mb-1">Stage</label>
-              <select value={form.stage} onChange={e=>setForm({...form, stage: e.target.value})} className="w-full px-2.5 py-1.5 text-xs border rounded-lg outline-none focus:border-[#FF6600] bg-white">
+              <select value={form.stage} onChange={e=>setForm({...form, stage: e.target.value})} className="w-full px-2.5 py-1.5 text-xs border rounded-lg outline-none focus:border-[#B89416] bg-white">
                 <option value="General">General</option>
                 {dynamicStages.map(s => <option key={s} value={s}>{s}</option>)}
               </select>
             </div>
             
-            <div><label className="block text-[9px] font-bold text-gray-500 uppercase mb-1">Status</label><select value={form.status} onChange={e=>setForm({...form, status: e.target.value})} className="w-full px-2.5 py-1.5 text-xs border rounded-lg outline-none focus:border-[#FF6600] bg-white">{STATUSES.map(s=><option key={s}>{s}</option>)}</select></div>
-            <div className="sm:col-span-3"><label className="block text-[9px] font-bold text-gray-500 uppercase mb-1">Description</label><input value={form.description} onChange={e=>setForm({...form, description: e.target.value})} className="w-full px-2.5 py-1.5 text-xs border rounded-lg outline-none focus:border-[#FF6600]" placeholder="Optional notes..." /></div>
+            <div><label className="block text-[9px] font-bold text-gray-500 uppercase mb-1">Status</label><select value={form.status} onChange={e=>setForm({...form, status: e.target.value})} className="w-full px-2.5 py-1.5 text-xs border rounded-lg outline-none focus:border-[#B89416] bg-white">{STATUSES.map(s=><option key={s}>{s}</option>)}</select></div>
+            <div className="sm:col-span-3"><label className="block text-[9px] font-bold text-gray-500 uppercase mb-1">Description</label><input value={form.description} onChange={e=>setForm({...form, description: e.target.value})} className="w-full px-2.5 py-1.5 text-xs border rounded-lg outline-none focus:border-[#B89416]" placeholder="Optional notes..." /></div>
             {!editingId && (
               <div className="sm:col-span-4 flex items-center gap-3 pt-2">
                 <label className="cursor-pointer bg-white border border-gray-300 px-4 py-2 rounded-lg text-[10px] font-bold text-gray-700 hover:bg-gray-100 flex items-center gap-1.5 shadow-sm">
@@ -175,7 +175,7 @@ export default function DocumentsTab({ project, onSaved }) {
           </div>
           <div className="flex justify-end gap-2 pt-3 mt-3 border-t border-gray-200">
             <button onClick={() => setShowForm(false)} className="px-4 py-1.5 text-[10px] font-bold text-gray-600 hover:bg-gray-200 rounded-lg">Cancel</button>
-            <button onClick={handleSave} disabled={saving || uploading} className="px-5 py-1.5 text-[10px] font-bold bg-[#000F1B] hover:bg-[#FF6600] text-white rounded-lg flex items-center gap-1 shadow-sm transition">
+            <button onClick={handleSave} disabled={saving || uploading} className="px-5 py-1.5 text-[10px] font-bold bg-[#252A2A] hover:bg-[#B89416] text-white rounded-lg flex items-center gap-1 shadow-sm transition">
               {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />} {editingId ? "Update Metadata" : "Save Document"}
             </button>
           </div>
@@ -208,10 +208,10 @@ export default function DocumentsTab({ project, onSaved }) {
                         <td className="py-2.5 px-3">
                           <div className="flex items-center gap-2">
                             <div className="w-7 h-7 rounded bg-gray-100 border border-gray-200 grid place-items-center shrink-0">
-                              <FileText className="w-3.5 h-3.5 text-[#FF6600]" />
+                              <FileText className="w-3.5 h-3.5 text-[#B89416]" />
                             </div>
                             <div>
-                              <div className="font-bold text-[#000F1B] max-w-[180px] truncate" title={d.name}>{d.name}</div>
+                              <div className="font-bold text-[#252A2A] max-w-[180px] truncate" title={d.name}>{d.name}</div>
                               {d.description && <div className="text-[9px] text-gray-500 truncate max-w-[180px]">{d.description}</div>}
                             </div>
                           </div>
@@ -233,7 +233,7 @@ export default function DocumentsTab({ project, onSaved }) {
                           <div className="flex items-center justify-end gap-1">
                             <a href={resolveMediaUrl(latest.url)} target="_blank" rel="noreferrer" className="p-1.5 text-gray-500 hover:text-blue-600 transition" title="View"><ExternalLink className="w-3.5 h-3.5"/></a>
                             <button onClick={() => { setEditingId(d.id); setForm({ ...d }); setShowForm(true); }} className="p-1.5 text-gray-500 hover:text-emerald-600 transition" title="Edit Meta"><Pencil className="w-3.5 h-3.5"/></button>
-                            <label className="p-1.5 text-gray-500 hover:text-[#FF6600] transition cursor-pointer" title="Upload Revision">
+                            <label className="p-1.5 text-gray-500 hover:text-[#B89416] transition cursor-pointer" title="Upload Revision">
                               {revisingId === d.id ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <UploadCloud className="w-3.5 h-3.5"/>}
                               <input type="file" className="hidden" accept="image/*,application/pdf" onChange={(e) => handleUploadRevision(d.id, e)} disabled={revisingId === d.id} />
                             </label>

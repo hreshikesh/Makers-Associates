@@ -113,10 +113,10 @@ async def _execute_chat_with_gemini(
 
 
 # ============================================================================
-# 1. PUBLIC WEBSITE CHATBOT — ConstructONS AI Assist
+# 1. PUBLIC WEBSITE CHATBOT — Your Brand AI Assist
 # ============================================================================
 
-PUBLIC_BOT_SYSTEM_PROMPT = """You are 'ConstructONS AI Assist' — the friendly, expert AI guide for ConstructONS (India's First Integrated Construction Ecosystem).
+PUBLIC_BOT_SYSTEM_PROMPT = """You are 'Your Brand AI Assist' — the friendly, expert AI guide for Your Brand (India's First Integrated Construction Ecosystem).
 
 Persona & Style Rules:
 - Warm, confident, professional, and clear.
@@ -133,7 +133,7 @@ async def chat_public_gemini(
     if not _init_gemini():
         return (
             "I'm currently undergoing scheduled maintenance. Please contact"
-            " our team at hello@constructons.in or call us directly!"
+            " our team at hello@Your Brand.in or call us directly!"
         )
 
     try:
@@ -144,7 +144,7 @@ async def chat_public_gemini(
             gemini_history=gemini_history,
         )
         if res == "QUOTA_EXCEEDED":
-            return "ConstructONS AI Assist is currently experiencing high request volume. Please explore our Home Packages or contact our team at hello@constructons.in!"
+            return "Your Brand AI Assist is currently experiencing high request volume. Please explore our Home Packages or contact our team at hello@Your Brand.in!"
         return res
     except Exception as e:
         logger.error(f"[Gemini Public Chat Error]: {e}")
@@ -155,7 +155,7 @@ async def chat_public_gemini(
 
 
 # ============================================================================
-# 2. PORTAL PROJECT ADVISOR — ConstructONS Project Advisor
+# 2. PORTAL PROJECT ADVISOR — Your Brand Project Advisor
 # ============================================================================
 
 
@@ -175,7 +175,7 @@ async def chat_portal_gemini(
         ctx_str = json.dumps(project_context, indent=2, default=str)
 
         system_instruction = (
-            "You are the 'ConstructONS Project Advisor' for this homeowner's active project.\n\n"
+            "You are the 'Your Brand Project Advisor' for this homeowner's active project.\n\n"
             "LIVE PROJECT DATA (AUTHORITATIVE SOURCE OF TRUTH):\n"
             f"```json\n{ctx_str}\n```\n\n"
             "RESPONSE & FORMATTING RULES:\n"
@@ -208,7 +208,7 @@ async def chat_portal_gemini(
 # ============================================================================
 
 BRAND_SYSTEM_PROMPT = (
-    "You are the senior copy chief for ConstructONS — India's premium AI-powered "
+    "You are the senior copy chief for Your Brand — India's premium AI-powered "
     "home construction brand. Voice: confident, transparent, trustworthy, warm; "
     "never salesy or hype-y. Audience: aspirational Indian homeowners (30-55) "
     "who value quality, on-time delivery and no hidden costs.\n\n"
@@ -270,7 +270,7 @@ async def rewrite_copy(text: str, purpose: str = "copy", tone: str = "on-brand")
 # ============================================================================
 
 QUOTE_SYSTEM_PROMPT = (
-    "You are a senior estimator at ConstructONS — a premium Indian home "
+    "You are a senior estimator at Your Brand — a premium Indian home "
     "construction brand. Given client requirements, produce a realistic, "
     "buildable, budget-aligned custom quotation as STRICT JSON.\n\n"
     "PRICING RULES (critical):\n"

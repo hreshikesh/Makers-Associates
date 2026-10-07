@@ -1,16 +1,9 @@
 import React, { useState, useMemo, useRef } from "react";
 import { Sun, Moon, Compass, ShieldCheck } from "lucide-react";
 
-/* ============================================================================
-   SUN-PATH & VASTU SIMULATOR
-   - Real solar geometry for Bengaluru (12.97°N, 77.59°E): declination,
-     equation of time, longitude correction, hour angle, altitude, azimuth.
-   - Direct-beam irradiance (Meinel air-mass model) on every wall and the roof.
-   - Real projected shadows and a true 3D sun-path dome, drawn with a small
-     orthographic 3D engine (drag to orbit). No extra libraries.
-============================================================================ */
+
 const LAT = 12.9716, LON = 77.5946, RAD = Math.PI / 180;
-const NAVY = "#000F1B", ORANGE = "#FF6600";
+const NAVY = "#252A2A", ORANGE = "#B89416";
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const CARD = ["North", "East", "South", "West"];
 const WALL = ["Front", "Right", "Back", "Left"];
@@ -131,7 +124,7 @@ export default function SunPathSimulator() {
     const s = sunVec(pos), up = pos.alt > 0;
     const dayK = clamp((altD + 4) / 14, 0, 1), glow = clamp(1 - Math.abs(altD - 1) / 9, 0, 1);
     const skyTop = mix(mix("#00060C", "#38BDF8", dayK), "#7A3510", glow * 0.35);
-    const skyBot = mix(mix("#0B1E30", "#DCEFFB", dayK), "#FF7A2E", glow * 0.75);
+    const skyBot = mix(mix("#0B1E30", "#DCEFFB", dayK), "#F2D66D", glow * 0.75);
     const warm = clamp(1 - altD / 35, 0, 1);
     const lit = mix("#FFFFFF", "#FFB27A", warm), base = mix("#0F1B28", "#2A3B4E", dayK);
 
@@ -206,9 +199,9 @@ export default function SunPathSimulator() {
 
       {/* ===== LEFT: 3D scene + controls + chart ===== */}
       <div className="lg:col-span-7 min-w-0">
-        <div className="rounded-2xl overflow-hidden bg-[#000F1B] p-1.5 sm:p-2 shadow-inner">
+        <div className="rounded-2xl overflow-hidden bg-[#252A2A] p-1.5 sm:p-2 shadow-inner">
           <div className="relative rounded-xl overflow-hidden">
-            <svg viewBox={`0 0 ${VW} ${VH}`} className="w-full block cursor-grab active:cursor-grabbing select-none outline-none focus-visible:ring-2 focus-visible:ring-[#FF6600]"
+            <svg viewBox={`0 0 ${VW} ${VH}`} className="w-full block cursor-grab active:cursor-grabbing select-none outline-none focus-visible:ring-2 focus-visible:ring-[#B89416]"
               style={{ touchAction: "pan-y" }} tabIndex={0} role="img" aria-label={`3D model of a ${facing.toLowerCase()}-facing house on ${dateLabel(day)} at ${fmtT(clock)}. Drag to rotate.`}
               onPointerDown={onDown} onPointerMove={onMove} onPointerUp={() => (drag.current = null)} onPointerCancel={() => (drag.current = null)} onKeyDown={onKey}>
               <defs>
@@ -248,13 +241,13 @@ export default function SunPathSimulator() {
             </svg>
 
             {/* HUD */}
-            <div className="absolute top-3 left-3 bg-[#000F1B]/70 backdrop-blur rounded-xl px-3 py-2 text-white pointer-events-none">
+            <div className="absolute top-3 left-3 bg-[#252A2A]/70 backdrop-blur rounded-xl px-3 py-2 text-white pointer-events-none">
               <div className="text-lg sm:text-2xl font-bold leading-none">{fmtT(clock)}</div>
               <div className="text-[10px] sm:text-xs text-white/70 mt-1">{pos.alt > 0 ? `Altitude ${altD.toFixed(0)}° · ${compass8(azD)} ${azD.toFixed(0)}°` : "Sun below horizon"}</div>
             </div>
-            <div className="absolute top-3 right-3 flex gap-1 bg-[#000F1B]/70 backdrop-blur rounded-full p-1">
+            <div className="absolute top-3 right-3 flex gap-1 bg-[#252A2A]/70 backdrop-blur rounded-full p-1">
               {Object.entries(VIEWS).map(([k, [yw, pt]]) => (
-                <button key={k} onClick={() => { setYaw(yw); setPitch(pt); }} className="px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-bold text-white/80 hover:bg-white hover:text-[#000F1B] transition cursor-pointer">{k}</button>
+                <button key={k} onClick={() => { setYaw(yw); setPitch(pt); }} className="px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-bold text-white/80 hover:bg-white hover:text-[#252A2A] transition cursor-pointer">{k}</button>
               ))}
             </div>
             <div className="absolute bottom-2 left-3 text-[10px] text-white/60 pointer-events-none">Drag to rotate</div>
@@ -275,13 +268,13 @@ export default function SunPathSimulator() {
         {/* Date */}
         <div className="mt-5">
           <div className="flex items-center justify-between mb-3">
-            <div className="text-[10px] font-bold uppercase tracking-widest text-[#111111]/50">2. Date · {dateLabel(day)}</div>
-            <div className="text-[11px] font-semibold text-[#111111]/50">Day length {Math.floor(info.len)}h {Math.round((info.len % 1) * 60)}m</div>
+            <div className="text-[10px] font-bold uppercase tracking-widest text-[#252A2A]/50">2. Date · {dateLabel(day)}</div>
+            <div className="text-[11px] font-semibold text-[#252A2A]/50">Day length {Math.floor(info.len)}h {Math.round((info.len % 1) * 60)}m</div>
           </div>
           <div className="sp-scroll flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
             {DATES.map(([l, n]) => {
               const N = n ?? dayOfYear(new Date()), on = day === N;
-              return <button key={l} onClick={() => setDay(N)} className={`shrink-0 px-4 py-2 rounded-full text-xs font-bold border transition cursor-pointer ${on ? "bg-[#000F1B] text-white border-[#000F1B]" : "bg-white border-black/10 hover:border-[#FF6600] hover:text-[#FF6600]"}`}>{l}</button>;
+              return <button key={l} onClick={() => setDay(N)} className={`shrink-0 px-4 py-2 rounded-full text-xs font-bold border transition cursor-pointer ${on ? "bg-[#252A2A] text-white border-[#252A2A]" : "bg-white border-black/10 hover:border-[#B89416] hover:text-[#B89416]"}`}>{l}</button>;
             })}
           </div>
           <input type="range" min="1" max="365" value={day} onChange={(e) => setDay(parseInt(e.target.value))} aria-label="Day of year" className="sp-range mt-4"
@@ -291,16 +284,16 @@ export default function SunPathSimulator() {
         {/* Chart */}
         <div className="mt-6 rounded-2xl bg-[#F9FAFB] border border-black/5 p-4 sm:p-5">
           <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <div className="text-[10px] font-bold uppercase tracking-widest text-[#111111]/50">Direct sun on each wall (W/m²)</div>
-            <div className="flex gap-3 text-[10px] font-semibold text-[#111111]/60">{["Front", "Right", "Back", "Left"].map((l, i) => <span key={l} className="inline-flex items-center gap-1"><i className="inline-block w-3 h-0.5" style={{ background: chart[i][1] }} />{l}</span>)}</div>
+            <div className="text-[10px] font-bold uppercase tracking-widest text-[#252A2A]/50">Direct sun on each wall (W/m²)</div>
+            <div className="flex gap-3 text-[10px] font-semibold text-[#252A2A]/60">{["Front", "Right", "Back", "Left"].map((l, i) => <span key={l} className="inline-flex items-center gap-1"><i className="inline-block w-3 h-0.5" style={{ background: chart[i][1] }} />{l}</span>)}</div>
           </div>
           <svg viewBox="0 0 480 96" className="w-full" aria-hidden="true">
-            <rect x="0" y="0" width={((info.rise - 5) / 14) * 480} height="76" fill="#000F1B" opacity=".06" />
-            <rect x={((info.set - 5) / 14) * 480} y="0" width={480 - ((info.set - 5) / 14) * 480} height="76" fill="#000F1B" opacity=".06" />
-            {[0, 500, 1000].map((v) => <line key={v} x1="0" x2="480" y1={74 - (v / 1000) * 66} y2={74 - (v / 1000) * 66} stroke="#000F1B" strokeOpacity=".08" />)}
+            <rect x="0" y="0" width={((info.rise - 5) / 14) * 480} height="76" fill="#252A2A" opacity=".06" />
+            <rect x={((info.set - 5) / 14) * 480} y="0" width={480 - ((info.set - 5) / 14) * 480} height="76" fill="#252A2A" opacity=".06" />
+            {[0, 500, 1000].map((v) => <line key={v} x1="0" x2="480" y1={74 - (v / 1000) * 66} y2={74 - (v / 1000) * 66} stroke="#252A2A" strokeOpacity=".08" />)}
             {chart.map(([d, col, w, dash], i) => <path key={i} d={d} fill="none" stroke={col} strokeWidth={w} strokeDasharray={dash} strokeLinecap="round" />)}
             <line x1={xNow} x2={xNow} y1="0" y2="76" stroke={NAVY} strokeWidth="1.5" />
-            {[6, 9, 12, 15, 18].map((h) => <text key={h} x={((h - 5) / 14) * 480} y="92" fontSize="10" textAnchor="middle" fill="#000F1B" opacity=".45">{h % 12 || 12}{h < 12 ? "a" : "p"}</text>)}
+            {[6, 9, 12, 15, 18].map((h) => <text key={h} x={((h - 5) / 14) * 480} y="92" fontSize="10" textAnchor="middle" fill="#252A2A" opacity=".45">{h % 12 || 12}{h < 12 ? "a" : "p"}</text>)}
           </svg>
         </div>
       </div>
@@ -308,11 +301,11 @@ export default function SunPathSimulator() {
       {/* ===== RIGHT: facing + analysis ===== */}
       <div className="lg:col-span-5 flex flex-col gap-5 min-w-0">
         <div>
-          <div className="text-[10px] font-bold uppercase tracking-widest text-[#111111]/50 mb-3">1. Select plot entrance</div>
+          <div className="text-[10px] font-bold uppercase tracking-widest text-[#252A2A]/50 mb-3">1. Select plot entrance</div>
           <div className="grid grid-cols-4 gap-2">
             {Object.keys(FACINGS).map((f) => (
               <button key={f} onClick={() => setFacing(f)} aria-pressed={facing === f}
-                className={`py-3 rounded-xl text-xs font-bold border transition cursor-pointer ${facing === f ? "bg-[#000F1B] text-white border-[#000F1B]" : "bg-white border-black/10 hover:border-[#FF6600] hover:text-[#FF6600]"}`}>{f}</button>
+                className={`py-3 rounded-xl text-xs font-bold border transition cursor-pointer ${facing === f ? "bg-[#252A2A] text-white border-[#252A2A]" : "bg-white border-black/10 hover:border-[#B89416] hover:text-[#B89416]"}`}>{f}</button>
             ))}
           </div>
         </div>
@@ -320,25 +313,25 @@ export default function SunPathSimulator() {
         <div className="grid grid-cols-2 gap-3">
           {[["Altitude", pos.alt > 0 ? `${altD.toFixed(1)}°` : "Below horizon"], ["Azimuth", `${azD.toFixed(0)}° ${compass8(azD)}`], ["Sunrise", fmtT(info.rise)], ["Sunset", fmtT(info.set)]].map(([l, v]) => (
             <div key={l} className="rounded-xl bg-[#F9FAFB] border border-black/5 p-3">
-              <div className="text-[10px] font-bold uppercase tracking-wider text-[#111111]/40">{l}</div>
-              <div className="text-base font-bold text-[#000F1B] mt-0.5">{v}</div>
+              <div className="text-[10px] font-bold uppercase tracking-wider text-[#252A2A]/40">{l}</div>
+              <div className="text-base font-bold text-[#252A2A] mt-0.5">{v}</div>
             </div>
           ))}
         </div>
 
         <div className="rounded-2xl bg-[#F9FAFB] border border-black/5 p-4 sm:p-5">
-          <div className="text-[10px] font-bold uppercase tracking-widest text-[#111111]/50 mb-4">3. Wall-by-wall analysis</div>
+          <div className="text-[10px] font-bold uppercase tracking-widest text-[#252A2A]/50 mb-4">3. Wall-by-wall analysis</div>
           <div className="space-y-4">
             {rows.map((r) => (
               <div key={r.label}>
                 <div className="flex justify-between items-baseline text-xs mb-1.5 gap-2">
-                  <span className="font-bold text-[#000F1B]">{r.label} <span className="font-medium text-[#111111]/50">· faces {r.dir}</span></span>
-                  <span className="font-bold text-[#000F1B] tabular-nums">{Math.round(r.now)} <span className="font-medium text-[#111111]/40">W/m²</span></span>
+                  <span className="font-bold text-[#252A2A]">{r.label} <span className="font-medium text-[#252A2A]/50">· faces {r.dir}</span></span>
+                  <span className="font-bold text-[#252A2A] tabular-nums">{Math.round(r.now)} <span className="font-medium text-[#252A2A]/40">W/m²</span></span>
                 </div>
                 <div className="h-2.5 rounded-full bg-black/10 overflow-hidden">
                   <div className="h-full rounded-full transition-[width] duration-200" style={{ width: `${clamp(r.now / 1000, 0, 1) * 100}%`, background: r.i === 0 ? ORANGE : NAVY }} />
                 </div>
-                <div className="text-[11px] text-[#111111]/50 mt-1.5">
+                <div className="text-[11px] text-[#252A2A]/50 mt-1.5">
                   {r.hrs > 0 ? `Direct sun ${fmtT(r.first)}–${fmtT(r.last)} · ${r.hrs.toFixed(1)} h · ${r.kwh.toFixed(1)} kWh/m²` : "No direct sun today"}
                 </div>
               </div>
@@ -356,7 +349,7 @@ export default function SunPathSimulator() {
             </p>
           </div>
         </div>
-        <p className="text-[10px] text-[#111111]/40 leading-relaxed flex items-start gap-1.5"><Compass className="w-3.5 h-3.5 shrink-0 mt-px" /> Bengaluru 12.97°N, 77.59°E. Times in IST. Clear-sky direct-beam estimates for planning, not a substitute for a full energy model.</p>
+        <p className="text-[10px] text-[#252A2A]/40 leading-relaxed flex items-start gap-1.5"><Compass className="w-3.5 h-3.5 shrink-0 mt-px" /> Bengaluru 12.97°N, 77.59°E. Times in IST. Clear-sky direct-beam estimates for planning, not a substitute for a full energy model.</p>
       </div>
     </div>
   );

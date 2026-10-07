@@ -53,7 +53,7 @@ export function GradientBlob({ className = "" }) {
   return (
     <div
       className={`pointer-events-none absolute rounded-full blur-3xl opacity-40 ${className}`}
-      style={{ background: "radial-gradient(closest-side, #FF6600, transparent)" }}
+      style={{ background: "radial-gradient(closest-side, #B89416, transparent)" }}
     />
   );
 }

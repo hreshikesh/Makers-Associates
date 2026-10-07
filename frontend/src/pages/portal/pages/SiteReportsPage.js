@@ -102,9 +102,9 @@ export default function SiteReportsPage() {
   if (!project) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] text-center font-['Poppins']">
-        <ClipboardList className="w-12 h-12 text-[#111111]/20 mb-4" />
-        <h2 className="text-xl font-bold text-[#000F1B]">Activity Data Pending</h2>
-        <p className="text-sm text-[#111111]/50 mt-1">Awaiting active project linkage.</p>
+        <ClipboardList className="w-12 h-12 text-[#252A2A]/20 mb-4" />
+        <h2 className="text-xl font-bold text-[#252A2A]">Activity Data Pending</h2>
+        <p className="text-sm text-[#252A2A]/50 mt-1">Awaiting active project linkage.</p>
       </div>
     );
   }
@@ -112,7 +112,7 @@ export default function SiteReportsPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
-        <Loader2 className="w-8 h-8 animate-spin text-[#FF6600]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#B89416]" />
       </div>
     );
   }
@@ -124,15 +124,15 @@ export default function SiteReportsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-xl bg-[#000F1B] grid place-items-center shrink-0">
+          <div className="w-12 h-12 rounded-xl bg-[#252A2A] grid place-items-center shrink-0">
             <ClipboardList className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#000F1B] tracking-tight">Project Activity Feed</h1>
-            <p className="text-sm text-[#111111]/60 mt-0.5">Live chronological audit trail of all project events.</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#252A2A] tracking-tight">Project Activity Feed</h1>
+            <p className="text-sm text-[#252A2A]/60 mt-0.5">Live chronological audit trail of all project events.</p>
           </div>
         </div>
-        <div className="text-right text-xs font-bold text-[#FF6600] bg-white border border-[#FF6600]/20 px-4 py-2.5 rounded-xl shadow-sm">
+        <div className="text-right text-xs font-bold text-[#B89416] bg-white border border-[#B89416]/20 px-4 py-2.5 rounded-xl shadow-sm">
           {rawActivities.length} Total Events
         </div>
       </div>
@@ -142,13 +142,13 @@ export default function SiteReportsPage() {
         
         {/* Search */}
         <div className="relative w-full sm:max-w-md">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#111111]/40" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#252A2A]/40" />
           <input 
             type="text" 
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search activities or names..." 
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-black/10 bg-[#F5F6F8] text-xs font-medium focus:outline-none focus:ring-2 focus:ring-[#FF6600] focus:bg-white transition"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-black/10 bg-[#F5F6F8] text-xs font-medium focus:outline-none focus:ring-2 focus:ring-[#B89416] focus:bg-white transition"
           />
         </div>
 
@@ -158,11 +158,11 @@ export default function SiteReportsPage() {
             onClick={() => setIsFilterOpen(!isFilterOpen)}
             className="w-full sm:w-auto flex items-center justify-between gap-2 px-4 py-2.5 rounded-xl border border-black/10 bg-white hover:bg-[#F5F6F8] transition"
           >
-            <div className="flex items-center gap-2 text-xs font-bold text-[#000F1B]">
-              <Filter className="w-3.5 h-3.5 text-[#FF6600]" /> 
+            <div className="flex items-center gap-2 text-xs font-bold text-[#252A2A]">
+              <Filter className="w-3.5 h-3.5 text-[#B89416]" /> 
               {filter === "All" ? "Filter Feed" : filter}
             </div>
-            <ChevronDown className={`w-4 h-4 text-[#111111]/40 transition ${isFilterOpen ? 'rotate-180' : ''}`} />
+            <ChevronDown className={`w-4 h-4 text-[#252A2A]/40 transition ${isFilterOpen ? 'rotate-180' : ''}`} />
           </button>
           
           {isFilterOpen && (
@@ -171,7 +171,7 @@ export default function SiteReportsPage() {
                 <button
                   key={cat}
                   onClick={() => { setFilter(cat); setIsFilterOpen(false); }}
-                  className={`w-full text-left px-4 py-2.5 text-xs font-semibold hover:bg-[#F2F2F2] transition ${filter === cat ? 'text-[#FF6600] bg-[#FF6600]/5' : 'text-[#000F1B]'}`}
+                  className={`w-full text-left px-4 py-2.5 text-xs font-semibold hover:bg-[#F2F2F2] transition ${filter === cat ? 'text-[#B89416] bg-[#B89416]/5' : 'text-[#252A2A]'}`}
                 >
                   {cat}
                 </button>
@@ -185,9 +185,9 @@ export default function SiteReportsPage() {
       <div className="space-y-8 pl-2 sm:pl-4 pt-4">
         {groupedActivities.length === 0 ? (
           <div className="text-center py-16 bg-white rounded-2xl border border-black/5 shadow-sm">
-            <ClipboardList className="w-10 h-10 text-[#111111]/20 mx-auto mb-3" />
-            <h3 className="text-base font-bold text-[#000F1B]">No Activities Found</h3>
-            <p className="text-xs text-[#111111]/50 mt-1">Try adjusting your search or filters.</p>
+            <ClipboardList className="w-10 h-10 text-[#252A2A]/20 mx-auto mb-3" />
+            <h3 className="text-base font-bold text-[#252A2A]">No Activities Found</h3>
+            <p className="text-xs text-[#252A2A]/50 mt-1">Try adjusting your search or filters.</p>
           </div>
         ) : (
           groupedActivities.map((group) => (
@@ -195,7 +195,7 @@ export default function SiteReportsPage() {
               
               {/* Date Header Badge */}
               <div className="sticky top-[130px] z-10 inline-block bg-[#F5F6F8] py-1.5 pr-4 mb-4">
-                <span className="px-3.5 py-1.5 rounded-lg bg-white border border-black/10 text-[10px] font-bold text-[#FF6600] uppercase tracking-widest shadow-sm">
+                <span className="px-3.5 py-1.5 rounded-lg bg-white border border-black/10 text-[10px] font-bold text-[#B89416] uppercase tracking-widest shadow-sm">
                   {group.displayDate}
                 </span>
               </div>
@@ -227,7 +227,7 @@ function ActivityFeedItem({ act }) {
   if (mod === "Quality") { Icon = ShieldCheck; color = "text-indigo-600"; bg = "bg-indigo-50"; borderColor = "border-indigo-200"; }
   if (mod === "Team") { Icon = UserPlus; color = "text-emerald-600"; bg = "bg-emerald-50"; borderColor = "border-emerald-200"; }
   if (mod === "Payments") { Icon = IndianRupee; color = "text-emerald-600"; bg = "bg-emerald-50"; borderColor = "border-emerald-200"; }
-  if (mod === "Progress") { Icon = HardHat; color = "text-[#FF6600]"; bg = "bg-[#FF6600]/10"; borderColor = "border-[#FF6600]/20"; }
+  if (mod === "Progress") { Icon = HardHat; color = "text-[#B89416]"; bg = "bg-[#B89416]/10"; borderColor = "border-[#B89416]/20"; }
   if (mod === "Attendance") { Icon = CheckCircle2; color = "text-teal-600"; bg = "bg-teal-50"; borderColor = "border-teal-200"; }
   if (mod === "System") { Icon = Building2; color = "text-slate-600"; bg = "bg-slate-100"; borderColor = "border-slate-200"; }
 
@@ -241,14 +241,14 @@ function ActivityFeedItem({ act }) {
         <Icon className="w-4 h-4" />
       </div>
 
-      <div className={`bg-white rounded-2xl border ${borderColor} p-4 sm:p-5 shadow-sm hover:shadow-md transition group-hover:border-[#FF6600]/40`}>
+      <div className={`bg-white rounded-2xl border ${borderColor} p-4 sm:p-5 shadow-sm hover:shadow-md transition group-hover:border-[#B89416]/40`}>
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
           <div className="flex-1">
-            <h4 className="text-sm font-bold text-[#000F1B] leading-snug">
+            <h4 className="text-sm font-bold text-[#252A2A] leading-snug">
               {act.action}
             </h4>
-            <div className="text-[10px] text-[#111111]/50 font-medium mt-1 flex items-center gap-1.5">
-              <span className="font-bold text-[#111111]/70">{timeString}</span>
+            <div className="text-[10px] text-[#252A2A]/50 font-medium mt-1 flex items-center gap-1.5">
+              <span className="font-bold text-[#252A2A]/70">{timeString}</span>
               <span>•</span>
               <span>Action by {act.user_name || "System"}</span>
             </div>

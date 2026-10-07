@@ -73,11 +73,11 @@ export default function SmartHomeBuilder() {
       <div className="lg:col-span-3 bg-white border border-black/5 rounded-3xl p-5 md:p-7 shadow-sm">
         <div className="flex items-center justify-between mb-5">
           <div>
-            <div className="text-[10px] font-bold uppercase tracking-widest text-[#FF6600] mb-1">Step 1 · Room Selector</div>
-            <h4 className="text-lg md:text-xl font-bold text-[#000F1B]">Build room by room</h4>
+            <div className="text-[10px] font-bold uppercase tracking-widest text-[#B89416] mb-1">Step 1 · Room Selector</div>
+            <h4 className="text-lg md:text-xl font-bold text-[#252A2A]">Build room by room</h4>
           </div>
           {summary.deviceCount > 0 && (
-            <button onClick={reset} className="text-[10px] font-bold text-[#111111]/50 hover:text-[#FF6600] transition inline-flex items-center gap-1 cursor-pointer">
+            <button onClick={reset} className="text-[10px] font-bold text-[#252A2A]/50 hover:text-[#B89416] transition inline-flex items-center gap-1 cursor-pointer">
               <RotateCcw className="w-3 h-3" /> Reset
             </button>
           )}
@@ -94,12 +94,12 @@ export default function SmartHomeBuilder() {
                 key={r.id}
                 onClick={() => setActiveRoom(r.id)}
                 className={`shrink-0 px-4 py-2.5 rounded-xl text-xs font-bold transition border cursor-pointer inline-flex items-center gap-2 ${
-                  on ? "bg-[#000F1B] text-white border-[#000F1B]" : "bg-white text-[#111111]/70 border-black/10 hover:border-[#FF6600]"
+                  on ? "bg-[#252A2A] text-white border-[#252A2A]" : "bg-white text-[#252A2A]/70 border-black/10 hover:border-[#B89416]"
                 }`}
               >
                 {r.label}
                 {roomHasSel && (
-                  <span className={`text-[9px] font-black rounded-full w-4 h-4 grid place-items-center ${on ? "bg-[#FF6600] text-white" : "bg-[#FF6600]/15 text-[#FF6600]"}`}>
+                  <span className={`text-[9px] font-black rounded-full w-4 h-4 grid place-items-center ${on ? "bg-[#B89416] text-white" : "bg-[#B89416]/15 text-[#B89416]"}`}>
                     {selCount}
                   </span>
                 )}
@@ -108,8 +108,8 @@ export default function SmartHomeBuilder() {
           })}
         </div>
 
-        <div className="text-[10px] font-bold uppercase tracking-widest text-[#111111]/40 mb-3">
-          Choose features for <span className="text-[#FF6600]">{ROOMS.find((r) => r.id === activeRoom)?.label}</span>
+        <div className="text-[10px] font-bold uppercase tracking-widest text-[#252A2A]/40 mb-3">
+          Choose features for <span className="text-[#B89416]">{ROOMS.find((r) => r.id === activeRoom)?.label}</span>
         </div>
 
         {/* Feature Grid */}
@@ -123,23 +123,23 @@ export default function SmartHomeBuilder() {
                 onClick={() => toggleFeature(activeRoom, f.id)}
                 className={`group relative border rounded-2xl p-3 md:p-4 text-left transition-all cursor-pointer ${
                   on 
-                    ? "bg-[#000F1B] border-[#000F1B] text-white shadow-md -translate-y-0.5" 
-                    : "bg-[#F9FAFB] border-black/5 hover:border-[#FF6600]/40 hover:bg-white"
+                    ? "bg-[#252A2A] border-[#252A2A] text-white shadow-md -translate-y-0.5" 
+                    : "bg-[#F9FAFB] border-black/5 hover:border-[#B89416]/40 hover:bg-white"
                 }`}
               >
                 <div className="flex items-start justify-between mb-2">
-                  <div className={`w-9 h-9 rounded-lg grid place-items-center transition ${on ? "bg-[#FF6600]/20" : "bg-white border border-black/5"}`}>
-                    <Icon className={`w-4 h-4 ${on ? "text-[#FF6600]" : "text-[#000F1B]"}`} />
+                  <div className={`w-9 h-9 rounded-lg grid place-items-center transition ${on ? "bg-[#B89416]/20" : "bg-white border border-black/5"}`}>
+                    <Icon className={`w-4 h-4 ${on ? "text-[#B89416]" : "text-[#252A2A]"}`} />
                   </div>
                   {on && (
-                    <div className="w-5 h-5 rounded-full bg-[#FF6600] grid place-items-center">
+                    <div className="w-5 h-5 rounded-full bg-[#B89416] grid place-items-center">
                       <Check className="w-3 h-3 text-white stroke-[3]" />
                     </div>
                   )}
                 </div>
-                <div className={`text-xs font-bold leading-tight mb-0.5 ${on ? "text-white" : "text-[#000F1B]"}`}>{f.label}</div>
-                <div className={`text-[10px] leading-tight ${on ? "text-white/60" : "text-[#111111]/50"}`}>{f.desc}</div>
-                <div className={`text-[10px] font-bold mt-2 ${on ? "text-[#FF6600]" : "text-[#111111]/40"}`}>
+                <div className={`text-xs font-bold leading-tight mb-0.5 ${on ? "text-white" : "text-[#252A2A]"}`}>{f.label}</div>
+                <div className={`text-[10px] leading-tight ${on ? "text-white/60" : "text-[#252A2A]/50"}`}>{f.desc}</div>
+                <div className={`text-[10px] font-bold mt-2 ${on ? "text-[#B89416]" : "text-[#252A2A]/40"}`}>
                   from ₹{f.price.toLocaleString("en-IN")}
                 </div>
               </button>
@@ -149,16 +149,16 @@ export default function SmartHomeBuilder() {
       </div>
 
       {/* RIGHT PANEL — Live Summary */}
-      <div className="lg:col-span-2 bg-[#000F1B] rounded-3xl p-6 md:p-7 text-white relative overflow-hidden sticky top-24">
+      <div className="lg:col-span-2 bg-[#252A2A] rounded-3xl p-6 md:p-7 text-white relative overflow-hidden sticky top-24">
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px)", backgroundSize: "30px 30px" }} />
         <motion.div
-          className="absolute -top-20 -right-20 w-64 h-64 bg-[#FF6600]/20 blur-[80px] rounded-full pointer-events-none"
+          className="absolute -top-20 -right-20 w-64 h-64 bg-[#B89416]/20 blur-[80px] rounded-full pointer-events-none"
           animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
         
         <div className="relative z-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FF6600]/15 text-[#FF6600] text-[10px] font-bold uppercase tracking-widest mb-4 border border-[#FF6600]/20">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#B89416]/15 text-[#B89416] text-[10px] font-bold uppercase tracking-widest mb-4 border border-[#B89416]/20">
             <Zap className="w-3.5 h-3.5" /> Live Estimate
           </div>
           <h3 className="text-2xl font-bold leading-tight mb-6">Your Smart Home</h3>
@@ -187,8 +187,8 @@ export default function SmartHomeBuilder() {
 
                 {/* Savings */}
                 {summary.annualSavings > 0 && (
-                  <div className="bg-[#FF6600]/10 border border-[#FF6600]/20 rounded-2xl p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-[#FF6600] mb-1 flex items-center gap-1.5">
+                  <div className="bg-[#B89416]/10 border border-[#B89416]/20 rounded-2xl p-4">
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-[#B89416] mb-1 flex items-center gap-1.5">
                       <TrendingDown className="w-3 h-3" /> Annual Energy Savings
                     </div>
                     <div className="text-2xl font-black text-white leading-none">{formatMoney(summary.annualSavings)}</div>
@@ -207,7 +207,7 @@ export default function SmartHomeBuilder() {
                     <div className="text-[8px] font-bold uppercase tracking-wider text-white/50 mt-1">Rooms</div>
                   </div>
                   <div className="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
-                    <div className="text-lg font-black text-[#FF6600] leading-none">{summary.score}</div>
+                    <div className="text-lg font-black text-[#B89416] leading-none">{summary.score}</div>
                     <div className="text-[8px] font-bold uppercase tracking-wider text-white/50 mt-1">Score</div>
                   </div>
                 </div>
@@ -220,7 +220,7 @@ export default function SmartHomeBuilder() {
                   </div>
                   <div className="h-2 bg-white/10 rounded-full overflow-hidden">
                     <motion.div
-                      className="h-full bg-gradient-to-r from-[#FF6600] to-[#FF7A2E]"
+                      className="h-full bg-gradient-to-r from-[#B89416] to-[#F2D66D]"
                       initial={{ width: 0 }}
                       animate={{ width: `${summary.score}%` }}
                       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -230,10 +230,10 @@ export default function SmartHomeBuilder() {
 
                 <button
                   onClick={() => {
-                    const text = encodeURIComponent(`Hi, I built a smart home plan on ConstructONS™:\n\n• ${summary.deviceCount} devices across ${summary.roomsCovered} rooms\n• Est. Budget: ${formatMoney(summary.totalPrice)}\n• Est. Annual Savings: ${formatMoney(summary.annualSavings)}\n\nCan we schedule a consultation?`);
+                    const text = encodeURIComponent(`Hi, I built a smart home plan on [Your Brand]s™:\n\n• ${summary.deviceCount} devices across ${summary.roomsCovered} rooms\n• Est. Budget: ${formatMoney(summary.totalPrice)}\n• Est. Annual Savings: ${formatMoney(summary.annualSavings)}\n\nCan we schedule a consultation?`);
                     window.open(`https://wa.me/917892071052?text=${text}`, "_blank");
                   }}
-                  className="w-full py-3.5 rounded-xl bg-[#FF6600] hover:bg-[#E04F00] text-white text-xs font-bold transition inline-flex items-center justify-center gap-2 cursor-pointer mt-2"
+                  className="w-full py-3.5 rounded-xl bg-[#B89416] hover:bg-[#8F7210] text-white text-xs font-bold transition inline-flex items-center justify-center gap-2 cursor-pointer mt-2"
                 >
                   Get Free Consultation <ArrowRight className="w-4 h-4" />
                 </button>

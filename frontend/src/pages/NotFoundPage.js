@@ -17,7 +17,7 @@ export default function NotFoundPage() {
   }, []);
 
   return (
-    <div className="not-found-page min-h-screen flex flex-col bg-[#000F1B] font-['Poppins',sans-serif] text-white selection:bg-[#FF6600] selection:text-white">
+    <div className="not-found-page min-h-screen flex flex-col bg-[#252A2A] font-['Poppins',sans-serif] text-white selection:bg-[#B89416] selection:text-white">
       <SEO
         title="404 - Page Under Construction"
         description="The page you are looking for has been moved or does not exist."
@@ -29,7 +29,7 @@ export default function NotFoundPage() {
 
       <main className="flex-1 flex flex-col items-center justify-center relative overflow-hidden px-4 py-30 md:py-30 lg:py-32">
         {/* Ambient */}
-        <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[420px] w-[420px] rounded-full bg-[#FF6600]/[0.12] blur-3xl" />
+        <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[420px] w-[420px] rounded-full bg-[#B89416]/[0.12] blur-3xl" />
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.04]"
           style={{
@@ -73,7 +73,7 @@ export default function NotFoundPage() {
                 x="500"
                 y="88"
                 textAnchor="middle"
-                fill="#FF6600"
+                fill="#B89416"
                 fontSize="88"
                 fontWeight="900"
                 letterSpacing="10"
@@ -89,7 +89,7 @@ export default function NotFoundPage() {
                 y1="260"
                 x2="960"
                 y2="260"
-                stroke="#FF6600"
+                stroke="#B89416"
                 strokeWidth="3"
                 strokeLinecap="round"
               />
@@ -138,7 +138,7 @@ export default function NotFoundPage() {
                 <path
                   d="M55,25 L90,25 L115,70 L45,70 Z"
                   fill="#0F172A"
-                  stroke="#FF6600"
+                  stroke="#B89416"
                   strokeWidth="2.5"
                 />
                 <path
@@ -148,7 +148,7 @@ export default function NotFoundPage() {
                 />
 
                 {/* Body */}
-                <rect x="90" y="50" width="85" height="40" rx="4" fill="#FF6600" />
+                <rect x="90" y="50" width="85" height="40" rx="4" fill="#B89416" />
                 <rect
                   x="100"
                   y="58"
@@ -169,7 +169,7 @@ export default function NotFoundPage() {
                 />
                 <path
                   d="M140,75 L190,90 L205,115"
-                  stroke="#FF6600"
+                  stroke="#B89416"
                   strokeWidth="3"
                   strokeLinecap="round"
                   fill="none"
@@ -179,7 +179,7 @@ export default function NotFoundPage() {
                 <path
                   d="M195,85 L225,85 L215,140 L185,140 Z"
                   fill="#0F172A"
-                  stroke="#FF6600"
+                  stroke="#B89416"
                   strokeWidth="2.5"
                   strokeLinejoin="round"
                 />
@@ -193,7 +193,7 @@ export default function NotFoundPage() {
                     height="35"
                     rx="17.5"
                     fill="#0F172A"
-                    stroke="#FF6600"
+                    stroke="#B89416"
                     strokeWidth="2.5"
                   />
                   {[40, 70, 100, 130, 160].map((cx) => (
@@ -238,7 +238,7 @@ export default function NotFoundPage() {
 
               <Link
                 to="/"
-                className="inline-flex min-h-[48px] w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-[#FF6600] px-6 py-3 text-xs font-semibold uppercase tracking-wider text-white transition-all hover:bg-[#E04F00] hover:shadow-[0_12px_32px_rgba(255,90,0,0.35)] active:scale-[0.98]"
+                className="inline-flex min-h-[48px] w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-[#B89416] px-6 py-3 text-xs font-semibold uppercase tracking-wider text-white transition-all hover:bg-[#8F7210] hover:shadow-[0_12px_32px_rgba(255,90,0,0.35)] active:scale-[0.98]"
               >
                 <Home className="h-4 w-4" />
                 Back to Home
@@ -247,19 +247,19 @@ export default function NotFoundPage() {
 
             {/* Quick links */}
             <div className="pt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[11px] font-medium text-white/40">
-              <Link to="/#packages" className="hover:text-[#FF6600] transition">
+              <Link to="/#packages" className="hover:text-[#B89416] transition">
                 Packages
               </Link>
               <span className="text-white/15">·</span>
-              <Link to="/#home-collection" className="hover:text-[#FF6600] transition">
+              <Link to="/#home-collection" className="hover:text-[#B89416] transition">
                 Home Designs
               </Link>
               <span className="text-white/15">·</span>
-              <Link to="/contact" className="hover:text-[#FF6600] transition">
+              <Link to="/contact" className="hover:text-[#B89416] transition">
                 Contact
               </Link>
               <span className="text-white/15">·</span>
-              <Link to="/about" className="hover:text-[#FF6600] transition">
+              <Link to="/about" className="hover:text-[#B89416] transition">
                 About
               </Link>
             </div>

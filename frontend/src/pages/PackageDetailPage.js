@@ -80,11 +80,11 @@ export default function PackageDetailPage() {
         {
           "@type": "Product",
           "name": pkg.name,
-          "image": pkg.hero_image || "https://constructons.com/icon.svg",
+          "image": pkg.hero_image || "https://[Your Brand]s.com/icon.svg",
           "description": pkg.description || pkg.tagline,
           "brand": {
             "@type": "Brand",
-            "name": "ConstructONS"
+            "name": "[Your Brand]s"
           },
           "offers": {
             "@type": "Offer",
@@ -96,7 +96,7 @@ export default function PackageDetailPage() {
               "priceCurrency": "INR",
               "unitText": "SQFT"
             },
-            "url": `https://constructons.com/packages/${pkg.slug}`
+            "url": `https://[Your Brand]s.com/packages/${pkg.slug}`
           }
         },
         {
@@ -106,19 +106,19 @@ export default function PackageDetailPage() {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://constructons.com"
+              "item": "https://[Your Brand]s.com"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Packages",
-              "item": "https://constructons.com/packages"
+              "item": "https://[Your Brand]s.com/packages"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": pkg.name,
-              "item": `https://constructons.com/packages/${pkg.slug}`
+              "item": `https://[Your Brand]s.com/packages/${pkg.slug}`
             }
           ]
         }

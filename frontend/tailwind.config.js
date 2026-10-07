@@ -25,11 +25,11 @@ module.exports = {
       colors: {
         // Brand tokens
         brand: {
-          orange: "#FF6600",
-          orangeDark: "#E64F00",
-          orangeLight: "#FF7A2E",
-          navy: "#111111",
-          navySoft: "#111111",
+          orange: "#B89416",
+          orangeDark: "#8F7210",
+          orangeLight: "#F2D66D",
+          navy: "#252A2A",
+          navySoft: "#252A2A",
           bg: "#F8F9FC",
           success: "#22C55E",
           warning: "#F59E0B",

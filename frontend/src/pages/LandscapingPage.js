@@ -51,8 +51,8 @@ export default function LandscapingPage() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": "https://constructons.com/marketplace/landscaping#webpage",
-        "url": "https://constructons.com/marketplace/landscaping",
+        "@id": "https://[Your Brand]s.com/marketplace/landscaping#webpage",
+        "url": "https://[Your Brand]s.com/marketplace/landscaping",
         "name": "Garden, Terrace, & Balcony Landscaping Services",
         "description": "Browse premium landscaping portfolios. Discover custom vertical green walls, drip irrigation setups, terrace gardens, and water features."
       },
@@ -63,19 +63,19 @@ export default function LandscapingPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://constructons.com"
+            "item": "https://[Your Brand]s.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Marketplace",
-            "item": "https://constructons.com/marketplace/landscaping"
+            "item": "https://[Your Brand]s.com/marketplace/landscaping"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Landscaping",
-            "item": "https://constructons.com/marketplace/landscaping"
+            "item": "https://[Your Brand]s.com/marketplace/landscaping"
           }
         ]
       }
@@ -83,7 +83,7 @@ export default function LandscapingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F6F8] font-['Poppins',sans-serif] text-[#000F1B] selection:bg-[#FF6600] selection:text-white flex flex-col">
+    <div className="min-h-screen bg-[#F5F6F8] font-['Poppins',sans-serif] text-[#252A2A] selection:bg-[#B89416] selection:text-white flex flex-col">
       <style>{`.no-scrollbar::-webkit-scrollbar{display:none} .no-scrollbar{scrollbar-width:none}`}</style>
       
       <SEO
@@ -98,10 +98,10 @@ export default function LandscapingPage() {
 
       <main className="flex-1">
         {/* ===================== HERO ===================== */}
-        <section className="relative bg-[#000F1B] text-white pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <section className="relative bg-[#252A2A] text-white pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
           <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px)", backgroundSize: "40px 40px" }} />
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#FF6600]/15 blur-[120px] rounded-full pointer-events-none"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#B89416]/15 blur-[120px] rounded-full pointer-events-none"
             animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.8, 0.5] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -112,18 +112,18 @@ export default function LandscapingPage() {
                 <div className="inline-flex items-center justify-center lg:justify-start gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm mx-auto lg:mx-0">
                   <BrandLockup tone="dark" size="sm" />
                   <span className="w-px h-3 bg-white/20 mx-1" />
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#FF6600] uppercase">Landscaping Bureau</span>
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#B89416] uppercase">Landscaping Bureau</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
-                  The green thinkers who make your property <br className="hidden lg:block" /> <em className="text-[#FF6600] not-italic">breathe, bloom, and belong</em> to nature.
+                  The green thinkers who make your property <br className="hidden lg:block" /> <em className="text-[#B89416] not-italic">breathe, bloom, and belong</em> to nature.
                 </h1>
                 <p className="mt-6 text-base md:text-lg text-white/60 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                   From balcony gardens to villa estates. Curated plants, considered layouts, and outdoor spaces that feel alive from the very first day.
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-8">
-                  <button onClick={() => document.getElementById("showcase")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center gap-2 bg-[#FF6600] hover:bg-[#E04F00] transition px-8 py-4 rounded-full text-sm font-bold shadow-[0_0_20px_rgba(255,90,0,0.3)] hover:-translate-y-0.5 cursor-pointer">
+                  <button onClick={() => document.getElementById("showcase")?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center gap-2 bg-[#B89416] hover:bg-[#8F7210] transition px-8 py-4 rounded-full text-sm font-bold shadow-[0_0_20px_rgba(255,90,0,0.3)] hover:-translate-y-0.5 cursor-pointer">
                     See Our Work <ArrowRight className="w-4 h-4" />
                   </button>
                   <div className="flex gap-8 text-left">
@@ -160,13 +160,13 @@ export default function LandscapingPage() {
         <section className="py-16 md:py-28 bg-white border-b border-black/5 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="max-w-3xl mb-10 md:mb-12 text-center md:text-left mx-auto md:mx-0">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FF6600]/10 text-[#FF6600] text-[10px] font-bold uppercase tracking-widest mb-4">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#B89416]/10 text-[#B89416] text-[10px] font-bold uppercase tracking-widest mb-4">
                 <Leaf className="w-3.5 h-3.5" /> Interactive Discovery Tool
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[#000F1B] mb-4">
-                Which plants will actually <br /><span className="text-[#FF6600]">thrive at your place?</span>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[#252A2A] mb-4">
+                Which plants will actually <br /><span className="text-[#B89416]">thrive at your place?</span>
               </h2>
-              <p className="text-sm md:text-base text-[#111111]/60 leading-relaxed">
+              <p className="text-sm md:text-base text-[#252A2A]/60 leading-relaxed">
                 Every plant has its perfect home. Tell us about your space, your sunlight, and how much care you'd like to give — we'll show you plants that won't just survive, they'll flourish.
               </p>
             </div>
@@ -180,11 +180,11 @@ export default function LandscapingPage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FF6600]/10 text-[#FF6600] text-[10px] font-bold uppercase tracking-widest mb-3">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#B89416]/10 text-[#B89416] text-[10px] font-bold uppercase tracking-widest mb-3">
                   <Sprout className="w-3.5 h-3.5" /> Our Portfolio
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#000F1B] tracking-tight">Landscapings we've brought to life</h2>
-                <p className="text-sm text-[#111111]/60 mt-2">A glimpse of what your outdoor space could become.</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#252A2A] tracking-tight">Landscapings we've brought to life</h2>
+                <p className="text-sm text-[#252A2A]/60 mt-2">A glimpse of what your outdoor space could become.</p>
               </div>
             </div>
 
@@ -197,7 +197,7 @@ export default function LandscapingPage() {
                     key={f}
                     onClick={() => setSpaceFilter(f)}
                     className={`px-4 py-2 rounded-full text-xs font-bold transition border cursor-pointer ${
-                      on ? "bg-[#000F1B] text-white border-[#000F1B]" : "bg-white text-[#111111]/70 border-black/10 hover:border-[#FF6600] hover:text-[#FF6600]"
+                      on ? "bg-[#252A2A] text-white border-[#252A2A]" : "bg-white text-[#252A2A]/70 border-black/10 hover:border-[#B89416] hover:text-[#B89416]"
                     }`}
                   >
                     {f}
@@ -218,10 +218,10 @@ export default function LandscapingPage() {
             {filtered.length === 0 && (
               <div className="text-center py-16 bg-white rounded-3xl border border-black/5 shadow-sm">
                 <div className="w-16 h-16 rounded-full bg-black/5 grid place-items-center mx-auto mb-4">
-                  <Leaf className="w-8 h-8 text-[#111111]/30" />
+                  <Leaf className="w-8 h-8 text-[#252A2A]/30" />
                 </div>
-                <h3 className="text-xl font-bold text-[#000F1B] mb-2">No projects in this category yet</h3>
-                <p className="text-sm text-[#111111]/60">Try another filter or view all our work.</p>
+                <h3 className="text-xl font-bold text-[#252A2A] mb-2">No projects in this category yet</h3>
+                <p className="text-sm text-[#252A2A]/60">Try another filter or view all our work.</p>
               </div>
             )}
 
@@ -229,11 +229,11 @@ export default function LandscapingPage() {
             <div className="mt-16 bg-white rounded-3xl border border-black/5 p-6 md:p-8 shadow-sm">
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <div className="flex-1">
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-[#FF6600] mb-2">What We Offer</div>
-                  <h3 className="text-xl md:text-2xl font-bold text-[#000F1B] mb-2">Full-service landscape design & maintenance</h3>
-                  <p className="text-sm text-[#111111]/60 leading-relaxed">Landscape packages coming soon. For now, tell us what you're dreaming of — we'll build a custom quote just for you.</p>
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-[#B89416] mb-2">What We Offer</div>
+                  <h3 className="text-xl md:text-2xl font-bold text-[#252A2A] mb-2">Full-service landscape design & maintenance</h3>
+                  <p className="text-sm text-[#252A2A]/60 leading-relaxed">Landscape packages coming soon. For now, tell us what you're dreaming of — we'll build a custom quote just for you.</p>
                 </div>
-                <button onClick={() => handleWhatsApp()} className="shrink-0 inline-flex items-center gap-2 bg-[#000F1B] hover:bg-[#FF6600] text-white px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-widest transition cursor-pointer">
+                <button onClick={() => handleWhatsApp()} className="shrink-0 inline-flex items-center gap-2 bg-[#252A2A] hover:bg-[#B89416] text-white px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-widest transition cursor-pointer">
                   <MessageCircle className="w-4 h-4" /> Talk to Us
                 </button>
               </div>
@@ -243,12 +243,12 @@ export default function LandscapingPage() {
                   const Icon = o.icon;
                   return (
                     <div key={idx} className="flex items-center gap-2.5 p-2">
-                      <div className="w-9 h-9 rounded-lg bg-[#FF6600]/10 grid place-items-center shrink-0">
-                        <Icon className="w-4 h-4 text-[#FF6600]" />
+                      <div className="w-9 h-9 rounded-lg bg-[#B89416]/10 grid place-items-center shrink-0">
+                        <Icon className="w-4 h-4 text-[#B89416]" />
                       </div>
                       <div className="min-w-0">
-                        <div className="text-xs font-bold text-[#000F1B] truncate">{o.label}</div>
-                        <div className="text-[9px] text-[#111111]/50 truncate">{o.desc}</div>
+                        <div className="text-xs font-bold text-[#252A2A] truncate">{o.label}</div>
+                        <div className="text-[9px] text-[#252A2A]/50 truncate">{o.desc}</div>
                       </div>
                     </div>
                   );
@@ -259,15 +259,15 @@ export default function LandscapingPage() {
         </section>
 
         {/* ===================== CTA ===================== */}
-        <section className="bg-[#000F1B] text-white py-20 md:py-28 px-6 relative overflow-hidden">
+        <section className="bg-[#252A2A] text-white py-20 md:py-28 px-6 relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px)", backgroundSize: "40px 40px" }} />
           <div className="max-w-4xl mx-auto text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">A house is what you live in.<br /><span className="text-[#FF6600]">A garden is what you live with.</span></h2>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">A house is what you live in.<br /><span className="text-[#B89416]">A garden is what you live with.</span></h2>
             <p className="text-white/60 text-sm md:text-base max-w-2xl mx-auto mt-6 mb-10 leading-relaxed">
               Whether it's a small balcony or a sprawling estate, every outdoor space deserves thoughtful design. Talk to our landscape team about your vision.
             </p>
             <button onClick={() => handleWhatsApp()}
-              className="inline-flex items-center justify-center gap-2 bg-[#FF6600] hover:bg-[#E04F00] shadow-[0_0_20px_rgba(255,90,0,0.3)] text-white px-8 py-4 rounded-full font-bold text-sm transition hover:-translate-y-0.5 cursor-pointer">
+              className="inline-flex items-center justify-center gap-2 bg-[#B89416] hover:bg-[#8F7210] shadow-[0_0_20px_rgba(255,90,0,0.3)] text-white px-8 py-4 rounded-full font-bold text-sm transition hover:-translate-y-0.5 cursor-pointer">
               Talk to Our Landscape Team <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -291,18 +291,18 @@ function ShowcaseCard({ item, index, reduce, onOpen }) {
       className="bg-white rounded-2xl overflow-hidden border border-black/5 shadow-sm hover:shadow-xl hover:border-black/15 transition-all duration-300 group cursor-pointer"
       onClick={onOpen}>
 
-      <div className="relative aspect-[4/5] overflow-hidden bg-[#000F1B]">
+      <div className="relative aspect-[4/5] overflow-hidden bg-[#252A2A]">
         <img src={item.image} alt={item.title} loading="lazy"
           className="absolute inset-0 w-full h-full object-cover transition duration-700 ease-out group-hover:scale-105 opacity-95 group-hover:opacity-100" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
         {/* Style tag top-left */}
-        <span className="absolute top-3 left-3 bg-white/95 backdrop-blur text-[#000F1B] text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-lg shadow-sm">
+        <span className="absolute top-3 left-3 bg-white/95 backdrop-blur text-[#252A2A] text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-lg shadow-sm">
           {item.style}
         </span>
 
         {/* Year */}
-        <span className="absolute top-3 right-3 bg-[#FF6600] text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-lg shadow-sm">
+        <span className="absolute top-3 right-3 bg-[#B89416] text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-lg shadow-sm">
           {item.year}
         </span>
 
@@ -310,9 +310,9 @@ function ShowcaseCard({ item, index, reduce, onOpen }) {
         <div className="absolute bottom-0 left-0 right-0 p-4">
           <h3 className="text-white text-lg font-bold leading-tight mb-1.5">{item.title}</h3>
           <div className="flex items-center gap-3 text-[10px] text-white/80 font-semibold">
-            <span className="flex items-center gap-1"><MapPin className="w-3 h-3 text-[#FF6600]" /> {item.location}</span>
+            <span className="flex items-center gap-1"><MapPin className="w-3 h-3 text-[#B89416]" /> {item.location}</span>
             <span className="w-1 h-1 rounded-full bg-white/40" />
-            <span className="flex items-center gap-1"><Ruler className="w-3 h-3 text-[#FF6600]" /> {item.coverage}</span>
+            <span className="flex items-center gap-1"><Ruler className="w-3 h-3 text-[#B89416]" /> {item.coverage}</span>
           </div>
         </div>
       </div>
@@ -339,7 +339,7 @@ function ShowcaseModal({ view, setView, onChat }) {
     <AnimatePresence>
       {item && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setView(null)} className="absolute inset-0 bg-[#000F1B]/90 backdrop-blur-md" />
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setView(null)} className="absolute inset-0 bg-[#252A2A]/90 backdrop-blur-md" />
           <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="relative z-10 w-full max-w-5xl h-[90vh] lg:h-[680px] bg-white rounded-3xl overflow-hidden flex flex-col lg:flex-row shadow-2xl border border-black/10">
 
@@ -351,34 +351,34 @@ function ShowcaseModal({ view, setView, onChat }) {
 
             {/* Right: Details */}
             <div className="relative lg:w-[45%] flex-1 overflow-y-auto no-scrollbar p-6 md:p-8 flex flex-col bg-white">
-              <button onClick={() => setView(null)} aria-label="Close" className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/5 hover:bg-black/10 grid place-items-center cursor-pointer transition z-10"><X className="w-4 h-4 text-[#000F1B]" /></button>
+              <button onClick={() => setView(null)} aria-label="Close" className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/5 hover:bg-black/10 grid place-items-center cursor-pointer transition z-10"><X className="w-4 h-4 text-[#252A2A]" /></button>
 
               <div className="pt-4 mb-4">
                 <div className="flex flex-wrap gap-2 mb-3">
-                  <span className="bg-[#000F1B] text-white px-3 py-1 rounded-md text-xs font-bold">{item.style}</span>
-                  <span className="bg-[#FF6600]/10 border border-[#FF6600]/20 text-[#FF6600] px-3 py-1 rounded-md text-xs font-bold">{item.space}</span>
+                  <span className="bg-[#252A2A] text-white px-3 py-1 rounded-md text-xs font-bold">{item.style}</span>
+                  <span className="bg-[#B89416]/10 border border-[#B89416]/20 text-[#B89416] px-3 py-1 rounded-md text-xs font-bold">{item.space}</span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#000F1B] leading-tight mb-2">{item.title}</h3>
-                <div className="flex items-center gap-4 text-sm text-[#111111]/60 font-semibold">
-                  <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-[#FF6600]" /> {item.location}</span>
-                  <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5 text-[#FF6600]" /> {item.year}</span>
+                <h3 className="text-2xl md:text-3xl font-bold text-[#252A2A] leading-tight mb-2">{item.title}</h3>
+                <div className="flex items-center gap-4 text-sm text-[#252A2A]/60 font-semibold">
+                  <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-[#B89416]" /> {item.location}</span>
+                  <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5 text-[#B89416]" /> {item.year}</span>
                 </div>
               </div>
 
-              <p className="text-sm text-[#000F1B]/80 leading-relaxed mb-6 italic border-l-2 border-[#FF6600] pl-4 bg-[#F9FAFB] py-3 rounded-r-xl">"{item.description}"</p>
+              <p className="text-sm text-[#252A2A]/80 leading-relaxed mb-6 italic border-l-2 border-[#B89416] pl-4 bg-[#F9FAFB] py-3 rounded-r-xl">"{item.description}"</p>
 
               <div className="grid grid-cols-2 gap-3 mb-6">
                 <div className="bg-[#F9FAFB] rounded-xl p-3 border border-black/5 text-center">
-                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#111111]/40 mb-1">Coverage</div>
-                  <div className="text-sm font-bold text-[#000F1B] flex items-center justify-center gap-1"><Ruler className="w-3.5 h-3.5 text-[#FF6600]" /> {item.coverage}</div>
+                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#252A2A]/40 mb-1">Coverage</div>
+                  <div className="text-sm font-bold text-[#252A2A] flex items-center justify-center gap-1"><Ruler className="w-3.5 h-3.5 text-[#B89416]" /> {item.coverage}</div>
                 </div>
                 <div className="bg-[#F9FAFB] rounded-xl p-3 border border-black/5 text-center">
-                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#111111]/40 mb-1">Space Type</div>
-                  <div className="text-sm font-bold text-[#000F1B]">{item.space}</div>
+                  <div className="text-[9px] font-bold uppercase tracking-wider text-[#252A2A]/40 mb-1">Space Type</div>
+                  <div className="text-sm font-bold text-[#252A2A]">{item.space}</div>
                 </div>
               </div>
 
-              <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#111111]/40 mb-3 flex items-center gap-1.5"><Leaf className="w-3.5 h-3.5" /> Featured Plants</h4>
+              <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#252A2A]/40 mb-3 flex items-center gap-1.5"><Leaf className="w-3.5 h-3.5" /> Featured Plants</h4>
               <div className="flex flex-wrap gap-2 mb-6">
                 {item.plants.map((p) => (
                   <span key={p} className="px-3 py-1.5 rounded-md text-xs font-bold bg-emerald-50 border border-emerald-100 text-emerald-700 inline-flex items-center gap-1.5">

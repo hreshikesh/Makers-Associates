@@ -64,7 +64,7 @@ export default function DashboardMainRow({ project }) {
         <div className="flex items-center justify-between mb-2 shrink-0">
           <div className="flex items-center gap-1.5">
             <AlertCircle className="w-4 h-4 text-red-600" />
-            <h2 className="text-sm font-bold text-[#000F1B]">
+            <h2 className="text-sm font-bold text-[#252A2A]">
               Your Actions ({clientActions.length})
             </h2>
           </div>
@@ -78,7 +78,7 @@ export default function DashboardMainRow({ project }) {
 
         <div className="flex-1 overflow-y-auto custom-scrollbar space-y-1.5 pr-1">
           {clientActions.length === 0 ? (
-            <div className="h-full flex flex-col items-center justify-center text-center text-[#111111]/40">
+            <div className="h-full flex flex-col items-center justify-center text-center text-[#252A2A]/40">
               <CheckCircle2 className="w-6 h-6 mb-1 opacity-30" />
               <p className="text-[10px] font-semibold">Caught up!</p>
             </div>
@@ -90,10 +90,10 @@ export default function DashboardMainRow({ project }) {
                 className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-rose-100 shadow-sm hover:shadow-md transition"
               >
                 <div className="flex items-center gap-2 min-w-0">
-                  <div className="w-5 h-5 rounded-full bg-[#FF6600] text-white text-[9px] font-bold grid place-items-center shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-[#B89416] text-white text-[9px] font-bold grid place-items-center shrink-0">
                     {i + 1}
                   </div>
-                  <div className="text-[11px] font-bold text-[#000F1B] truncate">
+                  <div className="text-[11px] font-bold text-[#252A2A] truncate">
                     {act.title}
                   </div>
                 </div>
@@ -107,7 +107,7 @@ export default function DashboardMainRow({ project }) {
                   >
                     {act.priority}
                   </span>
-                  <span className="text-[9px] font-semibold text-[#111111]/50 hidden sm:inline">
+                  <span className="text-[9px] font-semibold text-[#252A2A]/50 hidden sm:inline">
                     Due {formatDate(act.due)}
                   </span>
                 </div>
@@ -122,7 +122,7 @@ export default function DashboardMainRow({ project }) {
         <div className="flex items-center justify-between mb-2 shrink-0">
           <div className="flex items-center gap-1.5">
             <Calendar className="w-4 h-4 text-blue-500" />
-            <h2 className="text-sm font-bold text-[#000F1B]">
+            <h2 className="text-sm font-bold text-[#252A2A]">
               What's Coming Next
               {upcomingEvents.length > 0 && (
                 <span className="ml-1 text-[10px] font-semibold text-gray-400">
@@ -141,7 +141,7 @@ export default function DashboardMainRow({ project }) {
 
         <div className="flex-1 overflow-y-auto custom-scrollbar space-y-1 pr-1">
           {upcomingEvents.length === 0 ? (
-            <div className="text-[10px] text-[#111111]/40 italic text-center py-8">
+            <div className="text-[10px] text-[#252A2A]/40 italic text-center py-8">
               No scheduled stages in the next 30 days.
             </div>
           ) : (
@@ -150,14 +150,14 @@ export default function DashboardMainRow({ project }) {
                 key={evt.id || `${evt.name}-${i}`}
                 className="flex items-center gap-3 hover:bg-[#F9FAFB] p-2 rounded-lg transition border border-transparent hover:border-black/5"
               >
-                <div className="w-12 text-right text-[10px] font-bold text-[#111111]/60 shrink-0">
+                <div className="w-12 text-right text-[10px] font-bold text-[#252A2A]/60 shrink-0">
                   {formatDate(evt.expected_date)}
                 </div>
                 <div className="w-6 h-6 rounded-md bg-[#F5F6F8] grid place-items-center shrink-0 border border-black/5">
-                  <Building2 className="w-3 h-3 text-[#111111]/50" />
+                  <Building2 className="w-3 h-3 text-[#252A2A]/50" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-xs font-bold text-[#000F1B] truncate">
+                  <div className="text-xs font-bold text-[#252A2A] truncate">
                     {evt.name}
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export default function DashboardMainRow({ project }) {
                   className={`text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md shrink-0 ${
                     i === 0
                       ? "bg-amber-50 text-amber-600"
-                      : "bg-[#F2F2F2] text-[#111111]/50"
+                      : "bg-[#F2F2F2] text-[#252A2A]/50"
                   }`}
                 >
                   {i === 0 ? "Next Up" : evt.status || "Scheduled"}

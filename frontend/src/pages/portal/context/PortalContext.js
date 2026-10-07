@@ -28,28 +28,28 @@ export function PortalProvider({ children }) {
     if (!notif || !notif.title) return;
 
     toast.custom((t) => (
-      <div className="flex items-start gap-3 p-4 bg-white border border-[#FF6600]/30 rounded-2xl shadow-2xl shadow-[#FF6600]/15 w-[350px] font-['Poppins'] relative overflow-hidden animate-in fade-in slide-in-from-top-3 duration-300">
-        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#FF6600]" />
+      <div className="flex items-start gap-3 p-4 bg-white border border-[#B89416]/30 rounded-2xl shadow-2xl shadow-[#B89416]/15 w-[350px] font-['Poppins'] relative overflow-hidden animate-in fade-in slide-in-from-top-3 duration-300">
+        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#B89416]" />
         
-        <div className="w-10 h-10 rounded-xl bg-[#FF6600]/10 border border-[#FF6600]/20 grid place-items-center shrink-0 mt-0.5">
-          <BellRing className="w-5 h-5 text-[#FF6600] animate-bounce" />
+        <div className="w-10 h-10 rounded-xl bg-[#B89416]/10 border border-[#B89416]/20 grid place-items-center shrink-0 mt-0.5">
+          <BellRing className="w-5 h-5 text-[#B89416] animate-bounce" />
         </div>
 
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between gap-2 mb-0.5">
-            <span className="text-[10px] font-extrabold text-[#FF6600] uppercase tracking-wider">Live Project Update</span>
-            <span className="text-[9px] text-[#111111]/40 font-medium">Just now</span>
+            <span className="text-[10px] font-extrabold text-[#B89416] uppercase tracking-wider">Live Project Update</span>
+            <span className="text-[9px] text-[#252A2A]/40 font-medium">Just now</span>
           </div>
           
-          <div className="font-bold text-[#000F1B] text-sm leading-snug line-clamp-1">{notif.title}</div>
-          <div className="text-[11px] text-[#111111]/70 mt-1 line-clamp-2 leading-relaxed">{notif.message}</div>
+          <div className="font-bold text-[#252A2A] text-sm leading-snug line-clamp-1">{notif.title}</div>
+          <div className="text-[11px] text-[#252A2A]/70 mt-1 line-clamp-2 leading-relaxed">{notif.message}</div>
           
           <button 
             onClick={() => {
               toast.dismiss(t);
               if (notif.link) navigate(notif.link);
             }}
-            className="mt-3 w-full flex items-center justify-center gap-1.5 text-[11px] font-bold text-white bg-[#000F1B] hover:bg-[#FF6600] px-3 py-2 rounded-xl transition-all shadow-md active:scale-95"
+            className="mt-3 w-full flex items-center justify-center gap-1.5 text-[11px] font-bold text-white bg-[#252A2A] hover:bg-[#B89416] px-3 py-2 rounded-xl transition-all shadow-md active:scale-95"
           >
             <span>View Details</span>
             <ExternalLink className="w-3.5 h-3.5" />

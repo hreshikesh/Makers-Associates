@@ -27,7 +27,7 @@ const getNormalizedStatus = (backendStatus) => {
 const getStatusConfig = (status) => {
   const map = {
     received: { label: "Received", color: "text-emerald-700 bg-emerald-50 border-emerald-200", icon: Truck },
-    ordered: { label: "Ordered", color: "text-[#FF6600] bg-[#FF6600]/10 border-[#FF6600]/20", icon: Box },
+    ordered: { label: "Ordered", color: "text-[#B89416] bg-[#B89416]/10 border-[#B89416]/20", icon: Box },
   };
   return map[status] || map.ordered;
 };
@@ -115,7 +115,7 @@ export default function MaterialsPage() {
       <div className={`shrink-0 bg-white border-b border-gray-200 px-3 md:px-4 pt-3 pb-2 shadow-sm z-10 ${selectedId ? 'hidden md:block' : 'block'}`}>
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-2 mb-2">
           <div>
-            <h1 className="text-lg md:text-xl font-bold text-[#000F1B]">Materials</h1>
+            <h1 className="text-lg md:text-xl font-bold text-[#252A2A]">Materials</h1>
             <p className="text-[9px] md:text-[10px] text-gray-500 mt-0.5">View the key materials used in your project and their current status.</p>
           </div>
           
@@ -124,31 +124,31 @@ export default function MaterialsPage() {
             <input 
               type="text" placeholder="Search materials (e.g. tiles, cement)..."
               value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
-              className="w-full pl-8 pr-3 py-1.5 text-[10px] bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-[#FF6600] focus:bg-white transition shadow-sm"
+              className="w-full pl-8 pr-3 py-1.5 text-[10px] bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-[#B89416] focus:bg-white transition shadow-sm"
             />
           </div>
         </div>
 
         {/* SUMMARY CARDS (Cleaned up to 3 cards) */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
-          <div className="bg-[#FF6600]/5 border border-[#FF6600]/20 rounded-lg p-2 flex items-center gap-2">
-            <div className="w-8 h-8 rounded-md bg-[#FF6600]/10 flex items-center justify-center shrink-0">
-              <Package className="w-4 h-4 text-[#FF6600]" />
+          <div className="bg-[#B89416]/5 border border-[#B89416]/20 rounded-lg p-2 flex items-center gap-2">
+            <div className="w-8 h-8 rounded-md bg-[#B89416]/10 flex items-center justify-center shrink-0">
+              <Package className="w-4 h-4 text-[#B89416]" />
             </div>
             <div>
               <div className="text-[9px] font-bold text-gray-500 uppercase tracking-wider">Total Materials</div>
-              <div className="text-lg font-black text-[#000F1B] leading-tight">{kpis.total}</div>
+              <div className="text-lg font-black text-[#252A2A] leading-tight">{kpis.total}</div>
             </div>
           </div>
           
-          <div className="bg-[#FF6600]/5 border border-[#FF6600]/20 rounded-lg p-2 flex items-center gap-2">
-            <div className="w-8 h-8 rounded-md bg-[#FF6600]/10 flex items-center justify-center shrink-0">
-              <Box className="w-4 h-4 text-[#FF6600]" />
+          <div className="bg-[#B89416]/5 border border-[#B89416]/20 rounded-lg p-2 flex items-center gap-2">
+            <div className="w-8 h-8 rounded-md bg-[#B89416]/10 flex items-center justify-center shrink-0">
+              <Box className="w-4 h-4 text-[#B89416]" />
             </div>
             <div>
               <div className="text-[9px] font-bold text-gray-500 uppercase tracking-wider">Ordered</div>
-              <div className="text-lg font-black text-[#000F1B] leading-tight flex items-baseline gap-1.5">
-                {kpis.ordered.count} <span className="text-[9px] font-semibold text-[#FF6600]">{kpis.ordered.pct}%</span>
+              <div className="text-lg font-black text-[#252A2A] leading-tight flex items-baseline gap-1.5">
+                {kpis.ordered.count} <span className="text-[9px] font-semibold text-[#B89416]">{kpis.ordered.pct}%</span>
               </div>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function MaterialsPage() {
             </div>
             <div>
               <div className="text-[9px] font-bold text-gray-500 uppercase tracking-wider">Received</div>
-              <div className="text-lg font-black text-[#000F1B] leading-tight flex items-baseline gap-1.5">
+              <div className="text-lg font-black text-[#252A2A] leading-tight flex items-baseline gap-1.5">
                 {kpis.received.count} <span className="text-[9px] font-semibold text-emerald-600">{kpis.received.pct}%</span>
               </div>
             </div>
@@ -177,7 +177,7 @@ export default function MaterialsPage() {
                 key={cat} onClick={() => setActiveTab(cat)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[10px] font-bold transition-all whitespace-nowrap border shadow-sm ${
                   isActive 
-                    ? "bg-[#FF6600] border-[#FF6600] text-white" 
+                    ? "bg-[#B89416] border-[#B89416] text-white" 
                     : "bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50"
                 }`}
               >
@@ -216,18 +216,18 @@ export default function MaterialsPage() {
                   return (
                     <tr 
                       key={m.id} onClick={() => setSelectedId(m.id)}
-                      className={`cursor-pointer transition-colors ${isSelected ? "bg-[#FF6600]/5 hover:bg-[#FF6600]/10" : "hover:bg-gray-50"}`}
+                      className={`cursor-pointer transition-colors ${isSelected ? "bg-[#B89416]/5 hover:bg-[#B89416]/10" : "hover:bg-gray-50"}`}
                     >
                       <td className="py-2 px-3">
                         <div className="flex items-center gap-2">
-                          {isSelected && <div className="absolute left-0 w-1 h-8 bg-[#FF6600] rounded-r" />}
+                          {isSelected && <div className="absolute left-0 w-1 h-8 bg-[#B89416] rounded-r" />}
                           <div className="w-8 h-8 rounded-md bg-gray-100 border border-gray-200 overflow-hidden shrink-0 flex items-center justify-center">
                             {m.photo_url ? <img src={resolveMediaUrl(m.photo_url)} alt="" className="w-full h-full object-cover" /> : <ImageIcon className="w-3.5 h-3.5 text-gray-400" />}
                           </div>
-                          <span className="text-[10px] font-bold text-[#000F1B]">{m.item_name}</span>
+                          <span className="text-[10px] font-bold text-[#252A2A]">{m.item_name}</span>
                         </div>
                       </td>
-                      <td className="py-2 px-3 text-[10px] font-medium text-[#FF6600]">{m.category || "—"}</td>
+                      <td className="py-2 px-3 text-[10px] font-medium text-[#B89416]">{m.category || "—"}</td>
                       <td className="py-2 px-3">
                         <div className="text-[10px] font-bold text-gray-800">{m.brand || "—"}</div>
                         <div className="text-[9px] text-gray-500 truncate max-w-[120px]">{m.grade_spec || "—"}</div>
@@ -260,12 +260,12 @@ export default function MaterialsPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between gap-2 mb-1">
-                          <h4 className="font-bold text-[#000F1B] text-[10px] truncate">{m.item_name}</h4>
+                          <h4 className="font-bold text-[#252A2A] text-[10px] truncate">{m.item_name}</h4>
                           <span className={`shrink-0 inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[8px] font-bold border ${conf.color}`}>
                             <conf.icon className="w-2.5 h-2.5" /> {conf.label}
                           </span>
                         </div>
-                        <div className="text-[9px] font-medium text-[#FF6600] mb-0.5">{m.category || "General"}</div>
+                        <div className="text-[9px] font-medium text-[#B89416] mb-0.5">{m.category || "General"}</div>
                         <div className="text-[9px] text-gray-500 truncate">{m.brand ? `${m.brand} • ` : ''}{m.grade_spec || "Standard"}</div>
                       </div>
                     </div>
@@ -296,14 +296,14 @@ export default function MaterialsPage() {
               <div className="p-3 border-b border-gray-100 bg-white shrink-0 relative">
                 <button 
                   onClick={() => setSelectedId(null)} 
-                  className="md:hidden flex items-center gap-1 text-[10px] font-bold text-gray-500 hover:text-[#FF6600] mb-2 bg-gray-50 px-2 py-1 rounded w-max"
+                  className="md:hidden flex items-center gap-1 text-[10px] font-bold text-gray-500 hover:text-[#B89416] mb-2 bg-gray-50 px-2 py-1 rounded w-max"
                 >
                   <ChevronLeft className="w-3.5 h-3.5" /> Back to List
                 </button>
 
                 <div className="flex justify-between items-start gap-2">
                   <div>
-                    <h2 className="text-sm font-bold text-[#000F1B] leading-tight flex items-center gap-2">
+                    <h2 className="text-sm font-bold text-[#252A2A] leading-tight flex items-center gap-2">
                       {selectedMaterial.item_name}
                       <span className={`text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-sm border ${getStatusConfig(getNormalizedStatus(selectedMaterial.status)).color}`}>
                         {getStatusConfig(getNormalizedStatus(selectedMaterial.status)).label}
@@ -338,7 +338,7 @@ export default function MaterialsPage() {
                   
                   <div className="grid grid-cols-3 gap-y-3 gap-x-2 text-[10px]">
                     <div className="col-span-1 text-gray-500 font-medium">Material Name</div>
-                    <div className="col-span-2 font-bold text-[#000F1B]">{selectedMaterial.item_name}</div>
+                    <div className="col-span-2 font-bold text-[#252A2A]">{selectedMaterial.item_name}</div>
 
                     <div className="col-span-1 text-gray-500 font-medium">Category</div>
                     <div className="col-span-2 font-medium text-gray-900">{selectedMaterial.category || "—"}</div>
@@ -384,7 +384,7 @@ export default function MaterialsPage() {
             </div>
           ) : (
             <div className="flex-1 flex flex-col items-center justify-center text-gray-400 p-6 text-center bg-[#F9FAFB]">
-              <Package className="w-12 h-12 opacity-20 mb-2 text-[#FF6600]" />
+              <Package className="w-12 h-12 opacity-20 mb-2 text-[#B89416]" />
               <p className="text-sm font-bold text-gray-600 mb-1">No Material Selected</p>
               <p className="text-[10px] max-w-[200px]">Select a material from the list to view its full specifications and status.</p>
             </div>

@@ -28,7 +28,7 @@ const rupees = (n) =>
   `₹${Math.round(Number(n) || 0).toLocaleString("en-IN")}`;
 
 const inputCls =
-  "w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm text-[#000F1B] focus:outline-none focus:ring-2 focus:ring-[#FF6600]/30 focus:border-[#FF6600] transition";
+  "w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm text-[#252A2A] focus:outline-none focus:ring-2 focus:ring-[#B89416]/30 focus:border-[#B89416] transition";
 
 const DEFAULT_MATERIAL_ROWS = [
   { category: "Structure", item: "Cement", brand_grade: "UltraTech / Ambuja (OPC 43 Grade)", notes: "Base Price - Rs. 410 / bag" },
@@ -212,7 +212,7 @@ export default function AdminCustomQuotes() {
 
   if (loading) return (
     <div className="grid place-items-center py-24 font-['Poppins']">
-      <Loader2 className="w-6 h-6 animate-spin text-[#FF6600]" />
+      <Loader2 className="w-6 h-6 animate-spin text-[#B89416]" />
     </div>
   );
 
@@ -222,18 +222,18 @@ export default function AdminCustomQuotes() {
         <div>
           <div className="flex items-center gap-2 mb-1">
             <BrandLockup tone="light" size="xs" />
-            <span className="ml-2 text-[10px] text-[#111111]/40 font-normal uppercase tracking-wider">· Sales Quotation Builder</span>
+            <span className="ml-2 text-[10px] text-[#252A2A]/40 font-normal uppercase tracking-wider">· Sales Quotation Builder</span>
           </div>
-          <h1 className="text-2xl md:text-3xl font-bold text-[#000F1B] tracking-tight">Custom Quotes</h1>
-          <p className="text-sm text-[#111111]/60 mt-0.5">
+          <h1 className="text-2xl md:text-3xl font-bold text-[#252A2A] tracking-tight">Custom Quotes</h1>
+          <p className="text-sm text-[#252A2A]/60 mt-0.5">
             Generate bespoke, AI-assisted quotations tailored to each client's requirements.
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <button onClick={load} className="inline-flex items-center gap-1.5 rounded-xl border border-black/10 bg-white px-3.5 py-2 text-xs font-semibold text-[#000F1B] hover:bg-[#F2F2F2] transition">
+          <button onClick={load} className="inline-flex items-center gap-1.5 rounded-xl border border-black/10 bg-white px-3.5 py-2 text-xs font-semibold text-[#252A2A] hover:bg-[#F2F2F2] transition">
             <RefreshCw className="w-4 h-4" /> Refresh
           </button>
-          <button onClick={startNew} className="inline-flex items-center gap-1.5 rounded-xl bg-[#FF6600] text-white px-4 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-[#FF0000] transition shadow-sm">
+          <button onClick={startNew} className="inline-flex items-center gap-1.5 rounded-xl bg-[#B89416] text-white px-4 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-[#B89416] transition shadow-sm">
             <Plus className="w-4 h-4" /> New Custom Quote
           </button>
         </div>
@@ -242,18 +242,18 @@ export default function AdminCustomQuotes() {
       <div className="rounded-2xl bg-white border border-black/5 shadow-sm overflow-hidden">
         {items.length === 0 ? (
           <div className="p-12 text-center">
-            <div className="w-16 h-16 mx-auto rounded-2xl bg-[#FF6600]/10 grid place-items-center mb-4">
-              <Building2 className="w-8 h-8 text-[#FF6600]" />
+            <div className="w-16 h-16 mx-auto rounded-2xl bg-[#B89416]/10 grid place-items-center mb-4">
+              <Building2 className="w-8 h-8 text-[#B89416]" />
             </div>
             <BrandLockup tone="light" size="sm" className="mx-auto mb-1" />
-            <div className="font-bold text-[#000F1B]">No custom quotes generated yet</div>
-            <p className="text-xs text-[#111111]/60 mt-1 max-w-sm mx-auto">
+            <div className="font-bold text-[#252A2A]">No custom quotes generated yet</div>
+            <p className="text-xs text-[#252A2A]/60 mt-1 max-w-sm mx-auto">
               Click "New Custom Quote" to build your first AI-assisted bespoke quotation.
             </p>
           </div>
         ) : (
           <table className="w-full text-xs text-left">
-            <thead className="bg-[#F9FAFB] text-[#111111]/50 text-[10px] uppercase tracking-wider font-bold">
+            <thead className="bg-[#F9FAFB] text-[#252A2A]/50 text-[10px] uppercase tracking-wider font-bold">
               <tr>
                 <th className="px-4 py-3">Ref No.</th>
                 <th className="px-4 py-3">Client</th>
@@ -269,21 +269,21 @@ export default function AdminCustomQuotes() {
                 const grand = computeGrand(row);
                 return (
                   <tr key={row.id} className="hover:bg-[#F9FAFB] transition">
-                    <td className="px-4 py-3 font-mono font-bold text-[#000F1B]">{row.ref_number || "—"}</td>
+                    <td className="px-4 py-3 font-mono font-bold text-[#252A2A]">{row.ref_number || "—"}</td>
                     <td className="px-4 py-3">
-                      <div className="font-bold text-[#000F1B]">{row.client_name}</div>
-                      <div className="text-[10px] text-[#111111]/50">{row.client_phone || "—"} · {row.client_email || "no email"}</div>
+                      <div className="font-bold text-[#252A2A]">{row.client_name}</div>
+                      <div className="text-[10px] text-[#252A2A]/50">{row.client_phone || "—"} · {row.client_email || "no email"}</div>
                     </td>
-                    <td className="px-4 py-3 text-[#111111]/80 font-medium">
+                    <td className="px-4 py-3 text-[#252A2A]/80 font-medium">
                       {row.built_up_area || 0} sq.ft · {row.floors} ({row.bhk || "Custom"})
                     </td>
-                    <td className="px-4 py-3 text-[#111111]/80">{rupees(row.price_per_sqft)}/sqft</td>
+                    <td className="px-4 py-3 text-[#252A2A]/80">{rupees(row.price_per_sqft)}/sqft</td>
                     <td className="px-4 py-3 font-bold text-[#10B981]">{rupees(grand)}</td>
                     <td className="px-4 py-3"><StatusBadge status={row.status} /></td>
                     <td className="px-4 py-3 text-right">
                       <div className="inline-flex items-center gap-1">
-                        <a href={adminApi.customQuotes.pdfUrl(row.id)} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg grid place-items-center hover:bg-[#F2F2F2] text-[#000F1B]" title="Download PDF"><FileDown className="w-4 h-4" /></a>
-                        <button onClick={() => startEdit(row)} className="w-8 h-8 rounded-lg grid place-items-center hover:bg-[#F2F2F2] text-[#000F1B]" title="Edit"><Pencil className="w-4 h-4" /></button>
+                        <a href={adminApi.customQuotes.pdfUrl(row.id)} target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg grid place-items-center hover:bg-[#F2F2F2] text-[#252A2A]" title="Download PDF"><FileDown className="w-4 h-4" /></a>
+                        <button onClick={() => startEdit(row)} className="w-8 h-8 rounded-lg grid place-items-center hover:bg-[#F2F2F2] text-[#252A2A]" title="Edit"><Pencil className="w-4 h-4" /></button>
                         <button onClick={() => remove(row)} className="w-8 h-8 rounded-lg grid place-items-center hover:bg-red-50 text-red-500" title="Delete"><Trash2 className="w-4 h-4" /></button>
                       </div>
                     </td>
@@ -338,7 +338,7 @@ function computeGrand(q) {
 
 function StatusBadge({ status }) {
   const map = {
-    draft: "bg-gray-100 text-[#000F1B]",
+    draft: "bg-gray-100 text-[#252A2A]",
     sent: "bg-amber-100 text-amber-800",
     accepted: "bg-emerald-100 text-emerald-800",
     rejected: "bg-red-100 text-red-700",
@@ -607,7 +607,7 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
     if (!editing.client_phone) { toast.error("Add client phone"); return; }
     const digits = editing.client_phone.replace(/\D/g, "");
     const pdfUrl = adminApi.customQuotes.pdfUrl(editing.id);
-    const msg = encodeURIComponent(`Hi ${editing.client_name},\n\nYour customised quote from ConstructONS:\nRef: ${editing.ref_number}\nPackage: ${editing.package_name}\nTotal: ${rupees(pricing.grand)}\n\nPDF: ${pdfUrl}`);
+    const msg = encodeURIComponent(`Hi ${editing.client_name},\n\nYour customised quote from [Your Brand]s:\nRef: ${editing.ref_number}\nPackage: ${editing.package_name}\nTotal: ${rupees(pricing.grand)}\n\nPDF: ${pdfUrl}`);
     window.open(`https://wa.me/${digits}?text=${msg}`, "_blank");
   };
 
@@ -615,7 +615,7 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
     if (!editing.id) { toast.error("Save quote first"); return; }
     if (!editing.client_email) { toast.error("Add client email"); return; }
     const pdfUrl = adminApi.customQuotes.pdfUrl(editing.id);
-    const subject = encodeURIComponent(`Your ConstructONS Quotation — ${editing.ref_number}`);
+    const subject = encodeURIComponent(`Your [Your Brand]s Quotation — ${editing.ref_number}`);
     const body = encodeURIComponent(`Hi ${editing.client_name},\n\nRef: ${editing.ref_number}\nTotal: ${rupees(pricing.grand)}\n\nPDF: ${pdfUrl}`);
     window.location.href = `mailto:${editing.client_email}?subject=${subject}&body=${body}`;
   };
@@ -678,7 +678,7 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
 
   return (
     <>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onCancel} className="fixed inset-0 bg-[#000F1B]/60 backdrop-blur-sm z-40" />
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onCancel} className="fixed inset-0 bg-[#252A2A]/60 backdrop-blur-sm z-40" />
       <motion.div
         initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "tween", duration: 0.3 }}
         className={`fixed inset-y-0 right-0 bg-[#F5F6F8] z-50 overflow-hidden shadow-2xl ${showPreview ? "w-full max-w-[1400px]" : "w-full max-w-4xl"}`}
@@ -688,9 +688,9 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
           <div className="min-w-0">
             <div className="flex items-center gap-2">
               <BrandLockup tone="light" size="xs" />
-              <span className="ml-2 text-[10px] text-[#111111]/40 font-normal uppercase tracking-wider">• {editing.ref_number || "Draft"}</span>
+              <span className="ml-2 text-[10px] text-[#252A2A]/40 font-normal uppercase tracking-wider">• {editing.ref_number || "Draft"}</span>
             </div>
-            <div className="font-bold text-[#000F1B] text-base truncate">{editing.client_name || "Untitled Quote"}</div>
+            <div className="font-bold text-[#252A2A] text-base truncate">{editing.client_name || "Untitled Quote"}</div>
           </div>
           <div className="flex items-center gap-2">
             {autoSavedTime && (
@@ -698,15 +698,15 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
                 Auto-saved {autoSavedTime}
               </span>
             )}
-            <button onClick={() => setShowPreview((v) => !v)} className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-bold transition ${showPreview ? "bg-[#000F1B] text-white" : "border border-black/10 bg-white text-[#000F1B] hover:bg-[#F2F2F2]"}`}>
+            <button onClick={() => setShowPreview((v) => !v)} className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-bold transition ${showPreview ? "bg-[#252A2A] text-white" : "border border-black/10 bg-white text-[#252A2A] hover:bg-[#F2F2F2]"}`}>
               {showPreview ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               {showPreview ? "Hide" : "Preview PDF"}
             </button>
-            <button onClick={() => onSave(false)} disabled={saving} className="inline-flex items-center gap-1.5 rounded-xl bg-[#FF6600] text-white px-4 py-2 text-xs font-bold hover:bg-[#FF0000] transition disabled:opacity-60 cursor-pointer shadow-sm">
+            <button onClick={() => onSave(false)} disabled={saving} className="inline-flex items-center gap-1.5 rounded-xl bg-[#B89416] text-white px-4 py-2 text-xs font-bold hover:bg-[#B89416] transition disabled:opacity-60 cursor-pointer shadow-sm">
               {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
               Save
             </button>
-            <button onClick={onCancel} className="w-8 h-8 rounded-full grid place-items-center hover:bg-[#F2F2F2] text-[#000F1B]"><X className="w-5 h-5" /></button>
+            <button onClick={onCancel} className="w-8 h-8 rounded-full grid place-items-center hover:bg-[#F2F2F2] text-[#252A2A]"><X className="w-5 h-5" /></button>
           </div>
         </div>
 
@@ -717,15 +717,15 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
             {/* Share Bar */}
             {editing.id && (
               <div className="rounded-2xl bg-white border border-black/5 p-4 flex flex-wrap items-center gap-2 shadow-sm">
-                <div className="text-xs text-[#111111]/60 mr-2 font-bold">Share:</div>
-                <a href={adminApi.customQuotes.pdfUrl(editing.id)} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-xl bg-[#000F1B] text-white px-3.5 py-1.5 text-xs font-bold hover:bg-[#FF6600] transition"><FileDown className="w-3.5 h-3.5" /> PDF</a>
+                <div className="text-xs text-[#252A2A]/60 mr-2 font-bold">Share:</div>
+                <a href={adminApi.customQuotes.pdfUrl(editing.id)} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-xl bg-[#252A2A] text-white px-3.5 py-1.5 text-xs font-bold hover:bg-[#B89416] transition"><FileDown className="w-3.5 h-3.5" /> PDF</a>
                 <button onClick={whatsappShare} className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 text-white px-3.5 py-1.5 text-xs font-bold hover:bg-emerald-700 transition"><MessageCircle className="w-3.5 h-3.5" /> WhatsApp</button>
-                <button onClick={emailShare} className="inline-flex items-center gap-1.5 rounded-xl bg-[#FF6600] text-white px-3.5 py-1.5 text-xs font-bold hover:bg-[#FF0000] transition"><Mail className="w-3.5 h-3.5" /> Email</button>
-                <button onClick={copyPdfLink} className="inline-flex items-center gap-1.5 rounded-xl border border-black/10 bg-white px-3.5 py-1.5 text-xs font-bold text-[#000F1B] hover:bg-[#F2F2F2]"><Copy className="w-3.5 h-3.5" /> Copy Link</button>
-                <button onClick={() => setShowTplModal(true)} className="inline-flex items-center gap-1.5 rounded-xl border border-black/10 bg-white px-3.5 py-1.5 text-xs font-bold text-[#000F1B] hover:bg-[#F2F2F2]"><BookOpen className="w-3.5 h-3.5" /> Save Template</button>
+                <button onClick={emailShare} className="inline-flex items-center gap-1.5 rounded-xl bg-[#B89416] text-white px-3.5 py-1.5 text-xs font-bold hover:bg-[#B89416] transition"><Mail className="w-3.5 h-3.5" /> Email</button>
+                <button onClick={copyPdfLink} className="inline-flex items-center gap-1.5 rounded-xl border border-black/10 bg-white px-3.5 py-1.5 text-xs font-bold text-[#252A2A] hover:bg-[#F2F2F2]"><Copy className="w-3.5 h-3.5" /> Copy Link</button>
+                <button onClick={() => setShowTplModal(true)} className="inline-flex items-center gap-1.5 rounded-xl border border-black/10 bg-white px-3.5 py-1.5 text-xs font-bold text-[#252A2A] hover:bg-[#F2F2F2]"><BookOpen className="w-3.5 h-3.5" /> Save Template</button>
                 
                 <div className="ml-auto flex items-center gap-2">
-                  <label className="text-xs font-bold text-[#000F1B]">Status:</label>
+                  <label className="text-xs font-bold text-[#252A2A]">Status:</label>
                   <select value={editing.status || "draft"} onChange={(e) => handleStatusChange(e.target.value)} className="rounded-lg border border-black/10 bg-white px-2 py-1 text-xs font-bold">
                     <option value="draft">Draft</option>
                     <option value="sent">Sent</option>
@@ -743,12 +743,12 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
                   <div className="w-10 h-10 rounded-xl bg-emerald-100 grid place-items-center shrink-0"><LinkIcon className="w-5 h-5 text-emerald-700" /></div>
                   <div className="flex-1 min-w-0">
                     <div className="text-xs uppercase tracking-widest text-emerald-700 font-bold">Client Portal</div>
-                    <div className="font-bold text-[#000F1B]">Shareable link — Client can view & respond</div>
+                    <div className="font-bold text-[#252A2A]">Shareable link — Client can view & respond</div>
                     {publicLink ? (
                       <div className="mt-3 flex flex-wrap items-center gap-2">
-                        <code className="text-xs bg-white border border-black/10 rounded-lg px-3 py-1.5 text-[#000F1B]/80 break-all">{`${window.location.origin}/quote/${publicLink}`}</code>
+                        <code className="text-xs bg-white border border-black/10 rounded-lg px-3 py-1.5 text-[#252A2A]/80 break-all">{`${window.location.origin}/quote/${publicLink}`}</code>
                         <button onClick={copyPublicLink} className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600 text-white px-3.5 py-1.5 text-xs font-bold hover:brightness-110"><Copy className="w-3.5 h-3.5" /> Copy</button>
-                        <a href={`/quote/${publicLink}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3.5 py-1.5 text-xs font-bold text-[#000F1B]">Preview</a>
+                        <a href={`/quote/${publicLink}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3.5 py-1.5 text-xs font-bold text-[#252A2A]">Preview</a>
                       </div>
                     ) : (
                       <button onClick={generatePublicLink} className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-emerald-600 text-white px-4 py-2 text-xs font-bold hover:brightness-110"><LinkIcon className="w-3.5 h-3.5" /> Generate Client Link</button>
@@ -766,8 +766,8 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
             {/* Template Loader */}
             {templates.length > 0 && !editing.id && (
               <div className="rounded-2xl bg-white border border-black/5 p-4 flex flex-wrap items-center gap-2">
-                <BookOpen className="w-4 h-4 text-[#FF6600]" />
-                <div className="text-sm font-bold text-[#000F1B]">Start from template:</div>
+                <BookOpen className="w-4 h-4 text-[#B89416]" />
+                <div className="text-sm font-bold text-[#252A2A]">Start from template:</div>
                 <select onChange={(e) => { loadTemplate(e.target.value); e.target.value = ""; }} className="rounded-lg border border-black/10 bg-white px-2 py-1.5 text-sm" defaultValue="">
                   <option value="">— Pick a template —</option>
                   {templates.map((t) => <option key={t.id} value={t.id}>{t.name} · {rupees(t.price_per_sqft)}/sqft</option>)}
@@ -813,33 +813,33 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
             </Section>
 
             {/* AI Panel with Magic Revision */}
-            <div className="rounded-2xl bg-[#000F1B] text-white p-5 md:p-6 shadow-xl relative overflow-hidden">
+            <div className="rounded-2xl bg-[#252A2A] text-white p-5 md:p-6 shadow-xl relative overflow-hidden">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#FF6600]/20 grid place-items-center shrink-0"><Wand2 className="w-5 h-5 text-[#FF6600]" /></div>
+                <div className="w-10 h-10 rounded-xl bg-[#B89416]/20 grid place-items-center shrink-0"><Wand2 className="w-5 h-5 text-[#B89416]" /></div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[10px] uppercase font-bold tracking-widest text-[#FF6600]">AI Quote Assistant · Gemini Flash</div>
+                  <div className="text-[10px] uppercase font-bold tracking-widest text-[#B89416]">AI Quote Assistant · Gemini Flash</div>
                   <div className="font-bold text-lg mt-1">Generate or Patch Quote</div>
 
                   {/* IDEA 1: MAGIC REVISION */}
                   <form onSubmit={handleMagicRevision} className="mt-4 flex gap-2">
-                    <input type="text" value={magicPrompt} onChange={(e) => setMagicPrompt(e.target.value)} placeholder="e.g. 'Change flooring to Italian Marble and add 5% discount'..." className="flex-1 rounded-xl bg-white/10 border border-white/20 px-3.5 py-2 text-xs text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#FF6600]" />
-                    <button type="submit" disabled={magicLoading || !magicPrompt.trim()} className="px-4 py-2 bg-[#FF6600] hover:bg-[#FF0000] text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 disabled:opacity-50">
+                    <input type="text" value={magicPrompt} onChange={(e) => setMagicPrompt(e.target.value)} placeholder="e.g. 'Change flooring to Italian Marble and add 5% discount'..." className="flex-1 rounded-xl bg-white/10 border border-white/20 px-3.5 py-2 text-xs text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#B89416]" />
+                    <button type="submit" disabled={magicLoading || !magicPrompt.trim()} className="px-4 py-2 bg-[#B89416] hover:bg-[#B89416] text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 disabled:opacity-50">
                       {magicLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Sparkles className="w-3.5 h-3.5" />}
                       Magic Patch
                     </button>
                   </form>
 
                   <div className="mt-4 inline-flex rounded-full bg-white/10 p-1">
-                    <button onClick={() => setAiMode("recommend")} className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${aiMode === "recommend" ? "bg-[#FF6600] text-white" : "text-white/70 hover:text-white"}`}>Recommend + tune</button>
-                    <button onClick={() => setAiMode("scratch")} className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${aiMode === "scratch" ? "bg-[#FF6600] text-white" : "text-white/70 hover:text-white"}`}>Build from scratch</button>
+                    <button onClick={() => setAiMode("recommend")} className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${aiMode === "recommend" ? "bg-[#B89416] text-white" : "text-white/70 hover:text-white"}`}>Recommend + tune</button>
+                    <button onClick={() => setAiMode("scratch")} className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${aiMode === "scratch" ? "bg-[#B89416] text-white" : "text-white/70 hover:text-white"}`}>Build from scratch</button>
                   </div>
 
                   <div className="mt-4 flex flex-wrap items-center gap-3">
-                    <button onClick={runAI} disabled={aiLoading} className="inline-flex items-center gap-2 rounded-full bg-[#FF6600] text-white px-5 py-2.5 text-sm font-bold hover:brightness-95 transition disabled:opacity-60">
+                    <button onClick={runAI} disabled={aiLoading} className="inline-flex items-center gap-2 rounded-full bg-[#B89416] text-white px-5 py-2.5 text-sm font-bold hover:brightness-95 transition disabled:opacity-60">
                       {aiLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Wand2 className="w-4 h-4" />}
                       {aiLoading ? "Drafting..." : "Generate Full AI Draft"}
                     </button>
-                    {editing.ai_notes && <div className="text-xs text-white/60 max-w-xl"><span className="text-[#FF6600] font-bold">AI:</span> {editing.ai_notes}</div>}
+                    {editing.ai_notes && <div className="text-xs text-white/60 max-w-xl"><span className="text-[#B89416] font-bold">AI:</span> {editing.ai_notes}</div>}
                   </div>
                 </div>
               </div>
@@ -864,8 +864,8 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
             {/* Interiors + Library */}
             <Section title="Interior Fit-Out">
               <div className="flex items-start justify-between gap-2 mb-2 flex-wrap">
-                <div className="text-xs text-[#111111]/60 flex-1 min-w-0">Add interior items. Tick "Bill" to include in the grand total.</div>
-                <button onClick={() => setShowLibraryPicker(true)} className="inline-flex items-center gap-1.5 rounded-full bg-[#FF6600] text-white px-3.5 py-1.5 text-xs font-bold hover:brightness-95"><PackageOpen className="w-3.5 h-3.5" /> Add from Library</button>
+                <div className="text-xs text-[#252A2A]/60 flex-1 min-w-0">Add interior items. Tick "Bill" to include in the grand total.</div>
+                <button onClick={() => setShowLibraryPicker(true)} className="inline-flex items-center gap-1.5 rounded-full bg-[#B89416] text-white px-3.5 py-1.5 text-xs font-bold hover:brightness-95"><PackageOpen className="w-3.5 h-3.5" /> Add from Library</button>
               </div>
               <SpecCategoryEditor categories={editing.interiors || []} onChange={(interiors) => set({ interiors })} isInterior />
             </Section>
@@ -894,8 +894,8 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
                 <Field label="Service Charge %"><input type="number" value={editing.service_charge_percent ?? 15} onChange={(e) => set({ service_charge_percent: e.target.value })} className={inputCls} /></Field>
                 <Field label="Warranty (years)"><input type="number" value={editing.warranty_years || 10} onChange={(e) => set({ warranty_years: e.target.value })} className={inputCls} /></Field>
               </Grid>
-              <div className="mt-4 rounded-xl bg-[#000F1B] text-white p-4">
-                <div className="text-[10px] uppercase tracking-widest text-[#FF6600] font-bold">Live Pricing</div>
+              <div className="mt-4 rounded-xl bg-[#252A2A] text-white p-4">
+                <div className="text-[10px] uppercase tracking-widest text-[#B89416] font-bold">Live Pricing</div>
                 <div className="mt-2 grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
                   <PriceLine label="Base build" value={pricing.base} />
                   <PriceLine label="Add-ons" value={pricing.addonTotal} />
@@ -907,7 +907,7 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
                 </div>
                 <div className="mt-3 pt-3 border-t border-white/15 flex items-center justify-between">
                   <div className="text-sm text-white/70">Grand Total</div>
-                  <div className="text-2xl font-bold text-[#FF6600]">{rupees(pricing.grand)}</div>
+                  <div className="text-2xl font-bold text-[#B89416]">{rupees(pricing.grand)}</div>
                 </div>
               </div>
             </Section>
@@ -928,12 +928,12 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
                   {editing.comments.map((c, i) => (
                     <div key={c.id || i} className={`p-3 rounded-xl border ${c.source === "client" ? "bg-emerald-50 border-emerald-100" : "bg-[#F9FAFB] border-black/5"}`}>
                       <div className="flex items-center justify-between gap-2 mb-1">
-                        <div className="font-bold text-[#000F1B] text-sm inline-flex items-center gap-1.5">
+                        <div className="font-bold text-[#252A2A] text-sm inline-flex items-center gap-1.5">
                           <MessageSquare className="w-3.5 h-3.5 text-emerald-600" /> {c.author || "Client"}
                         </div>
-                        <div className="text-[10px] text-[#111111]/50">{new Date(c.created_at).toLocaleString()}</div>
+                        <div className="text-[10px] text-[#252A2A]/50">{new Date(c.created_at).toLocaleString()}</div>
                       </div>
-                      <div className="text-sm text-[#111111]/80 whitespace-pre-wrap">{c.message}</div>
+                      <div className="text-sm text-[#252A2A]/80 whitespace-pre-wrap">{c.message}</div>
                     </div>
                   ))}
                 </div>
@@ -943,38 +943,38 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
             {/* Notes & Terms */}
             <Section title="Notes & Terms">
               <div>
-                <div className="text-xs font-bold uppercase tracking-wider text-[#111111]/60 mb-1.5">Intro Note (top of PDF)</div>
+                <div className="text-xs font-bold uppercase tracking-wider text-[#252A2A]/60 mb-1.5">Intro Note (top of PDF)</div>
                 <RichTextEditor value={editing.intro_note || ""} onChange={(html) => set({ intro_note: html })} placeholder="Personal note on page 2 of PDF" minHeight={140} />
               </div>
               <div className="mt-4">
-                <div className="text-xs font-bold uppercase tracking-wider text-[#111111]/60 mb-1.5">Terms & Conditions (leave blank for default)</div>
+                <div className="text-xs font-bold uppercase tracking-wider text-[#252A2A]/60 mb-1.5">Terms & Conditions (leave blank for default)</div>
                 <RichTextEditor value={editing.terms || ""} onChange={(html) => set({ terms: html })} placeholder="Override default terms" minHeight={200} />
               </div>
             </Section>
 
             <div className="pt-2 flex items-center gap-3 sticky bottom-0 bg-[#F5F6F8] py-4 z-10">
-              <button onClick={() => onSave(false)} disabled={saving} className="inline-flex items-center gap-1.5 rounded-xl bg-[#FF6600] text-white px-5 py-2.5 text-sm font-bold hover:bg-[#FF0000] transition disabled:opacity-60">
+              <button onClick={() => onSave(false)} disabled={saving} className="inline-flex items-center gap-1.5 rounded-xl bg-[#B89416] text-white px-5 py-2.5 text-sm font-bold hover:bg-[#B89416] transition disabled:opacity-60">
                 {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
                 Save Quote
               </button>
-              <button onClick={onCancel} className="rounded-xl border border-black/10 bg-white px-5 py-2.5 text-sm font-bold text-[#000F1B] hover:bg-[#F2F2F2]">Close</button>
+              <button onClick={onCancel} className="rounded-xl border border-black/10 bg-white px-5 py-2.5 text-sm font-bold text-[#252A2A] hover:bg-[#F2F2F2]">Close</button>
             </div>
           </div>
 
           {/* PDF Preview Panel */}
           {showPreview && (
-            <div className="w-1/2 bg-[#000F1B]/95 relative flex flex-col">
+            <div className="w-1/2 bg-[#252A2A]/95 relative flex flex-col">
               <div className="p-3 flex items-center justify-between text-white text-xs">
-                <div className="inline-flex items-center gap-2"><Eye className="w-4 h-4 text-[#FF6600]" /><span className="font-bold uppercase tracking-wider">Live PDF Preview</span></div>
+                <div className="inline-flex items-center gap-2"><Eye className="w-4 h-4 text-[#B89416]" /><span className="font-bold uppercase tracking-wider">Live PDF Preview</span></div>
                 <div className="inline-flex items-center gap-3">
-                  {previewLoading && <div className="inline-flex items-center gap-1.5 text-[#FF6600]"><Loader2 className="w-3.5 h-3.5 animate-spin" /> Rendering...</div>}
+                  {previewLoading && <div className="inline-flex items-center gap-1.5 text-[#B89416]"><Loader2 className="w-3.5 h-3.5 animate-spin" /> Rendering...</div>}
                   {previewUrl && !previewLoading && <a href={previewUrl} target="_blank" rel="noreferrer" className="text-white/70 hover:text-white">Open in tab</a>}
                 </div>
               </div>
               {previewError && <div className="mx-3 mb-2 rounded-lg bg-red-500/15 border border-red-400/30 px-3 py-2 text-[11px] text-red-100">{previewError}</div>}
               <div className="flex-1 bg-white">
                 {previewUrl ? <iframe src={previewUrl} title="PDF Preview" className="w-full h-full border-0" /> : (
-                  <div className="w-full h-full grid place-items-center text-[#000F1B]/40 text-sm">{previewLoading ? "Building preview..." : "Preview will appear here"}</div>
+                  <div className="w-full h-full grid place-items-center text-[#252A2A]/40 text-sm">{previewLoading ? "Building preview..." : "Preview will appear here"}</div>
                 )}
               </div>
             </div>
@@ -983,12 +983,12 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
 
         {/* Template Modal */}
         {showTplModal && (
-          <div className="fixed inset-0 bg-[#000F1B]/60 backdrop-blur-sm z-[60] grid place-items-center p-4">
+          <div className="fixed inset-0 bg-[#252A2A]/60 backdrop-blur-sm z-[60] grid place-items-center p-4">
             <div className="bg-white rounded-2xl w-full max-w-md p-6">
-              <div className="font-bold text-[#000F1B] text-lg inline-flex items-center gap-2">
+              <div className="font-bold text-[#252A2A] text-lg inline-flex items-center gap-2">
                 <BrandLockup tone="light" size="sm" />
               </div>
-              <div className="text-xs text-[#111111]/60 mt-1">Save as template for future reuse.</div>
+              <div className="text-xs text-[#252A2A]/60 mt-1">Save as template for future reuse.</div>
               <label className="block mt-4">
                 <div className="text-xs font-bold uppercase mb-1.5">Template Name *</div>
                 <input value={tplName} onChange={(e) => setTplName(e.target.value)} className="w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm" placeholder="e.g. 3BHK Modern G+1 Premium" />
@@ -998,8 +998,8 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
                 <textarea value={tplDesc} onChange={(e) => setTplDesc(e.target.value)} rows={2} className="w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-sm resize-y" placeholder="What this template is best for" />
               </label>
               <div className="mt-5 flex items-center gap-2 justify-end">
-                <button onClick={() => { setShowTplModal(false); setTplName(""); setTplDesc(""); }} className="rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-bold text-[#000F1B]">Cancel</button>
-                <button onClick={saveAsTemplate} disabled={savingTpl} className="inline-flex items-center gap-1.5 rounded-full bg-[#FF6600] text-white px-5 py-2 text-sm font-bold">
+                <button onClick={() => { setShowTplModal(false); setTplName(""); setTplDesc(""); }} className="rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-bold text-[#252A2A]">Cancel</button>
+                <button onClick={saveAsTemplate} disabled={savingTpl} className="inline-flex items-center gap-1.5 rounded-full bg-[#B89416] text-white px-5 py-2 text-sm font-bold">
                   {savingTpl ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />} Save Template
                 </button>
               </div>
@@ -1009,15 +1009,15 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
 
         {/* FEATURE H: Convert to Project Modal */}
         {showConvertModal && (
-          <div className="fixed inset-0 bg-[#000F1B]/70 backdrop-blur-sm z-[60] grid place-items-center p-4">
+          <div className="fixed inset-0 bg-[#252A2A]/70 backdrop-blur-sm z-[60] grid place-items-center p-4">
             <div className="bg-white rounded-3xl w-full max-w-md p-6 shadow-2xl">
               <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 grid place-items-center mb-4"><Building2 className="w-6 h-6" /></div>
-              <h3 className="font-bold text-[#000F1B] text-lg">Quote Accepted! Initialize Live Project?</h3>
-              <p className="text-xs text-[#111111]/60 mt-1 leading-relaxed">
+              <h3 className="font-bold text-[#252A2A] text-lg">Quote Accepted! Initialize Live Project?</h3>
+              <p className="text-xs text-[#252A2A]/60 mt-1 leading-relaxed">
                 Client <strong>{editing.client_name}</strong> has accepted this quotation. Convert this into a live Customer Portal project tracker?
               </p>
               <div className="mt-6 flex items-center justify-end gap-2">
-                <button onClick={() => setShowConvertModal(false)} className="px-4 py-2.5 rounded-xl border border-black/10 text-xs font-bold text-[#000F1B]">Not Now</button>
+                <button onClick={() => setShowConvertModal(false)} className="px-4 py-2.5 rounded-xl border border-black/10 text-xs font-bold text-[#252A2A]">Not Now</button>
                 <button onClick={convertToProject} disabled={converting} className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center gap-2 transition">
                   {converting ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle2 className="w-4 h-4" />}
                   Initialize Live Project
@@ -1059,7 +1059,7 @@ function QuoteEditor({ editing, setEditing, packages, saving, onSave, onCancel, 
 function Grid({ children }) { return <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{children}</div>; }
 
 function Field({ label, children }) {
-  return <label className="block"><div className="text-xs font-bold uppercase tracking-wider text-[#111111]/60 mb-1.5">{label}</div>{children}</label>;
+  return <label className="block"><div className="text-xs font-bold uppercase tracking-wider text-[#252A2A]/60 mb-1.5">{label}</div>{children}</label>;
 }
 
 function Section({ title, children, defaultOpen = true }) {
@@ -1067,7 +1067,7 @@ function Section({ title, children, defaultOpen = true }) {
   return (
     <div className="rounded-2xl bg-white border border-black/5 shadow-sm overflow-hidden">
       <button type="button" onClick={() => setOpen((v) => !v)} className="w-full flex items-center justify-between px-5 py-4 hover:bg-[#F9FAFB] transition">
-        <div className="font-bold text-[#000F1B]">{title}</div>
+        <div className="font-bold text-[#252A2A]">{title}</div>
         {open ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
       </button>
       {open && <div className="px-5 pb-5">{children}</div>}
@@ -1096,7 +1096,7 @@ function ListEditor({ items, onChange, placeholder }) {
           <button onClick={() => remove(i)} className="w-8 h-8 rounded-full grid place-items-center hover:bg-red-50 text-red-500"><Trash2 className="w-3.5 h-3.5" /></button>
         </div>
       ))}
-      <button onClick={add} className="inline-flex items-center gap-1.5 rounded-full bg-[#000F1B] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#FF6600] transition"><Plus className="w-3.5 h-3.5" /> Add</button>
+      <button onClick={add} className="inline-flex items-center gap-1.5 rounded-full bg-[#252A2A] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#B89416] transition"><Plus className="w-3.5 h-3.5" /> Add</button>
     </div>
   );
 }
@@ -1122,18 +1122,18 @@ function ScheduleEditor({ items, onChange }) {
       {(items || []).map((it, i) => (
         <div key={i} className="grid grid-cols-12 gap-2 items-center">
           <input value={it.milestone || ""} onChange={(e) => update(i, { milestone: e.target.value })} className="col-span-4 rounded-xl border border-black/10 bg-white px-3 py-2 text-xs font-bold" placeholder="Milestone" />
-          <input type="number" value={it.percentage || 0} onChange={(e) => update(i, { percentage: e.target.value })} className="col-span-2 rounded-xl border border-black/10 bg-white px-3 py-2 text-xs font-bold text-[#FF6600]" placeholder="%" />
+          <input type="number" value={it.percentage || 0} onChange={(e) => update(i, { percentage: e.target.value })} className="col-span-2 rounded-xl border border-black/10 bg-white px-3 py-2 text-xs font-bold text-[#B89416]" placeholder="%" />
           <input value={it.description || ""} onChange={(e) => update(i, { description: e.target.value })} className="col-span-5 rounded-xl border border-black/10 bg-white px-3 py-2 text-xs" placeholder="Description" />
           <button onClick={() => remove(i)} className="col-span-1 w-7 h-7 rounded-full grid place-items-center hover:bg-red-50 text-red-500 mx-auto"><Trash2 className="w-3.5 h-3.5" /></button>
         </div>
       ))}
       <div className="flex items-center justify-between text-xs pt-1">
-        <span className="font-bold text-[#000F1B]">Total: <span className={Math.abs(total - 100) < 0.1 ? "text-emerald-600" : "text-amber-600"}>{total.toFixed(0)}%</span></span>
+        <span className="font-bold text-[#252A2A]">Total: <span className={Math.abs(total - 100) < 0.1 ? "text-emerald-600" : "text-amber-600"}>{total.toFixed(0)}%</span></span>
         {Math.abs(total - 100) >= 0.1 && (
-          <button onClick={autoBalance} type="button" className="text-[10px] font-bold text-[#FF6600] bg-[#FF6600]/10 hover:bg-[#FF6600] hover:text-white px-2.5 py-1 rounded-md transition">Auto-Balance to 100%</button>
+          <button onClick={autoBalance} type="button" className="text-[10px] font-bold text-[#B89416] bg-[#B89416]/10 hover:bg-[#B89416] hover:text-white px-2.5 py-1 rounded-md transition">Auto-Balance to 100%</button>
         )}
       </div>
-      <button onClick={add} className="inline-flex items-center gap-1.5 rounded-full bg-[#000F1B] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#FF6600] transition"><Plus className="w-3.5 h-3.5" /> Add Milestone</button>
+      <button onClick={add} className="inline-flex items-center gap-1.5 rounded-full bg-[#252A2A] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#B89416] transition"><Plus className="w-3.5 h-3.5" /> Add Milestone</button>
     </div>
   );
 }
@@ -1152,13 +1152,13 @@ function MaterialSpecEditor({ rows, onChange }) {
   return (
     <div className="space-y-2">
       {list.length === 0 ? (
-        <div className="p-4 rounded-xl border border-dashed border-black/15 text-center text-xs text-[#111111]/60">
+        <div className="p-4 rounded-xl border border-dashed border-black/15 text-center text-xs text-[#252A2A]/60">
           No material specs yet. Load the standard template or add rows.
         </div>
       ) : (
         <div className="overflow-x-auto rounded-lg border border-black/10">
           <table className="w-full text-xs">
-            <thead className="bg-[#000F1B] text-white">
+            <thead className="bg-[#252A2A] text-white">
               <tr>
                 <th className="text-left px-2 py-2 font-bold w-[18%]">Category</th>
                 <th className="text-left px-2 py-2 font-bold w-[22%]">Item</th>
@@ -1182,8 +1182,8 @@ function MaterialSpecEditor({ rows, onChange }) {
         </div>
       )}
       <div className="flex items-center gap-2 flex-wrap pt-1">
-        <button onClick={add} className="inline-flex items-center gap-1.5 rounded-full bg-[#000F1B] text-white px-4 py-1.5 text-xs font-bold"><Plus className="w-3.5 h-3.5" /> Add Row</button>
-        <button onClick={loadDefaults} className="inline-flex items-center gap-1.5 rounded-full border border-[#000F1B]/15 bg-white text-[#000F1B] px-4 py-1.5 text-xs font-bold hover:bg-[#000F1B]/5" type="button">Load Standard 19-Row Template</button>
+        <button onClick={add} className="inline-flex items-center gap-1.5 rounded-full bg-[#252A2A] text-white px-4 py-1.5 text-xs font-bold"><Plus className="w-3.5 h-3.5" /> Add Row</button>
+        <button onClick={loadDefaults} className="inline-flex items-center gap-1.5 rounded-full border border-[#252A2A]/15 bg-white text-[#252A2A] px-4 py-1.5 text-xs font-bold hover:bg-[#252A2A]/5" type="button">Load Standard 19-Row Template</button>
         {list.length > 0 && <button onClick={clearAll} className="inline-flex items-center gap-1.5 rounded-full border border-red-200 bg-white text-red-600 px-4 py-1.5 text-xs font-bold hover:bg-red-50" type="button">Clear all</button>}
       </div>
     </div>
@@ -1196,7 +1196,7 @@ function DrawingSheetsEditor({ sheets, onChange, kind }) {
     id: crypto.randomUUID?.() || String(Date.now()),
     title: kind === "floor-plan" ? `Floor Plan ${(sheets || []).length + 1}` : `Elevation ${(sheets || []).length + 1}`,
     image_url: "", sheet_number: (sheets || []).length + 1, units: "mm", scale: "1:100",
-    drawn_by: "ConstructONS", north_direction: "N", notes: "", current_revision: "A",
+    drawn_by: "[Your Brand]s", north_direction: "N", notes: "", current_revision: "A",
     revisions: [{ id: crypto.randomUUID?.() || String(Date.now()), letter: "A", date: new Date().toISOString().slice(0, 10), note: "Initial issue" }],
   }]);
   const updateSheet = (i, patch) => onChange((sheets || []).map((s, ii) => (ii === i ? { ...s, ...patch } : s)));
@@ -1225,8 +1225,8 @@ function DrawingSheetsEditor({ sheets, onChange, kind }) {
                   <button onClick={() => updateSheet(i, { image_url: "" })} className="absolute top-1 right-1 w-6 h-6 rounded-full bg-white/90 grid place-items-center text-red-500 hover:bg-white"><X className="w-3.5 h-3.5" /></button>
                 </div>
               ) : (
-                <label className="w-full h-40 rounded-lg border-2 border-dashed border-black/15 grid place-items-center cursor-pointer hover:border-[#FF6600] text-[#000F1B]/50 text-xs bg-[#F5F6F8]/30">
-                  {uploading === i ? <Loader2 className="w-5 h-5 animate-spin text-[#FF6600]" /> : <span>Click to upload drawing</span>}
+                <label className="w-full h-40 rounded-lg border-2 border-dashed border-black/15 grid place-items-center cursor-pointer hover:border-[#B89416] text-[#252A2A]/50 text-xs bg-[#F5F6F8]/30">
+                  {uploading === i ? <Loader2 className="w-5 h-5 animate-spin text-[#B89416]" /> : <span>Click to upload drawing</span>}
                   <input type="file" accept="image/*" className="hidden" onChange={(e) => upload(i, e.target.files?.[0])} />
                 </label>
               )}
@@ -1245,7 +1245,7 @@ function DrawingSheetsEditor({ sheets, onChange, kind }) {
           </div>
         </div>
       ))}
-      <button onClick={addSheet} className="inline-flex items-center gap-1.5 rounded-full bg-[#000F1B] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#FF6600] transition"><Plus className="w-3.5 h-3.5" /> Add {kind === "floor-plan" ? "Floor Plan" : "Elevation"} Sheet</button>
+      <button onClick={addSheet} className="inline-flex items-center gap-1.5 rounded-full bg-[#252A2A] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#B89416] transition"><Plus className="w-3.5 h-3.5" /> Add {kind === "floor-plan" ? "Floor Plan" : "Elevation"} Sheet</button>
     </div>
   );
 }
@@ -1303,17 +1303,17 @@ function VisualBoardsEditor({ boards, onChange, stylePref, bhk }) {
   return (
     <div className="space-y-4">
       <div className="flex justify-end">
-        <button onClick={autoGenerate} type="button" className="inline-flex items-center gap-1.5 bg-[#FF6600]/10 hover:bg-[#FF6600] text-[#FF6600] hover:text-white px-3 py-1.5 rounded-xl text-xs font-bold transition"><Sparkles className="w-3.5 h-3.5" /> Auto-Generate {stylePref || "Modern"} Mood Board</button>
+        <button onClick={autoGenerate} type="button" className="inline-flex items-center gap-1.5 bg-[#B89416]/10 hover:bg-[#B89416] text-[#B89416] hover:text-white px-3 py-1.5 rounded-xl text-xs font-bold transition"><Sparkles className="w-3.5 h-3.5" /> Auto-Generate {stylePref || "Modern"} Mood Board</button>
       </div>
       {(boards || []).map((b, bi) => (
         <div key={b.id || bi} className="rounded-xl border border-black/10 bg-white overflow-hidden">
           <div className="p-3 border-b border-black/5 flex items-center gap-2">
-            <input value={b.title || ""} onChange={(e) => updateBoard(bi, { title: e.target.value })} className="flex-1 font-bold text-[#000F1B] bg-transparent focus:outline-none" placeholder="Board title" />
+            <input value={b.title || ""} onChange={(e) => updateBoard(bi, { title: e.target.value })} className="flex-1 font-bold text-[#252A2A] bg-transparent focus:outline-none" placeholder="Board title" />
             <button onClick={() => removeBoard(bi)} className="w-7 h-7 rounded-full grid place-items-center hover:bg-red-50 text-red-500"><Trash2 className="w-3.5 h-3.5" /></button>
           </div>
           <div className="p-3 space-y-3">
             <input value={b.description || ""} onChange={(e) => updateBoard(bi, { description: e.target.value })} className="w-full rounded border border-black/10 bg-white px-2 py-1.5 text-xs" placeholder="Board description..." />
-            <label className="inline-flex items-center gap-1.5 rounded-full bg-[#000F1B] text-white px-3.5 py-1.5 text-xs font-bold cursor-pointer hover:bg-[#FF6600] transition">
+            <label className="inline-flex items-center gap-1.5 rounded-full bg-[#252A2A] text-white px-3.5 py-1.5 text-xs font-bold cursor-pointer hover:bg-[#B89416] transition">
               {uploading === `${bi}` ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Plus className="w-3.5 h-3.5" />}
               Upload image
               <input type="file" accept="image/*" className="hidden" onChange={(e) => addImageFromUpload(bi, e.target.files?.[0])} />
@@ -1330,7 +1330,7 @@ function VisualBoardsEditor({ boards, onChange, stylePref, bhk }) {
           </div>
         </div>
       ))}
-      <button onClick={addBoard} className="inline-flex items-center gap-1.5 rounded-full bg-[#000F1B] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#FF6600] transition"><Plus className="w-3.5 h-3.5" /> Add Visual Board</button>
+      <button onClick={addBoard} className="inline-flex items-center gap-1.5 rounded-full bg-[#252A2A] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#B89416] transition"><Plus className="w-3.5 h-3.5" /> Add Visual Board</button>
     </div>
   );
 }
@@ -1362,7 +1362,7 @@ function SpecCategoryEditor({ categories, onChange, isInterior = false }) {
       {(categories || []).map((cat, ci) => (
         <div key={ci} className="rounded-xl border border-black/10 bg-[#F9FAFB] p-3">
           <div className="flex items-center gap-2 mb-3">
-            <input value={cat.name || ""} onChange={(e) => updateCat(ci, { name: e.target.value })} className="flex-1 font-bold text-[#000F1B] bg-transparent border-b border-transparent hover:border-black/10 focus:border-[#FF6600] focus:outline-none pb-1" placeholder="Category name" />
+            <input value={cat.name || ""} onChange={(e) => updateCat(ci, { name: e.target.value })} className="flex-1 font-bold text-[#252A2A] bg-transparent border-b border-transparent hover:border-black/10 focus:border-[#B89416] focus:outline-none pb-1" placeholder="Category name" />
             <button onClick={() => removeCat(ci)} className="text-red-500 w-7 h-7 grid place-items-center hover:bg-red-50 rounded-full"><Trash2 className="w-4 h-4" /></button>
           </div>
           <div className="space-y-1.5">
@@ -1376,8 +1376,8 @@ function SpecCategoryEditor({ categories, onChange, isInterior = false }) {
                   <>
                     <input type="number" value={it.rate || 0} onChange={(e) => updateItem(ci, ii, { rate: e.target.value })} className="col-span-1 rounded border border-black/10 bg-white px-2 py-1 text-xs" placeholder="Rate" />
                     <input type="number" value={it.quantity || 1} onChange={(e) => updateItem(ci, ii, { quantity: e.target.value })} className="col-span-1 rounded border border-black/10 bg-white px-2 py-1 text-xs" placeholder="Qty" />
-                    <label className="col-span-1 flex items-center gap-1 text-[10px] font-bold text-[#FF6600]">
-                      <input type="checkbox" checked={!!it.include_in_total} onChange={(e) => updateItem(ci, ii, { include_in_total: e.target.checked })} className="accent-[#FF6600]" /> Bill
+                    <label className="col-span-1 flex items-center gap-1 text-[10px] font-bold text-[#B89416]">
+                      <input type="checkbox" checked={!!it.include_in_total} onChange={(e) => updateItem(ci, ii, { include_in_total: e.target.checked })} className="accent-[#B89416]" /> Bill
                     </label>
                   </>
                 )}
@@ -1385,10 +1385,10 @@ function SpecCategoryEditor({ categories, onChange, isInterior = false }) {
               </div>
             ))}
           </div>
-          <button onClick={() => addItem(ci)} className="mt-2 text-[10px] font-bold text-[#FF6600] hover:underline"><Plus className="w-3 h-3 inline mr-1" /> Add Item to {cat.name || "Category"}</button>
+          <button onClick={() => addItem(ci)} className="mt-2 text-[10px] font-bold text-[#B89416] hover:underline"><Plus className="w-3 h-3 inline mr-1" /> Add Item to {cat.name || "Category"}</button>
         </div>
       ))}
-      <button onClick={addCat} className="rounded-full bg-[#000F1B] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#FF6600] transition"><Plus className="w-3.5 h-3.5 inline mr-1" /> Add Category</button>
+      <button onClick={addCat} className="rounded-full bg-[#252A2A] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#B89416] transition"><Plus className="w-3.5 h-3.5 inline mr-1" /> Add Category</button>
     </div>
   );
 }
@@ -1407,7 +1407,7 @@ function AddOnEditor({ items, onChange }) {
           <button onClick={() => remove(i)} className="col-span-1 text-red-500 mx-auto"><Trash2 className="w-4 h-4" /></button>
         </div>
       ))}
-      <button onClick={add} className="rounded-full bg-[#000F1B] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#FF6600] transition"><Plus className="w-3.5 h-3.5 inline mr-1" /> Add Add-on</button>
+      <button onClick={add} className="rounded-full bg-[#252A2A] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#B89416] transition"><Plus className="w-3.5 h-3.5 inline mr-1" /> Add Add-on</button>
     </div>
   );
 }
@@ -1426,7 +1426,7 @@ function LineItemEditor({ items, onChange }) {
           <button onClick={() => remove(i)} className="col-span-1 text-red-500 mx-auto"><Trash2 className="w-4 h-4" /></button>
         </div>
       ))}
-      <button onClick={add} className="rounded-full bg-[#000F1B] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#FF6600] transition"><Plus className="w-3.5 h-3.5 inline mr-1" /> Add Line Item</button>
+      <button onClick={add} className="rounded-full bg-[#252A2A] text-white px-4 py-1.5 text-xs font-bold hover:bg-[#B89416] transition"><Plus className="w-3.5 h-3.5 inline mr-1" /> Add Line Item</button>
     </div>
   );
 }
@@ -1453,13 +1453,13 @@ function InteriorLibraryPicker({ onClose, onAdd }) {
   const selectedItems = useMemo(() => items.filter((it) => selected[it.id]), [items, selected]);
 
   return (
-    <div className="fixed inset-0 bg-[#000F1B]/60 backdrop-blur-sm z-[60] grid place-items-center p-4 font-['Poppins']">
+    <div className="fixed inset-0 bg-[#252A2A]/60 backdrop-blur-sm z-[60] grid place-items-center p-4 font-['Poppins']">
       <div className="bg-white rounded-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden">
         <div className="p-5 border-b border-black/5 flex items-center justify-between">
-          <div className="font-bold text-[#000F1B] text-lg flex items-center gap-2">
-            <PackageOpen className="w-5 h-5 text-[#FF6600]" /> Pick Interior Items
+          <div className="font-bold text-[#252A2A] text-lg flex items-center gap-2">
+            <PackageOpen className="w-5 h-5 text-[#B89416]" /> Pick Interior Items
           </div>
-          <button onClick={onClose} className="w-9 h-9 rounded-full grid place-items-center hover:bg-[#F2F2F2] text-[#000F1B]"><X className="w-5 h-5" /></button>
+          <button onClick={onClose} className="w-9 h-9 rounded-full grid place-items-center hover:bg-[#F2F2F2] text-[#252A2A]"><X className="w-5 h-5" /></button>
         </div>
 
         <div className="p-4 border-b border-black/5 flex items-center gap-3 flex-wrap">
@@ -1471,15 +1471,15 @@ function InteriorLibraryPicker({ onClose, onAdd }) {
         </div>
 
         <div className="flex-1 overflow-y-auto p-4 space-y-2">
-          {loading ? <div className="p-12 flex justify-center"><Loader2 className="w-6 h-6 animate-spin text-[#FF6600]" /></div> :
+          {loading ? <div className="p-12 flex justify-center"><Loader2 className="w-6 h-6 animate-spin text-[#B89416]" /></div> :
             items.map((it) => (
-              <div key={it.id} onClick={() => toggle(it.id)} className={`p-3 rounded-xl border flex items-center justify-between cursor-pointer transition ${selected[it.id] ? "border-[#FF6600] bg-[#FF6600]/5" : "border-black/10 bg-white"}`}>
+              <div key={it.id} onClick={() => toggle(it.id)} className={`p-3 rounded-xl border flex items-center justify-between cursor-pointer transition ${selected[it.id] ? "border-[#B89416] bg-[#B89416]/5" : "border-black/10 bg-white"}`}>
                 <div>
-                  <div className="font-bold text-sm text-[#000F1B]">{it.name}</div>
-                  <div className="text-xs text-[#111111]/60">{it.category} • ₹{it.rate} {it.rate_unit}</div>
-                  {it.brand && <div className="text-[10px] text-[#111111]/50 mt-0.5">Brand: {it.brand}</div>}
+                  <div className="font-bold text-sm text-[#252A2A]">{it.name}</div>
+                  <div className="text-xs text-[#252A2A]/60">{it.category} • ₹{it.rate} {it.rate_unit}</div>
+                  {it.brand && <div className="text-[10px] text-[#252A2A]/50 mt-0.5">Brand: {it.brand}</div>}
                 </div>
-                <input type="checkbox" checked={!!selected[it.id]} readOnly className="accent-[#FF6600] w-4 h-4" />
+                <input type="checkbox" checked={!!selected[it.id]} readOnly className="accent-[#B89416] w-4 h-4" />
               </div>
             ))
           }
@@ -1487,7 +1487,7 @@ function InteriorLibraryPicker({ onClose, onAdd }) {
 
         <div className="p-4 border-t border-black/5 flex justify-end gap-2">
           <button onClick={onClose} className="px-4 py-2 border rounded-full text-xs font-bold">Cancel</button>
-          <button onClick={() => { onAdd(selectedItems); onClose(); }} disabled={selectedItems.length === 0} className="px-5 py-2 bg-[#FF6600] text-white rounded-full text-xs font-bold disabled:opacity-50">
+          <button onClick={() => { onAdd(selectedItems); onClose(); }} disabled={selectedItems.length === 0} className="px-5 py-2 bg-[#B89416] text-white rounded-full text-xs font-bold disabled:opacity-50">
             Add {selectedItems.length} Items
           </button>
         </div>

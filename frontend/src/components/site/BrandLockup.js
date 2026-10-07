@@ -9,24 +9,24 @@ export default function BrandLockup({
 }) {
   const isDarkBackground = tone === "dark";
 
-  // Your original sizes - KEPT EXACTLY SAME
+  // Sizes reduced by 50%
   const dimensions = {
-    xs: "w-[84px] h-8",
-    sm: "w-[112px] h-10",
+    xs: "w-[42px] h-4",
+    sm: "w-[56px] h-5",
     md: responsive
-      ? "w-[128px] h-10 sm:w-[148px] sm:h-12"
-      : "w-[148px] h-12",
-    lg: "w-[188px] h-16",
-  }[size] || "w-[148px] h-12";
+      ? "w-[64px] h-5 sm:w-[74px] sm:h-6"
+      : "w-[74px] h-6",
+    lg: "w-[94px] h-8",
+  }[size] || "w-[74px] h-6";
 
   if (!showLogo) return null;
 
   return (
     <img
-      src={isDarkBackground ? "/logoLight.svg" : "/logoDark.svg"}
-      alt="ConstructONS - Everything Construction. Always On."
+      src={isDarkBackground ? "/logo.svg" : "/logo.svg"}
+      alt="[Your Brand]s - Everything Construction. Always On."
       draggable={false}
-      className={`${dimensions} shrink-0 object-cover object-left select-none ${className}`}
+      className={`${dimensions} shrink-0 object-contain object-left select-none ${className}`}
     />
   );
 }

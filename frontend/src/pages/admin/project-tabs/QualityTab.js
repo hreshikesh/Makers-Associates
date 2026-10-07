@@ -165,18 +165,18 @@ export default function QualityTab({ project, onSaved }) {
       
       {/* TABS */}
       <div className="flex items-center gap-4 border-b border-gray-200">
-        <button onClick={() => setActiveTab("prd")} className={`pb-2.5 text-xs font-bold relative ${activeTab === "prd" ? "text-[#000F1B]" : "text-gray-400 hover:text-gray-700"}`}>
+        <button onClick={() => setActiveTab("prd")} className={`pb-2.5 text-xs font-bold relative ${activeTab === "prd" ? "text-[#252A2A]" : "text-gray-400 hover:text-gray-700"}`}>
           <span className="flex items-center gap-1.5"><List className="w-3.5 h-3.5" /> Stage Reviews</span>
-          {activeTab === "prd" && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6600]" />}
+          {activeTab === "prd" && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#B89416]" />}
         </button>
-        <button onClick={() => setActiveTab("issues")} className={`pb-2.5 text-xs font-bold relative flex items-center gap-1.5 ${activeTab === "issues" ? "text-[#000F1B]" : "text-gray-400 hover:text-gray-700"}`}>
+        <button onClick={() => setActiveTab("issues")} className={`pb-2.5 text-xs font-bold relative flex items-center gap-1.5 ${activeTab === "issues" ? "text-[#252A2A]" : "text-gray-400 hover:text-gray-700"}`}>
           <AlertTriangle className="w-3.5 h-3.5" /> Issues Dashboard
           {issues.filter(i => i.status !== "closed").length > 0 && <span className="bg-red-500 text-white text-[9px] px-1.5 py-0.5 rounded-full leading-none">{issues.filter(i => i.status !== "closed").length}</span>}
-          {activeTab === "issues" && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6600]" />}
+          {activeTab === "issues" && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#B89416]" />}
         </button>
-        <button onClick={() => setActiveTab("legacy")} className={`pb-2.5 text-xs font-bold relative ${activeTab === "legacy" ? "text-[#000F1B]" : "text-gray-400 hover:text-gray-700"}`}>
+        <button onClick={() => setActiveTab("legacy")} className={`pb-2.5 text-xs font-bold relative ${activeTab === "legacy" ? "text-[#252A2A]" : "text-gray-400 hover:text-gray-700"}`}>
           <span className="flex items-center gap-1.5"><History className="w-3.5 h-3.5" /> Legacy</span>
-          {activeTab === "legacy" && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6600]" />}
+          {activeTab === "legacy" && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#B89416]" />}
         </button>
       </div>
 
@@ -185,7 +185,7 @@ export default function QualityTab({ project, onSaved }) {
         <div className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-3.5 rounded-xl border border-gray-200 shadow-sm">
             <div>
-              <h3 className="text-xs font-bold text-[#000F1B]">Stage-wise Quality Reviews</h3>
+              <h3 className="text-xs font-bold text-[#252A2A]">Stage-wise Quality Reviews</h3>
               <p className="text-[10px] text-gray-500 font-medium">Build stages → Add verification checks → Release to Client</p>
             </div>
             <button onClick={() => setShowAddStage(true)} className="inline-flex items-center gap-1 px-3 py-2 bg-[#1A73E8] hover:bg-blue-700 text-white text-[11px] font-bold rounded-lg transition shadow-sm">
@@ -222,7 +222,7 @@ export default function QualityTab({ project, onSaved }) {
                         </div>
                       ) : (
                         <div className="flex items-center gap-2 flex-wrap">
-                          <h3 className="text-sm font-bold text-[#000F1B]">{stage.name}</h3>
+                          <h3 className="text-sm font-bold text-[#252A2A]">{stage.name}</h3>
                           <span className={`text-[8px] font-bold uppercase px-1.5 py-0.5 rounded border ${isReleased ? "bg-emerald-50 text-emerald-700 border-emerald-200" : "bg-amber-100 text-amber-800 border-amber-200"}`}>{isReleased ? "Released" : "Draft"}</span>
                           <span className="text-[10px] text-gray-500 font-medium">• {checks.length} checks</span>
                         </div>
@@ -259,7 +259,7 @@ export default function QualityTab({ project, onSaved }) {
                               return (
                                 <tr key={c.id} className="hover:bg-gray-50 align-top">
                                   <td className="p-2">{c.photo_urls?.[0] ? <a href={resolveMediaUrl(c.photo_urls[0])} target="_blank" rel="noreferrer"><img src={resolveMediaUrl(c.photo_urls[0])} alt="" className="w-10 h-10 object-cover rounded border border-gray-200" /></a> : <div className="w-10 h-10 bg-gray-100 rounded border border-gray-200 flex items-center justify-center"><ImageIcon className="w-4 h-4 text-gray-300" /></div>}</td>
-                                  <td className="p-2 font-bold text-[#000F1B]">{c.check_text}</td>
+                                  <td className="p-2 font-bold text-[#252A2A]">{c.check_text}</td>
                                   <td className="p-2 text-[#1A73E8] font-semibold">{c.area}</td>
                                   <td className="p-2 text-gray-600 max-w-[200px] truncate">{c.pm_remark}</td>
                                   {isReleased && (
@@ -296,7 +296,7 @@ export default function QualityTab({ project, onSaved }) {
                           <div className="sm:col-span-2"><label className="block text-[9px] font-bold text-gray-500 uppercase mb-1">PM Remark</label><input value={checkForm.pm_remark} onChange={(e) => setCheckForm({ ...checkForm, pm_remark: e.target.value })} placeholder="Checked on site." className="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg outline-none focus:border-blue-500 bg-white" /></div>
                           <div className="sm:col-span-2 flex items-center gap-3 flex-wrap">
                             <label className="cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-[10px] font-bold text-gray-700 hover:bg-gray-100 shadow-sm">
-                              {uploading ? <Loader2 className="w-3.5 h-3.5 animate-spin text-[#FF6600]" /> : <UploadCloud className="w-3.5 h-3.5 text-gray-500" />}
+                              {uploading ? <Loader2 className="w-3.5 h-3.5 animate-spin text-[#B89416]" /> : <UploadCloud className="w-3.5 h-3.5 text-gray-500" />}
                               {checkForm.photo_url ? "Replace Photo" : "Upload Evidence Photo"}
                               <input type="file" accept="image/*" className="hidden" onChange={handleUploadPhoto} disabled={uploading} />
                             </label>
@@ -310,7 +310,7 @@ export default function QualityTab({ project, onSaved }) {
                         </div>
                         <div className="flex justify-end gap-2 pt-2 border-t border-gray-200">
                           <button type="button" onClick={() => { setAddingCheckTo(null); setEditingCheck(null); }} className="px-3 py-1.5 text-[10px] font-bold text-gray-600">Cancel</button>
-                          <button type="button" onClick={handleSaveCheck} disabled={saving} className="px-4 py-1.5 text-[10px] font-bold bg-[#000F1B] hover:bg-[#FF6600] text-white rounded-lg flex items-center gap-1 transition shadow-sm">
+                          <button type="button" onClick={handleSaveCheck} disabled={saving} className="px-4 py-1.5 text-[10px] font-bold bg-[#252A2A] hover:bg-[#B89416] text-white rounded-lg flex items-center gap-1 transition shadow-sm">
                             {saving ? <Loader2 className="w-3 h-3 animate-spin" /> : <Save className="w-3 h-3" />}{editingCheck ? "Update Check" : "Save Check"}
                           </button>
                         </div>
@@ -333,7 +333,7 @@ export default function QualityTab({ project, onSaved }) {
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
             <div className="p-4 border-b border-gray-100 flex items-center gap-2 bg-gray-50/50">
               <AlertTriangle className="w-4 h-4 text-red-500" />
-              <h3 className="text-sm font-bold text-[#000F1B]">Issues Lifecycle Board</h3>
+              <h3 className="text-sm font-bold text-[#252A2A]">Issues Lifecycle Board</h3>
             </div>
             
             {issues.length === 0 ? (
@@ -358,7 +358,7 @@ export default function QualityTab({ project, onSaved }) {
                           <div className="text-[9px] text-gray-400 mt-1">{fmtDateTime(i.raised_at)}</div>
                         </td>
                         <td className="p-3">
-                          <div className="font-bold text-[#000F1B]">{i.check_text_snapshot}</div>
+                          <div className="font-bold text-[#252A2A]">{i.check_text_snapshot}</div>
                           <div className="text-[#1A73E8] font-semibold text-[10px] mt-0.5">{i.area}</div>
                         </td>
                         <td className="p-3 text-gray-700 max-w-[240px]">
@@ -382,7 +382,7 @@ export default function QualityTab({ project, onSaved }) {
                           )}
                         </td>
                         <td className="p-3 text-right whitespace-nowrap">
-                          <button onClick={() => openIssueModal(i)} className="px-3 py-1.5 bg-white border border-gray-300 hover:bg-gray-100 text-[#000F1B] rounded text-[10px] font-bold transition shadow-sm">
+                          <button onClick={() => openIssueModal(i)} className="px-3 py-1.5 bg-white border border-gray-300 hover:bg-gray-100 text-[#252A2A] rounded text-[10px] font-bold transition shadow-sm">
                             Manage Issue
                           </button>
                         </td>
@@ -406,7 +406,7 @@ export default function QualityTab({ project, onSaved }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {legacyInspections.map((insp) => (
               <div key={insp.id} className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-xs">
-                <div className="font-bold text-[#000F1B]">{insp.name}</div>
+                <div className="font-bold text-[#252A2A]">{insp.name}</div>
                 <div className="text-[10px] text-gray-500 mt-0.5">{insp.category} • {insp.status}</div>
               </div>
             ))}
@@ -419,7 +419,7 @@ export default function QualityTab({ project, onSaved }) {
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
             <div className="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50 shrink-0">
-              <h3 className="text-sm font-bold text-[#000F1B]">Manage Issue: {selectedIssue.id}</h3>
+              <h3 className="text-sm font-bold text-[#252A2A]">Manage Issue: {selectedIssue.id}</h3>
               <button onClick={() => setSelectedIssue(null)} className="p-1 hover:bg-gray-200 rounded-full"><X className="w-4 h-4 text-gray-500" /></button>
             </div>
             
@@ -472,7 +472,7 @@ export default function QualityTab({ project, onSaved }) {
               {selectedIssue.client_reviewed_at && (
                 <div className={`p-3 rounded-lg border ${selectedIssue.client_review_status === "approved" ? "bg-emerald-50 border-emerald-200" : "bg-red-50 border-red-200"}`}>
                   <div className="text-[10px] font-bold uppercase mb-1 text-gray-500">Client Response on Resolution</div>
-                  <div className="text-xs font-bold text-[#000F1B]">Decision: {selectedIssue.client_review_status === "approved" ? "Approved" : "Not Approved"}</div>
+                  <div className="text-xs font-bold text-[#252A2A]">Decision: {selectedIssue.client_review_status === "approved" ? "Approved" : "Not Approved"}</div>
                   {selectedIssue.client_review_remark && <div className="text-[10px] italic mt-1 text-gray-600">"{selectedIssue.client_review_remark}"</div>}
                 </div>
               )}

@@ -20,9 +20,9 @@ export default function BlogListPage() {
     "@graph": [
       {
         "@type": "Blog",
-        "@id": "https://constructons.com/blog#blog",
-        "url": "https://constructons.com/blog",
-        "name": "ConstructONS Construction & Architecture Blog",
+        "@id": "https://[Your Brand]s.com/blog#blog",
+        "url": "https://[Your Brand]s.com/blog",
+        "name": "[Your Brand]s Construction & Architecture Blog",
         "description": "Insights, guides, and practical advice on residential construction, budgeting, Vastu, and modern architecture in India."
       },
       {
@@ -32,13 +32,13 @@ export default function BlogListPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://constructons.com"
+            "item": "https://[Your Brand]s.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Blog",
-            "item": "https://constructons.com/blog"
+            "item": "https://[Your Brand]s.com/blog"
           }
         ]
       }
@@ -49,7 +49,7 @@ export default function BlogListPage() {
     <>
       <SEO
         title="Construction Insights, Tips & Home Building Blog"
-        description="Read expert guides, architectural design trends, budgeting tips, and step-by-step home construction advice in India on the ConstructONS blog."
+        description="Read expert guides, architectural design trends, budgeting tips, and step-by-step home construction advice in India on the [Your Brand]s blog."
         canonical="/blog"
         keywords="construction blog India, home building tips, house construction costs, architectural trends, turnkey construction guide, vastu planning tips"
         structuredData={structuredData}

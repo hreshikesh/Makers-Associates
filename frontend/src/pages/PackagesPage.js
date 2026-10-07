@@ -22,13 +22,13 @@ export default function PackagesPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://constructons.com",
+        item: "https://[Your Brand]s.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Packages",
-        item: "https://constructons.com/packages",
+        item: "https://[Your Brand]s.com/packages",
       },
     ],
   };

@@ -53,14 +53,14 @@ export default function Header() {
             rounded-full border px-2 py-2 sm:px-3
             ${scrolled
               ? "border-black/[0.06] bg-white/95 shadow-[0_12px_40px_rgba(17,17,17,0.08)] backdrop-blur-xl"
-              : "border-white/15 bg-[#111111]/30 backdrop-blur-md"
+              : "border-white/15 bg-[#252A2A]/30 backdrop-blur-md"
             }
           `}
         >
         <Link
   to="/"
   data-testid="header-logo"
-  aria-label="ConstructONS home"
+  aria-label="[Your Brand]s home"
   className="flex shrink-0 items-center py-1 pl-3 pr-4 sm:pl-4"
 >
   <BrandLockup tone={scrolled ? "light" : "dark"} size="lg" responsive />
@@ -81,8 +81,8 @@ export default function Header() {
                 hidden min-h-11 items-center justify-center rounded-full px-4
                 text-sm font-semibold transition-all duration-300 md:inline-flex
                 ${scrolled
-                  ? "text-[#111111] hover:text-[#FF6600]"
-                  : "text-white hover:text-[#FF6600]"
+                  ? "text-[#252A2A] hover:text-[#B89416]"
+                  : "text-white hover:text-[#B89416]"
                 }
               `}
             >
@@ -95,10 +95,10 @@ export default function Header() {
               data-testid="header-cta"
               className="
                 hidden min-h-11 items-center justify-center gap-2 rounded-full
-                bg-gradient-to-r from-[#FF6600] to-[#FF0000] px-5 text-sm font-semibold text-white
+                bg-gradient-to-r from-[#B89416] to-[#B89416] px-5 text-sm font-semibold text-white
                 transition-all duration-300
                 hover:opacity-90 hover:shadow-[0_8px_30px_rgba(255,102,0,0.35)]
-                focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6600]
+                focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B89416]
                 focus-visible:ring-offset-2 md:inline-flex
               "
             >
@@ -115,8 +115,8 @@ export default function Header() {
               className={`
                 grid h-11 w-11 shrink-0 place-items-center rounded-full transition-colors xl:hidden
                 ${scrolled
-                  ? "bg-[#111111] text-white hover:bg-[#FF6600]"
-                  : "border border-white/20 bg-white/10 text-white hover:bg-[#FF6600] hover:border-[#FF6600]"
+                  ? "bg-[#252A2A] text-white hover:bg-[#B89416]"
+                  : "border border-white/20 bg-white/10 text-white hover:bg-[#B89416] hover:border-[#B89416]"
                 }
               `}
             >
@@ -144,7 +144,7 @@ export default function Header() {
                     to="/portal/login"
                     onClick={() => setOpen(false)}
                     data-testid="mobile-client-login"
-                    className="flex min-h-12 items-center rounded-2xl px-4 text-sm font-semibold text-[#111111] transition-colors hover:text-[#FF6600] hover:bg-[#FF6600]/5"
+                    className="flex min-h-12 items-center rounded-2xl px-4 text-sm font-semibold text-[#252A2A] transition-colors hover:text-[#B89416] hover:bg-[#B89416]/5"
                   >
                     Client Login
                   </Link>
@@ -155,7 +155,7 @@ export default function Header() {
                       setOpen(false);
                       openLead({ source: "header" });
                     }}
-                    className="mt-1 flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#FF6600] to-[#FF0000] px-5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    className="mt-1 flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#B89416] to-[#B89416] px-5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                   >
                     Talk to an Expert
                     <ArrowRight className="h-4 w-4" />
@@ -195,8 +195,8 @@ function NavItem({ item, scrolled }) {
     relative rounded-full px-3 py-2.5 text-[13px] font-medium
     transition-colors duration-200 cursor-pointer
     ${scrolled
-      ? "text-[#111111]/75 hover:text-[#FF6600]"
-      : "text-white/80 hover:text-[#FF6600]"
+      ? "text-[#252A2A]/75 hover:text-[#B89416]"
+      : "text-white/80 hover:text-[#B89416]"
     }
   `;
 
@@ -242,8 +242,8 @@ function MobileNavItem({ item, onClose }) {
 
   const className = `
     flex min-h-12 items-center justify-between rounded-2xl px-4 text-sm
-    font-medium text-[#111111]/80 transition-colors cursor-pointer
-    hover:bg-[#FF6600]/5 hover:text-[#FF6600]
+    font-medium text-[#252A2A]/80 transition-colors cursor-pointer
+    hover:bg-[#B89416]/5 hover:text-[#B89416]
   `;
 
   if (!item.hash) {

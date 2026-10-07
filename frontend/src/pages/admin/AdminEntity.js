@@ -268,13 +268,13 @@ const ENTITY_CONFIG = {
   },
   comparison: {
     title: "Comparison Rows",
-    listCols: ["feature", "traditional", "constructons", "sort_order"],
+    listCols: ["feature", "traditional", "[Your Brand]s", "sort_order"],
     fields: [
       { name: "feature", type: "string", required: true },
       { name: "traditional", type: "string" },
-      { name: "constructons", type: "string" },
+      { name: "[Your Brand]s", type: "string" },
       { name: "traditional_positive", type: "bool" },
-      { name: "constructons_positive", type: "bool" },
+      { name: "[Your Brand]s_positive", type: "bool" },
       { name: "sort_order", type: "number" },
       { name: "is_published", type: "bool" },
     ],
@@ -350,10 +350,10 @@ export default function AdminEntity() {
   if (!cfg) {
     return (
       <div className="p-8 text-center bg-white rounded-2xl border border-black/5 font-['Poppins']">
-        <Database className="w-10 h-10 text-[#FF6600] mx-auto mb-3" />
-        <h2 className="text-xl font-bold text-[#000F1B]">Unknown Entity Schema</h2>
-        <p className="text-sm text-[#111111]/60 mt-1">
-          Entity <code className="text-[#FF6600] bg-black/5 px-2 py-0.5 rounded">{entity}</code> is not declared.
+        <Database className="w-10 h-10 text-[#B89416] mx-auto mb-3" />
+        <h2 className="text-xl font-bold text-[#252A2A]">Unknown Entity Schema</h2>
+        <p className="text-sm text-[#252A2A]/60 mt-1">
+          Entity <code className="text-[#B89416] bg-black/5 px-2 py-0.5 rounded">{entity}</code> is not declared.
         </p>
       </div>
     );
@@ -451,16 +451,16 @@ export default function AdminEntity() {
   };
 
   return (
-    <div className="font-['Poppins'] text-[#111111]">
+    <div className="font-['Poppins'] text-[#252A2A]">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="text-[11px] font-bold text-[#FF6600] tracking-wider uppercase">ConstructONS™ CMS</div>
-          <h1 className="mt-1 text-2xl sm:text-3xl font-bold text-[#000F1B] tracking-tight">{cfg.title}</h1>
+          <div className="text-[11px] font-bold text-[#B89416] tracking-wider uppercase">[Your Brand]s™ CMS</div>
+          <h1 className="mt-1 text-2xl sm:text-3xl font-bold text-[#252A2A] tracking-tight">{cfg.title}</h1>
         </div>
         <button
           type="button"
           onClick={startCreate}
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#FF6600] hover:bg-[#FF0000] text-white px-5 py-3 text-xs sm:text-sm font-semibold shadow-sm transition min-h-[44px]"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#B89416] hover:bg-[#B89416] text-white px-5 py-3 text-xs sm:text-sm font-semibold shadow-sm transition min-h-[44px]"
         >
           <Plus className="w-4 h-4" /> <span>Add New {cfg.title}</span>
         </button>
@@ -468,15 +468,15 @@ export default function AdminEntity() {
 
       <div className="mt-6 rounded-2xl bg-white border border-black/5 shadow-sm overflow-hidden">
         {loading ? (
-          <div className="p-12 flex flex-col items-center justify-center gap-3 text-sm text-[#111111]/60">
-            <Loader2 className="w-7 h-7 animate-spin text-[#FF6600]" /> Fetching records...
+          <div className="p-12 flex flex-col items-center justify-center gap-3 text-sm text-[#252A2A]/60">
+            <Loader2 className="w-7 h-7 animate-spin text-[#B89416]" /> Fetching records...
           </div>
         ) : items.length === 0 ? (
-          <div className="p-12 text-center text-sm text-[#111111]/50">No records found. Click &quot;Add New&quot; to create one.</div>
+          <div className="p-12 text-center text-sm text-[#252A2A]/50">No records found. Click &quot;Add New&quot; to create one.</div>
         ) : (
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm">
-              <thead className="bg-[#000F1B] text-white">
+              <thead className="bg-[#252A2A] text-white">
                 <tr>
                   {isTeam && <th className="px-5 py-3.5 w-16" />}
                   {cfg.listCols.map((col) => (
@@ -495,18 +495,18 @@ export default function AdminEntity() {
                         {it.photo ? (
                           <img src={it.photo} alt={it.name} className="w-8 h-8 rounded-full object-cover bg-black/5 border border-black/10" />
                         ) : (
-                          <div className="w-8 h-8 rounded-full bg-[#000F1B] text-white flex items-center justify-center">
+                          <div className="w-8 h-8 rounded-full bg-[#252A2A] text-white flex items-center justify-center">
                             <User className="w-4 h-4" />
                           </div>
                         )}
                       </td>
                     )}
                     {cfg.listCols.map((col) => (
-                      <td key={col} className="px-5 py-3.5 text-[#000F1B]">
+                      <td key={col} className="px-5 py-3.5 text-[#252A2A]">
                         {typeof it[col] === "boolean" ? (
                           <span
                             className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold ${
-                              it[col] ? "bg-emerald-50 text-emerald-700" : "bg-black/5 text-[#111111]/50"
+                              it[col] ? "bg-emerald-50 text-emerald-700" : "bg-black/5 text-[#252A2A]/50"
                             }`}
                           >
                             {it[col] ? "Yes" : "No"}
@@ -518,10 +518,10 @@ export default function AdminEntity() {
                     ))}
                     <td className="px-5 py-3.5 text-right whitespace-nowrap">
                       <div className="flex items-center justify-end gap-1">
-                        <button type="button" onClick={() => startEdit(it)} className="w-9 h-9 rounded-xl hover:bg-[#F2F2F2] grid place-items-center text-[#000F1B] transition">
+                        <button type="button" onClick={() => startEdit(it)} className="w-9 h-9 rounded-xl hover:bg-[#F2F2F2] grid place-items-center text-[#252A2A] transition">
                           <Pencil className="w-4 h-4" />
                         </button>
-                        <button type="button" onClick={() => remove(it.id)} className="w-9 h-9 rounded-xl hover:bg-red-50 text-[#FF0000] grid place-items-center transition">
+                        <button type="button" onClick={() => remove(it.id)} className="w-9 h-9 rounded-xl hover:bg-red-50 text-[#B89416] grid place-items-center transition">
                           <Trash2 className="w-4 h-4" />
                         </button>
                       </div>
@@ -537,7 +537,7 @@ export default function AdminEntity() {
       <AnimatePresence>
         {editing && (
           <div className="fixed inset-0 z-50 flex items-stretch justify-end">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 bg-[#000F1B]/60 backdrop-blur-sm" onClick={close} />
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 bg-[#252A2A]/60 backdrop-blur-sm" onClick={close} />
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -547,10 +547,10 @@ export default function AdminEntity() {
             >
               <div className="p-5 sm:p-6 border-b border-black/5 flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur-md z-10">
                 <div>
-                  <span className="text-[10px] font-bold text-[#FF6600] uppercase tracking-wider">{editing.__isNew ? "Create New" : "Edit Record"}</span>
-                  <div className="text-lg font-bold text-[#000F1B] mt-0.5">{cfg.title}</div>
+                  <span className="text-[10px] font-bold text-[#B89416] uppercase tracking-wider">{editing.__isNew ? "Create New" : "Edit Record"}</span>
+                  <div className="text-lg font-bold text-[#252A2A] mt-0.5">{cfg.title}</div>
                 </div>
-                <button type="button" onClick={close} className="w-9 h-9 rounded-xl grid place-items-center hover:bg-[#F2F2F2] text-[#000F1B] transition">
+                <button type="button" onClick={close} className="w-9 h-9 rounded-xl grid place-items-center hover:bg-[#F2F2F2] text-[#252A2A] transition">
                   <X className="w-5 h-5" />
                 </button>
               </div>
@@ -568,10 +568,10 @@ export default function AdminEntity() {
               </div>
 
               <div className="p-5 sm:p-6 border-t border-black/5 sticky bottom-0 bg-[#F2F2F2] flex items-center justify-end gap-3 z-10">
-                <button type="button" onClick={close} disabled={saving} className="rounded-xl border border-black/15 bg-white px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#000F1B] hover:bg-black/5 transition">
+                <button type="button" onClick={close} disabled={saving} className="rounded-xl border border-black/15 bg-white px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#252A2A] hover:bg-black/5 transition">
                   Cancel
                 </button>
-                <button type="button" onClick={save} disabled={saving} className="inline-flex items-center gap-2 rounded-xl bg-[#FF6600] hover:bg-[#FF0000] text-white px-6 py-2.5 text-xs sm:text-sm font-bold shadow-sm transition disabled:opacity-60">
+                <button type="button" onClick={save} disabled={saving} className="inline-flex items-center gap-2 rounded-xl bg-[#B89416] hover:bg-[#B89416] text-white px-6 py-2.5 text-xs sm:text-sm font-bold shadow-sm transition disabled:opacity-60">
                   {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />} Save Record
                 </button>
               </div>
@@ -588,13 +588,13 @@ function FieldEditor({ field, value, onChange, editingItem }) {
   const isRequired = !!field.required;
 
   const label = (
-    <div className="text-[11px] uppercase tracking-wider text-[#000F1B] font-bold mb-1.5 flex items-center justify-between gap-2">
+    <div className="text-[11px] uppercase tracking-wider text-[#252A2A] font-bold mb-1.5 flex items-center justify-between gap-2">
       <span className="flex items-center gap-2 min-w-0">
         <span className="truncate">{field.label || field.name.replaceAll("_", " ")}</span>
         {isRequired ? (
-          <span className="shrink-0 text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#FF0000]/10 text-[#FF0000]">Required</span>
+          <span className="shrink-0 text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#B89416]/10 text-[#B89416]">Required</span>
         ) : (
-          <span className="shrink-0 text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-black/5 text-[#111111]/45">Optional</span>
+          <span className="shrink-0 text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-black/5 text-[#252A2A]/45">Optional</span>
         )}
       </span>
     </div>
@@ -630,22 +630,22 @@ function FieldEditor({ field, value, onChange, editingItem }) {
       <div className="block">
         {label}
         <div className="flex items-center gap-4 p-3 rounded-xl border border-black/10 bg-[#F2F2F2]/50">
-          <div className="w-16 h-16 rounded-full overflow-hidden bg-[#000F1B] grid place-items-center border-2 border-white shadow-sm shrink-0">
+          <div className="w-16 h-16 rounded-full overflow-hidden bg-[#252A2A] grid place-items-center border-2 border-white shadow-sm shrink-0">
             {value ? <img src={value} alt="Preview" className="w-full h-full object-cover" /> : <User className="w-6 h-6 text-white/50" />}
           </div>
           <div className="flex-1 space-y-2">
-            <label className="inline-flex items-center gap-2 rounded-xl bg-white border border-black/10 px-4 py-2 text-xs font-semibold text-[#000F1B] cursor-pointer hover:bg-black/5 transition shadow-sm w-max">
-              {uploading ? <Loader2 className="w-4 h-4 animate-spin text-[#FF6600]" /> : <UploadCloud className="w-4 h-4 text-[#FF6600]" />}
+            <label className="inline-flex items-center gap-2 rounded-xl bg-white border border-black/10 px-4 py-2 text-xs font-semibold text-[#252A2A] cursor-pointer hover:bg-black/5 transition shadow-sm w-max">
+              {uploading ? <Loader2 className="w-4 h-4 animate-spin text-[#B89416]" /> : <UploadCloud className="w-4 h-4 text-[#B89416]" />}
               <span>{uploading ? "Uploading..." : "Upload New Image"}</span>
               <input type="file" accept="image/*" className="hidden" onChange={handleUpload} disabled={uploading} />
             </label>
-            <p className="text-[10px] text-[#111111]/45">
+            <p className="text-[10px] text-[#252A2A]/45">
               {field.category === "team" || field.maxBytes === 1024 * 1024 ? "Max 1 MB · JPG/PNG/WebP" : "Image file"}
             </p>
             {value && (
               <div className="flex items-center gap-2">
-                <input value={value} readOnly className="flex-1 text-[10px] text-[#111111]/50 bg-transparent outline-none truncate" />
-                <button type="button" onClick={() => onChange("")} className="text-[10px] font-semibold text-[#FF0000] hover:underline">
+                <input value={value} readOnly className="flex-1 text-[10px] text-[#252A2A]/50 bg-transparent outline-none truncate" />
+                <button type="button" onClick={() => onChange("")} className="text-[10px] font-semibold text-[#B89416] hover:underline">
                   Remove
                 </button>
               </div>
@@ -673,9 +673,9 @@ function FieldEditor({ field, value, onChange, editingItem }) {
           }}
           placeholder="+919876543210"
           maxLength={13}
-          className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#FF6600] text-sm text-[#000F1B] font-mono"
+          className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#B89416] text-sm text-[#252A2A] font-mono"
         />
-        <p className="mt-1 text-[10px] text-[#111111]/45">+91 then exactly 10 digits. No spaces or letters.</p>
+        <p className="mt-1 text-[10px] text-[#252A2A]/45">+91 then exactly 10 digits. No spaces or letters.</p>
       </label>
     );
   }
@@ -694,12 +694,12 @@ function FieldEditor({ field, value, onChange, editingItem }) {
     const display = value === undefined || value === null || value === "" ? "+91" : String(value);
     return (
       <div className="block">
-        <div className="text-[11px] uppercase tracking-wider text-[#000F1B] font-bold mb-1.5 flex justify-between items-center gap-2">
+        <div className="text-[11px] uppercase tracking-wider text-[#252A2A] font-bold mb-1.5 flex justify-between items-center gap-2">
           <span className="flex items-center gap-2">
             {field.label || "WhatsApp"}
-            <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-black/5 text-[#111111]/45">Optional</span>
+            <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-black/5 text-[#252A2A]/45">Optional</span>
           </span>
-          <button type="button" onClick={handleSync} className="inline-flex items-center gap-1 text-[9px] text-[#FF6600] font-bold hover:underline">
+          <button type="button" onClick={handleSync} className="inline-flex items-center gap-1 text-[9px] text-[#B89416] font-bold hover:underline">
             <Copy className="w-3 h-3" /> Same as Phone
           </button>
         </div>
@@ -710,7 +710,7 @@ function FieldEditor({ field, value, onChange, editingItem }) {
           onChange={(e) => onChange(forcePhone91Input(e.target.value))}
           maxLength={13}
           placeholder="+919876543210"
-          className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#FF6600] text-sm font-mono"
+          className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#B89416] text-sm font-mono"
         />
       </div>
     );
@@ -719,9 +719,9 @@ function FieldEditor({ field, value, onChange, editingItem }) {
   if (field.type === "bool") {
     return (
       <label className="flex items-center gap-3 p-3 rounded-xl border border-black/5 bg-[#F2F2F2]/40 hover:bg-[#F2F2F2] cursor-pointer transition">
-        <input type="checkbox" checked={!!value} onChange={(e) => onChange(e.target.checked)} className="w-5 h-5 rounded accent-[#FF6600]" />
-        <span className="text-xs sm:text-sm font-semibold text-[#000F1B]">{field.label || field.name.replaceAll("_", " ")}</span>
-        <span className="ml-auto text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-black/5 text-[#111111]/45">Optional</span>
+        <input type="checkbox" checked={!!value} onChange={(e) => onChange(e.target.checked)} className="w-5 h-5 rounded accent-[#B89416]" />
+        <span className="text-xs sm:text-sm font-semibold text-[#252A2A]">{field.label || field.name.replaceAll("_", " ")}</span>
+        <span className="ml-auto text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-black/5 text-[#252A2A]/45">Optional</span>
       </label>
     );
   }
@@ -730,7 +730,7 @@ function FieldEditor({ field, value, onChange, editingItem }) {
     return (
       <label className="block">
         {label}
-        <input type="number" value={value ?? 0} onChange={(e) => onChange(e.target.value)} className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#FF6600] text-sm text-[#000F1B]" />
+        <input type="number" value={value ?? 0} onChange={(e) => onChange(e.target.value)} className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#B89416] text-sm text-[#252A2A]" />
       </label>
     );
   }
@@ -739,7 +739,7 @@ function FieldEditor({ field, value, onChange, editingItem }) {
     return (
       <label className="block">
         {label}
-        <textarea value={value || ""} onChange={(e) => onChange(e.target.value)} rows={4} className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#FF6600] text-sm text-[#000F1B] resize-y" placeholder={field.placeholder || "Enter details..."} />
+        <textarea value={value || ""} onChange={(e) => onChange(e.target.value)} rows={4} className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#B89416] text-sm text-[#252A2A] resize-y" placeholder={field.placeholder || "Enter details..."} />
       </label>
     );
   }
@@ -758,7 +758,7 @@ function FieldEditor({ field, value, onChange, editingItem }) {
     return (
       <label className="block">
         {label}
-        <input value={val} placeholder={field.placeholder || "Comma-separated"} onChange={(e) => onChange(e.target.value)} className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#FF6600] text-sm text-[#000F1B]" />
+        <input value={val} placeholder={field.placeholder || "Comma-separated"} onChange={(e) => onChange(e.target.value)} className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#B89416] text-sm text-[#252A2A]" />
       </label>
     );
   }
@@ -768,7 +768,7 @@ function FieldEditor({ field, value, onChange, editingItem }) {
     return (
       <label className="block">
         {label}
-        <textarea value={val} onChange={(e) => onChange(e.target.value)} rows={5} placeholder={field.placeholder} className="w-full rounded-xl border border-black/10 bg-[#F2F2F2]/60 px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#FF6600] text-xs font-mono text-[#000F1B] resize-y" />
+        <textarea value={val} onChange={(e) => onChange(e.target.value)} rows={5} placeholder={field.placeholder} className="w-full rounded-xl border border-black/10 bg-[#F2F2F2]/60 px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#B89416] text-xs font-mono text-[#252A2A] resize-y" />
       </label>
     );
   }
@@ -777,7 +777,7 @@ function FieldEditor({ field, value, onChange, editingItem }) {
     return (
       <label className="block">
         {label}
-        <select value={value || ""} onChange={(e) => onChange(e.target.value)} className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#FF6600] text-sm text-[#000F1B]">
+        <select value={value || ""} onChange={(e) => onChange(e.target.value)} className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#B89416] text-sm text-[#252A2A]">
           <option value="">— Select an option —</option>
           {field.options?.map((o) => (
             <option key={o} value={o}>
@@ -808,10 +808,10 @@ function FieldEditor({ field, value, onChange, editingItem }) {
           }
           onChange(v);
         }}
-        className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#FF6600] text-sm text-[#000F1B]"
+        className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 outline-none focus:ring-2 focus:ring-[#B89416] text-sm text-[#252A2A]"
       />
       {field.name === "name" && (
-        <p className="mt-1 text-[10px] text-[#111111]/45">Letters and spaces only · max 30 characters</p>
+        <p className="mt-1 text-[10px] text-[#252A2A]/45">Letters and spaces only · max 30 characters</p>
       )}
     </label>
   );

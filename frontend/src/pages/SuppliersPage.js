@@ -29,11 +29,11 @@ const CLEAN_MAP_STYLE = [
   { featureType: "road.highway", elementType: "geometry", stylers: [{ color: "#ffe0b2" }] },
 ];
 
-function BrandName({ constructClass = "text-white", onsClass = "text-[#FF6600]" }) {
+function BrandName({ constructClass = "text-white", onsClass = "text-[#B89416]" }) {
   return (
     <span className="inline-flex items-center font-black tracking-tight">
-      <span className={constructClass}>Construct</span>
-      <span className={onsClass}>ONS</span>
+      <span className={constructClass}>Your</span>
+      <span className={onsClass}>Brand</span>
     </span>
   );
 }
@@ -86,8 +86,8 @@ export default function SuppliersPage() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": "https://constructons.com/marketplace/materials#webpage",
-        "url": "https://constructons.com/marketplace/materials",
+        "@id": "https://[Your Brand]s.com/marketplace/materials#webpage",
+        "url": "https://[Your Brand]s.com/marketplace/materials",
         "name": "Wholesale Building Materials & Certified Supplier Network",
         "description": "Source directly from verified suppliers for TMT steel, cement, vitrified tiles, electricals, and plumbing fittings across India."
       },
@@ -98,19 +98,19 @@ export default function SuppliersPage() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://constructons.com"
+            "item": "https://[Your Brand]s.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Marketplace",
-            "item": "https://constructons.com/marketplace/materials"
+            "item": "https://[Your Brand]s.com/marketplace/materials"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Materials & Suppliers",
-            "item": "https://constructons.com/marketplace/materials"
+            "item": "https://[Your Brand]s.com/marketplace/materials"
           }
         ]
       }
@@ -118,7 +118,7 @@ export default function SuppliersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] font-['Poppins',sans-serif] text-[#000F1B] flex flex-col selection:bg-[#FF6600] selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#F8F9FA] font-['Poppins',sans-serif] text-[#252A2A] flex flex-col selection:bg-[#B89416] selection:text-white overflow-x-hidden">
       <SEO
         title="Wholesale Building Materials, Cement & TMT Steel Suppliers"
         description="Source construction materials directly at guaranteed wholesale rates. Locate verified distributors for cement, TMT steel, tiles, sanitaryware, and electricals on our live vendor map."
@@ -130,14 +130,14 @@ export default function SuppliersPage() {
       <Header />
 
       {/* Hero Banner */}
-      <section className="bg-[#000F1B] pt-28 pb-10 md:pt-36 md:pb-12 px-4 sm:px-6 relative shrink-0 overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#FF6600_1px,transparent_1px)] [background-size:24px_24px]" />
+      <section className="bg-[#252A2A] pt-28 pb-10 md:pt-36 md:pb-12 px-4 sm:px-6 relative shrink-0 overflow-hidden border-b border-white/10">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#B89416_1px,transparent_1px)] [background-size:24px_24px]" />
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-semibold mb-3 backdrop-blur-sm">
-                <Building2 className="w-3.5 h-3.5 text-[#FF6600]" />
+                <Building2 className="w-3.5 h-3.5 text-[#B89416]" />
                 <BrandName constructClass="text-white" />
                 <span className="text-white/80 font-normal">Verified Supplier Network</span>
               </div>
@@ -155,7 +155,7 @@ export default function SuppliersPage() {
                 <BrandName constructClass="text-white" /> Verified
               </div>
               <div className="bg-white/5 border border-white/10 px-4 py-2.5 rounded-2xl flex items-center gap-2">
-                <Package className="w-4 h-4 text-[#FF6600]" /> Direct Wholesale Pricing
+                <Package className="w-4 h-4 text-[#B89416]" /> Direct Wholesale Pricing
               </div>
             </div>
           </div>
@@ -173,7 +173,7 @@ export default function SuppliersPage() {
               placeholder="Search Network by Pincode or Area..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#F5F6F8] border border-black/10 focus:border-[#FF6600] focus:bg-white text-xs font-bold pl-10 pr-4 py-2.5 rounded-xl outline-none transition"
+              className="w-full bg-[#F5F6F8] border border-black/10 focus:border-[#B89416] focus:bg-white text-xs font-bold pl-10 pr-4 py-2.5 rounded-xl outline-none transition"
             />
           </div>
 
@@ -182,9 +182,9 @@ export default function SuppliersPage() {
             <div className="relative" ref={dropdownRef}>
               <button 
                 onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-                className="flex items-center gap-2 bg-[#F5F6F8] hover:bg-gray-200 border border-black/10 px-3.5 py-2.5 rounded-xl text-xs font-bold transition text-[#000F1B]"
+                className="flex items-center gap-2 bg-[#F5F6F8] hover:bg-gray-200 border border-black/10 px-3.5 py-2.5 rounded-xl text-xs font-bold transition text-[#252A2A]"
               >
-                <Filter className="w-3.5 h-3.5 text-[#FF6600]" />
+                <Filter className="w-3.5 h-3.5 text-[#B89416]" />
                 <span>{activeCategory}</span>
                 <ChevronDown className={`w-3.5 h-3.5 text-gray-500 transition-transform ${isCategoryOpen ? "rotate-180" : ""}`} />
               </button>
@@ -206,12 +206,12 @@ export default function SuppliersPage() {
                         }}
                         className={`w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center justify-between transition ${
                           activeCategory === cat 
-                            ? "bg-[#000F1B] text-white" 
-                            : "text-[#000F1B]/80 hover:bg-gray-100"
+                            ? "bg-[#252A2A] text-white" 
+                            : "text-[#252A2A]/80 hover:bg-gray-100"
                         }`}
                       >
                         {cat}
-                        {activeCategory === cat && <Check className="w-3.5 h-3.5 text-[#FF6600]" />}
+                        {activeCategory === cat && <Check className="w-3.5 h-3.5 text-[#B89416]" />}
                       </button>
                     ))}
                   </motion.div>
@@ -225,7 +225,7 @@ export default function SuppliersPage() {
               <select 
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-transparent border-none text-xs font-bold text-[#000F1B] outline-none py-1.5 cursor-pointer"
+                className="bg-transparent border-none text-xs font-bold text-[#252A2A] outline-none py-1.5 cursor-pointer"
               >
                 {SORT_OPTIONS.map(opt => (
                   <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -243,7 +243,7 @@ export default function SuppliersPage() {
               }`}
             >
               <ShieldCheck className={`w-3.5 h-3.5 ${verifiedOnly ? "text-emerald-600" : "text-gray-400"}`} />
-              <BrandName constructClass={verifiedOnly ? "text-emerald-900" : "text-[#000F1B]"} /> Verified
+              <BrandName constructClass={verifiedOnly ? "text-emerald-900" : "text-[#252A2A]"} /> Verified
             </button>
           </div>
         </div>
@@ -266,7 +266,7 @@ export default function SuppliersPage() {
                   setActiveCategory("All Categories");
                   setVerifiedOnly(false);
                 }}
-                className="text-xs font-bold text-[#FF6600] hover:underline"
+                className="text-xs font-bold text-[#B89416] hover:underline"
               >
                 Reset Filters
               </button>
@@ -287,7 +287,7 @@ export default function SuppliersPage() {
                   onMouseLeave={() => setHoveredVendorId(null)}
                   className={`group bg-white rounded-2xl border p-4 flex flex-col sm:flex-row gap-4 transition-all duration-300 shadow-sm ${
                     hoveredVendorId === vendor.id 
-                      ? "border-[#FF6600] shadow-xl ring-2 ring-[#FF6600]/10 -translate-y-0.5" 
+                      ? "border-[#B89416] shadow-xl ring-2 ring-[#B89416]/10 -translate-y-0.5" 
                       : "border-black/10 hover:border-black/20"
                   }`}
                 >
@@ -304,7 +304,7 @@ export default function SuppliersPage() {
 
                   <div className="flex-1 flex flex-col min-w-0">
                     <div className="flex items-center justify-between gap-2 mb-1">
-                      <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#FF6600] truncate">
+                      <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#B89416] truncate">
                         {vendor.category}
                       </span>
                       {vendor.verified && (
@@ -315,7 +315,7 @@ export default function SuppliersPage() {
                       )}
                     </div>
 
-                    <h3 className="text-base font-bold text-[#000F1B] group-hover:text-[#FF6600] transition-colors leading-tight mb-2 truncate">
+                    <h3 className="text-base font-bold text-[#252A2A] group-hover:text-[#B89416] transition-colors leading-tight mb-2 truncate">
                       {vendor.name}
                     </h3>
 
@@ -338,14 +338,14 @@ export default function SuppliersPage() {
                     <div className="mt-auto pt-2 border-t border-gray-100 flex items-center justify-between">
                       <a 
                         href={`tel:${vendor.phone}`} 
-                        className="inline-flex items-center gap-1 text-xs font-bold text-gray-600 hover:text-[#000F1B] transition"
+                        className="inline-flex items-center gap-1 text-xs font-bold text-gray-600 hover:text-[#252A2A] transition"
                       >
                         <Phone className="w-3.5 h-3.5" /> {vendor.phone}
                       </a>
 
                       <button
-                        onClick={() => openLead({ package: vendor.name, source: "constructons_materials_directory" })}
-                        className="bg-[#000F1B] hover:bg-[#FF6600] text-white px-3 py-1.5 rounded-xl text-xs font-bold transition duration-200 shadow-sm flex items-center gap-1"
+                        onClick={() => openLead({ package: vendor.name, source: "[Your Brand]s_materials_directory" })}
+                        className="bg-[#252A2A] hover:bg-[#B89416] text-white px-3 py-1.5 rounded-xl text-xs font-bold transition duration-200 shadow-sm flex items-center gap-1"
                       >
                         Request Quote <ChevronDown className="-rotate-90 w-3.5 h-3.5" />
                       </button>
@@ -358,8 +358,8 @@ export default function SuppliersPage() {
             {filteredVendors.length === 0 && (
               <div className="text-center py-12 bg-white rounded-2xl border border-black/10 p-6 shadow-sm">
                 <Building2 className="w-10 h-10 text-gray-300 mx-auto mb-2" />
-                <h3 className="text-base font-bold text-[#000F1B] flex items-center justify-center gap-1">
-                  No <BrandName constructClass="text-[#000F1B]" /> suppliers found
+                <h3 className="text-base font-bold text-[#252A2A] flex items-center justify-center gap-1">
+                  No <BrandName constructClass="text-[#252A2A]" /> suppliers found
                 </h3>
                 <p className="text-xs text-gray-500 mt-1 max-w-xs mx-auto">Try broadening your search query or selecting a different category.</p>
               </div>
@@ -373,7 +373,7 @@ export default function SuppliersPage() {
             vendors={filteredVendors} 
             activeId={hoveredVendorId} 
             onHoverVendor={setHoveredVendorId} 
-            onSelectVendor={(v) => openLead({ package: v.name, source: "constructons_map_marker" })}
+            onSelectVendor={(v) => openLead({ package: v.name, source: "[Your Brand]s_map_marker" })}
           />
         </div>
 
@@ -383,15 +383,15 @@ export default function SuppliersPage() {
       <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-40">
         <button
           onClick={() => setMobileView(mobileView === "list" ? "map" : "list")}
-          className="bg-[#000F1B] text-white px-5 py-3 rounded-full text-xs font-extrabold shadow-2xl flex items-center gap-2 border border-white/20 active:scale-95 transition"
+          className="bg-[#252A2A] text-white px-5 py-3 rounded-full text-xs font-extrabold shadow-2xl flex items-center gap-2 border border-white/20 active:scale-95 transition"
         >
           {mobileView === "list" ? (
             <>
-              <MapIcon className="w-4 h-4 text-[#FF6600]" /> <BrandName constructClass="text-white" /> Map
+              <MapIcon className="w-4 h-4 text-[#B89416]" /> <BrandName constructClass="text-white" /> Map
             </>
           ) : (
             <>
-              <List className="w-4 h-4 text-[#FF6600]" /> Supplier List
+              <List className="w-4 h-4 text-[#B89416]" /> Supplier List
             </>
           )}
         </button>
@@ -441,8 +441,8 @@ function GoogleMapsWrapper({ vendors, activeId, onHoverVendor, onSelectVendor })
 
   if (!isLoaded) {
     return (
-      <div className="w-full h-full flex items-center justify-center bg-[#E5E3DF] text-[#000F1B] text-xs font-bold gap-1">
-        Loading <BrandName constructClass="text-[#000F1B]" /> Map View...
+      <div className="w-full h-full flex items-center justify-center bg-[#E5E3DF] text-[#252A2A] text-xs font-bold gap-1">
+        Loading <BrandName constructClass="text-[#252A2A]" /> Map View...
       </div>
     );
   }
@@ -475,7 +475,7 @@ function GoogleMapsWrapper({ vendors, activeId, onHoverVendor, onSelectVendor })
               onClick={() => onSelectVendor(v)}
               icon={{
                 path: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z",
-                fillColor: isActive ? "#FF6600" : "#000F1B",
+                fillColor: isActive ? "#B89416" : "#252A2A",
                 fillOpacity: 1,
                 strokeWeight: 2,
                 strokeColor: "#FFFFFF",
@@ -493,10 +493,10 @@ function GoogleMapsWrapper({ vendors, activeId, onHoverVendor, onSelectVendor })
             onCloseClick={() => onHoverVendor(null)}
           >
             <div className="p-1 max-w-[200px] font-['Poppins',sans-serif]">
-              <span className="text-[9px] font-black text-[#FF6600] uppercase tracking-wider block mb-0.5">
+              <span className="text-[9px] font-black text-[#B89416] uppercase tracking-wider block mb-0.5">
                 {activeVendor.category}
               </span>
-              <h4 className="text-xs font-bold text-[#000F1B] leading-tight">
+              <h4 className="text-xs font-bold text-[#252A2A] leading-tight">
                 {activeVendor.name}
               </h4>
               <p className="text-[11px] text-gray-600 mt-1 font-semibold flex items-center gap-1">
@@ -507,8 +507,8 @@ function GoogleMapsWrapper({ vendors, activeId, onHoverVendor, onSelectVendor })
         )}
       </GoogleMap>
 
-      <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-xs font-extrabold text-[#000F1B] shadow-md border border-black/10 pointer-events-none flex items-center gap-1">
-        📍 {vendors.length} <BrandName constructClass="text-[#000F1B]" /> Suppliers Pinpointed
+      <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-xs font-extrabold text-[#252A2A] shadow-md border border-black/10 pointer-events-none flex items-center gap-1">
+        📍 {vendors.length} <BrandName constructClass="text-[#252A2A]" /> Suppliers Pinpointed
       </div>
     </div>
   );

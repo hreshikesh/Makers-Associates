@@ -87,14 +87,14 @@ export default function SeismicZoneChecker() {
     <div className="grid lg:grid-cols-5 gap-6 lg:gap-8 items-start">
       
       {/* INPUT PANEL */}
-      <div className="lg:col-span-2 bg-[#000F1B] rounded-3xl p-6 md:p-8 text-white relative overflow-hidden">
+      <div className="lg:col-span-2 bg-[#252A2A] rounded-3xl p-6 md:p-8 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px)", backgroundSize: "30px 30px" }} />
         
         <div className="relative z-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FF6600]/15 text-[#FF6600] text-[10px] font-bold uppercase tracking-widest mb-4 border border-[#FF6600]/20">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#B89416]/15 text-[#B89416] text-[10px] font-bold uppercase tracking-widest mb-4 border border-[#B89416]/20">
             <ShieldAlert className="w-3.5 h-3.5" /> IS 1893:2016
           </div>
-          <h3 className="text-2xl md:text-3xl font-bold leading-tight mb-3">Check your <span className="text-[#FF6600]">seismic zone</span></h3>
+          <h3 className="text-2xl md:text-3xl font-bold leading-tight mb-3">Check your <span className="text-[#B89416]">seismic zone</span></h3>
           <p className="text-white/60 text-sm leading-relaxed mb-6">
             Enter your PIN code and instantly know your seismic risk category — plus the exact structural precautions your engineer must follow.
           </p>
@@ -112,13 +112,13 @@ export default function SeismicZoneChecker() {
                   onChange={(e) => { setPincode(e.target.value.replace(/\D/g, "")); setError(""); }}
                   onKeyDown={(e) => e.key === "Enter" && check()}
                   placeholder="e.g. 600001"
-                  className="w-full bg-white/5 border border-white/15 rounded-xl pl-11 pr-4 py-3.5 text-sm font-bold text-white placeholder:text-white/30 focus:outline-none focus:border-[#FF6600] focus:ring-2 focus:ring-[#FF6600]/20"
+                  className="w-full bg-white/5 border border-white/15 rounded-xl pl-11 pr-4 py-3.5 text-sm font-bold text-white placeholder:text-white/30 focus:outline-none focus:border-[#B89416] focus:ring-2 focus:ring-[#B89416]/20"
                 />
               </div>
               <button
                 onClick={check}
                 disabled={loading || pincode.length !== 6}
-                className="px-5 py-3.5 rounded-xl bg-[#FF6600] hover:bg-[#E04F00] disabled:bg-white/10 disabled:cursor-not-allowed text-white text-xs font-bold uppercase tracking-widest transition inline-flex items-center gap-2 cursor-pointer"
+                className="px-5 py-3.5 rounded-xl bg-[#B89416] hover:bg-[#8F7210] disabled:bg-white/10 disabled:cursor-not-allowed text-white text-xs font-bold uppercase tracking-widest transition inline-flex items-center gap-2 cursor-pointer"
               >
                 {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <><Search className="w-4 h-4" /><span className="hidden sm:inline">Check</span></>}
               </button>
@@ -152,18 +152,18 @@ export default function SeismicZoneChecker() {
           {!result ? (
             <motion.div key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex-1 flex flex-col items-center justify-center text-center py-8">
               <div className="w-20 h-20 rounded-full bg-[#F5F6F8] grid place-items-center mb-4">
-                <ShieldCheck className="w-10 h-10 text-[#111111]/30" />
+                <ShieldCheck className="w-10 h-10 text-[#252A2A]/30" />
               </div>
-              <h4 className="text-lg font-bold text-[#000F1B] mb-2">Awaiting Site Data</h4>
-              <p className="text-sm text-[#111111]/60 max-w-sm">Enter a PIN code on the left to see the seismic risk profile and mandatory engineering compliance for your area.</p>
+              <h4 className="text-lg font-bold text-[#252A2A] mb-2">Awaiting Site Data</h4>
+              <p className="text-sm text-[#252A2A]/60 max-w-sm">Enter a PIN code on the left to see the seismic risk profile and mandatory engineering compliance for your area.</p>
             </motion.div>
           ) : (
             <motion.div key={result.location} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="flex-1 flex flex-col">
               <div className="flex items-start justify-between gap-4 mb-6 pb-6 border-b border-black/5">
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-[#111111]/50 mb-1">Site Location</div>
-                  <div className="text-lg md:text-xl font-bold text-[#000F1B] leading-tight">{result.area}</div>
-                  <div className="text-sm text-[#111111]/60 mt-0.5">{result.location}</div>
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-[#252A2A]/50 mb-1">Site Location</div>
+                  <div className="text-lg md:text-xl font-bold text-[#252A2A] leading-tight">{result.area}</div>
+                  <div className="text-sm text-[#252A2A]/60 mt-0.5">{result.location}</div>
                 </div>
                 <div className="text-white px-4 py-2 rounded-xl text-center shrink-0 shadow-md" style={{ background: result.color }}>
                   <div className="text-[9px] font-bold uppercase tracking-widest opacity-80">Zone</div>
@@ -173,25 +173,25 @@ export default function SeismicZoneChecker() {
 
               <div className="grid grid-cols-2 gap-3 mb-6">
                 <div className="bg-[#F9FAFB] rounded-xl p-4 border border-black/5">
-                  <div className="text-[9px] font-bold uppercase tracking-widest text-[#111111]/40 mb-1">Risk Category</div>
+                  <div className="text-[9px] font-bold uppercase tracking-widest text-[#252A2A]/40 mb-1">Risk Category</div>
                   <div className="text-base font-bold" style={{ color: result.color }}>{result.risk}</div>
                 </div>
                 <div className="bg-[#F9FAFB] rounded-xl p-4 border border-black/5">
-                  <div className="text-[9px] font-bold uppercase tracking-widest text-[#111111]/40 mb-1">Peak Ground Accel.</div>
-                  <div className="text-base font-bold text-[#000F1B]">{result.pga}</div>
+                  <div className="text-[9px] font-bold uppercase tracking-widest text-[#252A2A]/40 mb-1">Peak Ground Accel.</div>
+                  <div className="text-base font-bold text-[#252A2A]">{result.pga}</div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-[#FF6600]/5 to-[#FF6600]/10 border border-[#FF6600]/20 rounded-xl p-5">
+              <div className="bg-gradient-to-br from-[#B89416]/5 to-[#B89416]/10 border border-[#B89416]/20 rounded-xl p-5">
                 <div className="flex items-center gap-2 mb-4">
-                  <Zap className="w-4 h-4 text-[#FF6600]" />
-                  <h5 className="text-xs font-bold text-[#000F1B] uppercase tracking-wider">Engineering Precautions Required</h5>
+                  <Zap className="w-4 h-4 text-[#B89416]" />
+                  <h5 className="text-xs font-bold text-[#252A2A] uppercase tracking-wider">Engineering Precautions Required</h5>
                 </div>
                 <ul className="space-y-2.5">
                   {result.recommendations.map((r, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-[#111111]/80">
-                      <div className="w-4 h-4 rounded-full bg-[#FF6600]/15 grid place-items-center shrink-0 mt-0.5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#FF6600]" />
+                    <li key={i} className="flex items-start gap-2 text-sm text-[#252A2A]/80">
+                      <div className="w-4 h-4 rounded-full bg-[#B89416]/15 grid place-items-center shrink-0 mt-0.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#B89416]" />
                       </div>
                       <span className="leading-snug">{r}</span>
                     </li>
@@ -199,7 +199,7 @@ export default function SeismicZoneChecker() {
                 </ul>
               </div>
 
-              <p className="text-[10px] font-semibold text-[#111111]/40 mt-4 text-center">
+              <p className="text-[10px] font-semibold text-[#252A2A]/40 mt-4 text-center">
                 Source: IS 1893:2016 · Bureau of Indian Standards · Data via api.postalpincode.in
               </p>
             </motion.div>

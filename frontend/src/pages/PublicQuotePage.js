@@ -82,7 +82,7 @@ export default function PublicQuotePage() {
         message: comment.trim(),
       });
       setComment("");
-      toast.success("Comment sent to ConstructONS");
+      toast.success("Comment sent to [Your Brand]s");
       load();
     } catch {
       toast.error("Failed to send comment");
@@ -127,7 +127,7 @@ export default function PublicQuotePage() {
           </div>
           <h1 className="mt-4 text-2xl font-bold text-brand-navy">Quote not found</h1>
           <p className="mt-2 text-brand-navy/60 max-w-md">
-            The link you followed is invalid or has been revoked. Please contact ConstructONS for a fresh link.
+            The link you followed is invalid or has been revoked. Please contact [Your Brand]s for a fresh link.
           </p>
         </div>
       </div>
@@ -145,7 +145,7 @@ export default function PublicQuotePage() {
     <div className="min-h-screen bg-brand-bg pb-20" data-testid="public-quote-page">
       <SEO
         title="Custom Home Quotation"
-        description="Confidential custom construction quotation prepared by ConstructONS."
+        description="Confidential custom construction quotation prepared by [Your Brand]s."
         canonical={`/quote/${token}`}
         noindex={true}
       />
@@ -155,7 +155,7 @@ export default function PublicQuotePage() {
         <div className="max-w-4xl mx-auto px-5 md:px-8 py-5 flex items-center justify-between gap-3">
           <div className="min-w-0">
             <div className="text-[10px] uppercase tracking-widest text-brand-orangeLight">
-              {settings.company_name || "ConstructONS"}
+              {settings.company_name || "[Your Brand]s"}
             </div>
             <div className="font-bold truncate">Customised Home Quotation</div>
           </div>
@@ -365,7 +365,7 @@ export default function PublicQuotePage() {
                     <div><div className="text-brand-orangeLight text-[9px] uppercase">Units</div><div className="font-semibold">{s.units || "mm"}</div></div>
                     <div><div className="text-brand-orangeLight text-[9px] uppercase">North</div><div className="font-semibold">{s.north_direction || "N"}</div></div>
                   </div>
-                  <div className="p-2 text-xs text-brand-navy/70 bg-brand-bg">{s.title} · drawn by {s.drawn_by || "ConstructONS"}</div>
+                  <div className="p-2 text-xs text-brand-navy/70 bg-brand-bg">{s.title} · drawn by {s.drawn_by || "[Your Brand]s"}</div>
                 </div>
               ))}
             </div>
@@ -598,7 +598,7 @@ export default function PublicQuotePage() {
       </main>
 
       <footer className="max-w-4xl mx-auto px-5 md:px-8 pt-6 text-center text-xs text-brand-navy/40">
-        Powered by {settings.company_name || "ConstructONS"} · Confidential quotation · Valid {q.valid_days || 30} days from issue
+        Powered by {settings.company_name || "[Your Brand]s"} · Confidential quotation · Valid {q.valid_days || 30} days from issue
       </footer>
     </div>
   );

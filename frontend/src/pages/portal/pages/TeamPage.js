@@ -117,12 +117,12 @@ export default function TeamPage() {
       const msg =
 `Hi${invName ? ` ${invName}` : ""}! 👋
 
-You have been invited to join the *${res.data.project_title}* project team at *ConstructONS™* as *${invRole}*.
+You have been invited to join the *${res.data.project_title}* project team at *[Your Brand]s™* as *${invRole}*.
 
 🔐 Access project updates, drawings & site reports here (Sign in with ${invEmail}):
 ${window.location.origin}/portal/login
 
-— ConstructONS™
+— [Your Brand]s™
 Everything Construction. Always On.`;
 
       window.open(waLink(invPhone, msg), "_blank");
@@ -141,15 +141,15 @@ Everything Construction. Always On.`;
   if (!project) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] text-center font-['Poppins']">
-        <Users className="w-12 h-12 text-[#111111]/20 mb-4" />
-        <h2 className="text-xl font-bold text-[#000F1B]">Team Data Pending</h2>
-        <p className="text-sm text-[#111111]/50 mt-1">Awaiting active project linkage.</p>
+        <Users className="w-12 h-12 text-[#252A2A]/20 mb-4" />
+        <h2 className="text-xl font-bold text-[#252A2A]">Team Data Pending</h2>
+        <p className="text-sm text-[#252A2A]/50 mt-1">Awaiting active project linkage.</p>
       </div>
     );
   }
 
   if (loading) {
-    return <div className="flex items-center justify-center min-h-[60vh]"><Loader2 className="w-8 h-8 animate-spin text-[#FF6600]" /></div>;
+    return <div className="flex items-center justify-center min-h-[60vh]"><Loader2 className="w-8 h-8 animate-spin text-[#B89416]" /></div>;
   }
 
   const kpis = teamData?.kpis || {};
@@ -177,23 +177,23 @@ Everything Construction. Always On.`;
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div className="text-[11px] font-semibold text-[#FF6600] tracking-wider uppercase mb-1">Home &gt; Team</div>
-          <h1 className="text-3xl font-bold text-[#000F1B] tracking-tight">Team</h1>
-          <p className="text-sm text-[#111111]/60 mt-1">The right people. A better build. Collaborate, track and grow together.</p>
+          <div className="text-[11px] font-semibold text-[#B89416] tracking-wider uppercase mb-1">Home &gt; Team</div>
+          <h1 className="text-3xl font-bold text-[#252A2A] tracking-tight">Team</h1>
+          <p className="text-sm text-[#252A2A]/60 mt-1">The right people. A better build. Collaborate, track and grow together.</p>
         </div>
         
         <div className="flex items-center gap-3">
           <button 
             onClick={() => loadTeam(false)} 
             disabled={refreshing}
-            className="px-3 py-2 bg-white border border-black/10 rounded-lg text-xs font-semibold text-[#000F1B] hover:bg-black/5 flex items-center gap-1.5 transition"
+            className="px-3 py-2 bg-white border border-black/10 rounded-lg text-xs font-semibold text-[#252A2A] hover:bg-black/5 flex items-center gap-1.5 transition"
           >
-            <RefreshCw className={`w-3.5 h-3.5 ${refreshing ? 'animate-spin text-[#FF6600]' : ''}`} />
+            <RefreshCw className={`w-3.5 h-3.5 ${refreshing ? 'animate-spin text-[#B89416]' : ''}`} />
             <span>Sync Live Data</span>
           </button>
 
           {hasFullAccess && (
-            <button onClick={scrollToInvite} className="px-5 py-2 bg-[#000F1B] text-white rounded-lg text-xs font-bold flex items-center gap-2 hover:bg-[#FF6600] transition w-max">
+            <button onClick={scrollToInvite} className="px-5 py-2 bg-[#252A2A] text-white rounded-lg text-xs font-bold flex items-center gap-2 hover:bg-[#B89416] transition w-max">
               <UserPlus className="w-3.5 h-3.5" /> Invite Member
             </button>
           )}
@@ -219,7 +219,7 @@ Everything Construction. Always On.`;
             <div className="flex px-2 pt-2">
               {["Team Members", "Attendance"].map(tab => (
                 <button key={tab} onClick={() => setActiveTab(tab)}
-                  className={`px-4 py-3 text-xs font-bold transition-all border-b-2 ${activeTab === tab ? "border-[#FF6600] text-[#000F1B]" : "border-transparent text-[#111111]/50 hover:text-[#000F1B]"}`}>
+                  className={`px-4 py-3 text-xs font-bold transition-all border-b-2 ${activeTab === tab ? "border-[#B89416] text-[#252A2A]" : "border-transparent text-[#252A2A]/50 hover:text-[#252A2A]"}`}>
                   {tab}
                 </button>
               ))}
@@ -227,20 +227,20 @@ Everything Construction. Always On.`;
             {activeTab === "Team Members" && (
               <div className="p-3 bg-[#F2F2F2]/30 flex flex-wrap items-center justify-between gap-3">
                 <div className="relative flex-1 min-w-[180px] max-w-sm">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#111111]/40" />
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#252A2A]/40" />
                   <input value={search} onChange={e => setSearch(e.target.value)} type="text" placeholder="Search team members..."
-                    className="w-full pl-9 pr-4 py-2 rounded-lg border border-black/10 text-xs focus:outline-none focus:ring-1 focus:ring-[#FF6600]" />
+                    className="w-full pl-9 pr-4 py-2 rounded-lg border border-black/10 text-xs focus:outline-none focus:ring-1 focus:ring-[#B89416]" />
                 </div>
                 <div className="flex items-center gap-2">
                   <select value={roleFilter} onChange={e => setRoleFilter(e.target.value)}
-                    className="px-3 py-2 bg-white border border-black/10 rounded-lg text-xs font-semibold text-[#111111]/70 focus:outline-none">
+                    className="px-3 py-2 bg-white border border-black/10 rounded-lg text-xs font-semibold text-[#252A2A]/70 focus:outline-none">
                     {roles.map(r => <option key={r} value={r}>{r === "All" ? "All Roles" : r}</option>)}
                   </select>
                   <div className="flex bg-white border border-black/10 rounded-lg p-0.5">
-                    <button onClick={() => setViewMode("List")} className={`px-3 py-1.5 text-xs font-semibold rounded-md flex items-center gap-1.5 transition ${viewMode === "List" ? "bg-[#000F1B] text-white" : "text-[#111111]/60"}`}>
+                    <button onClick={() => setViewMode("List")} className={`px-3 py-1.5 text-xs font-semibold rounded-md flex items-center gap-1.5 transition ${viewMode === "List" ? "bg-[#252A2A] text-white" : "text-[#252A2A]/60"}`}>
                       <List className="w-3.5 h-3.5" /> List
                     </button>
-                    <button onClick={() => setViewMode("Cards")} className={`px-3 py-1.5 text-xs font-semibold rounded-md flex items-center gap-1.5 transition ${viewMode === "Cards" ? "bg-[#000F1B] text-white" : "text-[#111111]/60"}`}>
+                    <button onClick={() => setViewMode("Cards")} className={`px-3 py-1.5 text-xs font-semibold rounded-md flex items-center gap-1.5 transition ${viewMode === "Cards" ? "bg-[#252A2A] text-white" : "text-[#252A2A]/60"}`}>
                       <LayoutGrid className="w-3.5 h-3.5" /> Cards
                     </button>
                   </div>
@@ -253,7 +253,7 @@ Everything Construction. Always On.`;
             {activeTab === "Team Members" ? (
               viewMode === "List" ? (
                 <table className="w-full text-left text-sm whitespace-nowrap">
-                  <thead className="bg-[#F9FAFB] text-[10px] uppercase tracking-wider text-[#111111]/50 font-bold sticky top-0 z-10">
+                  <thead className="bg-[#F9FAFB] text-[10px] uppercase tracking-wider text-[#252A2A]/50 font-bold sticky top-0 z-10">
                     <tr>
                       <th className="px-5 py-3">Name</th>
                       <th className="px-5 py-3">Role</th>
@@ -269,7 +269,7 @@ Everything Construction. Always On.`;
                       <MemberRow key={m.id || idx} m={m} onDelete={() => handleDeleteMember(m.id, m.name)} hasFullAccess={hasFullAccess} />
                     ))}
                     {members.length === 0 && (
-                      <tr><td colSpan="7" className="px-5 py-12 text-center text-sm text-[#111111]/50 italic">No members match your search.</td></tr>
+                      <tr><td colSpan="7" className="px-5 py-12 text-center text-sm text-[#252A2A]/50 italic">No members match your search.</td></tr>
                     )}
                   </tbody>
                 </table>
@@ -278,21 +278,21 @@ Everything Construction. Always On.`;
                   {members.map((m, idx) => (
                     <MemberCard key={m.id || idx} m={m} onDelete={() => handleDeleteMember(m.id, m.name)} hasFullAccess={hasFullAccess} />
                   ))}
-                  {members.length === 0 && <div className="col-span-full py-12 text-center text-sm text-[#111111]/50 italic">No members match your search.</div>}
+                  {members.length === 0 && <div className="col-span-full py-12 text-center text-sm text-[#252A2A]/50 italic">No members match your search.</div>}
                 </div>
               )
             ) : (
               /* Attendance Tab */
               <div className="p-5 space-y-6">
                 <div className={`rounded-xl p-4 flex items-center gap-3 ${onSiteMembers.length > 0 ? "bg-emerald-50 border border-emerald-200" : "bg-[#F2F2F2] border border-black/5"}`}>
-                  <div className={`w-10 h-10 rounded-full grid place-items-center ${onSiteMembers.length > 0 ? "bg-emerald-500 text-white" : "bg-[#111111]/10 text-[#111111]/40"}`}>
+                  <div className={`w-10 h-10 rounded-full grid place-items-center ${onSiteMembers.length > 0 ? "bg-emerald-500 text-white" : "bg-[#252A2A]/10 text-[#252A2A]/40"}`}>
                     <HardHat className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-[#000F1B]">
+                    <div className="text-sm font-bold text-[#252A2A]">
                       {onSiteMembers.length > 0 ? `${onSiteMembers.length} team member(s) currently on site` : "No attendance marked for today"}
                     </div>
-                    <div className="text-[11px] text-[#111111]/55">
+                    <div className="text-[11px] text-[#252A2A]/55">
                       Attendance is marked daily by your site admin. Last updated: {attendance[0] ? new Date(attendance[0].marked_at).toLocaleString("en-IN") : "—"}
                     </div>
                   </div>
@@ -300,14 +300,14 @@ Everything Construction. Always On.`;
 
                 {onSiteMembers.length > 0 && (
                   <div>
-                    <h4 className="text-[10px] font-bold uppercase tracking-wider text-[#111111]/50 mb-2.5">On Site Today</h4>
+                    <h4 className="text-[10px] font-bold uppercase tracking-wider text-[#252A2A]/50 mb-2.5">On Site Today</h4>
                     <div className="flex flex-wrap gap-3">
                       {onSiteMembers.map(m => (
                         <div key={m.id} className="flex items-center gap-2 pl-1 pr-3 py-1 rounded-full bg-emerald-50 border border-emerald-200">
                           {m.photo
                             ? <img src={resolveMediaUrl(m.photo)} alt="" className="w-7 h-7 rounded-full object-cover" />
-                            : <div className="w-7 h-7 rounded-full bg-[#000F1B] text-white text-[10px] font-bold grid place-items-center">{m.name?.[0]}</div>}
-                          <span className="text-xs font-semibold text-[#000F1B]">{m.name}</span>
+                            : <div className="w-7 h-7 rounded-full bg-[#252A2A] text-white text-[10px] font-bold grid place-items-center">{m.name?.[0]}</div>}
+                          <span className="text-xs font-semibold text-[#252A2A]">{m.name}</span>
                           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                         </div>
                       ))}
@@ -316,21 +316,21 @@ Everything Construction. Always On.`;
                 )}
 
                 <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-[#111111]/50 mb-2.5">Attendance History (Last 7 Records)</h4>
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-[#252A2A]/50 mb-2.5">Attendance History (Last 7 Records)</h4>
                   {attendance.length === 0 ? (
-                    <div className="text-xs text-[#111111]/40 italic">No attendance history yet. Mark attendance from Admin Projects.</div>
+                    <div className="text-xs text-[#252A2A]/40 italic">No attendance history yet. Mark attendance from Admin Projects.</div>
                   ) : (
                     <div className="space-y-2">
                       {attendance.map(a => (
                         <div key={a.date} className="flex items-center justify-between p-3 rounded-xl bg-[#F9FAFB] border border-black/5">
                           <div className="flex items-center gap-2.5">
-                            <CheckCircle2 className={`w-4 h-4 ${(a.member_ids || []).length > 0 ? "text-emerald-500" : "text-[#111111]/30"}`} />
-                            <span className="text-xs font-semibold text-[#000F1B]">
+                            <CheckCircle2 className={`w-4 h-4 ${(a.member_ids || []).length > 0 ? "text-emerald-500" : "text-[#252A2A]/30"}`} />
+                            <span className="text-xs font-semibold text-[#252A2A]">
                               {new Date(a.date + "T00:00:00").toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" })}
-                              {a.date === teamData?.date_today && <span className="ml-2 text-[9px] font-bold text-[#FF6600] uppercase">Today</span>}
+                              {a.date === teamData?.date_today && <span className="ml-2 text-[9px] font-bold text-[#B89416] uppercase">Today</span>}
                             </span>
                           </div>
-                          <span className="text-xs font-bold text-[#000F1B]">{a.count ?? (a.member_ids || []).length} on site</span>
+                          <span className="text-xs font-bold text-[#252A2A]">{a.count ?? (a.member_ids || []).length} on site</span>
                         </div>
                       ))}
                     </div>
@@ -340,7 +340,7 @@ Everything Construction. Always On.`;
             )}
           </div>
 
-          <div className="border-t border-black/5 p-3 bg-[#F9FAFB] text-[10px] font-medium text-[#111111]/40">
+          <div className="border-t border-black/5 p-3 bg-[#F9FAFB] text-[10px] font-medium text-[#252A2A]/40">
             Showing {members.length} of {allMembers.length} members
           </div>
         </div>
@@ -349,11 +349,11 @@ Everything Construction. Always On.`;
         <div className="lg:col-span-4 flex flex-col gap-6">
 
           <div className="bg-white rounded-2xl border border-black/5 shadow-sm p-6 flex flex-col flex-1 min-h-[300px] max-h-[420px]">
-            <h3 className="font-bold text-[#000F1B] mb-5 shrink-0">Team Activity</h3>
+            <h3 className="font-bold text-[#252A2A] mb-5 shrink-0">Team Activity</h3>
             <div className="relative pl-3 space-y-5 flex-1 overflow-y-auto no-scrollbar">
               <div className="absolute left-[17px] top-2 bottom-0 w-px bg-black/5" />
               {activities.length === 0 ? (
-                <div className="text-xs text-[#111111]/40 italic">No recent activity.</div>
+                <div className="text-xs text-[#252A2A]/40 italic">No recent activity.</div>
               ) : (
                 activities.slice(0, 15).map((act, i) => <ActivityItem key={act.id || i} act={act} />)
               )}
@@ -363,25 +363,25 @@ Everything Construction. Always On.`;
           {/* Quick Invite Box */}
           {hasFullAccess ? (
             <form ref={inviteRef} onSubmit={handleInvite} className="bg-white rounded-2xl border border-black/5 shadow-sm p-6 shrink-0 scroll-mt-24">
-              <h3 className="font-bold text-[#000F1B] mb-1">Invite Co-Owner or Family</h3>
-              <p className="text-[10px] text-[#111111]/60 mb-4 leading-relaxed">
+              <h3 className="font-bold text-[#252A2A] mb-1">Invite Co-Owner or Family</h3>
+              <p className="text-[10px] text-[#252A2A]/60 mb-4 leading-relaxed">
                 Add family members to this project. They will log in using the Google Email specified below.
               </p>
               <div className="space-y-3">
                 <input ref={nameInputRef} value={invName} onChange={e => setInvName(e.target.value)} type="text"
                   placeholder="Name" maxLength={30} required
-                  className="w-full px-3 py-2 rounded-lg border border-black/10 text-xs focus:outline-none focus:ring-1 focus:ring-[#FF6600]" />
+                  className="w-full px-3 py-2 rounded-lg border border-black/10 text-xs focus:outline-none focus:ring-1 focus:ring-[#B89416]" />
                 
                 <input value={invEmail} onChange={e => setInvEmail(e.target.value)} type="email"
                   placeholder="Google Email (required for login)" required
-                  className="w-full px-3 py-2 rounded-lg border border-black/10 text-xs focus:outline-none focus:ring-1 focus:ring-[#FF6600]" />
+                  className="w-full px-3 py-2 rounded-lg border border-black/10 text-xs focus:outline-none focus:ring-1 focus:ring-[#B89416]" />
 
                 <input value={invPhone} onChange={e => setInvPhone(forcePhone(e.target.value))} type="tel" inputMode="numeric"
                   maxLength={13} placeholder="WhatsApp Number (+91...)" required
-                  className="w-full px-3 py-2 rounded-lg border border-black/10 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-[#FF6600]" />
+                  className="w-full px-3 py-2 rounded-lg border border-black/10 text-xs font-mono focus:outline-none focus:ring-1 focus:ring-[#B89416]" />
                 
                 <select value={invRole} onChange={e => setInvRole(e.target.value)} required
-                  className="w-full px-3 py-2 rounded-lg border border-black/10 text-xs text-[#111111]/70 bg-white focus:outline-none focus:ring-1 focus:ring-[#FF6600]">
+                  className="w-full px-3 py-2 rounded-lg border border-black/10 text-xs text-[#252A2A]/70 bg-white focus:outline-none focus:ring-1 focus:ring-[#B89416]">
                   <option value="">Select Role...</option>
                   <option value="Co-Owner">Co-Owner</option>
                   <option value="Spouse">Spouse</option>
@@ -390,7 +390,7 @@ Everything Construction. Always On.`;
                 </select>
 
                 <button type="submit" disabled={isInviting}
-                  className="w-full px-4 py-2.5 bg-[#000F1B] hover:bg-[#FF6600] text-white rounded-lg text-xs font-bold flex items-center justify-center gap-2 transition disabled:opacity-70">
+                  className="w-full px-4 py-2.5 bg-[#252A2A] hover:bg-[#B89416] text-white rounded-lg text-xs font-bold flex items-center justify-center gap-2 transition disabled:opacity-70">
                   {isInviting ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <MessageCircle className="w-3.5 h-3.5" />}
                   {isInviting ? "Sending..." : "Grant Access & Send WhatsApp"}
                 </button>
@@ -398,9 +398,9 @@ Everything Construction. Always On.`;
             </form>
           ) : (
             <div className="bg-white rounded-2xl border border-black/5 shadow-sm p-6 flex flex-col items-center justify-center text-center">
-              <Lock className="w-8 h-8 text-[#111111]/20 mb-3" />
-              <h3 className="font-bold text-[#000F1B]">Access Restricted</h3>
-              <p className="text-xs text-[#111111]/50 mt-1">You need "Full Access" to invite or remove members from this project.</p>
+              <Lock className="w-8 h-8 text-[#252A2A]/20 mb-3" />
+              <h3 className="font-bold text-[#252A2A]">Access Restricted</h3>
+              <p className="text-xs text-[#252A2A]/50 mt-1">You need "Full Access" to invite or remove members from this project.</p>
             </div>
           )}
         </div>
@@ -421,16 +421,16 @@ function MemberRow({ m, onDelete, hasFullAccess }) {
         <div className="flex items-center gap-3">
           {m.photo
             ? <img src={resolveMediaUrl(m.photo)} alt="" className="w-8 h-8 rounded-full object-cover border border-black/10 shrink-0" />
-            : <div className="w-8 h-8 rounded-full bg-[#E5E7EB] text-[#000F1B] font-bold text-xs flex items-center justify-center shrink-0">{m.name?.[0]?.toUpperCase() || "?"}</div>}
+            : <div className="w-8 h-8 rounded-full bg-[#E5E7EB] text-[#252A2A] font-bold text-xs flex items-center justify-center shrink-0">{m.name?.[0]?.toUpperCase() || "?"}</div>}
           <div className="min-w-0">
-            <div className="font-bold text-[#000F1B] truncate max-w-[150px]">{m.name}</div>
-            {m.email && <div className="text-[9px] text-[#FF6600] font-semibold">{m.email}</div>}
+            <div className="font-bold text-[#252A2A] truncate max-w-[150px]">{m.name}</div>
+            {m.email && <div className="text-[9px] text-[#B89416] font-semibold">{m.email}</div>}
           </div>
         </div>
       </td>
-      <td className="px-5 py-3.5 text-xs text-[#111111]/70">{m.role || "—"}</td>
-      <td className="px-5 py-3.5 text-xs text-[#111111]/70">{m.company || "—"}</td>
-      <td className="px-5 py-3.5 text-xs font-mono text-[#111111]/60">{m.contact || "—"}</td>
+      <td className="px-5 py-3.5 text-xs text-[#252A2A]/70">{m.role || "—"}</td>
+      <td className="px-5 py-3.5 text-xs text-[#252A2A]/70">{m.company || "—"}</td>
+      <td className="px-5 py-3.5 text-xs font-mono text-[#252A2A]/60">{m.contact || "—"}</td>
       <td className="px-5 py-3.5"><AccessBadge access={m.access} /></td>
       <td className="px-5 py-3.5">
         <span className={`text-[10px] font-bold uppercase tracking-wider ${m.status === "Pending" ? "text-[#F59E0B]" : "text-[#10B981]"}`}>{m.status || "Active"}</span>
@@ -439,7 +439,7 @@ function MemberRow({ m, onDelete, hasFullAccess }) {
         <div className="flex items-center justify-end gap-1.5">
           {phoneDigits.length >= 10 && (
             <>
-              <a href={`tel:+${phoneDigits}`} title="Call" className="w-7 h-7 rounded-lg bg-[#F2F2F2] grid place-items-center text-[#000F1B] hover:bg-[#000F1B] hover:text-white transition"><Phone className="w-3.5 h-3.5" /></a>
+              <a href={`tel:+${phoneDigits}`} title="Call" className="w-7 h-7 rounded-lg bg-[#F2F2F2] grid place-items-center text-[#252A2A] hover:bg-[#252A2A] hover:text-white transition"><Phone className="w-3.5 h-3.5" /></a>
               <a href={waLink(m.whatsapp || m.contact)} target="_blank" rel="noreferrer" title="WhatsApp" className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 grid place-items-center hover:bg-emerald-600 hover:text-white transition"><MessageCircle className="w-3.5 h-3.5" /></a>
             </>
           )}
@@ -467,11 +467,11 @@ function MemberCard({ m, onDelete, hasFullAccess }) {
       <div className="flex items-center gap-3 mb-3">
         {m.photo
           ? <img src={resolveMediaUrl(m.photo)} alt="" className="w-11 h-11 rounded-full object-cover border border-black/10" />
-          : <div className="w-11 h-11 rounded-full bg-[#E5E7EB] text-[#000F1B] font-bold grid place-items-center">{m.name?.[0]?.toUpperCase() || "?"}</div>}
+          : <div className="w-11 h-11 rounded-full bg-[#E5E7EB] text-[#252A2A] font-bold grid place-items-center">{m.name?.[0]?.toUpperCase() || "?"}</div>}
         <div className="min-w-0 flex-1">
-          <div className="font-bold text-sm text-[#000F1B] truncate">{m.name}</div>
-          <div className="text-[10px] text-[#111111]/55 truncate">{m.role}</div>
-          {m.email && <div className="text-[9px] text-[#FF6600] truncate">{m.email}</div>}
+          <div className="font-bold text-sm text-[#252A2A] truncate">{m.name}</div>
+          <div className="text-[10px] text-[#252A2A]/55 truncate">{m.role}</div>
+          {m.email && <div className="text-[9px] text-[#B89416] truncate">{m.email}</div>}
         </div>
         {isRemovable && (
           <button
@@ -488,7 +488,7 @@ function MemberCard({ m, onDelete, hasFullAccess }) {
         <div className="flex gap-1.5">
           {phoneDigits.length >= 10 && (
             <>
-              <a href={`tel:+${phoneDigits}`} className="w-7 h-7 rounded-lg bg-[#F2F2F2] grid place-items-center text-[#000F1B] hover:bg-[#000F1B] hover:text-white transition"><Phone className="w-3.5 h-3.5" /></a>
+              <a href={`tel:+${phoneDigits}`} className="w-7 h-7 rounded-lg bg-[#F2F2F2] grid place-items-center text-[#252A2A] hover:bg-[#252A2A] hover:text-white transition"><Phone className="w-3.5 h-3.5" /></a>
               <a href={waLink(m.whatsapp || m.contact)} target="_blank" rel="noreferrer" className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 grid place-items-center hover:bg-emerald-600 hover:text-white transition"><MessageCircle className="w-3.5 h-3.5" /></a>
             </>
           )}
@@ -498,14 +498,14 @@ function MemberCard({ m, onDelete, hasFullAccess }) {
   );
 }
 
-function KpiCard({ icon: Icon, count, label, sub, color = "#000F1B" }) {
+function KpiCard({ icon: Icon, count, label, sub, color = "#252A2A" }) {
   return (
     <div className="bg-white rounded-xl border border-black/5 p-4 shadow-sm flex flex-col relative overflow-hidden">
       <div className="absolute top-0 left-0 w-1 h-full" style={{ backgroundColor: color }} />
       <Icon className="w-5 h-5 mb-2 opacity-80" style={{ color }} />
-      <div className="text-2xl font-black text-[#000F1B] leading-none mb-1">{count || 0}</div>
-      <div className="text-[10px] font-bold text-[#111111]/70 leading-tight">{label}</div>
-      <div className="text-[9px] text-[#111111]/40 mt-0.5">{sub}</div>
+      <div className="text-2xl font-black text-[#252A2A] leading-none mb-1">{count || 0}</div>
+      <div className="text-[10px] font-bold text-[#252A2A]/70 leading-tight">{label}</div>
+      <div className="text-[9px] text-[#252A2A]/40 mt-0.5">{sub}</div>
     </div>
   );
 }
@@ -527,7 +527,7 @@ function AccessBadge({ access }) {
 function ActivityItem({ act }) {
   let Icon = UserPlus, color = "text-emerald-600", bg = "bg-emerald-50";
   const mod = act.module || "System";
-  if (mod === "Progress") { Icon = HardHat; color = "text-[#FF6600]"; bg = "bg-[#FF6600]/10"; }
+  if (mod === "Progress") { Icon = HardHat; color = "text-[#B89416]"; bg = "bg-[#B89416]/10"; }
   if (mod === "Attendance") { Icon = CheckCircle2; color = "text-teal-600"; bg = "bg-teal-50"; }
   if (mod === "Payments") { Icon = HardHat; color = "text-emerald-600"; bg = "bg-emerald-50"; }
   if (mod === "System") { Icon = Building2; color = "text-slate-500"; bg = "bg-slate-100"; }
@@ -539,14 +539,14 @@ function ActivityItem({ act }) {
       </div>
       <div className="min-w-0 pt-0.5 flex-1">
         <div className="flex items-start justify-between gap-2">
-          <div className="text-xs font-medium text-[#000F1B] leading-tight break-words">
+          <div className="text-xs font-medium text-[#252A2A] leading-tight break-words">
             {act.action}
           </div>
           <div className={`text-[9px] font-bold uppercase tracking-wider shrink-0 pt-0.5 ${color}`}>
             {mod}
           </div>
         </div>
-        <div className="text-[10px] text-[#111111]/40 mt-1.5">
+        <div className="text-[10px] text-[#252A2A]/40 mt-1.5">
           {new Date(act.timestamp).toLocaleString("en-IN", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}
         </div>
       </div>

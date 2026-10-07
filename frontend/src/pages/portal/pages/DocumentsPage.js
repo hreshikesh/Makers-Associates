@@ -100,7 +100,7 @@ export default function DocumentsPage() {
     if (["approved", "current", "signed", "paid", "passed", "valid"].includes(s)) return "text-emerald-700 bg-emerald-50 border-emerald-200";
     if (["under review"].includes(s)) return "text-amber-700 bg-amber-50 border-amber-200";
     if (["superseded"].includes(s)) return "text-gray-600 bg-gray-100 border-gray-200";
-    return "text-[#FF6600] bg-[#FF6600]/10 border-[#FF6600]/20";
+    return "text-[#B89416] bg-[#B89416]/10 border-[#B89416]/20";
   };
 
   const resetFilters = () => {
@@ -161,14 +161,14 @@ export default function DocumentsPage() {
         ctx.translate(canvas.width / 2, canvas.height / 2);
         ctx.rotate(-Math.PI / 6); 
         
-        ctx.fillText("ConstructONS", 0, 0);
-        ctx.fillText("ConstructONS", 0, -fontSize * 4);
-        ctx.fillText("ConstructONS", 0, fontSize * 4);
+        ctx.fillText("[Your Brand]s", 0, 0);
+        ctx.fillText("[Your Brand]s", 0, -fontSize * 4);
+        ctx.fillText("[Your Brand]s", 0, fontSize * 4);
 
         const dataUrl = canvas.toDataURL("image/jpeg", 0.9);
         const link = document.createElement('a');
         link.href = dataUrl;
-        link.download = filename || 'ConstructONS_Document.jpg';
+        link.download = filename || '[Your Brand]s_Document.jpg';
         link.click();
         toast.success("Download complete!", { id: "watermark" });
       };
@@ -190,7 +190,7 @@ export default function DocumentsPage() {
       {/* HEADER */}
       <div className={`shrink-0 bg-white border-b border-gray-200 px-3 md:px-5 2xl:px-8 pt-4 2xl:pt-6 pb-2 z-10 ${selectedId ? 'hidden md:block' : 'block'}`}>
         <div className="mb-3 md:mb-4">
-          <h1 className="text-xl md:text-2xl 2xl:text-4xl font-bold text-[#000F1B]">Documents</h1>
+          <h1 className="text-xl md:text-2xl 2xl:text-4xl font-bold text-[#252A2A]">Documents</h1>
           <p className="text-[10px] md:text-xs 2xl:text-sm text-gray-500 mt-0.5">Your complete project document vault. Access all project-related documents in one place.</p>
         </div>
 
@@ -198,7 +198,7 @@ export default function DocumentsPage() {
         <div className="grid grid-cols-2 sm:flex sm:overflow-x-auto no-scrollbar gap-2 md:gap-2.5 pb-2 mb-2">
           {[
             { label: "All Documents", count: documents.length, color: "text-[#1A73E8]", icon: FolderArchive },
-            { label: "Drawings", count: documents.filter(d=>d.category==="Drawings").length, color: "text-[#FF6600]", icon: FileText },
+            { label: "Drawings", count: documents.filter(d=>d.category==="Drawings").length, color: "text-[#B89416]", icon: FileText },
             { label: "Contracts", count: documents.filter(d=>d.category==="Contracts & Agreements").length, color: "text-emerald-600", icon: FileText },
             { label: "Estimates", count: documents.filter(d=>d.category==="BOQ & Estimates").length, color: "text-blue-600", icon: FileText },
             { label: "Invoices", count: documents.filter(d=>d.category==="Invoices & Payments").length, color: "text-purple-600", icon: FileText },
@@ -207,7 +207,7 @@ export default function DocumentsPage() {
               <k.icon className={`w-4 h-4 md:w-5 md:h-5 ${k.color} shrink-0`} />
               <div className="min-w-0">
                 <div className="text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-wider truncate">{k.label}</div>
-                <div className="text-base md:text-lg font-black text-[#000F1B] leading-none mt-1">{k.count}</div>
+                <div className="text-base md:text-lg font-black text-[#252A2A] leading-none mt-1">{k.count}</div>
               </div>
             </div>
           ))}
@@ -223,12 +223,12 @@ export default function DocumentsPage() {
           <div className="p-2.5 md:p-3 border-b border-gray-100 flex flex-wrap items-center gap-2 bg-gray-50 shrink-0">
             <div className="relative flex-1 min-w-[150px]">
               <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" />
-              <input type="text" placeholder="Search documents..." value={search} onChange={e=>setSearch(e.target.value)} className="w-full pl-8 pr-3 py-2 text-[11px] md:text-xs bg-white border border-gray-200 rounded-md outline-none focus:border-[#FF6600] shadow-sm" />
+              <input type="text" placeholder="Search documents..." value={search} onChange={e=>setSearch(e.target.value)} className="w-full pl-8 pr-3 py-2 text-[11px] md:text-xs bg-white border border-gray-200 rounded-md outline-none focus:border-[#B89416] shadow-sm" />
             </div>
-            <select value={catFilter} onChange={e=>setCatFilter(e.target.value)} className="text-[10px] md:text-xs border border-gray-200 rounded-md px-2.5 py-2 outline-none focus:border-[#FF6600] bg-white cursor-pointer w-[110px]">
+            <select value={catFilter} onChange={e=>setCatFilter(e.target.value)} className="text-[10px] md:text-xs border border-gray-200 rounded-md px-2.5 py-2 outline-none focus:border-[#B89416] bg-white cursor-pointer w-[110px]">
               {CATEGORIES.map(c=><option key={c}>{c}</option>)}
             </select>
-            <select value={stageFilter} onChange={e=>setStageFilter(e.target.value)} className="text-[10px] md:text-xs border border-gray-200 rounded-md px-2.5 py-2 outline-none focus:border-[#FF6600] bg-white cursor-pointer w-[100px] hidden sm:block">
+            <select value={stageFilter} onChange={e=>setStageFilter(e.target.value)} className="text-[10px] md:text-xs border border-gray-200 rounded-md px-2.5 py-2 outline-none focus:border-[#B89416] bg-white cursor-pointer w-[100px] hidden sm:block">
               {projectStages.map(s=><option key={s}>{s}</option>)}
             </select>
             <button onClick={resetFilters} className="text-[10px] md:text-xs font-bold text-gray-500 hover:text-black px-2 py-2 cursor-pointer">Reset</button>
@@ -249,12 +249,12 @@ export default function DocumentsPage() {
                 {filteredDocs.map(d => {
                   const isSelected = selectedId === d.id;
                   return (
-                    <tr key={d.id} onClick={() => setSelectedId(d.id)} className={`cursor-pointer transition-colors ${isSelected ? "bg-[#FF6600]/5 hover:bg-[#FF6600]/10" : "hover:bg-gray-50"}`}>
+                    <tr key={d.id} onClick={() => setSelectedId(d.id)} className={`cursor-pointer transition-colors ${isSelected ? "bg-[#B89416]/5 hover:bg-[#B89416]/10" : "hover:bg-gray-50"}`}>
                       <td className="py-3 px-3 relative">
                         <div className="flex items-center gap-2">
-                          {isSelected && <div className="absolute left-0 w-1.5 h-8 bg-[#FF6600] rounded-r-md" />}
+                          {isSelected && <div className="absolute left-0 w-1.5 h-8 bg-[#B89416] rounded-r-md" />}
                           <FileText className={`w-4 h-4 shrink-0 ${d.category?.includes("Drawing") ? "text-red-500" : d.category?.includes("Contract") ? "text-emerald-500" : "text-[#1A73E8]"}`} />
-                          <span className="font-bold text-[#000F1B] truncate max-w-[150px] lg:max-w-[200px]">{d.name}</span>
+                          <span className="font-bold text-[#252A2A] truncate max-w-[150px] lg:max-w-[200px]">{d.name}</span>
                         </div>
                       </td>
                       <td className="py-3 px-3 text-gray-600 font-medium">{d.category || "Other"}</td>
@@ -274,11 +274,11 @@ export default function DocumentsPage() {
             {/* Mobile View */}
             <div className="sm:hidden space-y-2 p-3">
               {filteredDocs.map(d => (
-                <div key={d.id} onClick={() => setSelectedId(d.id)} className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm cursor-pointer hover:border-[#FF6600]/50 transition-colors">
+                <div key={d.id} onClick={() => setSelectedId(d.id)} className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm cursor-pointer hover:border-[#B89416]/50 transition-colors">
                   <div className="flex items-start justify-between mb-1.5 gap-2">
                     <div className="flex items-center gap-2 min-w-0">
-                      <FileText className="w-4 h-4 text-[#FF6600] shrink-0" />
-                      <h4 className="font-bold text-[11px] text-[#000F1B] truncate">{d.name}</h4>
+                      <FileText className="w-4 h-4 text-[#B89416] shrink-0" />
+                      <h4 className="font-bold text-[11px] text-[#252A2A] truncate">{d.name}</h4>
                     </div>
                     <span className={`inline-flex px-1.5 py-0.5 rounded text-[8px] font-bold uppercase border shrink-0 ${getStatusColor(d.status)}`}>{d.status || "Current"}</span>
                   </div>
@@ -310,12 +310,12 @@ export default function DocumentsPage() {
               {/* Header */}
               <div className="p-2.5 md:p-3.5 border-b border-gray-100 bg-white shrink-0 relative flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 shadow-sm z-20">
                 <div className="flex items-center gap-2 w-full sm:w-auto">
-                  <button onClick={() => setSelectedId(null)} className="md:hidden flex items-center gap-1.5 text-[11px] font-bold text-gray-500 hover:text-[#FF6600] bg-gray-50 px-2.5 py-1.5 rounded-md">
+                  <button onClick={() => setSelectedId(null)} className="md:hidden flex items-center gap-1.5 text-[11px] font-bold text-gray-500 hover:text-[#B89416] bg-gray-50 px-2.5 py-1.5 rounded-md">
                     <ChevronLeft className="w-3.5 h-3.5" /> Back
                   </button>
                   <div className="flex flex-col">
                     <div className="flex items-center gap-2">
-                      <h2 className="text-sm md:text-base font-bold text-[#000F1B] max-w-[200px] lg:max-w-[350px] truncate">{selectedDoc.name}</h2>
+                      <h2 className="text-sm md:text-base font-bold text-[#252A2A] max-w-[200px] lg:max-w-[350px] truncate">{selectedDoc.name}</h2>
                       <span className={`text-[8px] md:text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md border ${getStatusColor(selectedDoc.status)}`}>
                         {selectedDoc.status || "Current"}
                       </span>
@@ -335,7 +335,7 @@ export default function DocumentsPage() {
                   <button 
                     onClick={() => downloadWithWatermark(resolveMediaUrl(activeUrl), `${selectedDoc.name.replace(/\s+/g, '_')}_V${activeVersion?.version || selectedDoc.current_version || 1}`)} 
                     disabled={!activeUrl}
-                    className="flex-1 sm:flex-none px-2.5 py-1.5 bg-[#000F1B] hover:bg-[#FF6600] text-white rounded-lg text-[10px] md:text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm transition disabled:opacity-50 cursor-pointer whitespace-nowrap"
+                    className="flex-1 sm:flex-none px-2.5 py-1.5 bg-[#252A2A] hover:bg-[#B89416] text-white rounded-lg text-[10px] md:text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm transition disabled:opacity-50 cursor-pointer whitespace-nowrap"
                   >
                     <Download className="w-3.5 h-3.5" /> Download
                   </button>
@@ -369,9 +369,9 @@ export default function DocumentsPage() {
               {/* Tabs */}
               <div className="flex border-b border-gray-200 shrink-0 px-3 md:px-5 bg-white z-10">
                 {["Overview", "Revisions"].map(t => (
-                  <button key={t} onClick={() => setDrawerTab(t)} className={`px-4 py-2.5 text-[10px] md:text-xs font-bold relative transition cursor-pointer ${drawerTab === t ? "text-[#000F1B]" : "text-gray-400 hover:text-gray-700"}`}>
+                  <button key={t} onClick={() => setDrawerTab(t)} className={`px-4 py-2.5 text-[10px] md:text-xs font-bold relative transition cursor-pointer ${drawerTab === t ? "text-[#252A2A]" : "text-gray-400 hover:text-gray-700"}`}>
                     {t} {t === "Revisions" && `(${versions.length})`}
-                    {drawerTab === t && <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6600]" />}
+                    {drawerTab === t && <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#B89416]" />}
                   </button>
                 ))}
               </div>
@@ -388,7 +388,7 @@ export default function DocumentsPage() {
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-y-3 gap-x-3 text-[11px] md:text-xs">
                         <div className="col-span-2">
                           <div className="text-gray-500 font-medium mb-0.5 text-[10px]">File Name</div>
-                          <div className="font-bold text-[#000F1B] break-all leading-snug">{selectedDoc.name}</div>
+                          <div className="font-bold text-[#252A2A] break-all leading-snug">{selectedDoc.name}</div>
                         </div>
                         <div className="col-span-2 md:col-span-1">
                           <div className="text-gray-500 font-medium mb-0.5 text-[10px]">Category</div>
@@ -400,7 +400,7 @@ export default function DocumentsPage() {
                         </div>
                         <div>
                           <div className="text-gray-500 font-medium mb-0.5 text-[10px]">Viewing Revision</div>
-                          <div className="text-gray-900 font-bold text-[#FF6600]">
+                          <div className="text-gray-900 font-bold text-[#B89416]">
                             {activeVersion?.version ? `R0${activeVersion.version}` : selectedDoc.current_version ? `R0${selectedDoc.current_version}` : "R01"}
                           </div>
                         </div>
@@ -414,7 +414,7 @@ export default function DocumentsPage() {
                     {selectedDoc.description && (
                       <div className="bg-white rounded-xl border border-black/5 p-3 shadow-sm">
                         <div className="text-[9px] font-bold text-gray-400 uppercase tracking-wider mb-1 flex items-center gap-1.5"><FileText className="w-3 h-3"/> Document Notes</div>
-                        <p className="text-[10px] md:text-xs text-gray-700 leading-relaxed italic border-l-2 border-[#FF6600] pl-2.5">
+                        <p className="text-[10px] md:text-xs text-gray-700 leading-relaxed italic border-l-2 border-[#B89416] pl-2.5">
                           "{selectedDoc.description}"
                         </p>
                       </div>
@@ -423,7 +423,7 @@ export default function DocumentsPage() {
                     {/* COMPACT PREVIEW CONTAINER */}
                     <div className="bg-white rounded-xl border border-black/5 shadow-sm overflow-hidden flex flex-col h-[42vh] min-h-[280px] sm:h-[380px] md:h-[450px]">
                       <div className="py-2 px-3 border-b border-black/5 bg-gray-50 flex items-center justify-between shrink-0">
-                        <div className="text-[11px] md:text-xs font-bold text-[#000F1B]">Document Preview</div>
+                        <div className="text-[11px] md:text-xs font-bold text-[#252A2A]">Document Preview</div>
                         <div className="flex items-center gap-3">
                           {activeUrl && (
                             <a 
@@ -437,7 +437,7 @@ export default function DocumentsPage() {
                           )}
                           <button 
                             onClick={() => { if (activeUrl) setIsFullscreen(true); }}
-                            className="text-[10px] font-bold text-[#FF6600] hover:underline cursor-pointer flex items-center gap-1"
+                            className="text-[10px] font-bold text-[#B89416] hover:underline cursor-pointer flex items-center gap-1"
                           >
                             <Maximize2 className="w-3 h-3" /> View Full Screen
                           </button>
@@ -483,11 +483,11 @@ export default function DocumentsPage() {
                       
                       return (
                         <div key={v.version || originalIndex} className={`p-3 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 transition ${
-                          isViewingThis ? "bg-[#FF6600]/5 border-[#FF6600]/30 shadow-sm" : "bg-white border-black/5 hover:border-black/15 shadow-sm"
+                          isViewingThis ? "bg-[#B89416]/5 border-[#B89416]/30 shadow-sm" : "bg-white border-black/5 hover:border-black/15 shadow-sm"
                         }`}>
                           <div>
                             <div className="flex items-center gap-2 mb-0.5">
-                              <span className={`text-xs md:text-sm font-bold ${isViewingThis ? "text-[#000F1B]" : "text-gray-700"}`}>
+                              <span className={`text-xs md:text-sm font-bold ${isViewingThis ? "text-[#252A2A]" : "text-gray-700"}`}>
                                 Revision {String(v.version).startsWith("R") ? v.version : `R0${v.version}`}
                               </span>
                               {isCurrentDocVersion && (
@@ -499,7 +499,7 @@ export default function DocumentsPage() {
                             <div className="text-[10px] text-gray-500 font-medium">{fmtDate(v.uploaded_at)}</div>
                             
                             {v.client_comment && (
-                              <p className="text-[10px] text-gray-600 italic border-l-2 border-[#FF6600]/50 pl-2 mt-1.5">"{v.client_comment}"</p>
+                              <p className="text-[10px] text-gray-600 italic border-l-2 border-[#B89416]/50 pl-2 mt-1.5">"{v.client_comment}"</p>
                             )}
                           </div>
                           
@@ -517,7 +517,7 @@ export default function DocumentsPage() {
                                   setActiveVersionIdx(originalIndex);
                                   setDrawerTab("Overview"); 
                                 }}
-                                className="flex-1 sm:flex-none px-3 py-1.5 bg-white border border-gray-300 text-[#000F1B] hover:border-[#FF6600] hover:text-[#FF6600] text-[10px] md:text-xs font-bold rounded-lg transition shadow-sm cursor-pointer ml-auto"
+                                className="flex-1 sm:flex-none px-3 py-1.5 bg-white border border-gray-300 text-[#252A2A] hover:border-[#B89416] hover:text-[#B89416] text-[10px] md:text-xs font-bold rounded-lg transition shadow-sm cursor-pointer ml-auto"
                               >
                                 Read
                               </button>
@@ -540,8 +540,8 @@ export default function DocumentsPage() {
             </div>
           ) : (
             <div className="flex-1 flex flex-col items-center justify-center text-gray-400 p-8 text-center bg-[#F9FAFB]">
-              <FolderArchive className="w-14 h-14 opacity-20 mb-3 text-[#FF6600]" />
-              <p className="text-base font-bold text-[#000F1B] mb-1">No Document Selected</p>
+              <FolderArchive className="w-14 h-14 opacity-20 mb-3 text-[#B89416]" />
+              <p className="text-base font-bold text-[#252A2A] mb-1">No Document Selected</p>
               <p className="text-xs max-w-[250px] text-gray-500 leading-relaxed">Select a file from the vault to read, review history, and securely download.</p>
             </div>
           )}
@@ -559,7 +559,7 @@ export default function DocumentsPage() {
           >
             <button 
               onClick={() => setIsFullscreen(false)} 
-              className="absolute top-4 right-4 md:top-6 md:right-6 p-2 md:p-3 bg-white/10 hover:bg-[#FF6600] rounded-full text-white transition-all shadow-lg z-50 cursor-pointer"
+              className="absolute top-4 right-4 md:top-6 md:right-6 p-2 md:p-3 bg-white/10 hover:bg-[#B89416] rounded-full text-white transition-all shadow-lg z-50 cursor-pointer"
             >
               <X className="w-5 h-5 md:w-6 md:h-6" />
             </button>
@@ -582,9 +582,9 @@ export default function DocumentsPage() {
               <div className="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center overflow-hidden mix-blend-overlay">
                 {Array.from({ length: 6 }).map((_, i) => (
                   <div key={i} className="w-[200%] flex justify-between opacity-[0.08] transform -rotate-12 space-x-12 my-10 md:my-16 2xl:my-24">
-                    <span className="text-4xl md:text-6xl 2xl:text-8xl 4xl:text-[10rem] font-black text-black tracking-widest uppercase">ConstructONS</span>
-                    <span className="text-4xl md:text-6xl 2xl:text-8xl 4xl:text-[10rem] font-black text-black tracking-widest uppercase hidden md:inline">ConstructONS</span>
-                    <span className="text-4xl md:text-6xl 2xl:text-8xl 4xl:text-[10rem] font-black text-black tracking-widest uppercase hidden lg:inline">ConstructONS</span>
+                    <span className="text-4xl md:text-6xl 2xl:text-8xl 4xl:text-[10rem] font-black text-black tracking-widest uppercase">[Your Brand]s</span>
+                    <span className="text-4xl md:text-6xl 2xl:text-8xl 4xl:text-[10rem] font-black text-black tracking-widest uppercase hidden md:inline">[Your Brand]s</span>
+                    <span className="text-4xl md:text-6xl 2xl:text-8xl 4xl:text-[10rem] font-black text-black tracking-widest uppercase hidden lg:inline">[Your Brand]s</span>
                   </div>
                 ))}
               </div>

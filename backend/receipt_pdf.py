@@ -30,9 +30,9 @@ def draw_watermark_and_header(canvas, doc):
     # 1. "CONSTRUCT" text (Black / Dark Navy)
     canvas.setFont(font_name, font_size)
     canvas.setFillColorRGB(0, 0.06, 0.11)
-    canvas.drawString(start_x, y_pos, "CONSTRUCT")
+    canvas.drawString(start_x, y_pos, "YOUR")
 
-    construct_width = canvas.stringWidth("CONSTRUCT", font_name, font_size)
+    construct_width = canvas.stringWidth("YOUR", font_name, font_size)
     o_width = canvas.stringWidth("O", font_name, font_size)
 
     o_center_x = start_x + construct_width + (o_width / 2)
@@ -40,34 +40,34 @@ def draw_watermark_and_header(canvas, doc):
     o_radius = 8.0
 
     # 2. Power Button "O" (Saffron / Orange)
-    canvas.setStrokeColorRGB(1.0, 0.35, 0)
-    canvas.setLineWidth(2.5)
-    canvas.setLineCap(1)
+    # canvas.setStrokeColorRGB(1.0, 0.35, 0)
+    # canvas.setLineWidth(2.5)
+    # canvas.setLineCap(1)
 
-    canvas.arc(
-        o_center_x - o_radius,
-        o_center_y - o_radius,
-        o_center_x + o_radius,
-        o_center_y + o_radius,
-        120,
-        300,
-    )
-    canvas.line(
-        o_center_x, o_center_y + 1, o_center_x, o_center_y + o_radius + 3
-    )
+    # canvas.arc(
+    #     o_center_x - o_radius,
+    #     o_center_y - o_radius,
+    #     o_center_x + o_radius,
+    #     o_center_y + o_radius,
+    #     120,
+    #     300,
+    # )
+    # canvas.line(
+    #     o_center_x, o_center_y + 1, o_center_x, o_center_y + o_radius + 3
+    # )
 
     # 3. "NS" text (Saffron / Orange)
     ns_start_x = start_x + construct_width + o_width
     canvas.setFont(font_name, font_size)
     canvas.setFillColorRGB(1.0, 0.35, 0)
-    canvas.drawString(ns_start_x, y_pos, "NS")
+    canvas.drawString(ns_start_x, y_pos, "Brand")
 
     # 4. "TM"
-    ns_width = canvas.stringWidth("NS", font_name, font_size)
-    tm_start_x = ns_start_x + ns_width + 2
-    canvas.setFont(font_name, 10)
-    canvas.setFillColorRGB(0, 0.06, 0.11)
-    canvas.drawString(tm_start_x, y_pos + 10, "TM")
+    # ns_width = canvas.stringWidth("Brand", font_name, font_size)
+    # tm_start_x = ns_start_x + ns_width + 2
+    # canvas.setFont(font_name, 10)
+    # canvas.setFillColorRGB(0, 0.06, 0.11)
+    # canvas.drawString(tm_start_x, y_pos + 10, "TM")
 
     # Tagline
     canvas.setFont("Helvetica", 8)
@@ -227,7 +227,7 @@ def generate_receipt_pdf(payment: dict, project: dict, settings: dict, linked_in
     elements.append(Spacer(1, 10))
     bank_details = (
         settings.get("invoice_bank_details")
-        or "ConstructONS Pvt. Ltd.\nBank: HDFC Bank\nA/C: 50200000000000\nIFSC: HDFC0001234"
+        or "YOUR BRAND.\nBank: HDFC Bank\nA/C: 50200000000000\nIFSC: HDFC0001234"
     )
     for line in bank_details.split("\n"):
         elements.append(Paragraph(line, normal_style))

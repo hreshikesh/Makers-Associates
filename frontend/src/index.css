@@ -12,7 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #FFFFFF;
-  color: #111111;
+  color: #252A2A;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -55,20 +55,20 @@ html { overflow-x: hidden; }
   h2 { @apply text-3xl md:text-5xl font-bold; }
   h3 { @apply text-2xl md:text-3xl font-semibold; }
 
-  ::selection { background: #FF6600; color: white; }
+  ::selection { background: #B89416; color: white; }
 }
 
 /* Utility classes */
 .container-wide { @apply max-w-[1360px] mx-auto px-4 md:px-8; }
 
 .text-gradient-orange {
-  background: linear-gradient(to right, #FF6600, #FF0000);
+  background: linear-gradient(to right, #B89416, #B89416);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-[class~="bg-[#000F1B]"],
+[class~="bg-[#252A2A]"],
 [class~="bg-[#0F1E30]"],
 [class~="bg-[#0B1E30]"],
 [class~="bg-[#0F172A]"],
@@ -79,7 +79,7 @@ html { overflow-x: hidden; }
   background-color: rgb(17 17 17 / var(--tw-bg-opacity, 1)) !important;
 }
 
-[class~="text-[#000F1B]"],
+[class~="text-[#252A2A]"],
 [class~="text-[#0F1E30]"],
 [class~="text-[#0B1E30]"],
 [class~="text-[#0F172A]"],
@@ -90,7 +90,7 @@ html { overflow-x: hidden; }
   color: rgb(17 17 17 / var(--tw-text-opacity, 1)) !important;
 }
 
-[class~="from-[#000F1B]"],
+[class~="from-[#252A2A]"],
 [class~="from-[#0F1E30]"],
 [class~="from-[#0B1E30]"],
 [class~="from-[#0F172A]"],
@@ -98,10 +98,10 @@ html { overflow-x: hidden; }
 [class~="from-[#111A2E]"],
 [class~="from-[#0B1B32]"],
 [class~="from-[#030914]"] {
-  --tw-gradient-from: #111111 var(--tw-gradient-from-position) !important;
+  --tw-gradient-from: #252A2A var(--tw-gradient-from-position) !important;
 }
 
-[class~="to-[#000F1B]"],
+[class~="to-[#252A2A]"],
 [class~="to-[#0F1E30]"],
 [class~="to-[#0B1E30]"],
 [class~="to-[#0F172A]"],
@@ -109,10 +109,10 @@ html { overflow-x: hidden; }
 [class~="to-[#111A2E]"],
 [class~="to-[#0B1B32]"],
 [class~="to-[#030914]"] {
-  --tw-gradient-to: #111111 var(--tw-gradient-to-position) !important;
+  --tw-gradient-to: #252A2A var(--tw-gradient-to-position) !important;
 }
 
-[class~="border-[#000F1B]"],
+[class~="border-[#252A2A]"],
 [class~="border-[#0F1E30]"],
 [class~="border-[#0B1E30]"],
 [class~="border-[#0F172A]"],
@@ -123,36 +123,36 @@ html { overflow-x: hidden; }
   border-color: rgb(17 17 17 / var(--tw-border-opacity, 1)) !important;
 }
 
-[fill="#000F1B"] {
-  fill: #111111 !important;
+[fill="#252A2A"] {
+  fill: #252A2A !important;
 }
 
-[stroke="#000F1B"] {
-  stroke: #111111 !important;
+[stroke="#252A2A"] {
+  stroke: #252A2A !important;
 }
 
-h1 span[class*="text-[#FF6600]"],
-h1 em[class*="text-[#FF6600]"],
-h2 span[class*="text-[#FF6600]"],
-h2 em[class*="text-[#FF6600]"],
-h3 span[class*="text-[#FF6600]"],
-h3 em[class*="text-[#FF6600]"] {
-  background-image: linear-gradient(to right, #FF6600, #FF0000);
+h1 span[class*="text-[#B89416]"],
+h1 em[class*="text-[#B89416]"],
+h2 span[class*="text-[#B89416]"],
+h2 em[class*="text-[#B89416]"],
+h3 span[class*="text-[#B89416]"],
+h3 em[class*="text-[#B89416]"] {
+  background-image: linear-gradient(to right, #B89416, #B89416);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent !important;
 }
 
-button[class*="bg-[#FF6600]"][class*="hover:bg-[#E04F00]"],
-button[class*="bg-[#FF6600]"][class*="hover:bg-[#FF0000]"],
-a[class*="bg-[#FF6600]"][class*="hover:bg-[#E04F00]"],
-a[class*="bg-[#FF6600]"][class*="hover:bg-[#FF0000]"] {
-  background-image: linear-gradient(to right, #FF6600, #FF0000);
+button[class*="bg-[#B89416]"][class*="hover:bg-[#8F7210]"],
+button[class*="bg-[#B89416]"][class*="hover:bg-[#B89416]"],
+a[class*="bg-[#B89416]"][class*="hover:bg-[#8F7210]"],
+a[class*="bg-[#B89416]"][class*="hover:bg-[#B89416]"] {
+  background-image: linear-gradient(to right, #B89416, #B89416);
 }
 
-button[class~="bg-[#000F1B]"][class*="hover:bg-[#FF6600]"],
-a[class~="bg-[#000F1B]"][class*="hover:bg-[#FF6600]"] {
-  background-image: linear-gradient(to right, #FF6600, #FF0000);
+button[class~="bg-[#252A2A]"][class*="hover:bg-[#B89416]"],
+a[class~="bg-[#252A2A]"][class*="hover:bg-[#B89416]"] {
+  background-image: linear-gradient(to right, #B89416, #B89416);
 }
 
 .glass {
@@ -179,9 +179,9 @@ a[class~="bg-[#000F1B]"][class*="hover:bg-[#FF6600]"] {
 @layer components {
   .btn-primary {
       @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange text-white font-semibold px-6 py-3 shadow-glow transition-all;
-      background-image: linear-gradient(to right, #FF6600, #FF0000);
+      background-image: linear-gradient(to right, #B89416, #B89416);
   }
-    .btn-primary:hover { background: #E64F00; background-image: linear-gradient(to right, #FF6600, #FF0000); transform: translateY(-1px); }
+    .btn-primary:hover { background: #8F7210; background-image: linear-gradient(to right, #B89416, #B89416); transform: translateY(-1px); }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 rounded-full bg-white text-brand-navy font-semibold px-6 py-3 border border-black/10 transition-all;
@@ -192,7 +192,7 @@ a[class~="bg-[#000F1B]"][class*="hover:bg-[#FF6600]"] {
 .divider-dot { display:inline-block; width:6px; height:6px; border-radius:9999px; background:#0B1220; opacity:.25; }
 
 /* Hide default focus ring but keep accessibility */
-:focus-visible { outline: 2px solid #FF6600; outline-offset: 2px; border-radius: 6px; }
+:focus-visible { outline: 2px solid #B89416; outline-offset: 2px; border-radius: 6px; }
 
 /* Marquee for testimonials */
 @keyframes marquee {
@@ -210,15 +210,15 @@ a[class~="bg-[#000F1B]"][class*="hover:bg-[#FF6600]"] {
 /* ---------------- TipTap Rich Text Editor ---------------- */
 .ProseMirror { outline: none; }
 .ProseMirror p { margin: 0 0 0.75rem; }
-.ProseMirror h1 { font-size: 1.6rem; font-weight: 700; margin: 1rem 0 0.5rem; color: #111111; }
-.ProseMirror h2 { font-size: 1.3rem; font-weight: 700; margin: 0.9rem 0 0.4rem; color: #111111; }
-.ProseMirror h3 { font-size: 1.1rem; font-weight: 600; margin: 0.75rem 0 0.35rem; color: #111111; }
+.ProseMirror h1 { font-size: 1.6rem; font-weight: 700; margin: 1rem 0 0.5rem; color: #252A2A; }
+.ProseMirror h2 { font-size: 1.3rem; font-weight: 700; margin: 0.9rem 0 0.4rem; color: #252A2A; }
+.ProseMirror h3 { font-size: 1.1rem; font-weight: 600; margin: 0.75rem 0 0.35rem; color: #252A2A; }
 .ProseMirror ul { list-style: disc; padding-left: 1.25rem; margin: 0.5rem 0; }
 .ProseMirror ol { list-style: decimal; padding-left: 1.25rem; margin: 0.5rem 0; }
 .ProseMirror li { margin: 0.25rem 0; }
 .ProseMirror li > p { margin: 0; }
 .ProseMirror blockquote {
-  border-left: 3px solid #FF6600;
+  border-left: 3px solid #B89416;
   padding-left: 0.75rem;
   margin: 0.75rem 0;
   color: #4b5563;
@@ -232,7 +232,7 @@ a[class~="bg-[#000F1B]"][class*="hover:bg-[#FF6600]"] {
   font-family: 'Source Code Pro', ui-monospace, monospace;
 }
 .ProseMirror pre {
-  background: #111111;
+  background: #252A2A;
   color: #F5F5F0;
   padding: 0.85rem 1rem;
   border-radius: 10px;
@@ -250,7 +250,7 @@ a[class~="bg-[#000F1B]"][class*="hover:bg-[#FF6600]"] {
   border-top: 1px solid rgba(17, 17, 17, 0.12);
   margin: 1rem 0;
 }
-.ProseMirror a { color: #FF6600; text-decoration: underline; text-underline-offset: 3px; }
+.ProseMirror a { color: #B89416; text-decoration: underline; text-underline-offset: 3px; }
 .ProseMirror p.is-editor-empty:first-child::before {
   color: rgba(17, 17, 17, 0.35);
   content: attr(data-placeholder);
@@ -259,18 +259,18 @@ a[class~="bg-[#000F1B]"][class*="hover:bg-[#FF6600]"] {
   pointer-events: none;
 }
 /* Rendered HTML from the editor on public/admin views */
-.rich-html h1 { font-size: 1.75rem; font-weight: 700; margin: 1.25rem 0 0.5rem; color: #111111; }
-.rich-html h2 { font-size: 1.4rem; font-weight: 700; margin: 1rem 0 0.5rem; color: #111111; }
-.rich-html h3 { font-size: 1.15rem; font-weight: 600; margin: 0.9rem 0 0.4rem; color: #111111; }
+.rich-html h1 { font-size: 1.75rem; font-weight: 700; margin: 1.25rem 0 0.5rem; color: #252A2A; }
+.rich-html h2 { font-size: 1.4rem; font-weight: 700; margin: 1rem 0 0.5rem; color: #252A2A; }
+.rich-html h3 { font-size: 1.15rem; font-weight: 600; margin: 0.9rem 0 0.4rem; color: #252A2A; }
 .rich-html p { margin: 0 0 0.9rem; line-height: 1.6; }
 .rich-html ul { list-style: disc; padding-left: 1.4rem; margin: 0.5rem 0; }
 .rich-html ol { list-style: decimal; padding-left: 1.4rem; margin: 0.5rem 0; }
 .rich-html li { margin: 0.25rem 0; }
 .rich-html blockquote {
-  border-left: 3px solid #FF6600;
+  border-left: 3px solid #B89416;
   padding-left: 0.9rem;
   margin: 0.9rem 0;
   color: #4b5563;
   font-style: italic;
 }
-.rich-html a { color: #FF6600; text-decoration: underline; }
+.rich-html a { color: #B89416; text-decoration: underline; }

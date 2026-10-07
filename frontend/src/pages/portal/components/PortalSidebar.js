@@ -69,7 +69,7 @@ export default function PortalSidebar({ open, onClose }) {
       {/* Mobile overlay */}
       {open && (
         <div
-          className="fixed inset-0 z-40 bg-[#000F1B]/50 backdrop-blur-sm lg:hidden"
+          className="fixed inset-0 z-40 bg-[#252A2A]/50 backdrop-blur-sm lg:hidden"
           onClick={onClose}
           aria-hidden="true"
         />
@@ -89,7 +89,7 @@ export default function PortalSidebar({ open, onClose }) {
             to="/portal"
             onClick={onClose}
             className="flex items-center gap-2 min-w-0 select-none"
-            aria-label="ConstructONS Portal Home"
+            aria-label="[Your Brand]s Portal Home"
           >
             <BrandLockup tone="dark" size="sm" />
           </Link>
@@ -118,7 +118,7 @@ export default function PortalSidebar({ open, onClose }) {
                       className={({ isActive }) =>
                         `flex items-center justify-between px-2.5 py-2 rounded-lg text-[12px] font-medium transition min-h-[36px] group ${
                           isActive
-                            ? "bg-[#FF6600] text-white shadow-sm"
+                            ? "bg-[#B89416] text-white shadow-sm"
                             : "text-white/70 hover:bg-white/5 hover:text-white"
                         }`
                       }
@@ -128,7 +128,7 @@ export default function PortalSidebar({ open, onClose }) {
                           <div className="flex items-center gap-2.5 min-w-0">
                             <item.icon
                               className={`w-3.5 h-3.5 shrink-0 transition ${
-                                isActive ? "text-white" : "group-hover:text-[#FF6600]"
+                                isActive ? "text-white" : "group-hover:text-[#B89416]"
                               }`}
                               strokeWidth={2}
                             />
@@ -136,7 +136,7 @@ export default function PortalSidebar({ open, onClose }) {
                           </div>
 
                           {item.label === "Approvals" && pendingApprovalsCount > 0 && (
-                            <span className="bg-[#FF0000] text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow-sm animate-pulse shrink-0">
+                            <span className="bg-[#B89416] text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow-sm animate-pulse shrink-0">
                               {pendingApprovalsCount}
                             </span>
                           )}
@@ -155,7 +155,7 @@ export default function PortalSidebar({ open, onClose }) {
           <p className="text-[9px] text-white/35 leading-snug font-semibold tracking-wide">
             PLAN · BUILD · MONITOR · COMPLETE
           </p>
-          <p className="text-[9px] text-[#FF6600] mt-0.5 font-bold">
+          <p className="text-[9px] text-[#B89416] mt-0.5 font-bold">
             Your Home. Our Commitment.
           </p>
         </div>

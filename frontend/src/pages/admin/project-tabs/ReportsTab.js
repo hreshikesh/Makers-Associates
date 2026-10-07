@@ -161,8 +161,8 @@ export default function ReportsTab({ project, onSaved }) {
           onClick={() => setActiveTab("queue")}
           className={`py-4 text-xs font-bold border-b-2 transition flex items-center gap-2 ${
             activeTab === "queue"
-              ? "border-[#FF6600] text-[#FF6600]"
-              : "border-transparent text-[#111111]/50 hover:text-[#111111]"
+              ? "border-[#B89416] text-[#B89416]"
+              : "border-transparent text-[#252A2A]/50 hover:text-[#252A2A]"
           }`}
         >
           <span>Report Queue & History ({reports.length})</span>
@@ -171,8 +171,8 @@ export default function ReportsTab({ project, onSaved }) {
           onClick={() => setActiveTab("create")}
           className={`py-4 text-xs font-bold border-b-2 transition flex items-center gap-1.5 ${
             activeTab === "create"
-              ? "border-[#FF6600] text-[#FF6600]"
-              : "border-transparent text-[#111111]/50 hover:text-[#111111]"
+              ? "border-[#B89416] text-[#B89416]"
+              : "border-transparent text-[#252A2A]/50 hover:text-[#252A2A]"
           }`}
         >
           <Plus className="w-4 h-4" /> <span>Log Daily Report</span>
@@ -185,7 +185,7 @@ export default function ReportsTab({ project, onSaved }) {
           className="bg-white rounded-xl border border-black/5 p-6 shadow-sm space-y-5"
         >
           <div className="flex items-center justify-between border-b border-black/5 pb-3">
-            <h3 className="text-sm font-bold text-[#111111] uppercase tracking-wider">
+            <h3 className="text-sm font-bold text-[#252A2A] uppercase tracking-wider">
               New Daily Site Report
             </h3>
             <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md">
@@ -195,7 +195,7 @@ export default function ReportsTab({ project, onSaved }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[10px] font-bold uppercase mb-1 text-[#111111]">
+              <label className="block text-[10px] font-bold uppercase mb-1 text-[#252A2A]">
                 Report Date *
               </label>
               <input
@@ -203,17 +203,17 @@ export default function ReportsTab({ project, onSaved }) {
                 required
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="w-full px-3 py-2 border rounded-xl text-xs font-bold text-[#111111] outline-none focus:ring-2 focus:ring-[#FF6600]"
+                className="w-full px-3 py-2 border rounded-xl text-xs font-bold text-[#252A2A] outline-none focus:ring-2 focus:ring-[#B89416]"
               />
             </div>
             <div>
-              <label className="block text-[10px] font-bold uppercase mb-1 text-[#111111]">
+              <label className="block text-[10px] font-bold uppercase mb-1 text-[#252A2A]">
                 Overall Site Status *
               </label>
               <select
                 value={overallStatus}
                 onChange={(e) => setOverallStatus(e.target.value)}
-                className="w-full px-3 py-2 border rounded-xl text-xs font-bold text-[#111111] bg-white cursor-pointer outline-none focus:ring-2 focus:ring-[#FF6600]"
+                className="w-full px-3 py-2 border rounded-xl text-xs font-bold text-[#252A2A] bg-white cursor-pointer outline-none focus:ring-2 focus:ring-[#B89416]"
               >
                 <option>Work as per plan</option>
                 <option>Ahead of schedule</option>
@@ -227,7 +227,7 @@ export default function ReportsTab({ project, onSaved }) {
           {/* Labor */}
           <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3">
             <h4 className="text-[10px] font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
-              <Users className="w-4 h-4 text-[#FF6600]" /> Labor & Site Strength Allocation
+              <Users className="w-4 h-4 text-[#B89416]" /> Labor & Site Strength Allocation
             </h4>
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -242,7 +242,7 @@ export default function ReportsTab({ project, onSaved }) {
                   value={countValue(workersCount)}
                   onChange={(e) => setWorkersCount(parseCountInput(e.target.value))}
                   onFocus={(e) => e.target.select()}
-                  className="w-full p-2 border border-gray-200 rounded-lg text-xs font-bold outline-none focus:ring-2 focus:ring-[#FF6600]"
+                  className="w-full p-2 border border-gray-200 rounded-lg text-xs font-bold outline-none focus:ring-2 focus:ring-[#B89416]"
                 />
               </div>
               <div>
@@ -257,7 +257,7 @@ export default function ReportsTab({ project, onSaved }) {
                   value={countValue(masteriesCount)}
                   onChange={(e) => setMasteriesCount(parseCountInput(e.target.value))}
                   onFocus={(e) => e.target.select()}
-                  className="w-full p-2 border border-gray-200 rounded-lg text-xs font-bold outline-none focus:ring-2 focus:ring-[#FF6600]"
+                  className="w-full p-2 border border-gray-200 rounded-lg text-xs font-bold outline-none focus:ring-2 focus:ring-[#B89416]"
                 />
               </div>
             </div>
@@ -266,7 +266,7 @@ export default function ReportsTab({ project, onSaved }) {
           {/* Yesterday + Planned Today */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[10px] font-bold uppercase mb-1 text-[#111111] flex items-center gap-1">
+              <label className="block text-[10px] font-bold uppercase mb-1 text-[#252A2A] flex items-center gap-1">
                 <History className="w-3.5 h-3.5 text-gray-500" /> Work Done Yesterday
               </label>
               <textarea
@@ -274,11 +274,11 @@ export default function ReportsTab({ project, onSaved }) {
                 value={workDoneYesterday}
                 onChange={(e) => setWorkDoneYesterday(e.target.value)}
                 placeholder="State work done yesterday..."
-                className="w-full px-3 py-2 border rounded-xl text-xs resize-none outline-none focus:ring-2 focus:ring-[#FF6600]"
+                className="w-full px-3 py-2 border rounded-xl text-xs resize-none outline-none focus:ring-2 focus:ring-[#B89416]"
               />
             </div>
             <div>
-              <label className="block text-[10px] font-bold uppercase mb-1 text-[#111111] flex items-center gap-1">
+              <label className="block text-[10px] font-bold uppercase mb-1 text-[#252A2A] flex items-center gap-1">
                 <FileSpreadsheet className="w-3.5 h-3.5 text-gray-500" /> Work Planned for Today
               </label>
               <textarea
@@ -286,13 +286,13 @@ export default function ReportsTab({ project, onSaved }) {
                 value={workCompletedToday}
                 onChange={(e) => setWorkCompletedToday(e.target.value)}
                 placeholder="What is planned for execution today..."
-                className="w-full px-3 py-2 border rounded-xl text-xs resize-none outline-none focus:ring-2 focus:ring-[#FF6600]"
+                className="w-full px-3 py-2 border rounded-xl text-xs resize-none outline-none focus:ring-2 focus:ring-[#B89416]"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-[10px] font-bold uppercase mb-1 text-[#111111]">
+            <label className="block text-[10px] font-bold uppercase mb-1 text-[#252A2A]">
               Status Briefing / Notes
             </label>
             <textarea
@@ -300,13 +300,13 @@ export default function ReportsTab({ project, onSaved }) {
               value={statusNotes}
               onChange={(e) => setStatusNotes(e.target.value)}
               placeholder="Brief morning notes or site conditions..."
-              className="w-full px-3 py-2 border rounded-xl text-xs resize-none outline-none focus:ring-2 focus:ring-[#FF6600]"
+              className="w-full px-3 py-2 border rounded-xl text-xs resize-none outline-none focus:ring-2 focus:ring-[#B89416]"
             />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 border-t border-black/5">
             <div>
-              <label className="block text-[10px] font-bold uppercase mb-2 text-[#111111]">
+              <label className="block text-[10px] font-bold uppercase mb-2 text-[#252A2A]">
                 Completed Line Items *
               </label>
               <div className="flex gap-2 mb-3">
@@ -315,7 +315,7 @@ export default function ReportsTab({ project, onSaved }) {
                   value={workCompletedInput}
                   onChange={(e) => setWorkCompletedInput(e.target.value)}
                   placeholder="e.g. Block work (50%)"
-                  className="flex-1 px-3 py-2 border rounded-xl text-xs outline-none focus:ring-2 focus:ring-[#FF6600]"
+                  className="flex-1 px-3 py-2 border rounded-xl text-xs outline-none focus:ring-2 focus:ring-[#B89416]"
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       e.preventDefault();
@@ -326,7 +326,7 @@ export default function ReportsTab({ project, onSaved }) {
                 <button
                   type="button"
                   onClick={handleAddWorkCompleted}
-                  className="px-4 py-2 bg-[#111111] hover:bg-[#FF6600] text-white rounded-xl text-xs font-bold transition"
+                  className="px-4 py-2 bg-[#252A2A] hover:bg-[#B89416] text-white rounded-xl text-xs font-bold transition"
                 >
                   Add
                 </button>
@@ -356,7 +356,7 @@ export default function ReportsTab({ project, onSaved }) {
             </div>
 
             <div>
-              <label className="block text-[10px] font-bold uppercase mb-2 text-[#111111]">
+              <label className="block text-[10px] font-bold uppercase mb-2 text-[#252A2A]">
                 Planned Tomorrow
               </label>
               <div className="flex gap-2 mb-3">
@@ -365,7 +365,7 @@ export default function ReportsTab({ project, onSaved }) {
                   value={plannedTomorrowInput}
                   onChange={(e) => setPlannedTomorrowInput(e.target.value)}
                   placeholder="e.g. Service conduits marking"
-                  className="flex-1 px-3 py-2 border rounded-xl text-xs outline-none focus:ring-2 focus:ring-[#FF6600]"
+                  className="flex-1 px-3 py-2 border rounded-xl text-xs outline-none focus:ring-2 focus:ring-[#B89416]"
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       e.preventDefault();
@@ -376,7 +376,7 @@ export default function ReportsTab({ project, onSaved }) {
                 <button
                   type="button"
                   onClick={handleAddPlannedTomorrow}
-                  className="px-4 py-2 bg-[#111111] hover:bg-[#FF6600] text-white rounded-xl text-xs font-bold transition"
+                  className="px-4 py-2 bg-[#252A2A] hover:bg-[#B89416] text-white rounded-xl text-xs font-bold transition"
                 >
                   Add
                 </button>
@@ -408,10 +408,10 @@ export default function ReportsTab({ project, onSaved }) {
 
           <div className="pt-2 border-t border-black/5">
             <div className="flex items-center justify-between mb-3">
-              <label className="block text-[10px] font-bold uppercase text-[#111111]">
+              <label className="block text-[10px] font-bold uppercase text-[#252A2A]">
                 Attach Today's Photos
               </label>
-              <label className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FF6600]/10 hover:bg-[#FF6600]/20 text-[#FF6600] rounded-lg text-xs font-bold cursor-pointer transition">
+              <label className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#B89416]/10 hover:bg-[#B89416]/20 text-[#B89416] rounded-lg text-xs font-bold cursor-pointer transition">
                 {uploading ? (
                   <Loader2 className="w-3.5 h-3.5 animate-spin" />
                 ) : (
@@ -469,7 +469,7 @@ export default function ReportsTab({ project, onSaved }) {
             <button
               type="submit"
               disabled={loading}
-              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#FF6600] to-[#FF0000] hover:opacity-90 text-white text-xs font-bold flex items-center gap-2 transition disabled:opacity-60 shadow-sm"
+              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#B89416] to-[#B89416] hover:opacity-90 text-white text-xs font-bold flex items-center gap-2 transition disabled:opacity-60 shadow-sm"
             >
               {loading ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
@@ -485,7 +485,7 @@ export default function ReportsTab({ project, onSaved }) {
       {activeTab === "queue" && (
         <div className="space-y-4">
           {reports.length === 0 ? (
-            <div className="bg-white rounded-xl border border-black/5 p-12 text-center text-xs text-[#111111]/50 italic shadow-sm">
+            <div className="bg-white rounded-xl border border-black/5 p-12 text-center text-xs text-[#252A2A]/50 italic shadow-sm">
               No daily reports logged yet.
             </div>
           ) : (
@@ -501,7 +501,7 @@ export default function ReportsTab({ project, onSaved }) {
                     </div>
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h4 className="font-bold text-[#111111] text-sm">
+                        <h4 className="font-bold text-[#252A2A] text-sm">
                           {new Date(rep.date + "T00:00:00").toLocaleDateString("en-IN", {
                             weekday: "short",
                             day: "numeric",
@@ -513,7 +513,7 @@ export default function ReportsTab({ project, onSaved }) {
                           Published to Client
                         </span>
                       </div>
-                      <p className="text-[10px] text-[#111111]/50 mt-0.5">
+                      <p className="text-[10px] text-[#252A2A]/50 mt-0.5">
                         Status: <strong>{rep.overall_status}</strong> · By{" "}
                         {rep.submitted_by || "Site Engineer"}
                       </p>
@@ -530,7 +530,7 @@ export default function ReportsTab({ project, onSaved }) {
 
                 <div className="flex items-center gap-4 text-[10px] bg-slate-50 border border-slate-200 p-2 rounded-lg mb-3">
                   <div className="flex items-center gap-1 font-bold text-slate-700">
-                    <Users className="w-3.5 h-3.5 text-[#FF6600]" /> Deployments:{" "}
+                    <Users className="w-3.5 h-3.5 text-[#B89416]" /> Deployments:{" "}
                     {rep.workers_count || 0} Workers
                   </div>
                   <div className="w-px h-3 bg-slate-300" />
@@ -561,14 +561,14 @@ export default function ReportsTab({ project, onSaved }) {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                   <div>
-                    <div className="text-[10px] font-bold text-[#111111] uppercase tracking-wider mb-1">
+                    <div className="text-[10px] font-bold text-[#252A2A] uppercase tracking-wider mb-1">
                       Completed Line Items:
                     </div>
                     <ul className="space-y-1 pl-1">
                       {(rep.work_completed || []).map((item, idx) => (
                         <li
                           key={idx}
-                          className="flex items-center gap-1.5 text-[#111111]/80 font-medium"
+                          className="flex items-center gap-1.5 text-[#252A2A]/80 font-medium"
                         >
                           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
                           <span>{item}</span>
@@ -578,7 +578,7 @@ export default function ReportsTab({ project, onSaved }) {
                   </div>
                   {(rep.photos || []).length > 0 && (
                     <div>
-                      <div className="text-[10px] font-bold text-[#111111] uppercase tracking-wider mb-1">
+                      <div className="text-[10px] font-bold text-[#252A2A] uppercase tracking-wider mb-1">
                         Attached Photos:
                       </div>
                       <div className="flex gap-2 overflow-x-auto pb-1">

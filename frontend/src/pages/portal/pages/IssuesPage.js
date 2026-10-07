@@ -62,14 +62,14 @@ export default function IssuesPage() {
     <div className="flex flex-col h-[calc(100vh-80px)] font-['Poppins'] bg-[#F5F6F8] p-4 sm:p-6 lg:px-20 overflow-y-auto">
       
       <div className="bg-white border border-gray-200 rounded-2xl p-5 md:p-6 shadow-sm mb-6">
-        <h1 className="text-xl md:text-2xl font-bold text-[#000F1B]">Quality Issues</h1>
+        <h1 className="text-xl md:text-2xl font-bold text-[#252A2A]">Quality Issues</h1>
         <p className="text-xs text-gray-500 mt-1">Track assigned owners, target fix dates, and verify resolutions for issues you raised.</p>
       </div>
 
       {issues.length === 0 ? (
         <div className="bg-white rounded-2xl border border-dashed border-gray-300 py-16 text-center">
           <AlertTriangle className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-          <h3 className="text-sm font-bold text-[#000F1B]">No Issues Raised</h3>
+          <h3 className="text-sm font-bold text-[#252A2A]">No Issues Raised</h3>
           <p className="text-xs text-gray-500 mt-1">You haven't raised any quality issues yet.</p>
         </div>
       ) : (
@@ -84,7 +84,7 @@ export default function IssuesPage() {
                   <div className="flex items-start justify-between mb-3">
                     <div>
                       <div className="text-[10px] font-bold text-[#1A73E8] uppercase tracking-wider">{i.area}</div>
-                      <div className="text-sm font-bold text-[#000F1B] leading-tight mt-0.5">{i.check_text_snapshot}</div>
+                      <div className="text-sm font-bold text-[#252A2A] leading-tight mt-0.5">{i.check_text_snapshot}</div>
                     </div>
                     <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border text-center ${ui.color}`}>
                       {ui.label}
@@ -108,7 +108,7 @@ export default function IssuesPage() {
                       )}
                       {i.target_date && (
                         <div className="flex items-center gap-1.5">
-                          <Calendar className="w-3.5 h-3.5 text-[#FF6600]" />
+                          <Calendar className="w-3.5 h-3.5 text-[#B89416]" />
                           <span>Target Fix: <strong className="text-gray-900">{fmtDate(i.target_date)}</strong></span>
                         </div>
                       )}
@@ -145,7 +145,7 @@ export default function IssuesPage() {
         <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 font-['Poppins']">
           <div className="bg-white rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
             <div className="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50 shrink-0">
-              <h3 className="text-base font-bold text-[#000F1B]">Review Resolution</h3>
+              <h3 className="text-base font-bold text-[#252A2A]">Review Resolution</h3>
               <button onClick={() => setSelectedIssue(null)} className="p-1 hover:bg-gray-200 rounded-full transition"><X className="w-5 h-5 text-gray-500" /></button>
             </div>
             
@@ -177,7 +177,7 @@ export default function IssuesPage() {
                 <textarea 
                   rows="2" value={remark} onChange={e => setRemark(e.target.value)}
                   placeholder="Leave a note for the team..."
-                  className="w-full border border-gray-200 rounded-xl p-3 text-xs sm:text-sm focus:border-[#FF6600] outline-none resize-none bg-gray-50 focus:bg-white"
+                  className="w-full border border-gray-200 rounded-xl p-3 text-xs sm:text-sm focus:border-[#B89416] outline-none resize-none bg-gray-50 focus:bg-white"
                 />
               </div>
             </div>

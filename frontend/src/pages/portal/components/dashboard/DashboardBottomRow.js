@@ -15,34 +15,34 @@ export default function DashboardBottomRow({ project }) {
         
         <Link to="/portal/approvals" className="rounded-xl border border-amber-200 bg-amber-50 p-2.5 flex items-center justify-center gap-2 hover:bg-amber-100 transition shadow-sm group">
           <CheckSquare className="w-4 h-4 text-amber-600 group-hover:scale-110 transition" />
-          <span className="text-[10px] font-bold text-[#000F1B] uppercase tracking-wider">Approvals</span>
+          <span className="text-[10px] font-bold text-[#252A2A] uppercase tracking-wider">Approvals</span>
         </Link>
 
         <Link to="/portal/documents" className="rounded-xl border border-black/10 bg-white p-2.5 flex items-center justify-center gap-2 hover:bg-[#F2F2F2] transition shadow-sm group">
           <FileText className="w-4 h-4 text-purple-600 group-hover:scale-110 transition" />
-          <span className="text-[10px] font-bold text-[#000F1B] uppercase tracking-wider">Docs ({(project?.documents || []).length})</span>
+          <span className="text-[10px] font-bold text-[#252A2A] uppercase tracking-wider">Docs ({(project?.documents || []).length})</span>
         </Link>
 
         <Link to="/portal/quality" className="rounded-xl border border-emerald-200 bg-emerald-50 p-2.5 flex items-center justify-center gap-2 hover:bg-emerald-100 transition shadow-sm group">
           <ShieldCheck className="w-4 h-4 text-emerald-700 group-hover:scale-110 transition" />
-          <span className="text-[10px] font-bold text-[#000F1B] uppercase tracking-wider">Quality</span>
+          <span className="text-[10px] font-bold text-[#252A2A] uppercase tracking-wider">Quality</span>
         </Link>
 
         {isHandoverComplete ? (
           <Link to="/portal/maintenance" className="rounded-xl border border-blue-200 bg-blue-50 p-2.5 flex items-center justify-center gap-2 hover:bg-blue-100 transition shadow-sm group">
             <Hammer className="w-4 h-4 text-blue-600 group-hover:scale-110 transition" />
-            <span className="text-[10px] font-bold text-[#000F1B] uppercase tracking-wider">Maint.</span>
+            <span className="text-[10px] font-bold text-[#252A2A] uppercase tracking-wider">Maint.</span>
           </Link>
         ) : (
           <div className="rounded-xl border border-dashed border-black/15 bg-white/50 p-2.5 flex items-center justify-center gap-2 opacity-60">
-            <Hammer className="w-4 h-4 text-[#111111]/40" />
-            <span className="text-[10px] font-bold text-[#000F1B] uppercase tracking-wider">Locked</span>
+            <Hammer className="w-4 h-4 text-[#252A2A]/40" />
+            <span className="text-[10px] font-bold text-[#252A2A] uppercase tracking-wider">Locked</span>
           </div>
         )}
 
         <button onClick={() => setShowAdvisor(true)} className="rounded-xl border border-indigo-200 bg-indigo-50 p-2.5 flex items-center justify-center gap-2 hover:bg-indigo-100 transition shadow-sm group">
           <Bot className="w-4 h-4 text-indigo-600 group-hover:scale-110 transition" />
-          <span className="text-[10px] font-bold text-[#000F1B] uppercase tracking-wider">AI Advisor</span>
+          <span className="text-[10px] font-bold text-[#252A2A] uppercase tracking-wider">AI Advisor</span>
         </button>
       </div>
 
@@ -56,8 +56,8 @@ export default function DashboardBottomRow({ project }) {
           <BuildingFooterItem icon={Building2} text="BUILD WITH QUALITY" />
           <ClockFooterItem icon={Clock} text="TRACK WITH TRANSPARENCY" />
         </div>
-        <div className="text-[10px] font-bold text-[#000F1B] uppercase tracking-[0.2em] border-l-2 border-[#FF6600] pl-3 hidden md:block">
-          ConstructONS
+        <div className="text-[10px] font-bold text-[#252A2A] uppercase tracking-[0.2em] border-l-2 border-[#B89416] pl-3 hidden md:block">
+          [Your Brand]s
         </div>
       </div>
     </div>
@@ -67,8 +67,8 @@ export default function DashboardBottomRow({ project }) {
 function FooterItem({ icon: Icon, text }) {
   return (
     <div className="flex items-center gap-1.5">
-      <Icon className="w-3.5 h-3.5 text-[#111111]/40" />
-      <span className="text-[8px] font-bold text-[#111111]/50 uppercase tracking-widest leading-tight">{text}</span>
+      <Icon className="w-3.5 h-3.5 text-[#252A2A]/40" />
+      <span className="text-[8px] font-bold text-[#252A2A]/50 uppercase tracking-widest leading-tight">{text}</span>
     </div>
   );
 }
@@ -76,8 +76,8 @@ function FooterItem({ icon: Icon, text }) {
 function BuildingFooterItem({ icon: Icon, text }) {
   return (
     <div className="flex items-center gap-1.5">
-      <Icon className="w-3.5 h-3.5 text-[#111111]/40" />
-      <span className="text-[8px] font-bold text-[#111111]/50 uppercase tracking-widest leading-tight">{text}</span>
+      <Icon className="w-3.5 h-3.5 text-[#252A2A]/40" />
+      <span className="text-[8px] font-bold text-[#252A2A]/50 uppercase tracking-widest leading-tight">{text}</span>
     </div>
   );
 }
@@ -85,8 +85,8 @@ function BuildingFooterItem({ icon: Icon, text }) {
 function ClockFooterItem({ icon: Icon, text }) {
   return (
     <div className="flex items-center gap-1.5">
-      <Icon className="w-3.5 h-3.5 text-[#111111]/40" />
-      <span className="text-[8px] font-bold text-[#111111]/50 uppercase tracking-widest leading-tight">{text}</span>
+      <Icon className="w-3.5 h-3.5 text-[#252A2A]/40" />
+      <span className="text-[8px] font-bold text-[#252A2A]/50 uppercase tracking-widest leading-tight">{text}</span>
     </div>
   );
 }

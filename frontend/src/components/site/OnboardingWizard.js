@@ -100,7 +100,7 @@ export default function OnboardingWizard({ user, onComplete }) {
       };
 
       await axios.put(`${API_BASE}/customer/profile`, payload, { withCredentials: true });
-      toast.success("Welcome to ConstructONS! Setup complete.");
+      toast.success("Welcome to [Your Brand]s! Setup complete.");
       onComplete();
     } catch (err) {
       toast.error(err?.response?.data?.detail || "Failed to complete setup.");
@@ -113,16 +113,16 @@ export default function OnboardingWizard({ user, onComplete }) {
   const progressPct = Math.round((step / totalSteps) * 100);
 
   return (
-    <div className="min-h-screen bg-[#F5F6F8] font-['Poppins'] text-[#111111] flex flex-col justify-between selection:bg-[#FF6600]/20 selection:text-[#000F1B]">
+    <div className="min-h-screen bg-[#F5F6F8] font-['Poppins'] text-[#252A2A] flex flex-col justify-between selection:bg-[#B89416]/20 selection:text-[#252A2A]">
       {/* Top Header */}
       <header className="h-16 bg-white border-b border-black/5 px-4 sm:px-8 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-2">
           <BrandLockup tone="light" size="sm" />
-          <span className="hidden sm:inline-block px-2 py-0.5 rounded bg-[#FF6600]/10 text-[10px] font-bold text-[#FF6600] uppercase tracking-wider">
+          <span className="hidden sm:inline-block px-2 py-0.5 rounded bg-[#B89416]/10 text-[10px] font-bold text-[#B89416] uppercase tracking-wider">
             Quick Onboarding
           </span>
         </div>
-        <div className="text-xs text-[#111111]/60 font-semibold">
+        <div className="text-xs text-[#252A2A]/60 font-semibold">
           Step {step} of {totalSteps}
         </div>
       </header>
@@ -133,7 +133,7 @@ export default function OnboardingWizard({ user, onComplete }) {
           {/* Top Progress Bar */}
           <div className="absolute top-0 left-0 w-full h-1.5 bg-[#F2F2F2]">
             <div
-              className="h-full bg-[#FF6600] transition-all duration-500 ease-out"
+              className="h-full bg-[#B89416] transition-all duration-500 ease-out"
               style={{ width: `${progressPct}%` }}
             />
           </div>
@@ -141,35 +141,35 @@ export default function OnboardingWizard({ user, onComplete }) {
           {/* STEP 1: Contact Information */}
           {step === 1 && (
             <div className="space-y-5">
-              <div className="w-12 h-12 rounded-2xl bg-[#FF6600]/10 grid place-items-center mb-2">
-                <Phone className="w-6 h-6 text-[#FF6600]" />
+              <div className="w-12 h-12 rounded-2xl bg-[#B89416]/10 grid place-items-center mb-2">
+                <Phone className="w-6 h-6 text-[#B89416]" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-[#000F1B] tracking-tight">Let's verify your details</h1>
-                <p className="text-xs text-[#111111]/60 mt-1">We need your mobile number for project and WhatsApp updates.</p>
+                <h1 className="text-2xl font-bold text-[#252A2A] tracking-tight">Let's verify your details</h1>
+                <p className="text-xs text-[#252A2A]/60 mt-1">We need your mobile number for project and WhatsApp updates.</p>
               </div>
 
               <div className="space-y-4 pt-2">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#000F1B] uppercase tracking-wider mb-1">Your Full Name *</label>
+                  <label className="block text-[11px] font-bold text-[#252A2A] uppercase tracking-wider mb-1">Your Full Name *</label>
                   <input
                     type="text"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="e.g. Rajesh Kumar"
-                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm font-semibold text-[#000F1B] focus:ring-2 focus:ring-[#FF6600] outline-none"
+                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm font-semibold text-[#252A2A] focus:ring-2 focus:ring-[#B89416] outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-[#000F1B] uppercase tracking-wider mb-1">Mobile Number *</label>
+                  <label className="block text-[11px] font-bold text-[#252A2A] uppercase tracking-wider mb-1">Mobile Number *</label>
                   <input
                     type="tel"
                     value={form.phone}
                     onChange={(e) => handlePhoneChange(e.target.value)}
                     placeholder="+919876543210"
                     maxLength={13}
-                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm font-mono text-[#000F1B] focus:ring-2 focus:ring-[#FF6600] outline-none"
+                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm font-mono text-[#252A2A] focus:ring-2 focus:ring-[#B89416] outline-none"
                   />
                 </div>
 
@@ -179,21 +179,21 @@ export default function OnboardingWizard({ user, onComplete }) {
                       type="checkbox"
                       checked={form.sameWhatsapp}
                       onChange={(e) => handleSameWhatsappToggle(e.target.checked)}
-                      className="w-4 h-4 rounded accent-[#FF6600]"
+                      className="w-4 h-4 rounded accent-[#B89416]"
                     />
-                    <span className="text-xs font-semibold text-[#000F1B]">WhatsApp number is same as mobile</span>
+                    <span className="text-xs font-semibold text-[#252A2A]">WhatsApp number is same as mobile</span>
                   </label>
 
                   {!form.sameWhatsapp && (
                     <div className="pt-2">
-                      <label className="block text-[10px] font-bold text-[#000F1B] uppercase tracking-wider mb-1">WhatsApp Number *</label>
+                      <label className="block text-[10px] font-bold text-[#252A2A] uppercase tracking-wider mb-1">WhatsApp Number *</label>
                       <input
                         type="tel"
                         value={form.whatsapp}
                         onChange={(e) => handleWhatsappChange(e.target.value)}
                         placeholder="+919876543210"
                         maxLength={13}
-                        className="w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-xs font-mono text-[#000F1B] outline-none"
+                        className="w-full rounded-xl border border-black/10 bg-white px-3 py-2 text-xs font-mono text-[#252A2A] outline-none"
                       />
                     </div>
                   )}
@@ -205,21 +205,21 @@ export default function OnboardingWizard({ user, onComplete }) {
           {/* STEP 2: Construction Status & Location */}
           {step === 2 && (
             <div className="space-y-5">
-              <div className="w-12 h-12 rounded-2xl bg-[#000F1B] grid place-items-center mb-2 text-white">
+              <div className="w-12 h-12 rounded-2xl bg-[#252A2A] grid place-items-center mb-2 text-white">
                 <Building2 className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-[#000F1B] tracking-tight">Your Home Project</h1>
-                <p className="text-xs text-[#111111]/60 mt-1">Tell us about your plot location and status.</p>
+                <h1 className="text-2xl font-bold text-[#252A2A] tracking-tight">Your Home Project</h1>
+                <p className="text-xs text-[#252A2A]/60 mt-1">Tell us about your plot location and status.</p>
               </div>
 
               <div className="space-y-4 pt-2">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#000F1B] uppercase tracking-wider mb-1">Current Status *</label>
+                  <label className="block text-[11px] font-bold text-[#252A2A] uppercase tracking-wider mb-1">Current Status *</label>
                   <select
                     value={form.current_status}
                     onChange={(e) => setForm({ ...form, current_status: e.target.value })}
-                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-xs font-semibold text-[#000F1B] focus:ring-2 focus:ring-[#FF6600] outline-none"
+                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-xs font-semibold text-[#252A2A] focus:ring-2 focus:ring-[#B89416] outline-none"
                   >
                     <option value="I own a plot & ready to build">I own a plot & ready to build</option>
                     <option value="Floor plan ready, looking for builder">Floor plan ready, looking for builder</option>
@@ -230,24 +230,24 @@ export default function OnboardingWizard({ user, onComplete }) {
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-[#000F1B] uppercase tracking-wider mb-1">Plot City / Location *</label>
+                  <label className="block text-[11px] font-bold text-[#252A2A] uppercase tracking-wider mb-1">Plot City / Location *</label>
                   <input
                     type="text"
                     value={form.plot_location}
                     onChange={(e) => setForm({ ...form, plot_location: e.target.value })}
                     placeholder="e.g. Whitefield, Bangalore"
-                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm font-semibold text-[#000F1B] focus:ring-2 focus:ring-[#FF6600] outline-none"
+                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm font-semibold text-[#252A2A] focus:ring-2 focus:ring-[#B89416] outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-[#000F1B] uppercase tracking-wider mb-1">Approximate Plot Area (Sq.ft)</label>
+                  <label className="block text-[11px] font-bold text-[#252A2A] uppercase tracking-wider mb-1">Approximate Plot Area (Sq.ft)</label>
                   <input
                     type="text"
                     value={form.plot_size}
                     onChange={(e) => setForm({ ...form, plot_size: e.target.value })}
                     placeholder="e.g. 1200 Sq.ft (30 x 40)"
-                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm font-semibold text-[#000F1B] focus:ring-2 focus:ring-[#FF6600] outline-none"
+                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-sm font-semibold text-[#252A2A] focus:ring-2 focus:ring-[#B89416] outline-none"
                   />
                 </div>
               </div>
@@ -261,13 +261,13 @@ export default function OnboardingWizard({ user, onComplete }) {
                 <Compass className="w-6 h-6 text-indigo-600" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-[#000F1B] tracking-tight">Design & Budget</h1>
-                <p className="text-xs text-[#111111]/60 mt-1">Select your preferred architectural style and target budget.</p>
+                <h1 className="text-2xl font-bold text-[#252A2A] tracking-tight">Design & Budget</h1>
+                <p className="text-xs text-[#252A2A]/60 mt-1">Select your preferred architectural style and target budget.</p>
               </div>
 
               <div className="space-y-4 pt-2">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#000F1B] uppercase tracking-wider mb-2">Architectural Style Preference</label>
+                  <label className="block text-[11px] font-bold text-[#252A2A] uppercase tracking-wider mb-2">Architectural Style Preference</label>
                   <div className="grid grid-cols-2 gap-2">
                     {["Modern", "Classic", "Contemporary", "Villa / Duplex"].map((style) => (
                       <button
@@ -276,8 +276,8 @@ export default function OnboardingWizard({ user, onComplete }) {
                         onClick={() => setForm({ ...form, style_pref: style })}
                         className={`p-3 rounded-xl border text-xs font-bold transition text-left ${
                           form.style_pref === style
-                            ? "bg-[#000F1B] text-white border-[#000F1B]"
-                            : "bg-white text-[#000F1B] border-black/10 hover:bg-[#F2F2F2]"
+                            ? "bg-[#252A2A] text-white border-[#252A2A]"
+                            : "bg-white text-[#252A2A] border-black/10 hover:bg-[#F2F2F2]"
                         }`}
                       >
                         {style}
@@ -287,11 +287,11 @@ export default function OnboardingWizard({ user, onComplete }) {
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-[#000F1B] uppercase tracking-wider mb-2">Target Budget Range</label>
+                  <label className="block text-[11px] font-bold text-[#252A2A] uppercase tracking-wider mb-2">Target Budget Range</label>
                   <select
                     value={form.budget_range}
                     onChange={(e) => setForm({ ...form, budget_range: e.target.value })}
-                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-xs font-semibold text-[#000F1B] focus:ring-2 focus:ring-[#FF6600] outline-none"
+                    className="w-full rounded-xl border border-black/10 bg-white px-3.5 py-2.5 text-xs font-semibold text-[#252A2A] focus:ring-2 focus:ring-[#B89416] outline-none"
                   >
                     <option value="Below ₹50 Lakhs">Below ₹50 Lakhs</option>
                     <option value="₹50 Lakhs - ₹1 Crore">₹50 Lakhs - ₹1 Crore</option>
@@ -309,7 +309,7 @@ export default function OnboardingWizard({ user, onComplete }) {
               <button
                 type="button"
                 onClick={prevStep}
-                className="px-4 py-2.5 rounded-xl border border-black/10 text-xs font-semibold text-[#000F1B] hover:bg-[#F5F6F8] flex items-center gap-1.5 transition"
+                className="px-4 py-2.5 rounded-xl border border-black/10 text-xs font-semibold text-[#252A2A] hover:bg-[#F5F6F8] flex items-center gap-1.5 transition"
               >
                 <ArrowLeft className="w-4 h-4" /> Back
               </button>
@@ -319,7 +319,7 @@ export default function OnboardingWizard({ user, onComplete }) {
               <button
                 type="button"
                 onClick={nextStep}
-                className="px-6 py-2.5 rounded-xl bg-[#000F1B] hover:bg-[#FF6600] text-white text-xs font-bold flex items-center gap-1.5 transition shadow-sm"
+                className="px-6 py-2.5 rounded-xl bg-[#252A2A] hover:bg-[#B89416] text-white text-xs font-bold flex items-center gap-1.5 transition shadow-sm"
               >
                 Continue <ArrowRight className="w-4 h-4" />
               </button>
@@ -328,7 +328,7 @@ export default function OnboardingWizard({ user, onComplete }) {
                 type="button"
                 onClick={handleSubmit}
                 disabled={saving}
-                className="px-6 py-2.5 rounded-xl bg-[#FF6600] hover:bg-[#FF0000] text-white text-xs font-bold flex items-center gap-1.5 transition shadow-sm disabled:opacity-70"
+                className="px-6 py-2.5 rounded-xl bg-[#B89416] hover:bg-[#B89416] text-white text-xs font-bold flex items-center gap-1.5 transition shadow-sm disabled:opacity-70"
               >
                 {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Check className="w-4 h-4" />}
                 {saving ? "Saving Setup..." : "Complete & Enter Portal"}
@@ -338,8 +338,8 @@ export default function OnboardingWizard({ user, onComplete }) {
         </div>
       </main>
 
-      <footer className="py-4 text-center text-xs text-[#111111]/40 border-t border-black/5 bg-white shrink-0">
-        ConstructONS™ — India's First Integrated Construction Ecosystem.
+      <footer className="py-4 text-center text-xs text-[#252A2A]/40 border-t border-black/5 bg-white shrink-0">
+        [Your Brand]s™ — India's First Integrated Construction Ecosystem.
       </footer>
     </div>
   );

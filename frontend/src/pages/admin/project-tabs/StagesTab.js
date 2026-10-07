@@ -460,7 +460,7 @@ export default function StagesTab({ project, onSaved }) {
     <div className="font-['Poppins'] flex flex-col h-[calc(100vh-160px)] min-h-[560px] bg-[#F9FAFB] rounded-xl border border-gray-200 shadow-sm overflow-hidden">
       <style>{`
         .gantt-slider{-webkit-appearance:none;width:100%;background:transparent}
-        .gantt-slider::-webkit-slider-thumb{-webkit-appearance:none;height:12px;width:12px;border-radius:50%;background:#FF6600;margin-top:-4px;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+        .gantt-slider::-webkit-slider-thumb{-webkit-appearance:none;height:12px;width:12px;border-radius:50%;background:#B89416;margin-top:-4px;box-shadow:0 1px 3px rgba(0,0,0,.25)}
         .gantt-slider::-webkit-slider-runnable-track{height:4px;background:#E8EAED;border-radius:2px}
         .csb::-webkit-scrollbar{width:6px;height:6px}
         .csb::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:3px}
@@ -473,7 +473,7 @@ export default function StagesTab({ project, onSaved }) {
           <button
             onClick={() => setViewMode("list")}
             className={`px-3 py-1.5 rounded-md text-xs font-bold flex items-center gap-1.5 ${
-              viewMode === "list" ? "bg-white shadow text-[#FF6600]" : "text-gray-500"
+              viewMode === "list" ? "bg-white shadow text-[#B89416]" : "text-gray-500"
             }`}
           >
             <List className="w-3.5 h-3.5" /> Editor
@@ -481,7 +481,7 @@ export default function StagesTab({ project, onSaved }) {
           <button
             onClick={() => setViewMode("split")}
             className={`px-3 py-1.5 rounded-md text-xs font-bold flex items-center gap-1.5 ${
-              viewMode === "split" ? "bg-white shadow text-[#FF6600]" : "text-gray-500"
+              viewMode === "split" ? "bg-white shadow text-[#B89416]" : "text-gray-500"
             }`}
           >
             <LayoutGrid className="w-3.5 h-3.5" /> Gantt
@@ -495,13 +495,13 @@ export default function StagesTab({ project, onSaved }) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search tasks..."
-              className="w-full pl-8 pr-2 py-1.5 text-xs border border-gray-200 rounded-lg outline-none focus:border-[#FF6600]"
+              className="w-full pl-8 pr-2 py-1.5 text-xs border border-gray-200 rounded-lg outline-none focus:border-[#B89416]"
             />
           </div>
         )}
 
         <div className="flex items-center gap-1.5 ml-auto">
-          {refreshing && <Loader2 className="w-3.5 h-3.5 animate-spin text-[#FF6600]" />}
+          {refreshing && <Loader2 className="w-3.5 h-3.5 animate-spin text-[#B89416]" />}
           {viewMode === "split" && (
             <>
               <button
@@ -527,7 +527,7 @@ export default function StagesTab({ project, onSaved }) {
           {viewMode === "list" && (
             <button
               onClick={() => setShowAddStage(true)}
-              className="px-3 py-1.5 bg-[#FF6600] hover:bg-[#FF0000] text-white text-xs font-bold rounded-lg flex items-center gap-1 shadow-sm"
+              className="px-3 py-1.5 bg-[#B89416] hover:bg-[#B89416] text-white text-xs font-bold rounded-lg flex items-center gap-1 shadow-sm"
             >
               <Plus className="w-3.5 h-3.5" /> Add Stage
             </button>
@@ -538,16 +538,16 @@ export default function StagesTab({ project, onSaved }) {
       {viewMode === "list" && (
         <div className="flex-1 overflow-y-auto csb p-4 space-y-4 bg-[#F9FAFB]">
           <div className="bg-white p-4 rounded-xl border border-black/5 shadow-sm">
-            <h2 className="font-bold text-[#111111] text-base">Stage Pipeline</h2>
-            <p className="text-[10px] text-[#111111]/50 mt-1">
+            <h2 className="font-bold text-[#252A2A] text-base">Stage Pipeline</h2>
+            <p className="text-[10px] text-[#252A2A]/50 mt-1">
               Edit freely, then click Save. Substage start date locks only after it is saved.
             </p>
           </div>
 
           {showAddStage && (
-            <div className="bg-white border-2 border-[#FF6600]/40 rounded-xl p-4 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center shadow-sm">
+            <div className="bg-white border-2 border-[#B89416]/40 rounded-xl p-4 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center shadow-sm">
               <div className="flex-1">
-                <label className="block text-[10px] font-bold uppercase tracking-wider text-[#111111]/50 mb-1">
+                <label className="block text-[10px] font-bold uppercase tracking-wider text-[#252A2A]/50 mb-1">
                   New Stage Name
                 </label>
                 <input
@@ -557,7 +557,7 @@ export default function StagesTab({ project, onSaved }) {
                   value={newStageName}
                   onChange={(e) => setNewStageName(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && addStage()}
-                  className="w-full px-3 py-2 border border-black/10 rounded-lg text-sm font-semibold focus:ring-2 focus:ring-[#FF6600] outline-none"
+                  className="w-full px-3 py-2 border border-black/10 rounded-lg text-sm font-semibold focus:ring-2 focus:ring-[#B89416] outline-none"
                 />
               </div>
               <div className="flex gap-2 sm:self-end">
@@ -569,7 +569,7 @@ export default function StagesTab({ project, onSaved }) {
                 </button>
                 <button
                   onClick={addStage}
-                  className="px-5 py-2 text-xs font-bold bg-[#111111] text-white rounded-lg hover:bg-[#FF6600]"
+                  className="px-5 py-2 text-xs font-bold bg-[#252A2A] text-white rounded-lg hover:bg-[#B89416]"
                 >
                   Create
                 </button>
@@ -588,8 +588,8 @@ export default function StagesTab({ project, onSaved }) {
 
               const statMap = {
                 completed: { text: "text-emerald-700", bg: "bg-emerald-50", label: "Completed" },
-                in_progress: { text: "text-[#FF6600]", bg: "bg-[#FF6600]/10", label: "In Progress" },
-                pending: { text: "text-[#111111]/50", bg: "bg-slate-100", label: "Pending" },
+                in_progress: { text: "text-[#B89416]", bg: "bg-[#B89416]/10", label: "In Progress" },
+                pending: { text: "text-[#252A2A]/50", bg: "bg-slate-100", label: "Pending" },
               };
               const stat = statMap[s.status] || statMap.pending;
 
@@ -598,7 +598,7 @@ export default function StagesTab({ project, onSaved }) {
                   key={s.id || idx}
                   className={`bg-white rounded-xl border shadow-sm transition-all ${
                     isExpanded
-                      ? "border-[#FF6600] ring-1 ring-[#FF6600]/20"
+                      ? "border-[#B89416] ring-1 ring-[#B89416]/20"
                       : "border-black/5 hover:border-black/15"
                   }`}
                 >
@@ -607,14 +607,14 @@ export default function StagesTab({ project, onSaved }) {
                       <button
                         onClick={() => moveStage(idx, -1)}
                         disabled={idx === 0}
-                        className="text-[#111111]/30 hover:text-[#111111] disabled:opacity-20 w-5 h-4 grid place-items-center"
+                        className="text-[#252A2A]/30 hover:text-[#252A2A] disabled:opacity-20 w-5 h-4 grid place-items-center"
                       >
                         <div className="w-0 h-0 border-l-4 border-r-4 border-b-[6px] border-l-transparent border-r-transparent border-b-current" />
                       </button>
                       <button
                         onClick={() => moveStage(idx, 1)}
                         disabled={idx === stages.length - 1 || isHandover}
-                        className="text-[#111111]/30 hover:text-[#111111] disabled:opacity-20 w-5 h-4 grid place-items-center"
+                        className="text-[#252A2A]/30 hover:text-[#252A2A] disabled:opacity-20 w-5 h-4 grid place-items-center"
                       >
                         <div className="w-0 h-0 border-l-4 border-r-4 border-t-[6px] border-l-transparent border-r-transparent border-t-current" />
                       </button>
@@ -625,10 +625,10 @@ export default function StagesTab({ project, onSaved }) {
                       onClick={() => setExpandedStage(isExpanded ? null : idx)}
                     >
                       <div className="flex items-center gap-2 mb-1 flex-wrap">
-                        <span className="text-xs font-black text-[#111111]/30">
+                        <span className="text-xs font-black text-[#252A2A]/30">
                           {(idx + 1).toString().padStart(2, "0")}
                         </span>
-                        <span className="font-bold text-sm sm:text-base text-[#111111] truncate">
+                        <span className="font-bold text-sm sm:text-base text-[#252A2A] truncate">
                           {s.name}
                         </span>
                         {isHandover && (
@@ -646,9 +646,9 @@ export default function StagesTab({ project, onSaved }) {
                         <span className={`font-bold px-2 py-0.5 rounded ${stat.bg} ${stat.text}`}>
                           {stat.label}
                         </span>
-                        <span className="font-bold text-[#111111]">{Number(s.progress_pct) || 0}% Done</span>
+                        <span className="font-bold text-[#252A2A]">{Number(s.progress_pct) || 0}% Done</span>
                         {activeSubs.length > 0 && (
-                          <span className="hidden sm:inline font-medium text-[#111111]/50">
+                          <span className="hidden sm:inline font-medium text-[#252A2A]/50">
                             • {activeSubs.length} Substage{activeSubs.length !== 1 ? "s" : ""}
                           </span>
                         )}
@@ -659,8 +659,8 @@ export default function StagesTab({ project, onSaved }) {
                       onClick={() => setExpandedStage(isExpanded ? null : idx)}
                       className={`shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition ${
                         isExpanded
-                          ? "bg-[#FF6600] border-[#FF6600] text-white"
-                          : "bg-white border-black/10 text-[#111111] hover:bg-black/5"
+                          ? "bg-[#B89416] border-[#B89416] text-white"
+                          : "bg-white border-black/10 text-[#252A2A] hover:bg-black/5"
                       }`}
                     >
                       <ChevronDown className={`w-4 h-4 transition-transform ${isExpanded ? "rotate-180" : ""}`} />
@@ -680,7 +680,7 @@ export default function StagesTab({ project, onSaved }) {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                           <div className="sm:col-span-2 lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 gap-4 border-b border-black/5 pb-4">
                             <div>
-                              <label className="block text-[10px] font-bold uppercase tracking-wider text-[#111111]/50 mb-1">
+                              <label className="block text-[10px] font-bold uppercase tracking-wider text-[#252A2A]/50 mb-1">
                                 Stage Name
                               </label>
                               <input
@@ -688,18 +688,18 @@ export default function StagesTab({ project, onSaved }) {
                                 value={s.name}
                                 disabled={isHandover}
                                 onChange={(e) => patchStageLocal(idx, { name: e.target.value })}
-                                className="w-full px-3 py-2 border border-black/10 rounded-lg text-sm font-bold focus:ring-2 focus:ring-[#FF6600] outline-none disabled:bg-gray-100"
+                                className="w-full px-3 py-2 border border-black/10 rounded-lg text-sm font-bold focus:ring-2 focus:ring-[#B89416] outline-none disabled:bg-gray-100"
                               />
                             </div>
                             <div>
-                              <label className="block text-[10px] font-bold uppercase tracking-wider text-[#111111]/50 mb-1">
+                              <label className="block text-[10px] font-bold uppercase tracking-wider text-[#252A2A]/50 mb-1">
                                 Status {hasChildren && <span className="text-blue-600">(auto)</span>}
                               </label>
                               <select
                                 value={s.status}
                                 disabled={hasChildren}
                                 onChange={(e) => patchStageLocal(idx, { status: e.target.value })}
-                                className="w-full px-3 py-2 border border-black/10 rounded-lg text-sm font-bold focus:ring-2 focus:ring-[#FF6600] outline-none bg-white disabled:bg-gray-100"
+                                className="w-full px-3 py-2 border border-black/10 rounded-lg text-sm font-bold focus:ring-2 focus:ring-[#B89416] outline-none bg-white disabled:bg-gray-100"
                               >
                                 <option value="pending">Pending</option>
                                 <option value="in_progress">In Progress</option>
@@ -709,37 +709,37 @@ export default function StagesTab({ project, onSaved }) {
                           </div>
 
                           <div>
-                            <label className="block text-[10px] font-bold uppercase text-[#111111]/50 mb-1">Start Date</label>
+                            <label className="block text-[10px] font-bold uppercase text-[#252A2A]/50 mb-1">Start Date</label>
                             <input
                               type="date"
                               disabled={hasChildren}
                               value={s.start_date || ""}
                               onChange={(e) => patchStageLocal(idx, { start_date: e.target.value || null })}
-                              className="w-full px-3 py-2 border border-black/10 rounded-lg text-xs font-semibold focus:ring-2 focus:ring-[#FF6600] outline-none disabled:bg-gray-100"
+                              className="w-full px-3 py-2 border border-black/10 rounded-lg text-xs font-semibold focus:ring-2 focus:ring-[#B89416] outline-none disabled:bg-gray-100"
                             />
                           </div>
                           <div>
-                            <label className="block text-[10px] font-bold uppercase text-[#111111]/50 mb-1">Planned End</label>
+                            <label className="block text-[10px] font-bold uppercase text-[#252A2A]/50 mb-1">Planned End</label>
                             <input
                               type="date"
                               disabled={hasChildren}
                               value={s.planned_end_date || s.expected_date || ""}
                               onChange={(e) => patchStageLocal(idx, { planned_end_date: e.target.value || null })}
-                              className="w-full px-3 py-2 border border-black/10 rounded-lg text-xs font-semibold focus:ring-2 focus:ring-[#FF6600] outline-none disabled:bg-gray-100"
+                              className="w-full px-3 py-2 border border-black/10 rounded-lg text-xs font-semibold focus:ring-2 focus:ring-[#B89416] outline-none disabled:bg-gray-100"
                             />
                           </div>
                           <div>
-                            <label className="block text-[10px] font-bold uppercase text-[#111111]/50 mb-1">Actual End</label>
+                            <label className="block text-[10px] font-bold uppercase text-[#252A2A]/50 mb-1">Actual End</label>
                             <input
                               type="date"
                               disabled={hasChildren}
                               value={s.actual_end_date || ""}
                               onChange={(e) => patchStageLocal(idx, { actual_end_date: e.target.value || null })}
-                              className="w-full px-3 py-2 border border-black/10 rounded-lg text-xs font-semibold focus:ring-2 focus:ring-[#FF6600] outline-none disabled:bg-gray-100"
+                              className="w-full px-3 py-2 border border-black/10 rounded-lg text-xs font-semibold focus:ring-2 focus:ring-[#B89416] outline-none disabled:bg-gray-100"
                             />
                           </div>
                           <div>
-                            <label className="block text-[10px] font-bold uppercase text-[#111111]/50 mb-1">Progress %</label>
+                            <label className="block text-[10px] font-bold uppercase text-[#252A2A]/50 mb-1">Progress %</label>
                             <div className="relative">
                               <input
                                 type="number"
@@ -752,16 +752,16 @@ export default function StagesTab({ project, onSaved }) {
                                   patchStageLocal(idx, { progress_pct: parseProgressInput(e.target.value) })
                                 }
                                 onFocus={(e) => e.target.select()}
-                                className="w-full px-3 py-2 border border-black/10 rounded-lg text-sm font-black text-[#FF6600] focus:ring-2 focus:ring-[#FF6600] outline-none pr-8 disabled:bg-gray-100"
+                                className="w-full px-3 py-2 border border-black/10 rounded-lg text-sm font-black text-[#B89416] focus:ring-2 focus:ring-[#B89416] outline-none pr-8 disabled:bg-gray-100"
                               />
-                              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-[#111111]/30">%</span>
+                              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-[#252A2A]/30">%</span>
                             </div>
                           </div>
                         </div>
 
                         {!hasChildren && !isHandover && (
                           <div className="mt-4 pt-4 border-t border-black/5">
-                            <label className="block text-[10px] font-bold uppercase text-[#111111]/50 mb-2">Progress Slider</label>
+                            <label className="block text-[10px] font-bold uppercase text-[#252A2A]/50 mb-2">Progress Slider</label>
                             <div className="flex items-center gap-3">
                               <input
                                 type="range"
@@ -773,7 +773,7 @@ export default function StagesTab({ project, onSaved }) {
                                 }
                                 className="flex-1 gantt-slider"
                               />
-                              <span className="text-sm font-black text-[#FF6600] w-12 text-right">
+                              <span className="text-sm font-black text-[#B89416] w-12 text-right">
                                 {Number(s.progress_pct) || 0}%
                               </span>
                             </div>
@@ -784,10 +784,10 @@ export default function StagesTab({ project, onSaved }) {
                       {/* Photos */}
                       <div className="bg-white border border-black/5 rounded-xl p-4 shadow-sm">
                         <div className="flex items-center justify-between mb-3 border-b border-black/5 pb-2">
-                          <h4 className="text-xs font-bold text-[#111111] uppercase tracking-wider flex items-center gap-1.5">
-                            <Camera className="w-3.5 h-3.5 text-[#FF6600]" /> Photos ({photos.length})
+                          <h4 className="text-xs font-bold text-[#252A2A] uppercase tracking-wider flex items-center gap-1.5">
+                            <Camera className="w-3.5 h-3.5 text-[#B89416]" /> Photos ({photos.length})
                           </h4>
-                          <label className="cursor-pointer text-xs font-bold text-[#FF6600] hover:text-[#FF0000] flex items-center gap-1.5">
+                          <label className="cursor-pointer text-xs font-bold text-[#B89416] hover:text-[#B89416] flex items-center gap-1.5">
                             {uploading === idx ? <Loader2 className="w-4 h-4 animate-spin" /> : <Plus className="w-4 h-4" />} Upload
                             <input
                               type="file"
@@ -799,7 +799,7 @@ export default function StagesTab({ project, onSaved }) {
                           </label>
                         </div>
                         {photos.length === 0 ? (
-                          <div className="text-center py-4 text-xs text-[#111111]/40 italic border border-dashed border-black/10 rounded-lg">
+                          <div className="text-center py-4 text-xs text-[#252A2A]/40 italic border border-dashed border-black/10 rounded-lg">
                             No photos yet
                           </div>
                         ) : (
@@ -822,7 +822,7 @@ export default function StagesTab({ project, onSaved }) {
                       {/* Substages */}
                       <div className="bg-white border border-black/5 rounded-xl p-4 shadow-sm">
                         <div className="flex items-center justify-between mb-4 border-b border-black/5 pb-2">
-                          <h4 className="text-xs font-bold text-[#111111] uppercase tracking-wider">Substages Map</h4>
+                          <h4 className="text-xs font-bold text-[#252A2A] uppercase tracking-wider">Substages Map</h4>
                           <div className="flex gap-2">
                             {hasChildren && (
                               <button
@@ -834,7 +834,7 @@ export default function StagesTab({ project, onSaved }) {
                             )}
                             <button
                               onClick={() => addSubstage(idx)}
-                              className="text-[10px] font-bold text-[#FF6600] hover:text-[#FF0000] flex items-center gap-1"
+                              className="text-[10px] font-bold text-[#B89416] hover:text-[#B89416] flex items-center gap-1"
                             >
                               <Plus className="w-3 h-3" /> Add Substage
                             </button>
@@ -856,21 +856,21 @@ export default function StagesTab({ project, onSaved }) {
                                 }`}
                               >
                                 <div className="flex items-center gap-2">
-                                  <span className="text-[#111111]/30 font-mono text-[10px] shrink-0">
+                                  <span className="text-[#252A2A]/30 font-mono text-[10px] shrink-0">
                                     {(sIdx + 1).toString().padStart(2, "0")}
                                   </span>
                                   <input
                                     type="text"
                                     value={sub.name}
                                     onChange={(e) => patchSubLocal(idx, sIdx, { name: e.target.value })}
-                                    className="flex-1 px-3 py-2 border border-black/10 bg-white rounded-lg text-xs font-bold focus:ring-2 focus:ring-[#FF6600] outline-none"
+                                    className="flex-1 px-3 py-2 border border-black/10 bg-white rounded-lg text-xs font-bold focus:ring-2 focus:ring-[#B89416] outline-none"
                                     placeholder="Name"
                                   />
                                 </div>
 
                                 <div className="grid grid-cols-3 gap-2">
                                   <div>
-                                    <label className="block text-[8px] font-bold uppercase text-[#111111]/50 mb-1">
+                                    <label className="block text-[8px] font-bold uppercase text-[#252A2A]/50 mb-1">
                                       Start {startLocked ? "(locked)" : "(editable until save)"}
                                     </label>
                                     <input
@@ -886,7 +886,7 @@ export default function StagesTab({ project, onSaved }) {
                                     />
                                   </div>
                                   <div>
-                                    <label className="block text-[8px] font-bold uppercase text-[#111111]/50 mb-1">
+                                    <label className="block text-[8px] font-bold uppercase text-[#252A2A]/50 mb-1">
                                       Planned End
                                     </label>
                                     <input
@@ -901,7 +901,7 @@ export default function StagesTab({ project, onSaved }) {
                                     />
                                   </div>
                                   <div>
-                                    <label className="block text-[8px] font-bold uppercase text-[#111111]/50 mb-1">
+                                    <label className="block text-[8px] font-bold uppercase text-[#252A2A]/50 mb-1">
                                       Actual End
                                     </label>
                                     <input
@@ -918,7 +918,7 @@ export default function StagesTab({ project, onSaved }) {
                                 </div>
 
                                 <div>
-                                  <label className="block text-[8px] font-bold uppercase text-[#111111]/50 mb-1">
+                                  <label className="block text-[8px] font-bold uppercase text-[#252A2A]/50 mb-1">
                                     Progress %
                                   </label>
                                   <div className="flex items-center gap-3">
@@ -946,21 +946,21 @@ export default function StagesTab({ project, onSaved }) {
                                         })
                                       }
                                       onFocus={(e) => e.target.select()}
-                                      className="w-16 border border-black/10 rounded-lg px-2 py-1.5 text-xs font-black text-[#FF6600] outline-none"
+                                      className="w-16 border border-black/10 rounded-lg px-2 py-1.5 text-xs font-black text-[#B89416] outline-none"
                                     />
                                   </div>
                                 </div>
 
                                 <div className="flex items-center justify-between gap-2 pt-2 border-t border-black/5">
-                                  <div className="text-[10px] font-semibold text-[#111111]/50">
+                                  <div className="text-[10px] font-semibold text-[#252A2A]/50">
                                     Status:{" "}
                                     <span
                                       className={`font-bold ${
                                         sub.status === "completed"
                                           ? "text-emerald-600"
                                           : sub.status === "in_progress"
-                                          ? "text-[#FF6600]"
-                                          : "text-[#111111]/50"
+                                          ? "text-[#B89416]"
+                                          : "text-[#252A2A]/50"
                                       }`}
                                     >
                                       {(sub.status || "pending").replace("_", " ").toUpperCase()}
@@ -978,7 +978,7 @@ export default function StagesTab({ project, onSaved }) {
                                     <button
                                       onClick={() => saveSubstage(idx, sub)}
                                       disabled={isSavingThis}
-                                      className="px-3 py-1.5 bg-[#FF6600] hover:bg-[#FF0000] text-white text-[10px] font-bold rounded-lg disabled:opacity-60 flex items-center gap-1"
+                                      className="px-3 py-1.5 bg-[#B89416] hover:bg-[#B89416] text-white text-[10px] font-bold rounded-lg disabled:opacity-60 flex items-center gap-1"
                                     >
                                       {isSavingThis ? <Loader2 className="w-3 h-3 animate-spin" /> : <Save className="w-3 h-3" />}
                                       Save
@@ -1004,7 +1004,7 @@ export default function StagesTab({ project, onSaved }) {
                         <button
                           onClick={() => saveStage(idx)}
                           disabled={saving === idx}
-                          className="px-5 py-2.5 bg-[#FF6600] hover:bg-[#FF0000] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 disabled:opacity-60 shadow-sm"
+                          className="px-5 py-2.5 bg-[#B89416] hover:bg-[#B89416] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 disabled:opacity-60 shadow-sm"
                         >
                           {saving === idx ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
                           Save Stage
@@ -1075,7 +1075,7 @@ export default function StagesTab({ project, onSaved }) {
                                 {open ? <ChevronDown className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
                               </button>
                               <span className="text-[9px] font-bold text-gray-700 shrink-0">{sIdx + 1}.</span>
-                              <span className="text-[11px] font-bold text-[#111111] truncate" title={d.name}>{d.name}</span>
+                              <span className="text-[11px] font-bold text-[#252A2A] truncate" title={d.name}>{d.name}</span>
                             </>
                           ) : (
                             <>
@@ -1097,7 +1097,7 @@ export default function StagesTab({ project, onSaved }) {
                         <div style={{ width: COL.progress }} className="flex items-center gap-1.5 px-2">
                           <div className="w-12 h-1.5 bg-gray-200 rounded-full overflow-hidden">
                             <div
-                              className={`h-full ${d.status === "completed" ? "bg-[#10B981]" : "bg-[#FF6600]"}`}
+                              className={`h-full ${d.status === "completed" ? "bg-[#10B981]" : "bg-[#B89416]"}`}
                               style={{ width: `${Number(d.progress_pct) || 0}%` }}
                             />
                           </div>
@@ -1118,7 +1118,7 @@ export default function StagesTab({ project, onSaved }) {
           </div>
 
           <div
-            className="w-2.5 shrink-0 bg-gray-100 hover:bg-[#FF6600] border-x border-gray-200 cursor-col-resize z-20 flex items-center justify-center group transition-colors"
+            className="w-2.5 shrink-0 bg-gray-100 hover:bg-[#B89416] border-x border-gray-200 cursor-col-resize z-20 flex items-center justify-center group transition-colors"
             onMouseDown={(e) => { e.preventDefault(); setDragging(true); }}
             title="Drag to resize"
           >
@@ -1132,7 +1132,7 @@ export default function StagesTab({ project, onSaved }) {
                   key={z}
                   onClick={() => setZoom(z)}
                   className={`px-2.5 py-0.5 text-[9px] font-bold capitalize rounded ${
-                    zoom === z ? "bg-[#FF6600] text-white" : "text-gray-500 hover:text-black"
+                    zoom === z ? "bg-[#B89416] text-white" : "text-gray-500 hover:text-black"
                   }`}
                 >
                   {z}
@@ -1166,7 +1166,7 @@ export default function StagesTab({ project, onSaved }) {
                     const bar = barPx(d.start_date || d.started_at, d.planned_end_date || d.expected_date);
                     const fill =
                       d.status === "completed" ? "bg-[#10B981]" :
-                      d.status === "in_progress" ? "bg-[#FF6600]" : "bg-gray-300";
+                      d.status === "in_progress" ? "bg-[#B89416]" : "bg-gray-300";
 
                     return (
                       <div key={row.id} className="h-9 border-b border-gray-50 relative row-h">
@@ -1195,7 +1195,7 @@ export default function StagesTab({ project, onSaved }) {
 function StatusPill({ status }) {
   const map = {
     completed: { text: "Completed", classes: "bg-[#E6F4EA] text-[#1E8E3E] border border-[#1E8E3E]/20" },
-    in_progress: { text: "In Progress", classes: "bg-[#FF6600]/10 text-[#FF6600] border border-[#FF6600]/30" },
+    in_progress: { text: "In Progress", classes: "bg-[#B89416]/10 text-[#B89416] border border-[#B89416]/30" },
     pending: { text: "Not Started", classes: "bg-[#F1F3F4] text-[#5F6368] border border-gray-200" },
   };
   const c = map[status] || map.pending;

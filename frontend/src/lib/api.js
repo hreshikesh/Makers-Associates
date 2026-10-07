@@ -51,7 +51,7 @@ export const publicApi = {
       quoteRef: r.headers["x-quote-ref"] || r.headers["X-Quote-Ref"],
       filename:
         (r.headers["content-disposition"] || "").split("filename=")[1]?.replace(/"/g, "") ||
-        `ConstructONS-${slug}.pdf`,
+        `[Your Brand]s-${slug}.pdf`,
     })),
   recommendPackage: (payload) => api.post("/recommend", payload).then((r) => r.data),
   getBlogs: () => api.get("/blogs").then((r) => r.data),

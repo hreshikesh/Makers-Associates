@@ -10,13 +10,13 @@ export default function Hero() {
     <section
       id="top"
       data-testid="hero-section"
-      className="relative min-h-[100svh] w-full overflow-hidden bg-[#111111]"
+      className="relative min-h-[100svh] w-full overflow-hidden bg-[#252A2A]"
     >
       {/* -------------------------------------------------
           BACKGROUND IMAGE & SMART OVERLAYS
       -------------------------------------------------- */}
       <div className="absolute inset-0">
-        {/* Construction Background Image */}
+    
         <img
           src="/hero-construction.png"
           alt="Construction site"
@@ -24,13 +24,13 @@ export default function Hero() {
         />
 
         {/* 1. Base darkening */}
-        <div className="absolute inset-0 bg-[#111111]/25" />
+        <div className="absolute inset-0 bg-[#252A2A]/25" />
 
         {/* 2. Strong left-side text protection */}
-        <div className="absolute inset-0 w-full bg-gradient-to-r from-[#111111]/95 via-[#111111]/65 to-[#111111]/15 md:w-[85%]" />
+        <div className="absolute inset-0 w-full bg-gradient-to-r from-[#252A2A]/95 via-[#252A2A]/65 to-[#252A2A]/15 md:w-[85%]" />
 
         {/* 3. Bottom fade */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#111111] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#252A2A] to-transparent" />
       </div>
 
       {/* -------------------------------------------------
@@ -48,13 +48,13 @@ export default function Hero() {
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#FF6600]/30 bg-black/40 px-4 py-2 backdrop-blur-md shadow-[0_0_20px_-3px_rgba(255,102,0,0.25)]"
+              className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#B89416]/30 bg-black/40 px-4 py-2 backdrop-blur-md shadow-[0_0_20px_-3px_rgba(255,102,0,0.25)]"
             >
               
              
               <span className="font-[Poppins] text-xs font-medium tracking-wide text-white/90 sm:text-sm">
                 India&apos;s First{" "}
-                <span className="bg-gradient-to-r from-[#FF6600] to-[#FF0000] bg-clip-text font-semibold text-transparent">
+                <span className="bg-gradient-to-r from-[#B89416] to-[#B89416] bg-clip-text font-semibold text-transparent">
                   AI-Integrated
                 </span>{" "}
                 Construction Platform
@@ -74,7 +74,7 @@ export default function Hero() {
             >
               Your trusted partner for <br className="hidden lg:block" />
               every stage of{" "}
-              <span className="bg-gradient-to-r from-[#FF6600] to-[#FF0000] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#B89416] to-[#B89416] bg-clip-text text-transparent">
                 home construction.
               </span>
             </motion.h1>
@@ -107,7 +107,7 @@ export default function Hero() {
             >
               <a
                 href="/about"
-                className="group flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#FF6600] to-[#FF0000] px-8 py-3 font-[Poppins] text-base font-medium text-white transition-all duration-300 hover:opacity-95 hover:shadow-[0_8px_30px_rgba(255,102,0,0.35)] sm:w-auto"
+                className="group flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#B89416] to-[#B89416] px-8 py-3 font-[Poppins] text-base font-medium text-white transition-all duration-300 hover:opacity-95 hover:shadow-[0_8px_30px_rgba(255,102,0,0.35)] sm:w-auto"
               >
                 Explore Our Ecosystem
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -116,7 +116,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={() => openLead({ source: "hero" })}
-                className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-8 py-3 font-[Poppins] text-base font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-[#FF6600] hover:bg-[#FF6600]/10 hover:text-[#FF6600] sm:w-auto"
+                className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-8 py-3 font-[Poppins] text-base font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-[#B89416] hover:bg-[#B89416]/10 hover:text-[#B89416] sm:w-auto"
               >
                 Talk to an Expert
               </button>

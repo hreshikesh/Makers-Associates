@@ -24,10 +24,10 @@ export default function MaintenancePage() {
         <div className="w-16 h-16 rounded-2xl bg-gray-100 grid place-items-center mb-5">
           <Hammer className="w-8 h-8 text-gray-400" />
         </div>
-        <h1 className="text-2xl sm:text-3xl font-bold text-[#000F1B] tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-bold text-[#252A2A] tracking-tight">
           Maintenance Locked
         </h1>
-        <p className="mt-3 text-sm text-[#111111]/60 max-w-md mx-auto leading-relaxed">
+        <p className="mt-3 text-sm text-[#252A2A]/60 max-w-md mx-auto leading-relaxed">
           The post-construction maintenance and warranty module will automatically unlock once your project reaches the <b>Handover</b> stage.
         </p>
       </div>
@@ -59,10 +59,10 @@ export default function MaintenancePage() {
       
       {/* Header */}
       <div>
-        <div className="text-[11px] font-semibold text-[#FF6600] tracking-wider uppercase mb-1">
+        <div className="text-[11px] font-semibold text-[#B89416] tracking-wider uppercase mb-1">
           Post-Handover Support
         </div>
-        <h1 className="text-2xl sm:text-3xl font-bold text-[#000F1B] tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-bold text-[#252A2A] tracking-tight">
           Maintenance & Warranty
         </h1>
       </div>
@@ -71,7 +71,7 @@ export default function MaintenancePage() {
         
         {/* Left Column: Warranty Timer & Benefits */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="bg-[#000F1B] rounded-2xl p-6 shadow-md relative overflow-hidden">
+          <div className="bg-[#252A2A] rounded-2xl p-6 shadow-md relative overflow-hidden">
             <div className="absolute top-0 right-0 p-6 opacity-10">
               <ShieldCheck className="w-24 h-24 text-white" />
             </div>
@@ -101,7 +101,7 @@ export default function MaintenancePage() {
                 { label: "Priority Resolution", desc: "48-hour SLA for critical tickets." }
               ].map((b, i) => (
                 <div key={i} className="flex gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#FF6600] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#B89416] shrink-0" />
                   <div>
                     <div className="text-xs font-bold text-white">{b.label}</div>
                     <div className="text-[10px] text-white/60 leading-tight">{b.desc}</div>
@@ -115,10 +115,10 @@ export default function MaintenancePage() {
         {/* Right Column: Ticket Manager */}
         <div className="lg:col-span-2 space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold text-[#000F1B]">Support Tickets</h2>
+            <h2 className="text-lg font-bold text-[#252A2A]">Support Tickets</h2>
             <button 
               onClick={() => setShowForm(true)}
-              className="inline-flex items-center gap-1.5 bg-[#FF6600] hover:bg-[#FF0000] text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm"
+              className="inline-flex items-center gap-1.5 bg-[#B89416] hover:bg-[#B89416] text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm"
             >
               <Plus className="w-4 h-4" /> Raise Request
             </button>
@@ -133,9 +133,9 @@ export default function MaintenancePage() {
 
           {tickets.length === 0 ? (
             <div className="bg-white border border-dashed border-black/15 rounded-2xl p-10 flex flex-col items-center justify-center text-center">
-              <Wrench className="w-10 h-10 text-[#111111]/30 mb-3" />
-              <h3 className="text-sm font-bold text-[#000F1B]">No Tickets Raised</h3>
-              <p className="text-xs text-[#111111]/50 mt-1">If you face any issues post-handover, log them here.</p>
+              <Wrench className="w-10 h-10 text-[#252A2A]/30 mb-3" />
+              <h3 className="text-sm font-bold text-[#252A2A]">No Tickets Raised</h3>
+              <p className="text-xs text-[#252A2A]/50 mt-1">If you face any issues post-handover, log them here.</p>
             </div>
           ) : (
             <div className="space-y-4">
@@ -193,8 +193,8 @@ function TicketForm({ onClose, onSuccess }) {
 
   return (
     <form onSubmit={submit} className="bg-white rounded-2xl border border-black/10 p-5 shadow-sm space-y-4 relative">
-      <button type="button" onClick={onClose} className="absolute top-4 right-4 text-[#111111]/50 hover:text-red-500"><X className="w-4 h-4"/></button>
-      <h3 className="text-sm font-bold text-[#000F1B]">Log a Maintenance Request</h3>
+      <button type="button" onClick={onClose} className="absolute top-4 right-4 text-[#252A2A]/50 hover:text-red-500"><X className="w-4 h-4"/></button>
+      <h3 className="text-sm font-bold text-[#252A2A]">Log a Maintenance Request</h3>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="md:col-span-2">
@@ -233,7 +233,7 @@ function TicketForm({ onClose, onSuccess }) {
         </div>
       </div>
       <div className="flex justify-end border-t border-black/5 pt-4">
-        <button type="submit" disabled={loading} className="px-5 py-2 rounded-xl bg-[#000F1B] text-white text-xs font-bold disabled:opacity-60">
+        <button type="submit" disabled={loading} className="px-5 py-2 rounded-xl bg-[#252A2A] text-white text-xs font-bold disabled:opacity-60">
           {loading ? "Submitting..." : "Submit Ticket"}
         </button>
       </div>
@@ -250,18 +250,18 @@ function TicketCard({ ticket }) {
       <div className="flex justify-between items-start mb-3 border-b border-black/5 pb-3">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-[10px] font-bold text-[#FF6600] bg-[#FF6600]/10 px-2 py-0.5 rounded uppercase">{ticket.id}</span>
-            <span className="text-[10px] font-semibold text-[#111111]/50">{new Date(ticket.raised_at).toLocaleDateString()}</span>
+            <span className="text-[10px] font-bold text-[#B89416] bg-[#B89416]/10 px-2 py-0.5 rounded uppercase">{ticket.id}</span>
+            <span className="text-[10px] font-semibold text-[#252A2A]/50">{new Date(ticket.raised_at).toLocaleDateString()}</span>
           </div>
-          <h4 className="font-bold text-[#000F1B]">{ticket.title}</h4>
-          <span className="text-xs text-[#111111]/50">{ticket.category} • {ticket.priority} Priority</span>
+          <h4 className="font-bold text-[#252A2A]">{ticket.title}</h4>
+          <span className="text-xs text-[#252A2A]/50">{ticket.category} • {ticket.priority} Priority</span>
         </div>
         <div className={`px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 ${isResolved ? "bg-emerald-50 text-emerald-600" : isInProg ? "bg-amber-50 text-amber-600" : "bg-red-50 text-red-600"}`}>
           {isResolved ? <CheckCircle2 className="w-3.5 h-3.5"/> : isInProg ? <Clock className="w-3.5 h-3.5"/> : <AlertCircle className="w-3.5 h-3.5"/>}
           {ticket.status.replace("_", " ")}
         </div>
       </div>
-      <p className="text-xs text-[#111111]/70 leading-relaxed mb-3">{ticket.description}</p>
+      <p className="text-xs text-[#252A2A]/70 leading-relaxed mb-3">{ticket.description}</p>
       
       {ticket.photo_urls?.length > 0 && (
         <div className="flex gap-2 mb-4">
@@ -273,8 +273,8 @@ function TicketCard({ ticket }) {
 
       {ticket.admin_notes && (
         <div className="bg-[#F9FAFB] border border-black/5 rounded-lg p-3 text-xs">
-          <div className="font-bold text-[#000F1B] mb-1 flex items-center gap-1"><Wrench className="w-3 h-3 text-[#FF6600]"/> ConstructONS Team Response:</div>
-          <div className="text-[#111111]/70 italic">{ticket.admin_notes}</div>
+          <div className="font-bold text-[#252A2A] mb-1 flex items-center gap-1"><Wrench className="w-3 h-3 text-[#B89416]"/> [Your Brand]s Team Response:</div>
+          <div className="text-[#252A2A]/70 italic">{ticket.admin_notes}</div>
         </div>
       )}
     </div>

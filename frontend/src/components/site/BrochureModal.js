@@ -65,7 +65,7 @@ export default function BrochureModal({ isOpen, onClose, slug, packageName, ctx 
       const url = window.URL.createObjectURL(res.blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = res.filename || `ConstructONS-${slug}.pdf`;
+      a.download = res.filename || `[Your Brand]s-${slug}.pdf`;
       document.body.appendChild(a);
       a.click();
       a.remove();

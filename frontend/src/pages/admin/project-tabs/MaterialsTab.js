@@ -27,7 +27,7 @@ const getStatusConfig = (status) => {
   const norm = getNormalizedStatus(status);
   const map = {
     received: { label: "Received", color: "text-emerald-700 bg-emerald-50 border-emerald-200", icon: Truck },
-    ordered: { label: "Ordered", color: "text-[#FF6600] bg-[#FF6600]/10 border-[#FF6600]/20", icon: Box },
+    ordered: { label: "Ordered", color: "text-[#B89416] bg-[#B89416]/10 border-[#B89416]/20", icon: Box },
     planned: { label: "Planned", color: "text-gray-600 bg-gray-100 border-gray-200", icon: Clock },
   };
   return map[norm] || map.planned;
@@ -130,7 +130,7 @@ export default function MaterialsTab({ project, onSaved }) {
       {!showForm && (
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-5 rounded-xl border border-gray-200 shadow-sm gap-4">
           <div>
-            <h3 className="text-sm font-bold text-[#000F1B]">Procurement & Materials Log</h3>
+            <h3 className="text-sm font-bold text-[#252A2A]">Procurement & Materials Log</h3>
             <p className="text-[10px] text-gray-500 mt-1 font-medium">Manage materials, costs, and track deliveries for this project.</p>
           </div>
           <button onClick={openNew} className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-[#1A73E8] hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-xs font-bold transition shadow-sm">
@@ -142,7 +142,7 @@ export default function MaterialsTab({ project, onSaved }) {
       {showForm ? (
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden animate-in fade-in duration-300">
           <div className="flex justify-between items-center p-4 border-b border-gray-100 bg-gray-50/50">
-            <h3 className="text-sm font-bold text-[#000F1B] flex items-center gap-2">
+            <h3 className="text-sm font-bold text-[#252A2A] flex items-center gap-2">
               <Package className="w-4 h-4 text-gray-400" />
               {editId ? "Edit Material Record" : "Log New Material"}
             </h3>
@@ -211,7 +211,7 @@ export default function MaterialsTab({ project, onSaved }) {
                   </div>
                   <div className="mt-3 text-right">
                     <span className="text-[10px] text-blue-700/70 font-bold uppercase">Total Estimated Cost: </span>
-                    <span className="text-sm font-black text-[#000F1B]">₹{((Number(form.quantity)||0) * (Number(form.unit_price)||0)).toLocaleString('en-IN')}</span>
+                    <span className="text-sm font-black text-[#252A2A]">₹{((Number(form.quantity)||0) * (Number(form.unit_price)||0)).toLocaleString('en-IN')}</span>
                   </div>
                 </div>
 
@@ -292,7 +292,7 @@ export default function MaterialsTab({ project, onSaved }) {
                               {m.photo_url ? <img src={resolveMediaUrl(m.photo_url)} alt="" className="w-full h-full object-cover" /> : <Package className="w-4 h-4 text-gray-400" />}
                             </div>
                             <div>
-                              <h4 className="font-bold text-[#000F1B] text-sm">{m.item_name}</h4>
+                              <h4 className="font-bold text-[#252A2A] text-sm">{m.item_name}</h4>
                               <p className="text-[10px] text-gray-500 truncate max-w-[200px]">{m.brand ? `${m.brand} • ` : ''}{m.grade_spec || "Standard"}</p>
                             </div>
                           </div>

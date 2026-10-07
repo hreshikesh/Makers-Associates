@@ -1,10 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-const SITE_URL = "https://constructons.com";
-const DEFAULT_TITLE = "ConstructONS | AI-Powered Home Construction Platform";
+const SITE_URL = "https://[Your Brand]s.com";
+const DEFAULT_TITLE = "[Your Brand]s | AI-Powered Home Construction Platform";
 const DEFAULT_DESC =
-  "ConstructONS is India's premium home construction platform. Get transparent packages starting from ₹1,499/sqft, real-time live site tracking, and AI-powered design tools.";
+  "[Your Brand]s is India's premium home construction platform. Get transparent packages starting from ₹1,499/sqft, real-time live site tracking, and AI-powered design tools.";
 const DEFAULT_IMAGE = `${SITE_URL}/icon.svg`;
 
 export default function SEO({
@@ -18,7 +18,7 @@ export default function SEO({
   structuredData,
   children,
 }) {
-  const fullTitle = title ? `${title} | ConstructONS` : DEFAULT_TITLE;
+  const fullTitle = title ? `${title} | [Your Brand]s` : DEFAULT_TITLE;
   const desc = description || DEFAULT_DESC;
   const ogImage = image || DEFAULT_IMAGE;
   const canonicalUrl = canonical
@@ -44,7 +44,7 @@ export default function SEO({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={desc} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="ConstructONS" />
+      <meta property="og:site_name" content="[Your Brand]s" />
       <meta property="og:locale" content="en_IN" />
 
       {/* Twitter */}
@@ -70,9 +70,9 @@ export default function SEO({
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "ConstructONS",
-  url: "https://constructons.com",
-  logo: "https://constructons.com/icon.svg",
+  name: "[Your Brand]s",
+  url: "https://[Your Brand]s.com",
+  logo: "https://[Your Brand]s.com/icon.svg",
   description: DEFAULT_DESC,
   address: {
     "@type": "PostalAddress",

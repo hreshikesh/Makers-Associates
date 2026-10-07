@@ -138,7 +138,7 @@ export default function PaymentsPage() {
       case "invoiced":
         return <span className={`${base} text-blue-700 bg-blue-50 border-blue-200`}>Invoiced</span>;
       default:
-        return <span className={`${base} text-[#FF6600] bg-[#FF6600]/10 border-[#FF6600]/20`}>Upcoming</span>;
+        return <span className={`${base} text-[#B89416] bg-[#B89416]/10 border-[#B89416]/20`}>Upcoming</span>;
     }
   };
 
@@ -161,16 +161,16 @@ export default function PaymentsPage() {
       {/* ====== HEADER ====== */}
       <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm mb-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
         <div>
-          <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-[#000F1B]">
+          <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-[#252A2A]">
             Payments & Contract
           </h1>
           <p className="text-[11px] sm:text-xs text-gray-500 mt-1">
             Track proforma invoices, verified receipts & scope variations in real-time.
           </p>
         </div>
-        <div className="bg-[#FF6600]/5 border border-[#FF6600]/20 rounded-lg p-2.5 flex items-start gap-2 w-full md:w-auto md:max-w-sm">
-          <Info className="w-4 h-4 text-[#FF6600] shrink-0 mt-0.5" />
-          <p className="text-[10px] sm:text-[11px] text-[#000F1B] font-medium leading-relaxed">
+        <div className="bg-[#B89416]/5 border border-[#B89416]/20 rounded-lg p-2.5 flex items-start gap-2 w-full md:w-auto md:max-w-sm">
+          <Info className="w-4 h-4 text-[#B89416] shrink-0 mt-0.5" />
+          <p className="text-[10px] sm:text-[11px] text-[#252A2A] font-medium leading-relaxed">
             All proforma invoices, receipts and contract changes are transparently maintained here.
           </p>
         </div>
@@ -186,7 +186,7 @@ export default function PaymentsPage() {
               </span>
               <FileSignature className="w-4 h-4 text-slate-500" />
             </div>
-            <div className="text-sm sm:text-base xl:text-lg font-black text-[#000F1B]">
+            <div className="text-sm sm:text-base xl:text-lg font-black text-[#252A2A]">
               {fmtINR(baseContract)}
             </div>
             <div className="text-[9px] font-semibold text-slate-400 mt-0.5">Original Signed</div>
@@ -197,9 +197,9 @@ export default function PaymentsPage() {
               <span className="text-[9px] font-bold text-amber-800 uppercase tracking-wider">
                 Variations
               </span>
-              <TrendingUp className="w-4 h-4 text-[#FF6600]" />
+              <TrendingUp className="w-4 h-4 text-[#B89416]" />
             </div>
-            <div className="text-sm sm:text-base xl:text-lg font-black text-[#FF6600]">
+            <div className="text-sm sm:text-base xl:text-lg font-black text-[#B89416]">
               + {fmtINR(approvedVariations)}
             </div>
             <div className="text-[9px] font-semibold text-amber-700/80 mt-0.5">
@@ -209,14 +209,14 @@ export default function PaymentsPage() {
             </div>
           </div>
 
-          <div className="bg-[#000F1B] border border-[#000F1B] rounded-xl p-3 shadow-sm text-white col-span-2 sm:col-span-1">
+          <div className="bg-[#252A2A] border border-[#252A2A] rounded-xl p-3 shadow-sm text-white col-span-2 sm:col-span-1">
             <div className="flex items-center justify-between mb-1.5">
               <span className="text-[9px] font-bold text-gray-300 uppercase tracking-wider">
                 Total Contract
               </span>
-              <FileText className="w-4 h-4 text-[#FF6600]" />
+              <FileText className="w-4 h-4 text-[#B89416]" />
             </div>
-            <div className="text-sm sm:text-base xl:text-lg font-black text-[#FF6600]">
+            <div className="text-sm sm:text-base xl:text-lg font-black text-[#B89416]">
               {fmtINR(totalContractValue)}
             </div>
             <div className="text-[9px] font-semibold text-gray-400 mt-0.5">Base + Approved</div>
@@ -227,9 +227,9 @@ export default function PaymentsPage() {
               <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wider">
                 Invoiced
               </span>
-              <Receipt className="w-4 h-4 text-[#000F1B]" />
+              <Receipt className="w-4 h-4 text-[#252A2A]" />
             </div>
-            <div className="text-sm sm:text-base xl:text-lg font-black text-[#000F1B]">
+            <div className="text-sm sm:text-base xl:text-lg font-black text-[#252A2A]">
               {fmtINR(totalInvoiced)}
             </div>
             <div className="text-[9px] font-semibold text-gray-400 mt-0.5">
@@ -297,16 +297,16 @@ export default function PaymentsPage() {
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             className={`pb-2.5 text-xs sm:text-[13px] font-bold transition-all relative whitespace-nowrap flex items-center gap-1.5 ${
-              activeTab === tab.id ? "text-[#000F1B]" : "text-gray-400 hover:text-gray-700"
+              activeTab === tab.id ? "text-[#252A2A]" : "text-gray-400 hover:text-gray-700"
             }`}
           >
             {tab.label}
             {tab.badge > 0 && (
-              <span className="bg-[#FF6600] text-white text-[9px] rounded-full w-4 h-4 flex items-center justify-center font-black">
+              <span className="bg-[#B89416] text-white text-[9px] rounded-full w-4 h-4 flex items-center justify-center font-black">
                 {tab.badge}
               </span>
             )}
-            {activeTab === tab.id && <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6600]" />}
+            {activeTab === tab.id && <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#B89416]" />}
           </button>
         ))}
       </div>
@@ -315,7 +315,7 @@ export default function PaymentsPage() {
       {activeTab === "schedule" && (
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
           <div className="p-3 border-b border-gray-100 bg-gray-50/50">
-            <h3 className="text-xs sm:text-sm font-bold text-[#000F1B]">
+            <h3 className="text-xs sm:text-sm font-bold text-[#252A2A]">
               Milestone Payment Schedule
             </h3>
             <p className="text-[10px] sm:text-[11px] text-gray-500 mt-0.5">
@@ -341,8 +341,8 @@ export default function PaymentsPage() {
                   (project.payment_schedule || []).map((ms, idx) => (
                     <tr key={idx} className="hover:bg-gray-50">
                       <td className="py-3 px-4 font-bold text-gray-400">{idx + 1}</td>
-                      <td className="py-3 px-4 font-bold text-[#000F1B]">{ms.name}</td>
-                      <td className="py-3 px-4 text-[#FF6600] font-semibold hidden sm:table-cell">
+                      <td className="py-3 px-4 font-bold text-[#252A2A]">{ms.name}</td>
+                      <td className="py-3 px-4 text-[#B89416] font-semibold hidden sm:table-cell">
                         {ms.stage || "General"}
                       </td>
                       <td className="py-3 px-4 text-gray-600">{fmtDate(ms.due_date)}</td>
@@ -366,10 +366,10 @@ export default function PaymentsPage() {
             {upcomingInvoices.length > 0 && (
               <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
                 <div className="p-3 border-b border-gray-100 bg-gray-50/50 flex items-center justify-between">
-                  <h3 className="text-xs sm:text-sm font-bold text-[#000F1B]">
+                  <h3 className="text-xs sm:text-sm font-bold text-[#252A2A]">
                     Upcoming Payments
                   </h3>
-                  <span className="text-[10px] font-bold text-[#FF6600] bg-[#FF6600]/10 px-2 py-0.5 rounded">
+                  <span className="text-[10px] font-bold text-[#B89416] bg-[#B89416]/10 px-2 py-0.5 rounded">
                     {upcomingInvoices.length} Due
                   </span>
                 </div>
@@ -386,7 +386,7 @@ export default function PaymentsPage() {
                   <tbody className="divide-y divide-gray-100">
                     {upcomingInvoices.map(inv => (
                       <tr key={inv.id} className="hover:bg-gray-50">
-                        <td className="py-2.5 px-3 font-mono font-bold text-[#000F1B] truncate">{inv.number}</td>
+                        <td className="py-2.5 px-3 font-mono font-bold text-[#252A2A] truncate">{inv.number}</td>
                         <td className="py-2.5 px-3 font-semibold text-gray-800 hidden sm:table-cell truncate">
                           {inv.description}
                           {inv.milestone_name && (
@@ -396,11 +396,11 @@ export default function PaymentsPage() {
                           )}
                         </td>
                         <td className="py-2.5 px-3 text-gray-600 truncate">{fmtDate(inv.due_date)}</td>
-                        <td className="py-2.5 px-3 font-bold text-[#FF6600] truncate">{fmtINR(inv.amount)}</td>
+                        <td className="py-2.5 px-3 font-bold text-[#B89416] truncate">{fmtINR(inv.amount)}</td>
                         <td className="py-2.5 px-3 text-right">
                           <button
                             onClick={() => setSelectedInvoiceId(inv.id)}
-                            className="px-2.5 py-1 bg-[#000F1B] hover:bg-[#FF6600] text-white text-[10px] font-bold rounded shadow-sm transition"
+                            className="px-2.5 py-1 bg-[#252A2A] hover:bg-[#B89416] text-white text-[10px] font-bold rounded shadow-sm transition"
                           >
                             View
                           </button>
@@ -414,14 +414,14 @@ export default function PaymentsPage() {
 
             <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
               <div className="p-3 border-b border-gray-100 bg-gray-50/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                <h3 className="text-xs sm:text-sm font-bold text-[#000F1B]">Proforma Invoice History</h3>
+                <h3 className="text-xs sm:text-sm font-bold text-[#252A2A]">Proforma Invoice History</h3>
                 <div className="flex items-center gap-2 w-full sm:w-auto">
                   <div className="relative flex-1 sm:w-48">
                     <Search className="w-3 h-3 absolute left-2 top-1/2 -translate-y-1/2 text-gray-400" />
                     <input
                       type="text" placeholder="Search..."
                       value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
-                      className="w-full pl-7 pr-2 py-1.5 text-[10px] bg-white border border-gray-200 rounded outline-none focus:border-[#FF6600]"
+                      className="w-full pl-7 pr-2 py-1.5 text-[10px] bg-white border border-gray-200 rounded outline-none focus:border-[#B89416]"
                     />
                   </div>
                   <select
@@ -455,11 +455,11 @@ export default function PaymentsPage() {
                       key={inv.id}
                       onClick={() => setSelectedInvoiceId(inv.id)}
                       className={`cursor-pointer transition hover:bg-gray-50 ${
-                        selectedInvoice?.id === inv.id ? "bg-[#FF6600]/5 border-l-4 border-l-[#FF6600]" : "border-l-4 border-l-transparent"
+                        selectedInvoice?.id === inv.id ? "bg-[#B89416]/5 border-l-4 border-l-[#B89416]" : "border-l-4 border-l-transparent"
                       }`}
                     >
                       <div className="hidden md:grid grid-cols-12 gap-2 px-4 py-3 items-center text-[11px]">
-                        <div className="col-span-2 font-mono font-bold text-[#000F1B]">
+                        <div className="col-span-2 font-mono font-bold text-[#252A2A]">
                           {inv.number}
                           {inv.edit_history?.length > 0 && (
                             <span className="ml-1 text-[8px] text-amber-600 font-normal inline-flex items-center gap-0.5">
@@ -485,7 +485,7 @@ export default function PaymentsPage() {
 
                       <div className="md:hidden p-3 space-y-1.5">
                         <div className="flex items-center justify-between">
-                          <div className="font-mono font-bold text-[#000F1B] text-xs">
+                          <div className="font-mono font-bold text-[#252A2A] text-xs">
                             {inv.number}
                             {inv.edit_history?.length > 0 && (
                               <span className="ml-1 text-[8px] text-amber-600 font-normal inline-flex items-center gap-0.5">
@@ -520,15 +520,15 @@ export default function PaymentsPage() {
                 <div className="flex items-start justify-between border-b border-gray-100 pb-3 gap-2">
                   <div className="min-w-0">
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <FileText className="w-4 h-4 text-[#FF6600] shrink-0" />
-                      <h3 className="text-sm font-bold text-[#000F1B]">{selectedInvoice.number}</h3>
+                      <FileText className="w-4 h-4 text-[#B89416] shrink-0" />
+                      <h3 className="text-sm font-bold text-[#252A2A]">{selectedInvoice.number}</h3>
                       {getStatusBadge(selectedInvoice.status)}
                     </div>
                     {selectedInvoice.milestone_name ? (
                       <div>
                         <div className="text-[12px] font-bold text-gray-900 truncate">{selectedInvoice.milestone_name}</div>
                         <div className="text-[10px] text-gray-400 font-medium truncate">{selectedInvoice.description}</div>
-                        <div className="text-[9px] text-[#FF6600] font-semibold mt-0.5 uppercase tracking-wider">{selectedInvoice.milestone_stage || selectedInvoice.stage} Stage</div>
+                        <div className="text-[9px] text-[#B89416] font-semibold mt-0.5 uppercase tracking-wider">{selectedInvoice.milestone_stage || selectedInvoice.stage} Stage</div>
                       </div>
                     ) : (
                       <div className="text-[11px] text-gray-500 font-medium truncate">
@@ -641,7 +641,7 @@ export default function PaymentsPage() {
             <div className="p-3 border-b border-amber-100 bg-amber-50/40 flex items-center gap-2">
               <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
               <div>
-                <h3 className="text-xs sm:text-sm font-bold text-[#000F1B]">
+                <h3 className="text-xs sm:text-sm font-bold text-[#252A2A]">
                   Variations Awaiting Your Decision
                 </h3>
                 <p className="text-[10px] text-gray-500 mt-0.5">
@@ -670,7 +670,7 @@ export default function PaymentsPage() {
                         <a
                           href={resolveMediaUrl(v.document_url)}
                           target="_blank" rel="noreferrer"
-                          className="inline-flex items-center gap-1 text-[10px] text-[#FF6600] hover:underline font-bold"
+                          className="inline-flex items-center gap-1 text-[10px] text-[#B89416] hover:underline font-bold"
                         >
                           <Download className="w-3 h-3" /> View supporting document
                         </a>
@@ -682,7 +682,7 @@ export default function PaymentsPage() {
                         <span className="text-[9px] font-bold uppercase text-gray-400 block">
                           Cost Adjustment
                         </span>
-                        <span className="text-sm font-black text-[#FF6600]">+ {fmtINR(v.amount)}</span>
+                        <span className="text-sm font-black text-[#B89416]">+ {fmtINR(v.amount)}</span>
                       </div>
 
                       <div className="flex gap-2 shrink-0">
@@ -724,7 +724,7 @@ export default function PaymentsPage() {
               <div className="p-3 border-b border-emerald-100 bg-emerald-50/40 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <div>
-                  <h3 className="text-xs sm:text-sm font-bold text-[#000F1B]">
+                  <h3 className="text-xs sm:text-sm font-bold text-[#252A2A]">
                     Approved Variations — Invoice & Payment Status
                   </h3>
                   <p className="text-[10px] text-gray-500 mt-0.5">
@@ -752,7 +752,7 @@ export default function PaymentsPage() {
                           <td className="py-3 px-4 font-bold text-gray-900 max-w-[200px]">
                             {v.description}
                           </td>
-                          <td className="py-3 px-4 font-bold text-[#FF6600]">+ {fmtINR(v.amount)}</td>
+                          <td className="py-3 px-4 font-bold text-[#B89416]">+ {fmtINR(v.amount)}</td>
                           <td className="py-3 px-4">
                             {payStatus.invoice ? (
                               <button
@@ -799,7 +799,7 @@ export default function PaymentsPage() {
 
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
             <div className="p-3 border-b border-gray-100 bg-gray-50/50">
-              <h3 className="text-xs sm:text-sm font-bold text-[#000F1B]">
+              <h3 className="text-xs sm:text-sm font-bold text-[#252A2A]">
                 Variation Decision History
               </h3>
               <p className="text-[10px] text-gray-500 mt-0.5">
@@ -823,7 +823,7 @@ export default function PaymentsPage() {
                     historyVariationsList.map((v, idx) => (
                       <tr key={idx} className="hover:bg-gray-50">
                         <td className="py-3 px-4 font-bold text-gray-900">{v.description}</td>
-                        <td className="py-3 px-4 font-bold text-[#FF6600]">+ {fmtINR(v.amount)}</td>
+                        <td className="py-3 px-4 font-bold text-[#B89416]">+ {fmtINR(v.amount)}</td>
                         <td className="py-3 px-4 text-gray-500 hidden sm:table-cell">
                           {fmtDate(v.approved_at || v.rejected_at || v.created_at)}
                         </td>

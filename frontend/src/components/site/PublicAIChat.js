@@ -9,7 +9,7 @@ export default function PublicAIChat() {
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { role: "assistant", content: "Namaste! 🙏 I'm **ConstructONS AI Assist**. Ask me anything about home construction packages, process, Vastu, or material standards!" }
+    { role: "assistant", content: "Namaste! 🙏 I'm **[Your Brand]s AI Assist**. Ask me anything about home construction packages, process, Vastu, or material standards!" }
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -55,7 +55,7 @@ export default function PublicAIChat() {
       {!open && (
         <button
           onClick={() => setOpen(true)}
-          className="bg-[#FF6600] hover:bg-[#FF0000] text-white h-12 px-4 rounded-full shadow-lg shadow-[#FF6600]/30 flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105"
+          className="bg-[#B89416] hover:bg-[#B89416] text-white h-12 px-4 rounded-full shadow-lg shadow-[#B89416]/30 flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105"
         >
           <Bot className="w-5 h-5 animate-pulse" />
           <span className="text-xs font-bold uppercase tracking-wider hidden sm:inline">Ask AI</span>
@@ -68,14 +68,14 @@ export default function PublicAIChat() {
           w-screen h-[85vh] rounded-t-3xl sm:w-[380px] sm:h-[520px] sm:rounded-3xl sm:border sm:border-black/10">
           
           {/* Header */}
-          <div className="bg-[#000F1B] p-4 text-white flex items-center justify-between shrink-0 border-b border-white/10">
+          <div className="bg-[#252A2A] p-4 text-white flex items-center justify-between shrink-0 border-b border-white/10">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-[#FF6600] grid place-items-center shrink-0 shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-[#B89416] grid place-items-center shrink-0 shadow-sm">
                 <Bot className="w-5 h-5 text-white" />
               </div>
               <div>
                 <div className="text-xs font-bold text-white flex items-center gap-1.5">
-                  ConstructONS AI
+                  [Your Brand]s AI
                 </div>
                 <div className="text-[10px] text-white/60">Everything Construction. Always On.</div>
               </div>
@@ -91,8 +91,8 @@ export default function PublicAIChat() {
               <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div className={`max-w-[85%] p-3 rounded-2xl ${
                   m.role === "user"
-                    ? "bg-[#000F1B] text-white rounded-br-none font-medium"
-                    : "bg-white text-[#111111] border border-black/5 shadow-sm rounded-bl-none"
+                    ? "bg-[#252A2A] text-white rounded-br-none font-medium"
+                    : "bg-white text-[#252A2A] border border-black/5 shadow-sm rounded-bl-none"
                 }`}>
                   {m.content}
                 </div>
@@ -101,7 +101,7 @@ export default function PublicAIChat() {
             {loading && (
               <div className="flex justify-start">
                 <div className="bg-white p-3 rounded-2xl border border-black/5 shadow-sm flex items-center gap-2 text-gray-500">
-                  <Loader2 className="w-4 h-4 animate-spin text-[#FF6600]" /> Thinking...
+                  <Loader2 className="w-4 h-4 animate-spin text-[#B89416]" /> Thinking...
                 </div>
               </div>
             )}
@@ -115,12 +115,12 @@ export default function PublicAIChat() {
               value={input}
               onChange={e => setInput(e.target.value)}
               placeholder="Ask about packages, pricing, Vastu..."
-              className="flex-1 px-3.5 py-2.5 bg-[#F5F6F8] rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-[#FF6600]"
+              className="flex-1 px-3.5 py-2.5 bg-[#F5F6F8] rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-[#B89416]"
             />
             <button
               type="submit"
               disabled={loading || !input.trim()}
-              className="w-10 h-10 rounded-xl bg-[#000F1B] hover:bg-[#FF6600] text-white grid place-items-center transition disabled:opacity-50 shrink-0"
+              className="w-10 h-10 rounded-xl bg-[#252A2A] hover:bg-[#B89416] text-white grid place-items-center transition disabled:opacity-50 shrink-0"
             >
               <Send className="w-4 h-4" />
             </button>

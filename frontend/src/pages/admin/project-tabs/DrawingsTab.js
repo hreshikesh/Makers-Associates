@@ -139,21 +139,21 @@ export default function DrawingsTab({ project, onSaved }) {
       <div className="flex items-center gap-6 border-b border-gray-200">
         <button 
           onClick={() => setActiveTab("library")}
-          className={`pb-3 text-sm font-bold transition-colors relative ${activeTab === "library" ? "text-[#000F1B]" : "text-gray-400 hover:text-gray-700"}`}
+          className={`pb-3 text-sm font-bold transition-colors relative ${activeTab === "library" ? "text-[#252A2A]" : "text-gray-400 hover:text-gray-700"}`}
         >
           Drawing Library
-          {activeTab === "library" && <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6600] rounded-t-full" />}
+          {activeTab === "library" && <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#B89416] rounded-t-full" />}
         </button>
         
         <button 
           onClick={() => setActiveTab("requests")}
-          className={`pb-3 text-sm font-bold transition-colors flex items-center gap-2 relative ${activeTab === "requests" ? "text-[#000F1B]" : "text-gray-400 hover:text-gray-700"}`}
+          className={`pb-3 text-sm font-bold transition-colors flex items-center gap-2 relative ${activeTab === "requests" ? "text-[#252A2A]" : "text-gray-400 hover:text-gray-700"}`}
         >
           Client Requests
           {pendingRequestsCount > 0 && (
             <span className="bg-red-500 text-white text-[9px] px-1.5 py-0.5 rounded-full leading-none">{pendingRequestsCount}</span>
           )}
-          {activeTab === "requests" && <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FF6600] rounded-t-full" />}
+          {activeTab === "requests" && <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#B89416] rounded-t-full" />}
         </button>
       </div>
 
@@ -166,7 +166,7 @@ export default function DrawingsTab({ project, onSaved }) {
           {/* Upload Box */}
           <div className={`rounded-xl border p-5 sm:p-6 shadow-sm transition-all duration-300 ${fulfillingReqId ? "bg-amber-50 border-amber-300 ring-4 ring-amber-500/10" : "bg-white border-black/5"}`}>
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-sm font-bold text-[#000F1B]">Upload New Drawing Plan</h3>
+              <h3 className="text-sm font-bold text-[#252A2A]">Upload New Drawing Plan</h3>
               {fulfillingReqId && (
                 <div className="flex items-center gap-3">
                   <span className="text-[10px] font-bold text-amber-700 bg-amber-200 px-2 py-0.5 rounded uppercase tracking-wider flex items-center gap-1.5">
@@ -179,16 +179,16 @@ export default function DrawingsTab({ project, onSaved }) {
             
             <div className="flex flex-col sm:flex-row items-start sm:items-end gap-3">
               <div className="flex-1 w-full">
-                <label className="block text-[10px] font-bold text-[#111111]/60 uppercase tracking-wider mb-1">Drawing Title *</label>
-                <input type="text" value={newTitle} onChange={e => setNewTitle(e.target.value)} placeholder="e.g. Ground Floor Electrical Layout" className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold focus:ring-2 focus:ring-[#FF6600] outline-none transition" />
+                <label className="block text-[10px] font-bold text-[#252A2A]/60 uppercase tracking-wider mb-1">Drawing Title *</label>
+                <input type="text" value={newTitle} onChange={e => setNewTitle(e.target.value)} placeholder="e.g. Ground Floor Electrical Layout" className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold focus:ring-2 focus:ring-[#B89416] outline-none transition" />
               </div>
               <div className="w-full sm:w-48">
-                <label className="block text-[10px] font-bold text-[#111111]/60 uppercase tracking-wider mb-1">Category</label>
-                <select value={newCategory} onChange={e => setNewCategory(e.target.value)} className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold focus:ring-2 focus:ring-[#FF6600] outline-none cursor-pointer">
+                <label className="block text-[10px] font-bold text-[#252A2A]/60 uppercase tracking-wider mb-1">Category</label>
+                <select value={newCategory} onChange={e => setNewCategory(e.target.value)} className="w-full rounded-xl border border-black/10 bg-white px-3 py-2.5 text-sm font-semibold focus:ring-2 focus:ring-[#B89416] outline-none cursor-pointer">
                   {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
-              <label className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl text-white px-6 py-2.5 text-sm font-bold transition cursor-pointer shadow-sm ${fulfillingReqId ? "bg-amber-600 hover:bg-amber-700" : "bg-[#000F1B] hover:bg-[#FF6600]"}`}>
+              <label className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl text-white px-6 py-2.5 text-sm font-bold transition cursor-pointer shadow-sm ${fulfillingReqId ? "bg-amber-600 hover:bg-amber-700" : "bg-[#252A2A] hover:bg-[#B89416]"}`}>
                 {uploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <UploadCloud className="w-4 h-4" />}
                 <span>{fulfillingReqId ? "Upload & Fulfill" : "Upload Plan"}</span>
                 <input type="file" accept="image/*,application/pdf" className="hidden" onChange={handleUploadNew} disabled={!newTitle.trim() || uploading} />
@@ -199,11 +199,11 @@ export default function DrawingsTab({ project, onSaved }) {
           {/* Drawings List */}
           <div className="bg-white rounded-xl border border-black/5 shadow-sm overflow-hidden">
             <div className="p-5 border-b border-black/5 flex items-center justify-between bg-gray-50/50">
-              <h3 className="text-sm font-bold text-[#000F1B]">Active Drawings ({drawings.length})</h3>
+              <h3 className="text-sm font-bold text-[#252A2A]">Active Drawings ({drawings.length})</h3>
             </div>
 
             {drawings.length === 0 ? (
-              <div className="p-12 text-center text-sm text-[#111111]/50 italic">
+              <div className="p-12 text-center text-sm text-[#252A2A]/50 italic">
                 <FileText className="w-12 h-12 text-gray-300 mx-auto mb-3" />
                 No drawings uploaded for this project yet.
               </div>
@@ -226,7 +226,7 @@ export default function DrawingsTab({ project, onSaved }) {
                   const isPdf = latest.url?.toLowerCase().includes('.pdf');
 
                   return (
-                    <div key={d.id} className="bg-white rounded-2xl border border-black/10 shadow-sm overflow-hidden hover:border-[#FF6600]/40 transition">
+                    <div key={d.id} className="bg-white rounded-2xl border border-black/10 shadow-sm overflow-hidden hover:border-[#B89416]/40 transition">
                       <div className="p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-[#F9FAFB]/50">
                         <div className="flex items-center gap-4 min-w-0">
                           
@@ -245,22 +245,22 @@ export default function DrawingsTab({ project, onSaved }) {
 
                           <div className="min-w-0">
                             <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                              <span className="text-[9px] font-bold text-[#FF6600] uppercase tracking-wider">{d.category}</span>
-                              <span className="text-[9px] font-mono font-bold bg-[#000F1B] text-white px-2 py-0.5 rounded shadow-sm">V{d.current_version}</span>
+                              <span className="text-[9px] font-bold text-[#B89416] uppercase tracking-wider">{d.category}</span>
+                              <span className="text-[9px] font-mono font-bold bg-[#252A2A] text-white px-2 py-0.5 rounded shadow-sm">V{d.current_version}</span>
                               <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${stat.color}`}>
                                 {stat.label}
                               </span>
                             </div>
-                            <h4 className="font-bold text-[#000F1B] text-sm md:text-base truncate">{d.name}</h4>
+                            <h4 className="font-bold text-[#252A2A] text-sm md:text-base truncate">{d.name}</h4>
                           </div>
                         </div>
 
                         <div className="flex items-center gap-2 self-end sm:self-center shrink-0">
-                          <button onClick={() => setExpandedId(isExpanded ? null : d.id)} className="px-3 py-1.5 rounded-lg bg-white border border-black/10 text-xs font-bold text-[#000F1B] hover:bg-[#F2F2F2] transition flex items-center gap-1.5 shadow-sm">
+                          <button onClick={() => setExpandedId(isExpanded ? null : d.id)} className="px-3 py-1.5 rounded-lg bg-white border border-black/10 text-xs font-bold text-[#252A2A] hover:bg-[#F2F2F2] transition flex items-center gap-1.5 shadow-sm">
                             <History className="w-3.5 h-3.5" /> {isExpanded ? "Hide History" : `History (${versions.length})`}
                           </button>
 
-                          <label className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#FF6600]/10 text-[#FF6600] hover:bg-[#FF6600] hover:text-white px-4 py-1.5 text-xs font-bold cursor-pointer transition shadow-sm">
+                          <label className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#B89416]/10 text-[#B89416] hover:bg-[#B89416] hover:text-white px-4 py-1.5 text-xs font-bold cursor-pointer transition shadow-sm">
                             {revisingId === d.id ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : `Upload V${d.current_version + 1}`}
                             <input type="file" className="hidden" accept="image/*,application/pdf" onChange={(e) => handleUploadRevision(d.id, e)} />
                           </label>
@@ -273,7 +273,7 @@ export default function DrawingsTab({ project, onSaved }) {
 
                       {isExpanded && (
                         <div className="bg-white border-t border-black/5 p-5 space-y-3">
-                          <div className="text-[10px] font-bold text-[#000F1B] uppercase tracking-wider mb-3">Revision & Feedback History</div>
+                          <div className="text-[10px] font-bold text-[#252A2A] uppercase tracking-wider mb-3">Revision & Feedback History</div>
                           <div className="space-y-2.5">
                             {[...versions].reverse().map((v) => {
                               const isRevPdf = v.url?.toLowerCase().includes('.pdf');
@@ -292,13 +292,13 @@ export default function DrawingsTab({ project, onSaved }) {
                                     </a>
                                     <div className="min-w-0">
                                       <div className="flex items-center gap-2">
-                                        <span className="text-xs font-bold text-[#000F1B]">Version {v.version}</span>
-                                        <span className="text-[10px] text-[#111111]/40 font-medium">• {v.uploaded_at ? new Date(v.uploaded_at).toLocaleDateString() : ""}</span>
+                                        <span className="text-xs font-bold text-[#252A2A]">Version {v.version}</span>
+                                        <span className="text-[10px] text-[#252A2A]/40 font-medium">• {v.uploaded_at ? new Date(v.uploaded_at).toLocaleDateString() : ""}</span>
                                       </div>
                                       {v.client_comment ? (
-                                        <p className="text-xs text-[#111111]/70 italic truncate mt-0.5">"{v.client_comment}"</p>
+                                        <p className="text-xs text-[#252A2A]/70 italic truncate mt-0.5">"{v.client_comment}"</p>
                                       ) : (
-                                        <span className="text-[10px] text-[#111111]/30 italic">No comments left</span>
+                                        <span className="text-[10px] text-[#252A2A]/30 italic">No comments left</span>
                                       )}
                                     </div>
                                   </div>
@@ -338,11 +338,11 @@ export default function DrawingsTab({ project, onSaved }) {
           
           <div className="p-4 border-b border-black/5 flex flex-col sm:flex-row items-center justify-between gap-4 bg-gray-50/50">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-[#000F1B] grid place-items-center shadow-sm">
+              <div className="w-10 h-10 rounded-lg bg-[#252A2A] grid place-items-center shadow-sm">
                 <FileQuestion className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="text-sm font-bold text-[#000F1B]">Request Ledger</h3>
+                <h3 className="text-sm font-bold text-[#252A2A]">Request Ledger</h3>
                 <p className="text-[10px] text-gray-500 font-medium">Manage and fulfill client drawing requests.</p>
               </div>
             </div>
@@ -351,7 +351,7 @@ export default function DrawingsTab({ project, onSaved }) {
               {['all', 'pending', 'fulfilled'].map(f => (
                 <button 
                   key={f} onClick={() => setRequestFilter(f)}
-                  className={`px-4 py-1.5 text-xs font-bold rounded-md capitalize transition ${requestFilter === f ? "bg-white text-[#000F1B] shadow-sm" : "text-gray-500 hover:text-gray-800"}`}
+                  className={`px-4 py-1.5 text-xs font-bold rounded-md capitalize transition ${requestFilter === f ? "bg-white text-[#252A2A] shadow-sm" : "text-gray-500 hover:text-gray-800"}`}
                 >
                   {f}
                 </button>
@@ -383,7 +383,7 @@ export default function DrawingsTab({ project, onSaved }) {
                     <td className="py-3 px-4 align-top">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wider bg-gray-100 px-1.5 py-0.5 rounded border border-gray-200">{req.category}</span>
-                        <h4 className="text-xs font-bold text-[#000F1B]">{req.title}</h4>
+                        <h4 className="text-xs font-bold text-[#252A2A]">{req.title}</h4>
                       </div>
                       {req.reason && <p className="text-[11px] text-gray-600 mt-1 max-w-lg">"{req.reason}"</p>}
                     </td>
@@ -396,7 +396,7 @@ export default function DrawingsTab({ project, onSaved }) {
                       {req.status === "pending" ? (
                         <div className="flex items-center justify-end gap-2">
                           <button onClick={() => updateRequestStatus(req.id, "dismissed")} className="text-[10px] font-bold text-gray-500 hover:text-gray-800 transition">Dismiss</button>
-                          <button onClick={() => startFulfillRequest(req)} className="px-3 py-1.5 bg-[#000F1B] hover:bg-[#FF6600] text-white text-[10px] font-bold rounded flex items-center gap-1 shadow-sm transition">
+                          <button onClick={() => startFulfillRequest(req)} className="px-3 py-1.5 bg-[#252A2A] hover:bg-[#B89416] text-white text-[10px] font-bold rounded flex items-center gap-1 shadow-sm transition">
                             Fulfill <ArrowRight className="w-3 h-3" />
                           </button>
                         </div>

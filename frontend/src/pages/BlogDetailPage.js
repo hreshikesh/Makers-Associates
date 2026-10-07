@@ -35,21 +35,21 @@ export default function BlogDetailPage() {
         {
           "@type": "BlogPosting",
           "headline": b.title,
-          "image": b.cover_image || "https://constructons.com/icon.svg",
+          "image": b.cover_image || "https://[Your Brand]s.com/icon.svg",
           "author": {
             "@type": "Person",
-            "name": b.author || "ConstructONS Team"
+            "name": b.author || "[Your Brand]s Team"
           },
           "publisher": {
             "@type": "Organization",
-            "name": "ConstructONS",
+            "name": "[Your Brand]s",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://constructons.com/icon.svg"
+              "url": "https://[Your Brand]s.com/icon.svg"
             }
           },
           "description": b.excerpt || b.title,
-          "mainEntityOfPage": `https://constructons.com/blog/${b.slug}`
+          "mainEntityOfPage": `https://[Your Brand]s.com/blog/${b.slug}`
         },
         {
           "@type": "BreadcrumbList",
@@ -58,19 +58,19 @@ export default function BlogDetailPage() {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://constructons.com"
+              "item": "https://[Your Brand]s.com"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Blog",
-              "item": "https://constructons.com/blog"
+              "item": "https://[Your Brand]s.com/blog"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": b.title,
-              "item": `https://constructons.com/blog/${b.slug}`
+              "item": `https://[Your Brand]s.com/blog/${b.slug}`
             }
           ]
         }
@@ -84,7 +84,7 @@ export default function BlogDetailPage() {
     <>
       <SEO
         title={b.title ? `${b.title}` : "Blog Article"}
-        description={b.excerpt || `${b.title} — insights from the ConstructONS team on modern home construction.`}
+        description={b.excerpt || `${b.title} — insights from the [Your Brand]s team on modern home construction.`}
         canonical={`/blog/${b.slug || slug}`}
         image={b.cover_image}
         type="article"

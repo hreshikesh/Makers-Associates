@@ -110,7 +110,7 @@ export default function DiagonalCarousel({
         <div className="absolute left-0 right-0 top-0 z-20 h-[2px] overflow-hidden bg-white/10">
           <motion.div
             key={virtualIndex}
-            className="h-full bg-[#FF6600]"
+            className="h-full bg-[#B89416]"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{ duration: autoPlayInterval / 1000, ease: "linear" }}
@@ -176,7 +176,7 @@ export default function DiagonalCarousel({
                       className={cn(
                         "h-full w-full select-none rounded-2xl object-cover shadow-2xl transition-all duration-300",
                         isActive
-                          ? "ring-2 ring-[#FF6600]/50 shadow-[0_12px_40px_rgba(255,90,0,0.3)]"
+                          ? "ring-2 ring-[#B89416]/50 shadow-[0_12px_40px_rgba(255,90,0,0.3)]"
                           : "",
                         imageClassName
                       )}
@@ -198,7 +198,7 @@ export default function DiagonalCarousel({
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="pointer-events-none absolute right-6 top-1/2 z-20 -translate-y-1/2"
           >
-            <div className="relative flex items-center gap-2 rounded-full border border-[#FF6600]/40 bg-[#FF6600]/95 px-3.5 py-1.5 shadow-[0_8px_30px_rgba(255,90,0,0.4)] backdrop-blur-md">
+            <div className="relative flex items-center gap-2 rounded-full border border-[#B89416]/40 bg-[#B89416]/95 px-3.5 py-1.5 shadow-[0_8px_30px_rgba(255,90,0,0.4)] backdrop-blur-md">
               <motion.span
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
@@ -212,7 +212,7 @@ export default function DiagonalCarousel({
               >
                 <ChevronRight className="h-4 w-4 text-white" />
               </motion.div>
-              <div className="absolute -left-1.5 top-1/2 h-3 w-3 -translate-y-1/2 rotate-45 border-b border-l border-[#FF6600]/40 bg-[#FF6600]/95" />
+              <div className="absolute -left-1.5 top-1/2 h-3 w-3 -translate-y-1/2 rotate-45 border-b border-l border-[#B89416]/40 bg-[#B89416]/95" />
             </div>
           </motion.div>
         )}
@@ -248,7 +248,7 @@ export default function DiagonalCarousel({
                   className={cn(
                     "h-1.5 rounded-full transition-all duration-300",
                     realIndex === index
-                      ? "w-6 bg-[#FF6600] opacity-100"
+                      ? "w-6 bg-[#B89416] opacity-100"
                       : "w-1.5 bg-white opacity-40"
                   )}
                   onClick={() => {

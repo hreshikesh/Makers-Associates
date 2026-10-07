@@ -92,7 +92,7 @@ export default function AdminLayout() {
     <div className="min-h-screen bg-brand-bg">
       <SEO
         title="Admin Control Center"
-        description="ConstructONS Internal Content Management System"
+        description="[Your Brand]s Internal Content Management System"
         canonical="/admin"
         noindex={true}
       />
@@ -215,7 +215,7 @@ function NotificationBell({ unseenCount, open, setOpen, notifications, markAllSe
             >
               <div className="p-4 flex items-center justify-between border-b border-black/5 bg-gray-50/50">
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-[#FF6600]">Live Notifications</div>
+                  <div className="text-[10px] font-bold uppercase tracking-widest text-[#B89416]">Live Notifications</div>
                   <div className="font-bold text-brand-navy text-sm mt-0.5">
                     {unseenCount > 0 ? `${unseenCount} new updates` : "You're all caught up"}
                   </div>

@@ -46,28 +46,28 @@ export default function AdminClientUsers() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
-          <div className="text-xs font-semibold text-[#FF6600] uppercase tracking-wider">CRM · Leads & Clients</div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#000F1B]">Registered Client Users</h1>
-          <p className="text-xs text-[#111111]/60 mt-1">Clients who completed Google login & onboarding questionnaire.</p>
+          <div className="text-xs font-semibold text-[#B89416] uppercase tracking-wider">CRM · Leads & Clients</div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#252A2A]">Registered Client Users</h1>
+          <p className="text-xs text-[#252A2A]/60 mt-1">Clients who completed Google login & onboarding questionnaire.</p>
         </div>
         <button 
           onClick={load} 
-          className="px-4 py-2 text-xs font-semibold text-[#000F1B] bg-white border border-black/10 rounded-xl hover:bg-[#F2F2F2] flex items-center gap-1.5 self-start"
+          className="px-4 py-2 text-xs font-semibold text-[#252A2A] bg-white border border-black/10 rounded-xl hover:bg-[#F2F2F2] flex items-center gap-1.5 self-start"
         >
-          <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-[#FF6600]' : ''}`} /> Refresh
+          <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-[#B89416]' : ''}`} /> Refresh
         </button>
       </div>
 
       {/* Search Bar */}
       <div className="mb-4">
         <div className="relative max-w-md">
-          <Search className="w-4 h-4 text-[#111111]/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-[#252A2A]/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder="Search name, email, phone, or location..."
-            className="w-full rounded-xl border border-black/10 bg-white pl-10 pr-4 py-2.5 text-xs font-semibold focus:ring-2 focus:ring-[#FF6600] outline-none"
+            className="w-full rounded-xl border border-black/10 bg-white pl-10 pr-4 py-2.5 text-xs font-semibold focus:ring-2 focus:ring-[#B89416] outline-none"
           />
         </div>
       </div>
@@ -75,13 +75,13 @@ export default function AdminClientUsers() {
       {/* Table */}
       <div className="rounded-2xl bg-white border border-black/5 shadow-sm overflow-hidden">
         {loading ? (
-          <div className="p-12 flex justify-center"><Loader2 className="w-6 h-6 animate-spin text-[#FF6600]" /></div>
+          <div className="p-12 flex justify-center"><Loader2 className="w-6 h-6 animate-spin text-[#B89416]" /></div>
         ) : filtered.length === 0 ? (
-          <div className="p-12 text-center text-xs text-[#111111]/50 italic">No registered client users found.</div>
+          <div className="p-12 text-center text-xs text-[#252A2A]/50 italic">No registered client users found.</div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs whitespace-nowrap">
-              <thead className="bg-[#000F1B] text-white text-[10px] uppercase tracking-wider font-bold">
+              <thead className="bg-[#252A2A] text-white text-[10px] uppercase tracking-wider font-bold">
                 <tr>
                   <th className="px-5 py-3.5">Client Name</th>
                   <th className="px-5 py-3.5">Contact</th>
@@ -99,26 +99,26 @@ export default function AdminClientUsers() {
                         {c.picture ? (
                           <img src={c.picture} alt="" referrerPolicy="no-referrer" className="w-8 h-8 rounded-full border border-black/10 object-cover" />
                         ) : (
-                          <div className="w-8 h-8 rounded-full bg-[#000F1B] text-white grid place-items-center font-bold text-xs">
+                          <div className="w-8 h-8 rounded-full bg-[#252A2A] text-white grid place-items-center font-bold text-xs">
                             {c.name?.[0]?.toUpperCase() || "U"}
                           </div>
                         )}
                         <div>
-                          <div className="font-bold text-[#000F1B] text-sm">{c.name}</div>
-                          <div className="text-[10px] text-[#111111]/50">{c.email}</div>
+                          <div className="font-bold text-[#252A2A] text-sm">{c.name}</div>
+                          <div className="text-[10px] text-[#252A2A]/50">{c.email}</div>
                         </div>
                       </div>
                     </td>
-                    <td className="px-5 py-3.5 font-mono text-[#111111]/70">
+                    <td className="px-5 py-3.5 font-mono text-[#252A2A]/70">
                       {c.phone || "—"}
                     </td>
                     <td className="px-5 py-3.5">
-                      <div className="font-semibold text-[#000F1B]">{c.plot_location || "—"}</div>
-                      <div className="text-[10px] text-[#111111]/50">{c.plot_size ? `${c.plot_size}` : ""}</div>
+                      <div className="font-semibold text-[#252A2A]">{c.plot_location || "—"}</div>
+                      <div className="text-[10px] text-[#252A2A]/50">{c.plot_size ? `${c.plot_size}` : ""}</div>
                     </td>
                     <td className="px-5 py-3.5">
-                      <div className="font-semibold text-[#000F1B]">{c.style_pref || "—"}</div>
-                      <div className="text-[10px] text-[#111111]/50">{c.budget_range || ""}</div>
+                      <div className="font-semibold text-[#252A2A]">{c.style_pref || "—"}</div>
+                      <div className="text-[10px] text-[#252A2A]/50">{c.budget_range || ""}</div>
                     </td>
                     <td className="px-5 py-3.5">
                       {c.onboarding_completed ? (
@@ -135,7 +135,7 @@ export default function AdminClientUsers() {
                       <button
                         type="button"
                         onClick={() => setSelectedUser(c)}
-                        className="px-3 py-1.5 bg-[#000F1B] hover:bg-[#FF6600] text-white font-bold rounded-lg transition"
+                        className="px-3 py-1.5 bg-[#252A2A] hover:bg-[#B89416] text-white font-bold rounded-lg transition"
                       >
                         View Profile
                       </button>
@@ -161,12 +161,12 @@ export default function AdminClientUsers() {
 
 function ClientDetailModal({ user, onClose }) {
   return (
-    <div className="fixed inset-0 bg-[#000F1B]/60 backdrop-blur-sm z-[60] grid place-items-center p-4 font-['Poppins']">
+    <div className="fixed inset-0 bg-[#252A2A]/60 backdrop-blur-sm z-[60] grid place-items-center p-4 font-['Poppins']">
       <div className="bg-white rounded-2xl w-full max-w-xl p-6 shadow-2xl flex flex-col max-h-[85vh] overflow-hidden">
         <div className="flex items-center justify-between border-b border-black/5 pb-4 mb-4">
           <div>
-            <span className="text-[10px] font-bold text-[#FF6600] uppercase tracking-wider">Client Onboarding File</span>
-            <h2 className="text-xl font-bold text-[#000F1B]">{user.name}</h2>
+            <span className="text-[10px] font-bold text-[#B89416] uppercase tracking-wider">Client Onboarding File</span>
+            <h2 className="text-xl font-bold text-[#252A2A]">{user.name}</h2>
           </div>
           <button onClick={onClose} className="w-8 h-8 rounded-full grid place-items-center hover:bg-[#F2F2F2]"><X className="w-4 h-4" /></button>
         </div>
@@ -174,41 +174,41 @@ function ClientDetailModal({ user, onClose }) {
         <div className="space-y-4 overflow-y-auto pr-1 flex-1 text-xs">
           <div className="grid grid-cols-2 gap-3 bg-[#F2F2F2]/50 p-4 rounded-xl border border-black/5">
             <div>
-              <span className="text-[10px] text-[#111111]/50 font-bold uppercase block">Email Address</span>
-              <span className="font-semibold text-[#000F1B]">{user.email}</span>
+              <span className="text-[10px] text-[#252A2A]/50 font-bold uppercase block">Email Address</span>
+              <span className="font-semibold text-[#252A2A]">{user.email}</span>
             </div>
             <div>
-              <span className="text-[10px] text-[#111111]/50 font-bold uppercase block">Mobile Phone</span>
-              <span className="font-semibold font-mono text-[#000F1B]">{user.phone || "—"}</span>
+              <span className="text-[10px] text-[#252A2A]/50 font-bold uppercase block">Mobile Phone</span>
+              <span className="font-semibold font-mono text-[#252A2A]">{user.phone || "—"}</span>
             </div>
             <div>
-              <span className="text-[10px] text-[#111111]/50 font-bold uppercase block">Plot Location</span>
-              <span className="font-semibold text-[#000F1B]">{user.plot_location || "—"}</span>
+              <span className="text-[10px] text-[#252A2A]/50 font-bold uppercase block">Plot Location</span>
+              <span className="font-semibold text-[#252A2A]">{user.plot_location || "—"}</span>
             </div>
             <div>
-              <span className="text-[10px] text-[#111111]/50 font-bold uppercase block">Plot Size</span>
-              <span className="font-semibold text-[#000F1B]">{user.plot_size || "—"}</span>
+              <span className="text-[10px] text-[#252A2A]/50 font-bold uppercase block">Plot Size</span>
+              <span className="font-semibold text-[#252A2A]">{user.plot_size || "—"}</span>
             </div>
             <div>
-              <span className="text-[10px] text-[#111111]/50 font-bold uppercase block">Style Preference</span>
-              <span className="font-semibold text-[#000F1B]">{user.style_pref || "—"}</span>
+              <span className="text-[10px] text-[#252A2A]/50 font-bold uppercase block">Style Preference</span>
+              <span className="font-semibold text-[#252A2A]">{user.style_pref || "—"}</span>
             </div>
             <div>
-              <span className="text-[10px] text-[#111111]/50 font-bold uppercase block">Budget Range</span>
-              <span className="font-semibold text-[#000F1B]">{user.budget_range || "—"}</span>
+              <span className="text-[10px] text-[#252A2A]/50 font-bold uppercase block">Budget Range</span>
+              <span className="font-semibold text-[#252A2A]">{user.budget_range || "—"}</span>
             </div>
           </div>
 
           <div>
-            <span className="text-[10px] text-[#111111]/50 font-bold uppercase block mb-1">Project Status</span>
-            <div className="p-3 bg-white border border-black/10 rounded-xl font-semibold text-[#000F1B]">
+            <span className="text-[10px] text-[#252A2A]/50 font-bold uppercase block mb-1">Project Status</span>
+            <div className="p-3 bg-white border border-black/10 rounded-xl font-semibold text-[#252A2A]">
               {user.current_status || "Not specified"}
             </div>
           </div>
 
           {user.site_photos && user.site_photos.length > 0 && (
             <div>
-              <span className="text-[10px] text-[#111111]/50 font-bold uppercase block mb-2">Uploaded Plot Photos ({user.site_photos.length})</span>
+              <span className="text-[10px] text-[#252A2A]/50 font-bold uppercase block mb-2">Uploaded Plot Photos ({user.site_photos.length})</span>
               <div className="grid grid-cols-3 gap-2">
                 {user.site_photos.map((url, i) => (
                   <a key={i} href={resolveMediaUrl(url)} target="_blank" rel="noreferrer" className="aspect-square rounded-lg overflow-hidden border border-black/10 bg-black/5 block">

@@ -12,13 +12,13 @@ export default function DashboardPage() {
   if (!project) {
     return (
       <div className="max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[60vh] text-center font-['Poppins']">
-        <div className="w-16 h-16 rounded-2xl bg-[#FF6600]/10 grid place-items-center mb-5">
-          <Building2 className="w-8 h-8 text-[#FF6600]" />
+        <div className="w-16 h-16 rounded-2xl bg-[#B89416]/10 grid place-items-center mb-5">
+          <Building2 className="w-8 h-8 text-[#B89416]" />
         </div>
-        <h1 className="text-2xl sm:text-3xl font-bold text-[#000F1B] tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-bold text-[#252A2A] tracking-tight">
           Welcome, {user?.name?.split(" ")[0] || "Client"}!
         </h1>
-        <p className="mt-3 text-sm text-[#111111]/65 max-w-md mx-auto leading-relaxed">
+        <p className="mt-3 text-sm text-[#252A2A]/65 max-w-md mx-auto leading-relaxed">
           Your project dashboard is awaiting linkage. Once your site consultation is complete, your live tracking data will appear here.
         </p>
       </div>
