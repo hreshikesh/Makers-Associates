@@ -14,8 +14,7 @@ from models import (
 IMG_HERO_VILLA = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80"
 
 HOME_IMAGES = {
-    # Verified pool-free front elevations. Admins can override any of these via
-    # Admin Panel → Homes → Edit → Cover Image URL / Gallery.
+ 
     "modern_aura": [
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1600&q=80",
